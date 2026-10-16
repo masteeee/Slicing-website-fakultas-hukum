@@ -1,28 +1,28 @@
 <div
-    style="position: relative; width: 100%; max-width: 100%; margin: 0; padding: 40px 4% 60px 4%; background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png'); background-repeat: no-repeat; background-position: center bottom; background-size: cover; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b2b2b;">
+    style="position: relative; width: 100%; max-width: 100%; margin: 0; padding: clamp(25px, 4vw, 45px) clamp(16px, 4%, 40px); background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png'); background-repeat: no-repeat; background-position: center bottom; background-size: cover; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b2b2b;">
 
-    <!-- Top Bar: Judul Sejarah dan Logo Yayasan / Unpam Sejajar -->
+    <!-- Top Bar: Judul Sejarah dan Logo Yayasan / Unpam Sejajar & Responsif -->
     <div
-        style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 30px; width: 100%; box-sizing: border-box;">
+        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: clamp(20px, 3.5vw, 35px); width: 100%; box-sizing: border-box;">
         <h1
-            style="font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -0.5px; font-family: inherit; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(185, 25, 25) 50%, rgb(225, 60, 35) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">
+            style="font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; margin: 0; letter-spacing: -0.5px; font-family: inherit; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(185, 25, 25) 50%, rgb(225, 60, 35) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">
             Sejarah</h1>
 
         <!-- Logo Yayasan dan Universitas Pamulang Sejajar dengan Sejarah -->
         <div style="display: flex; align-items: center;">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAAEWklEQVR4nN2Wa2wUVRiGnzk73e3utlu6lEoLyKLUilJsRZFbabRJE4wEKQQvQX+hQpSLJOKVRKJRg0pE4h8MGC9crCJRmhihiYiSNLQUCkq4dKm0RWC7dLvd6+zszjHdGvlBC5RGnfgk58c5871n3sz3ne+MEk9KiYkRmByByRGYHIHJEZgcgckRmByByVEHK2g+fZHc7ExuHplzfYJolGRDI0r7XmT4HIoqMGQJ6kMLUQoKrilXBnOTNJy4wOd7jqIgeWpOGRPH5V81PnWkGRo/QIhfUCfEONZRTInnBEbIQmJfFoyaT8YzbwzdoG7A9v0tbK1tpGC4k1A0wcVAlGWLZvHI1LH9amRbG/rGx7DPO4taGqM7mMPs6u1UVdax9pX16Rht1zB0fwUZK7YMrQZbujR2N7bjsKmsXDCF156cicth45v63/EGEv1qkjVrsc/vM9fLb03VPFzpxxqrIuh1pdds87pRnT+TrK0dmsF8p8p9ZR6c7mGEohrBSJxCTwHlZeNwO64s49ShJiyO/aiT+sxtXv0SRRPuYtWqs7z86g5Oe9dR88WS9DPrAyHk4Q9vzKASbyCjfQYjL7lZPf073lpcwac/tvDTyS5eX1TCismfkO8rwNo2GSV55m+dPL4ftURLp3Xn1qU8uuZW6iPvELYnOKD5GTv5XaaV3U3NrtmIkTrC2Yb0egdnUEn6UL1zEbF6DOcyhN5AoaOVqZN8jMjxMiYrhpL0YmRWosSOYGmpQqa6+wzGumg+V0TJ1Dqajk+D0Dnm3Pk2W1s/oycZIW/USnLsuWxYt5wFT3yM5RYNIxgcpMHwQYz8FSRzlyGiX9F7lIK+9Tx+Lzx7fyu+P15EEkakzpAa9jRy+FJE9Fif2J5D6ejTvLnmPRzWEQSDHTT5dzDeVUqdrwsCNaAaTLzjOMuXbEGGLCgoQ20zem91AZl/zSUKESRZV0Qmd9eSoT6HtSKEYQgC3m1kuDaRPeYeFONXujrK6ekJkD9mA/aUTmRjEerqH1Cys2+8UZ/3R1EUgUTDZe81KensTuApvDJWfXA22vNuMibGEcN1Ws9+RG5xFf5vXagjyohm1RO8uA/PbRp6swNRPLNfc2l6v+D1jphuyI7OkOzsictgJCF93dEBY8Pf75GxzeOl7HGnx7H6afKm/PNyYfXXMtDuSa/pB0bJ0AvTZey8b8B9+k3xhUshTrVd4mS7n4pSDx2dQToDMTKtKjabJX3VRSMaTmcmWQ4bgZCGlAaGYTCr1HO5KLZsQrWuQ4xOYJ0S4cudc5lw+0lKxp5CP2pHP1iIUv4+lvIZA2auX4OR3l4X1bHbVHoicVzOTIQCF7rCFOa5sAgFTdcJx/T0PBrXiWk6hiHJy3GgqpfPXurQIeThbRhH92Ip0iAJMpGHUrwAUbl44NRezeA/gp5E+jv7Xup2g812XbJ/z+D/9X9QYHIEJkdgcgQmR2ByBCZHYHIEJkdgcsR/beBa/AkOdzQvpIcTqwAAAABJRU5ErkJggg=="
                 alt="Logo Universitas Pamulang dan Yayasan Sasmita Jaya"
-                style="height: 42px; width: auto; object-fit: contain; border: 0; display: block;">
+                style="height: clamp(34px, 5vw, 44px); width: auto; max-width: 100%; object-fit: contain; border: 0; display: block;">
         </div>
     </div>
 
-    <!-- Container Grid 2 Kolom Full Width -->
+    <!-- Container Grid 2 Kolom Responsif (Desktop: 2 Kolom, Mobile: Stack Vertikal Rapi) -->
     <div
-        style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: flex-start; gap: 40px; width: 100%; box-sizing: border-box;">
+        style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: flex-start; gap: clamp(25px, 4vw, 45px); width: 100%; box-sizing: border-box;">
 
         <!-- KOLOM KIRI: TIMELINE KEPEMIMPINAN (280px) -->
-        <div style="position: relative; flex: 0 0 280px; width: 280px; min-height: 850px; box-sizing: border-box;">
-            <!-- Garis Lengkung Putus-putus SVG dengan Animasi CSS Aman -->
+        <div class="timeline-col" style="position: relative; flex: 0 0 280px; width: 280px; min-height: 850px; box-sizing: border-box;">
+            <!-- Garis Lengkung Putus-putus SVG dengan Animasi CSS Aman & Media Query -->
             <svg viewBox="0 0 280 850" fill="none" xmlns="http://www.w3.org/2000/svg"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
                 <style>
@@ -41,6 +41,11 @@
                     .foto-dekan-hover:hover {
                         transform: scale(1.15) translateY(-4px) !important;
                         filter: drop-shadow(0 8px 18px rgba(128,0,0,0.38)) !important;
+                    }
+                    @media (max-width: 768px) {
+                        .timeline-col {
+                            margin: 0 auto 20px auto !important;
+                        }
                     }
                 </style>
                 <path d="M 85 20 C 145 20, 240 45, 240 115 C 240 190, 190 200, 120 225 C 45 250, 45 325, 45 365 C 45 435, 100 455, 195 470 C 240 485, 240 555, 240 595 C 240 655, 190 675, 110 695 C 45 715, 45 780, 85 825" fill="none" stroke="#8b181b" stroke-width="1.8" stroke-dasharray="7 7" stroke-linecap="round" style="fill: none !important; stroke: #8b181b;" />
@@ -103,27 +108,27 @@
             </div>
         </div>
 
-        <!-- KOLOM KANAN: KONTEN NARASI SEJARAH (Full Remaining Width) -->
-        <div style="flex: 1 1 auto; min-width: 0; box-sizing: border-box;">
+        <!-- KOLOM KANAN: KONTEN NARASI SEJARAH (Responsif: Desktop isi sisa ruang, Mobile 100%) -->
+        <div style="flex: 1 1 340px; min-width: 280px; max-width: 100%; box-sizing: border-box;">
             <!-- Sub-heading & Heading -->
             <div style="margin: 0 0 4px 0; line-height: 1.2;">
                 <span
-                    style="font-size: 19px; font-weight: 700; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(190, 35, 30) 50%, rgb(230, 75, 30) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Sejarah
+                    style="font-size: clamp(16px, 2.5vw, 19px); font-weight: 700; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(190, 35, 30) 50%, rgb(230, 75, 30) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Sejarah
                     Berdirinya</span>
             </div>
             <div style="margin: 0 0 22px 0; line-height: 1.15; letter-spacing: -0.5px;">
                 <span
-                    style="font-size: 32px; font-weight: 800; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(185, 25, 25) 50%, rgb(225, 60, 35) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Fakultas
+                    style="font-size: clamp(24px, 3.8vw, 32px); font-weight: 800; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(185, 25, 25) 50%, rgb(225, 60, 35) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Fakultas
                     Hukum</span>
             </div>
 
-            <!-- Teks Sejarah -->
-            <p style="font-size: 14px; line-height: 1.7; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
+            <!-- Teks Sejarah Responsif -->
+            <p style="font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
                 Pamulang didirikan oleh Yayasan Prima Jaya pada tahun 2000 dan setelah itu beralih pengelolaannya oleh
                 Yayasan Sasmita Jaya tahun 2004 yang dipimpin oleh Dr. (H.C) Drs. H. Darsono.
             </p>
 
-            <p style="font-size: 14px; line-height: 1.7; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
+            <p style="font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
                 Dibawah naungan Yayasan Sasmita Jaya dan seiring berjalannya waktu, Universitas Pamulang terus
                 berkembang dengan berbagai kemajuan, dari mahasiswa hanya satu orang per kelas dan hanya memiliki satu
                 kampus yang relatif kecil, kendati demikian saat ini jumlahnya sudah hampir mencapai angka 100.000
@@ -132,22 +137,17 @@
                 PSDKU di kota Serang.
             </p>
 
-            <p style="font-size: 14px; line-height: 1.7; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
+            <p style="font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
                 Kemajuan yang dicapai Universitas Pamulang tentu tidak bisa dilepaskan dari andil Ketua Yayasan Sasmita
                 Jaya. Kita tahu, tujuan dari Yayasan Sasmita Jaya adalah mewujudkan suatu sarana pendidikan yang murah
                 dan terjangkau oleh seluruh lapisan masyarakat dengan mengedepankan kualitas pendidikan yang unggul.
             </p>
 
-            <p style="font-size: 14px; line-height: 1.7; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
+            <p style="font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #2b2b2b; text-align: justify; margin: 0 0 16px 0;">
                 Di Program Studi S-1 Ilmu Hukum sendiri awal berdiri dengan SK Menteri Pendidikan Nasional RI No.
                 136/D/O/2001 Tentang Pemberian Izin Penyelenggaraan Program-Program Studi dan Pendirian Universitas
                 Pamulang di Tangerang yang Diselenggarakan Oleh Yayasan Prima Jaya di Tangerang. Saat itu berdiri 10
                 Program Studi dan Ilmu Hukum menjadi salah satu di antaranya.
-            </p>
-
-            <p
-                style="font-size: 14.5px; line-height: 1.7; font-weight: 700; color: #8b181b; text-align: justify; margin: 22px 0 0 0;">
-                Secara historis Fakultas Hukum dipimpin oleh:
             </p>
         </div>
 
