@@ -235,10 +235,11 @@
             margin: 0 auto 8px auto !important;
         }
 
-        /* 3. Card pembungkus deskripsi sejarah di HP (Background hanya di sini) */
+        /* 3. Card pembungkus deskripsi sejarah di HP (Background terlihat jelas) */
         .desc-content-column {
             width: 100% !important;
             flex: 0 0 100% !important;
+            min-height: auto !important;
             background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png') !important;
             background-repeat: no-repeat !important;
             background-position: center bottom !important;
@@ -250,10 +251,22 @@
             box-sizing: border-box !important;
         }
 
-        /* Lapisan pelindung teks di dalam card mobile */
+        /* Warna card dibuat transparan agar gambar background terlihat di mobile */
         .desc-inner-card {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.88) 60%, rgba(255, 255, 255, 0.82) 100%) !important;
+            background: transparent !important;
             padding: 22px 18px !important;
+        }
+
+        /* 4. Tulisan Sejarah Berdirinya Fakultas Hukum rata tengah di HP */
+        .sejarah-heading-sub,
+        .sejarah-heading-title {
+            text-align: center !important;
+        }
+
+        .sejarah-heading-sub span,
+        .sejarah-heading-title span {
+            text-align: center !important;
+            display: inline-block !important;
         }
     }
 </style>
@@ -393,14 +406,15 @@
 
             <div class="desc-inner-card" style="width: 100%; height: 100%; box-sizing: border-box;">
                 <!-- Sub-heading & Heading -->
-                <div style="margin: 0 0 4px 0; line-height: 1.2; text-align: end;">
+                <div class="sejarah-heading-sub" style="margin: 0 0 4px 0; line-height: 1.2; text-align: end;">
                     <span
-                        style="font-family: 'Geist', sans-serif; font-size: clamp(16px, 2.5vw, 40px); font-weight: 400; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(255, 60, 35) 50%, rgb(185, 25, 25) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block; text-align: right;">Sejarah
+                        style="font-family: 'Geist', sans-serif; font-size: clamp(16px, 2.5vw, 40px); font-weight: 400; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(255, 60, 35) 50%, rgb(185, 25, 25) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Sejarah
                         Berdirinya</span>
                 </div>
-                <div style="margin: 0 0 22px 0; line-height: 1.15; letter-spacing: -0.5px; text-align: end  ;">
+                <div class="sejarah-heading-title"
+                    style="margin: 0 0 22px 0; line-height: 1.15; letter-spacing: -0.5px; text-align: end;">
                     <span
-                        style="font-family: 'Geist', sans-serif; font-size: clamp(24px, 3.8vw,70px); font-weight: 500; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(255, 60, 35) 50%, rgb(185, 25, 25) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block; text-align: right;">Fakultas
+                        style="font-family: 'Geist', sans-serif; font-size: clamp(24px, 3.8vw, 70px); font-weight: 500; background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(255, 60, 35) 50%, rgb(185, 25, 25) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block;">Fakultas
                         Hukum</span>
                 </div>
 
