@@ -119,37 +119,43 @@
     style="position: relative; width: 100%; max-width: 100%; margin: 0; padding: clamp(25px, 4vw, 45px) clamp(16px, 4%, 40px); background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png'); background-repeat: no-repeat; background-position: center bottom; background-size: cover; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b2b2b;">
 
     <!-- Top Bar: Judul Sejarah dan Logo Yayasan / Unpam Sejajar -->
-    <div class="top-bar-header" style="display:flex; flex-direction:row; flex-wrap:wrap;
-    justify-content:space-between; align-items:center;
-    gap:15px; margin-bottom:clamp(20px, 3.5vw, 35px);
-    width:100%; box-sizing:border-box;">
+    <div class="top-bar-header"
+        style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; width: 100%; box-sizing: border-box;">
 
-        <h1 style="font-size:clamp(26px, 4.5vw, 36px);
-        font-weight:800; margin:0; letter-spacing:-0.5px;
-        font-family:inherit;
-        background:linear-gradient(135deg, rgb(128,0,0) 0%,
-        rgb(185,25,25) 50%, rgb(225,60,35) 100%);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text; color:rgb(128,0,0);
-        display:inline-block;">
-            Sejarah
-        </h1>
-
-        <!-- Logo Yayasan Sasmita Jaya dan Universitas Pamulang -->
-        <div style="display:flex; flex-direction:row;
-        align-items:center; justify-content:flex-end;
-        gap:12px; flex-wrap:nowrap;">
-
-            <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya" style="height:clamp(34px, 5vw, 44px);
-            width:auto; max-width:45%; object-fit:contain;
-            border:0; display:block; background:transparent;">
-
-            <img src="https://unpam.ac.id/_nuxt/logo-unpam-300x291.DBvGUDu1.png" alt="Logo Universitas Pamulang" style="height:clamp(34px, 5vw, 44px);
-            width:auto; max-width:45%; object-fit:contain;
-            border:0; display:block; background:transparent;">
-
+        <!-- KOLOM KIRI: Judul (Lebar Fleksibel) -->
+        <div class="header-sejarah-kiri" style="flex: 1; min-width: 150px; box-sizing: border-box;">
+            <h1 style="font-size:clamp(26px, 4.5vw, 36px);
+                font-weight:800; margin:0; letter-spacing:-0.5px;
+                font-family:inherit;
+                background:linear-gradient(135deg, rgb(128,0,0) 0%,
+                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                background-clip:text; color:rgb(128,0,0);
+                display:inline-block;">
+                Sejarah
+            </h1>
         </div>
+
+        <!-- KOLOM KANAN: Kumpulan Logo (Rata Kiri di dalam Kolom Kanan) -->
+        <div class="header-sejarah-kanan" style="flex: 1; min-width: 200px; box-sizing: border-box;">
+            <!-- PERUBAHAN: justify-content diubah menjadi flex-start -->
+            <div style="display:flex; flex-direction:row;
+            align-items:center; justify-content:flex-start;
+            gap:12px; flex-wrap:nowrap;">
+
+                <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya" style="height:clamp(34px, 5vw, 44px);
+                width:auto; max-width:45%; object-fit:contain;
+                border:0; display:block; background:transparent;">
+
+                <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Universitas Pamulang"
+                    style="height:clamp(34px, 5vw, 44px);
+                width:auto; max-width:45%; object-fit:contain;
+                border:0; display:block; background:transparent;">
+
+            </div>
+        </div>
+
     </div>
 
     <!-- Container Grid (Desktop: 2 Kolom Berdampingan; Mobile: Dosen di Atas Lurus, Card Deskripsi di Bawah) -->
