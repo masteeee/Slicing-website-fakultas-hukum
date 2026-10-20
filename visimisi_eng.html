@@ -1,72 +1,113 @@
 <div class="visimisi-wrapper"
   style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
 
-  <!-- BREADCRUMB / TAB NAVIGATION -->
-  <div
+  <style>
+    /* CSS Murni Tanpa JavaScript */
+    .vm-tab-input {
+      display: none !important;
+    }
+
+    .vm-tab-label {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-family: inherit;
+      font-size: clamp(18px, 2.3vw, 22px);
+      font-weight: 600;
+      color: #85131b;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .vm-tab-indicator {
+      display: none;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3.5px;
+      background-color: #85131b;
+      border-radius: 2px;
+    }
+
+    .vm-content-box {
+      display: none;
+    }
+
+    /* Efek Saat Tab / Radio Button Dipilih (Checked) */
+    #vm-tab-visi:checked~.vm-nav-bar #vm-label-visi,
+    #vm-tab-misi:checked~.vm-nav-bar #vm-label-misi,
+    #vm-tab-tujuan:checked~.vm-nav-bar #vm-label-tujuan,
+    #vm-tab-sasaran:checked~.vm-nav-bar #vm-label-sasaran {
+      font-weight: 800;
+    }
+
+    #vm-tab-visi:checked~.vm-nav-bar #vm-ind-visi,
+    #vm-tab-misi:checked~.vm-nav-bar #vm-ind-misi,
+    #vm-tab-tujuan:checked~.vm-nav-bar #vm-ind-tujuan,
+    #vm-tab-sasaran:checked~.vm-nav-bar #vm-ind-sasaran {
+      display: block;
+    }
+
+    #vm-tab-visi:checked~.vm-main-body #vm-cnt-visi,
+    #vm-tab-misi:checked~.vm-main-body #vm-cnt-misi,
+    #vm-tab-tujuan:checked~.vm-main-body #vm-cnt-tujuan,
+    #vm-tab-sasaran:checked~.vm-main-body #vm-cnt-sasaran {
+      display: block;
+    }
+  </style>
+
+  <!-- RADIO INPUTS UNTUK TABS -->
+  <input type="radio" id="vm-tab-visi" name="vm-tab-group" class="vm-tab-input" checked>
+  <input type="radio" id="vm-tab-misi" name="vm-tab-group" class="vm-tab-input">
+  <input type="radio" id="vm-tab-tujuan" name="vm-tab-group" class="vm-tab-input">
+  <input type="radio" id="vm-tab-sasaran" name="vm-tab-group" class="vm-tab-input">
+
+  <!-- BREADCRUMB / TAB NAVIGATION (ENGLISH) -->
+  <div class="vm-nav-bar"
     style="position: relative; width: 100%; border-bottom: 2px solid #f87171; margin-bottom: clamp(25px, 4.5vw, 45px); box-sizing: border-box;">
     <div
       style="display: flex; flex-direction: row; align-items: flex-end; gap: clamp(24px, 5.5vw, 60px); flex-wrap: wrap; padding-bottom: 0;">
 
       <!-- TAB VISION -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <button type="button" id="vm-btn-visi"
-          onclick="if(window.switchVmTab){window.switchVmTab('visi');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='visi');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
-          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 800; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
-          Vision
-        </button>
-        <div id="vm-indicator-visi"
-          style="display: block; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
-        </div>
+        <label for="vm-tab-visi" id="vm-label-visi" class="vm-tab-label">Vision</label>
+        <div id="vm-ind-visi" class="vm-tab-indicator"></div>
       </div>
 
       <!-- TAB MISSION -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <button type="button" id="vm-btn-misi"
-          onclick="if(window.switchVmTab){window.switchVmTab('misi');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='misi');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
-          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
-          Mission
-        </button>
-        <div id="vm-indicator-misi"
-          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
-        </div>
+        <label for="vm-tab-misi" id="vm-label-misi" class="vm-tab-label">Mission</label>
+        <div id="vm-ind-misi" class="vm-tab-indicator"></div>
       </div>
 
       <!-- TAB GOALS -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <button type="button" id="vm-btn-tujuan"
-          onclick="if(window.switchVmTab){window.switchVmTab('tujuan');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='tujuan');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
-          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
-          Goals
-        </button>
-        <div id="vm-indicator-tujuan"
-          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
-        </div>
+        <label for="vm-tab-tujuan" id="vm-label-tujuan" class="vm-tab-label">Goals</label>
+        <div id="vm-ind-tujuan" class="vm-tab-indicator"></div>
       </div>
 
       <!-- TAB OBJECTIVES -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <button type="button" id="vm-btn-sasaran"
-          onclick="if(window.switchVmTab){window.switchVmTab('sasaran');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='sasaran');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
-          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
-          Objectives
-        </button>
-        <div id="vm-indicator-sasaran"
-          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
-        </div>
+        <label for="vm-tab-sasaran" id="vm-label-sasaran" class="vm-tab-label">Objectives</label>
+        <div id="vm-ind-sasaran" class="vm-tab-indicator"></div>
       </div>
 
     </div>
   </div>
 
   <!-- MAIN CONTENT AREA: 2 COLUMNS (TEXT & BUILDING IMAGE) -->
-  <div
+  <div class="vm-main-body"
     style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(24px, 4vw, 50px); width: 100%; box-sizing: border-box;">
 
-    <!-- LEFT COLUMN: DESCRIPTION TEXT (CHANGES BASED ON ACTIVE TAB) -->
+    <!-- LEFT COLUMN: DESCRIPTION TEXT (ENGLISH) -->
     <div style="flex: 1 1 340px; min-width: 280px; box-sizing: border-box;">
 
       <!-- 1. VISION CONTENT -->
-      <div id="vm-content-visi" style="display: block;">
+      <div id="vm-cnt-visi" class="vm-content-box">
         <h2
           style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
           Study Program Vision
@@ -79,7 +120,7 @@
       </div>
 
       <!-- 2. MISSION CONTENT -->
-      <div id="vm-content-misi" style="display: none;">
+      <div id="vm-cnt-misi" class="vm-content-box">
         <h2
           style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
           Study Program Mission
@@ -98,7 +139,7 @@
       </div>
 
       <!-- 3. GOALS CONTENT -->
-      <div id="vm-content-tujuan" style="display: none;">
+      <div id="vm-cnt-tujuan" class="vm-content-box">
         <h2
           style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
           Study Program Goals
@@ -117,7 +158,7 @@
       </div>
 
       <!-- 4. OBJECTIVES CONTENT -->
-      <div id="vm-content-sasaran" style="display: none;">
+      <div id="vm-cnt-sasaran" class="vm-content-box">
         <h2
           style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
           Study Program Objectives
@@ -137,7 +178,7 @@
 
     </div>
 
-    <!-- RIGHT COLUMN: FACULTY OF LAW BUILDING PHOTO WITH SMOOTH ROUNDED CORNERS -->
+    <!-- RIGHT COLUMN: FACULTY OF LAW BUILDING PHOTO -->
     <div style="flex: 1 1 320px; max-width: 440px; box-sizing: border-box; margin: 0 auto;">
       <div
         style="width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 12px 36px rgba(75, 22, 27, 0.16); background-color: #f7f7f7;">
@@ -150,29 +191,3 @@
   </div>
 
 </div>
-
-<!-- SCRIPT FOR INTERACTIVE BREADCRUMB TAB -->
-<script>
-  window.switchVmTab = function (tabKey) {
-    var tabs = ['visi', 'misi', 'tujuan', 'sasaran'];
-    for (var i = 0; i < tabs.length; i++) {
-      var key = tabs[i];
-      var isCurrent = (key === tabKey);
-
-      var contentEl = document.getElementById('vm-content-' + key);
-      if (contentEl) {
-        contentEl.style.display = isCurrent ? 'block' : 'none';
-      }
-
-      var btnEl = document.getElementById('vm-btn-' + key);
-      if (btnEl) {
-        btnEl.style.fontWeight = isCurrent ? '800' : '600';
-      }
-
-      var indicatorEl = document.getElementById('vm-indicator-' + key);
-      if (indicatorEl) {
-        indicatorEl.style.display = isCurrent ? 'block' : 'none';
-      }
-    }
-  };
-</script>
