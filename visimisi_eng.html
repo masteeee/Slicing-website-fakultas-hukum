@@ -1,0 +1,178 @@
+<div class="visimisi-wrapper"
+  style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
+
+  <!-- BREADCRUMB / TAB NAVIGATION -->
+  <div
+    style="position: relative; width: 100%; border-bottom: 2px solid #f87171; margin-bottom: clamp(25px, 4.5vw, 45px); box-sizing: border-box;">
+    <div
+      style="display: flex; flex-direction: row; align-items: flex-end; gap: clamp(24px, 5.5vw, 60px); flex-wrap: wrap; padding-bottom: 0;">
+
+      <!-- TAB VISION -->
+      <div style="position: relative; display: inline-block; padding-bottom: 10px;">
+        <button type="button" id="vm-btn-visi"
+          onclick="if(window.switchVmTab){window.switchVmTab('visi');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='visi');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
+          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 800; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
+          Vision
+        </button>
+        <div id="vm-indicator-visi"
+          style="display: block; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
+        </div>
+      </div>
+
+      <!-- TAB MISSION -->
+      <div style="position: relative; display: inline-block; padding-bottom: 10px;">
+        <button type="button" id="vm-btn-misi"
+          onclick="if(window.switchVmTab){window.switchVmTab('misi');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='misi');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
+          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
+          Mission
+        </button>
+        <div id="vm-indicator-misi"
+          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
+        </div>
+      </div>
+
+      <!-- TAB GOALS -->
+      <div style="position: relative; display: inline-block; padding-bottom: 10px;">
+        <button type="button" id="vm-btn-tujuan"
+          onclick="if(window.switchVmTab){window.switchVmTab('tujuan');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='tujuan');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
+          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
+          Goals
+        </button>
+        <div id="vm-indicator-tujuan"
+          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
+        </div>
+      </div>
+
+      <!-- TAB OBJECTIVES -->
+      <div style="position: relative; display: inline-block; padding-bottom: 10px;">
+        <button type="button" id="vm-btn-sasaran"
+          onclick="if(window.switchVmTab){window.switchVmTab('sasaran');}else{var ts=['visi','misi','tujuan','sasaran'];for(var i=0;i<ts.length;i++){var k=ts[i],s=(k==='sasaran');document.getElementById('vm-content-'+k).style.display=s?'block':'none';document.getElementById('vm-btn-'+k).style.fontWeight=s?'800':'600';document.getElementById('vm-indicator-'+k).style.display=s?'block':'none';}}"
+          style="background: transparent; border: none; padding: 0; margin: 0; font-family: inherit; font-size: clamp(18px, 2.3vw, 22px); font-weight: 600; color: #85131b; cursor: pointer; outline: none; transition: font-weight 0.2s ease;">
+          Objectives
+        </button>
+        <div id="vm-indicator-sasaran"
+          style="display: none; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3.5px; background-color: #85131b; border-radius: 2px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT AREA: 2 COLUMNS (TEXT & BUILDING IMAGE) -->
+  <div
+    style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(24px, 4vw, 50px); width: 100%; box-sizing: border-box;">
+
+    <!-- LEFT COLUMN: DESCRIPTION TEXT (CHANGES BASED ON ACTIVE TAB) -->
+    <div style="flex: 1 1 340px; min-width: 280px; box-sizing: border-box;">
+
+      <!-- 1. VISION CONTENT -->
+      <div id="vm-content-visi" style="display: block;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+          Study Program Vision
+        </h2>
+        <p
+          style="font-size: clamp(17px, 2.1vw, 20px); line-height: 1.62; color: #85131b; font-weight: 500; margin: 0; max-width: 500px;">
+          "To produce graduates who excel in the field of law and industrial relations, making a meaningful impact on
+          society, guided by the values of religiosity and humanism."
+        </p>
+      </div>
+
+      <!-- 2. MISSION CONTENT -->
+      <div id="vm-content-misi" style="display: none;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+          Study Program Mission
+        </h2>
+        <ol
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="margin-bottom: 10px;">To provide high-quality legal education and teaching that is responsive to
+            the development of national law and the needs of the wider community.</li>
+          <li style="margin-bottom: 10px;">To conduct innovative and competitive research in the fields of law and
+            industrial relations, oriented toward public benefit.</li>
+          <li style="margin-bottom: 10px;">To carry out community service through legal advocacy, consultation, and
+            education grounded in justice.</li>
+          <li style="margin-bottom: 0;">To develop strategic partnerships with law enforcement institutions and the
+            professional world, founded on the values of religiosity and humanism.</li>
+        </ol>
+      </div>
+
+      <!-- 3. GOALS CONTENT -->
+      <div id="vm-content-tujuan" style="display: none;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+          Study Program Goals
+        </h2>
+        <ol
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="margin-bottom: 10px;">To produce law graduates with integrity, professionalism, and mastery of
+            legal skills both theoretically and practically.</li>
+          <li style="margin-bottom: 10px;">To produce high-quality legal research that contributes meaningfully to the
+            reform of national law and labor law.</li>
+          <li style="margin-bottom: 10px;">To actively contribute to law enforcement and the protection of the legal
+            rights of the wider community.</li>
+          <li style="margin-bottom: 0;">To establish transparent, accountable, and excellent study program governance in
+            academic services.</li>
+        </ol>
+      </div>
+
+      <!-- 4. OBJECTIVES CONTENT -->
+      <div id="vm-content-sasaran" style="display: none;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+          Study Program Objectives
+        </h2>
+        <ol
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="margin-bottom: 10px;">Enhancing graduate competency in procedural law skills, moot court, and
+            industrial relations law.</li>
+          <li style="margin-bottom: 10px;">Increasing the percentage of graduates directly absorbed by judicial
+            institutions, government agencies, and reputable law firms.</li>
+          <li style="margin-bottom: 10px;">Expanding strategic internship and clinical legal education (law clinic)
+            partnerships for students.</li>
+          <li style="margin-bottom: 0;">Improving the quality of teaching staff holding Doctoral (S-3) degrees and
+            active legal practitioners.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: FACULTY OF LAW BUILDING PHOTO WITH SMOOTH ROUNDED CORNERS -->
+    <div style="flex: 1 1 320px; max-width: 440px; box-sizing: border-box; margin: 0 auto;">
+      <div
+        style="width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 12px 36px rgba(75, 22, 27, 0.16); background-color: #f7f7f7;">
+        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/vkXRYf6Rz5uB5YauOZbQqLhHi4dkYLSOsmptRSbW.png"
+          alt="Lobby of the Faculty of Law, Pamulang University"
+          style="width: 100%; height: auto; display: block; object-fit: cover; border-radius: 28px;">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT FOR INTERACTIVE BREADCRUMB TAB -->
+<script>
+  window.switchVmTab = function (tabKey) {
+    var tabs = ['visi', 'misi', 'tujuan', 'sasaran'];
+    for (var i = 0; i < tabs.length; i++) {
+      var key = tabs[i];
+      var isCurrent = (key === tabKey);
+
+      var contentEl = document.getElementById('vm-content-' + key);
+      if (contentEl) {
+        contentEl.style.display = isCurrent ? 'block' : 'none';
+      }
+
+      var btnEl = document.getElementById('vm-btn-' + key);
+      if (btnEl) {
+        btnEl.style.fontWeight = isCurrent ? '800' : '600';
+      }
+
+      var indicatorEl = document.getElementById('vm-indicator-' + key);
+      if (indicatorEl) {
+        indicatorEl.style.display = isCurrent ? 'block' : 'none';
+      }
+    }
+  };
+</script>
