@@ -1,275 +1,8 @@
-<head>
-    <!-- Hubungkan ke Google Fonts untuk memuat Font Geist -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<style>
-    /* Animasi Halus & Hover Foto */
-    @keyframes gentlePulse {
+<!-- Hubungkan ke Google Fonts untuk memuat Font Geist -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-        0%,
-        100% {
-            transform: scale(1) translateY(0);
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
-        }
-
-        50% {
-            transform: scale(1.06) translateY(-3px);
-            filter: drop-shadow(0 6px 14px rgba(128, 0, 0, 0.28));
-        }
-    }
-
-    .foto-dekan-1 {
-        animation: gentlePulse 3.5s ease-in-out infinite;
-    }
-
-    .foto-dekan-2 {
-        animation: gentlePulse 3.5s ease-in-out infinite 0.9s;
-    }
-
-    .foto-dekan-3 {
-        animation: gentlePulse 3.5s ease-in-out infinite 1.8s;
-    }
-
-    .foto-dekan-4 {
-        animation: gentlePulse 3.5s ease-in-out infinite 2.7s;
-    }
-
-    .foto-dekan-hover {
-        transition: transform 0.3s ease, filter 0.3s ease;
-        cursor: pointer;
-    }
-
-    .foto-dekan-hover:hover {
-        transform: scale(1.15) translateY(-4px) !important;
-        filter: drop-shadow(0 8px 18px rgba(128, 0, 0, 0.38)) !important;
-    }
-
-    /* ======================================================== */
-    /* SHARED STYLES (FOTO & TEKS DOSEN)                        */
-    /* ======================================================== */
-    .leader-photo {
-        display: inline-block;
-        transition: transform 0.3s ease, filter 0.3s ease;
-        cursor: pointer;
-    }
-
-    .leader-photo img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-    }
-
-    .leader-photo:hover {
-        transform: scale(1.08) translateY(-4px);
-        filter: drop-shadow(0 8px 16px rgba(139, 24, 27, 0.25));
-    }
-
-    .leader-caption p {
-        font-size: 11px;
-        font-weight: 700;
-        color: #8b181b;
-        line-height: 1.3;
-        margin: 0;
-        padding: 0;
-    }
-
-    .leader-caption span {
-        display: block;
-        font-size: 10px;
-        font-weight: 600;
-        color: #8b181b;
-        margin-top: 3px;
-    }
-
-    /* ======================================================== */
-    /* KHUSUS DESKTOP (LAYAR LEBAR >= 769px)                    */
-    /* ======================================================== */
-    @media (min-width: 769px) {
-        .timeline-desktop {
-            position: relative;
-            flex: 1 1 0%;
-            min-width: 280px;
-            min-height: 980px;
-            box-sizing: border-box;
-        }
-
-        .svg-desktop-curve {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            display: block;
-        }
-
-        .mobile-straight-line {
-            display: none !important;
-        }
-
-        .leader-node {
-            position: absolute;
-            z-index: 2;
-            text-align: center;
-            width: 145px;
-            box-sizing: border-box;
-        }
-
-        /* Posisi Tiap Dosen pada Desktop Sesuai Pola Berkelok (S-Curve) */
-        .leader-1 {
-            top: 35px;
-            left: 10px;
-        }
-
-        .leader-2 {
-            top: 275px;
-            left: 100px;
-        }
-
-        .leader-3 {
-            top: 515px;
-            left: 10px;
-        }
-
-        .leader-4 {
-            top: 755px;
-            left: 100px;
-        }
-
-        .leader-photo {
-            width: 105px;
-            margin: 0 auto 6px auto;
-        }
-    }
-
-    /* ======================================================== */
-    /* RESPONSIVE KHUSUS MOBILE (HANDPHONE <= 768px)            */
-    /* ======================================================== */
-    @media (max-width: 768px) {
-
-        /* 1. Hapus background di container utama saat di HP */
-        .sejarah-main-container {
-            background-image: none !important;
-            padding: 20px 14px 35px 14px !important;
-        }
-
-        /* Logo di HP bergeser ke kanan (justify-content: flex-end) */
-        .header-sejarah-kanan {
-            display: flex !important;
-            justify-content: flex-end !important;
-        }
-
-        .logo-wrapper-header {
-            display: flex !important;
-            justify-content: flex-end !important;
-            width: 100% !important;
-        }
-
-        /* 2. Timeline Dosen tampil di atas dengan tata letak lurus */
-        .timeline-column,
-        .timeline-desktop {
-            position: relative !important;
-            flex: 0 0 100% !important;
-            width: 100% !important;
-            min-height: auto !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 22px !important;
-            padding: 15px 0 30px 0 !important;
-            margin: 0 auto !important;
-        }
-
-        /* Sembunyikan kurva melengkung di HP */
-        .svg-desktop-curve {
-            display: none !important;
-        }
-
-        /* Munculkan garis alur lurus vertikal di HP */
-        .mobile-straight-line {
-            display: block !important;
-            position: absolute !important;
-            top: 30px !important;
-            bottom: 30px !important;
-            left: 50% !important;
-            width: 2px !important;
-            border-left: 2px dashed #8b181b !important;
-            transform: translateX(-50%) !important;
-            z-index: 1 !important;
-            pointer-events: none !important;
-        }
-
-        /* Kartu pimpinan di HP lurus ke bawah & tidak terpotong garis */
-        .leader-node-item,
-        .leader-node,
-        .leader-1,
-        .leader-2,
-        .leader-3,
-        .leader-4 {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            right: auto !important;
-            bottom: auto !important;
-            width: auto !important;
-            max-width: 260px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            z-index: 2 !important;
-            background-color: #ffffff !important;
-            padding: 10px 16px !important;
-            border-radius: 12px !important;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
-            margin: 0 auto !important;
-        }
-
-        .leader-photo {
-            width: 80px !important;
-            margin: 0 auto 8px auto !important;
-        }
-
-        /* 3. Card pembungkus deskripsi sejarah di HP (Background terlihat jelas) */
-        .desc-content-column {
-            width: 100% !important;
-            flex: 0 0 100% !important;
-            min-height: auto !important;
-            background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png') !important;
-            background-repeat: no-repeat !important;
-            background-position: center bottom !important;
-            background-size: cover !important;
-            border-radius: 16px !important;
-            border: 1px solid rgba(139, 24, 27, 0.15) !important;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
-            overflow: hidden !important;
-            box-sizing: border-box !important;
-        }
-
-        /* Warna card dibuat transparan agar gambar background terlihat di mobile */
-        .desc-inner-card {
-            background: transparent !important;
-            padding: 22px 18px !important;
-        }
-
-        /* 4. Tulisan Sejarah Berdirinya Fakultas Hukum rata tengah di HP */
-        .sejarah-heading-sub,
-        .sejarah-heading-title {
-            text-align: center !important;
-        }
-
-        .sejarah-heading-sub span,
-        .sejarah-heading-title span {
-            text-align: center !important;
-            display: inline-block !important;
-        }
-    }
-</style>
 <!--ganti background lihat link yang upload di cms -->
 <div class="sejarah-main-container"
     style="position: relative; width: 100%; max-width: 100%; margin: 0; padding: clamp(25px, 4vw, 45px) clamp(16px, 4%, 40px); background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png'); background-repeat: no-repeat; background-position: center bottom; background-size: cover; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b2b2b;">
@@ -321,11 +54,13 @@
         <!-- KOLOM TIMELINE KEPEMIMPINAN -->
 
         <!-- TIMELINE KEPEMIMPINAN — DESKTOP -->
-        <div class="timeline-column timeline-desktop">
+        <div class="timeline-column timeline-desktop"
+            style="position: relative; flex: 1 1 0%; min-width: 280px; min-height: 980px; box-sizing: border-box;">
 
             <!-- GARIS ALUR LENGKUNG S-CURVE KHUSUS DESKTOP (Sesuai Gambar Desain) -->
             <svg class="svg-desktop-curve" viewBox="0 0 280 960" preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; display: block;">
                 <path
                     d="M 130 30 C 190 30, 235 60, 235 110 L 235 165 C 235 235, 65 215, 65 285 L 65 405 C 65 475, 235 455, 235 525 L 235 645 C 235 715, 65 695, 65 765 L 65 915"
                     fill="none" stroke="#8b181b" stroke-width="2" stroke-dasharray="8 8" stroke-linecap="round" />
@@ -340,60 +75,72 @@
          DOSEN 1 — GANTI FOTO DOSEN 1 DI SINI
          Ganti src pada img dengan URL foto Anda.
          ========================================== -->
-            <div class="leader-node leader-1">
-                <div class="leader-photo">
+            <div class="leader-node leader-1"
+                style="position: absolute; z-index: 2; text-align: center; width: 145px; box-sizing: border-box; top: 35px; left: 10px;">
+                <div class="leader-photo foto-dekan-1"
+                    style="display: inline-block; width: 105px; margin: 0 auto 6px auto; transition: transform 0.3s ease, filter 0.3s ease; cursor: pointer;">
                     <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=00mE4IUAAAAJ&citpid=1"
-                        alt="Assoc. Prof. Dr. Yoyon M. Darusman">
+                        alt="Assoc. Prof. Dr. Yoyon M. Darusman"
+                        style="width: 100%; height: auto; display: block; margin: 0 auto; -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); border: 0;">
                 </div>
 
                 <div class="leader-caption">
-                    <p>Assoc. Prof. Dr. Yoyon M. Darusman, S.H., M.M.</p>
-                    <span>2004–2012</span>
+                    <p style="font-family: inherit; font-size: 11px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">Assoc. Prof. Dr. Yoyon M. Darusman, S.H., M.M.</p>
+                    <span style="display: block; font-family: inherit; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 3px;">2004–2012</span>
                 </div>
             </div>
 
             <!-- ================================================================= -->
             <!-- [GANTI FOTO DOSEN 2 DI SINI]: Ubah nilai src="..." di tag img bawah -->
             <!-- ================================================================= -->
-            <div class="leader-node leader-2">
-                <div class="leader-photo foto-dekan-2">
+            <div class="leader-node leader-2"
+                style="position: absolute; z-index: 2; text-align: center; width: 145px; box-sizing: border-box; top: 275px; left: 100px;">
+                <div class="leader-photo foto-dekan-2"
+                    style="display: inline-block; width: 105px; margin: 0 auto 6px auto; transition: transform 0.3s ease, filter 0.3s ease; cursor: pointer;">
                     <img src="data:image/png;base64,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"
-                        alt="Dr. Ferry Anka Sugandar, S.H., M.H.">
+                        alt="Dr. Ferry Anka Sugandar, S.H., M.H."
+                        style="width: 100%; height: auto; display: block; margin: 0 auto; -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); border: 0;">
                 </div>
 
                 <div class="leader-caption">
-                    <p>Dr. Ferry Anka Sugandar, S.H., M.H.</p>
-                    <span>2012–2021</span>
+                    <p style="font-family: inherit; font-size: 11px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">Dr. Ferry Anka Sugandar, S.H., M.H.</p>
+                    <span style="display: block; font-family: inherit; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 3px;">2012–2021</span>
                 </div>
             </div>
 
             <!-- ================================================================= -->
             <!-- [GANTI FOTO DOSEN 3 DI SINI]: Ubah nilai src="..." di tag img bawah -->
             <!-- ================================================================= -->
-            <div class="leader-node leader-3">
-                <div class="leader-photo foto-dekan-3">
-                    <img src="data:image/png;base64,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"
-                        alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H.">
+            <div class="leader-node leader-3"
+                style="position: absolute; z-index: 2; text-align: center; width: 145px; box-sizing: border-box; top: 515px; left: 10px;">
+                <div class="leader-photo foto-dekan-3"
+                    style="display: inline-block; width: 105px; margin: 0 auto 6px auto; transition: transform 0.3s ease, filter 0.3s ease; cursor: pointer;">
+                    <img src="data:image/png;base64,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"
+                        alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H."
+                        style="width: 100%; height: auto; display: block; margin: 0 auto; -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); border: 0;">
                 </div>
 
                 <div class="leader-caption">
-                    <p>Prof. Dr. Oksidelfa Yanto, S.H., M.H.</p>
-                    <span>2021–2024</span>
+                    <p style="font-family: inherit; font-size: 11px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">Prof. Dr. Oksidelfa Yanto, S.H., M.H.</p>
+                    <span style="display: block; font-family: inherit; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 3px;">2021–2024</span>
                 </div>
             </div>
 
             <!-- ================================================================= -->
             <!-- [GANTI FOTO DOSEN 4 DI SINI]: Ubah nilai src="..." di tag img bawah -->
             <!-- ================================================================= -->
-            <div class="leader-node leader-4">
-                <div class="leader-photo foto-dekan-4">
+            <div class="leader-node leader-4"
+                style="position: absolute; z-index: 2; text-align: center; width: 145px; box-sizing: border-box; top: 755px; left: 100px;">
+                <div class="leader-photo foto-dekan-4"
+                    style="display: inline-block; width: 105px; margin: 0 auto 6px auto; transition: transform 0.3s ease, filter 0.3s ease; cursor: pointer;">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA9CAYAAAAQyx+GAAAdMElEQVR4nH1caYwl11X+6tb++r3Xe7fTPYtnsWM7CnacRYExcsAkQKwsJFICCUSAFAQEgoSUfxE/EX9AioQEBIkoAkRQwiYFEWVx4jjBdozj2I49sWfGnsU90/v21lovOufcW1WvZ5xn9XS/Wm7de+5ZvvOdU3bGWanhAJB/+KO1pn9QlCXKskTzU+Q58qKA4zhQjgNHKXiuW90n99B5xdfQDx23o8s1BZSj4Nr7APMcTY/l466roJTieckYpYxJRxR9N+OVJd8vS5Bn2eeZS6pPvUwZ88iyqzHpnDdx1p4BUOpSHuDII+gU3+B5PLGiKFDSwaLg+2gRynWh+FqHj2n7N49Hk3X4UbxARUKVc3SchGEX13wm/RYBi6DtptGq6bRcwpMz15r1VHNvCsaZFET1z8RhvterxU2Dm2dq81RzUgbUrCG0ePovz3MkSWIWTTeWcLSCq1xeBO1waZSRNMQukh+jaOeNJjlWM0Tw1WL40VY4MlkrBLtJVghHF8zHjwjFqpBdblObbtIuB6QxdoBK2dEQpEyEruEFGRWsTIROl1CKTEImSteQ3oB0R4uJWO2T+St4nsumZFdhhdGcCT2T13dEKBOLsJtoDzZlcavv5sKGYcipIzIkLfdulp08jB9YiVnXC6jsWHaNXIP1Q1pbAck4eZFjd3cXGxvrOOwdoMxLJGmKJEvRG/RwY2MdO2vr0CgRdds4duwETh87gfnFZRxfXUW3Oy3aZFbSFGBTQLpsCGdihUe+T+jLEZuyAjYf7+iNtOiSHtQYgn5cI5RKhPzVgasUhsMhLl66iC988QuYnZtDPDWFFy/8BNsbGxjsHSAdjDAu88pEXZ9cm4Miy9APxRdZgZKn8QIP850ZLC0s4q4778IbT53GHWfvxMnjJ3HyxAmjobVPvKWvaK5/4rf12rXUmtYh89Bwxnk5cZy8fFEUMoYRBC2IIg/vntEYdr5FgY3NDXz5376MR7/7KF56+QJ0kkEV5aRRk59xSvnqACVK5I5GqYA0MI6Y/Jdyocj8rFNmE5YBlHYw153BZ/7w0/j4Rz9uHHu9iZM6f9Sb3kp7jthKIwjxph8VDC22MKFTnKiuo1EVLUQwVvsofD/27Udw+5mzeOrpp/D4k4/j8R88if72HtI8Q6AVdt0xStoJDfhaIVHFTRP1vAAtJ0QRutB5gdKro9axxSX82Wc+i/f84i/BUy5HOTHpxibYhR3Vmtf5NA2qcvzmQC0YEgrtgAnD2jg6+ptCKWkMO1yjQfY6K+jvPfYozj3wIOMPWkiv38Pm5ib+4FO/jwsXL2DoZnwv7Xy79DFUOWtOoF2MVM5TiLWP0A1RtH14jiCJk8eP42Mf+gg+/P4Podvt8m5aH1j5Qrv4hkRe1w/fUmo2oNTHPetErWpWUtIaBX0vSwFiEpiqRzXV3GqajVR0vt3uoNPp4PRdd+D5V85DYBiZlMaBm8DVigVBn6B0kakSQangK4WHfv5deNub34LOVAcf/rUPw/P9RkBoCmbCWsV9WPP/qUGqjn+T+MUMogGPIgo5UBzRBFCsKA3aNAuWZzZ2qiFzMrXqkRxq5aFTXnxLbaZzA5WxWdFPuwjgafFhd548hU/+7u/VYdqq+oTPNGZ9dNCGGCZNxQQec7CJgu15vses3SP4TurP0Jp8C0N9oCAHShHEqxGnODvBJOJ7ROYkyCCKqkilG1N2HYWQzIXAWmMZOTljAJlDjl6zSfFSswJpRqY1GRmbC2QPbkFpnQ80YmhTdHUEbQYTC0cqPMm3lchz8p0lPNIIBm+Maj04ZcGOlQCYCoxfuUmFBQXbUUmQQRAyGvb9YGKH6XdXB2jDR+pqjPIEGWQD+IqihHY0EicX4WiNw+3dSWncKulpHmP5VKhmAgk3UwQbaQ1erSVixqNNl6BSkk9VvCDGKq7LiFNZiE7QvZG7FEW9I3UmIdHLD3xkWcqCaTqyYpTgrtVF3H18GXEYINHAxfVN7PdGWFxoI1IuRkmGjYMe9naHGIxTvPDi+deVw00+4Sa5yYZNgEFOOjkJqQTBCmHmb/2VRej0NztfQqMkKYbqlAwql/1ODeMZ60OZB5BECW1aNSXkWqYp8iSBmurUQNLRyIf7ePub78BCK8RUO0QrcHDfmWUkhYPAdzhbH48L9AYjHAyGePbiDbx65TJrAD/3p4RbqxLO62XP1d9WuJLzVfmgTQ8awvJcEl8JlecZsizjxZJ95VnO30mL6FPkYlp0s6scDtue61VaRWOyMB0HhYHm1oT2d3cx3t+GKgqkaYZra1t46cXL2Nzcx/72Hl56+TVcuLyF/jBBrz9G7Hk4d+8ZRBr4/Of+8pZWVB2ccMxNP0JwQaIppyqNTNyKz8atJkZzXY9/+z79+FBpkprBxYQUOWKtkeUiIFFDzSCO8Y2ZCVMMjFDFqIb9AbY21hu75eDKKxdxbGkaEUpsHvawczDAwcEBdJqg2wow2t/C1a1dPHPxGjZ294AiQ8tXWJrr4PxjX5ccqGE/Tfh2s2kZp1+WyPIC42SM8WjMv+0mOw3OiMZmP6oUr4s2n9Y7ThK+z6MLmRQim+OksDSmQxogJuJ5volUEsGEKqDFUyRx+MGPP/Ekprsd3P3me6upnjx1Bosz08gOdjHqp8iKHCdPrODE8jJWWnOACyzsj7B7OEQc+pifi1GqgnPz1ROnG7lZHT2OWJHQFw3fYVE5+006VMiaIkXRVlXInhPgIidgVeV8rkda4yLLckLXRAN4HJ5tCNOMcwyq1ZBowwSVmJZyzXVV2Hawvr+NXOfIWcvEaU/PzWFleRGdlTZuPxzBc3wszHYxE8zDH2rcd/sZ7A5G6I9HmO7EyLwcV69sYKoV4h3veqhafG0/BstUQceYc6GhXBKAZg0ncyDTJk0gs6DFlkWJvCTNqYOJ9aX0IW3J8qzKvzw6GQYhS5V9iwlX2syFFmnVj6Isa5gWrbGhfH9/D99/8nF0pmfwx0UODx5yoi+Vi4XjZ+Df+AlO3HYn3LDETm8frdYstEox3tjGYtzFiflVDNUhdnGIQVpikTTvbe+sQVnlMGWnqyhuNo+0mCIKfYQBcRg+WDdAGmCpU0uMMWNoqFLSOFIQ5KJdDPCMG+KL/SAgbwwSEF9gVJMmWBQyuNPgagkc0mdtbQ3r19fR7w9x9fJl3PHGu6BKxSodzi1gf0NjttRIBjn2N/vYWX8WOcjRp1jSOdIwQeIWONjrI3V8/PKvfwyLK8eNVtaaTNLhkFrKRtG8yGmWeW5wmCyUVdsxuCTP+R4OGOwGGoyfwT9ifvY58lGkapYJI79Bduay2QgRXaf24vHZEeeZ4XnFx6xdu4p8lKDf7+G1q9fknEs26+LUm+7H/v4Ae9kuI8uXt9fwzed/iP89fx4bwx6mW10MdgfY3NrB9m4PhKje+Z73iZkyyiZNznmBaZYJ+KSxXZfnlaUpz5XmTHO06QxdR5tJWkM+kq4nH9PMoGtsbU1LiH3+TbtOX5oklmcoBhpYUgPDiSjD2BUlUp0Jm68UBv0+NDljOHj54st44MEH2a5pwnPLqxilCut729jyD3HqtmWcmVpA7PgYtAr85OAaO/ZhkuFgP4HfnUUQxkhTiZb0DPIZ9ExynHkupA6Nz76Dogtvojhg0WJKcWqC/lYVgUn/RehdgVI1TnlKYvAIsFX+TfIZx0xIsEFRCYedW0U9EO7R0EphnGZQJLzAY62hGwkT0SY6ysXKHT+DK88+gcHhJvxc41RrCanrYPO169h2MiyuzGCcaOwMEtz3jjfx4mxZhBYnWX+dltCGkbNlDXAlf2OsZRZbJb+0WSb5vYnla1Qi6rKP/SmgROpN+zIlDp6UgDkWEoW7qtxhSiAkANpFHsiHd5Bg1B9WwxCeoCj2tvd+kM/ffmoFC7ctonQ1UieH245x9u7jmGpH2NvaxnA8RDIa8j00cUluNcbjhM2Jnhf4vvhCE0140xpEEx23mT0HC5O81qbZoFbMb/YvDcGwttEInBA2siCnKkhJQY1CNduoQbiVdhnHzM7PRLNLl1+pnKXsdom4M4N7HnoYhXIxvdzFOAIGUYHjy7chVD76vTG2D/sYZhqDIkW/t2+wBZm4+AwaKwxDBGEooZi0xOARmgv5ShIabSRTII6Q8SRk0t6qDtaA0lIWI20TAGjZA1aCKvjxYoRq4A9XGWvIybCZJ1pjcCu8nEooXBhx8NzTz4idc/iss7z7HvwVYGqJJ3Hy5CruuP0EMO9ifW8PT52/hlcPUzjzC1g5eQY7G1elbkV+RmsWCP3QaJL9GrdJm8rOVdg+XoGNWMYRs3A4osp9kwyOuA3eQPO3pAcuPKYnpUJl8p5KEflTlS/4LoOGjT3bXHs0HmJcZmg7IcZ5jo2NDSwv38ZVSdqBGzeu4/N/99fItm/A7w/QjgN4KNAbDrG218P2MMXqmTN4x7lzuG1lBVevreHL//FVPPy+D+CuN97DQqIfW8Bjp28WIBOhMC6+h510WYrTNQje+pKmy6gZBAeeIi0TNtEiZ69JAtfpVf2x5BVKCtOCZZp2KiEciJyA6UsS2nPPP4dznS6+8+i38a1HHsEj3/kW+skQH33vw9i4voXXNrcxzDMkaQ4nCHDbqbN4+7mfxdLKCr776Pfwz1/9TwwPh/j+U0/h3b/wLnzsNz6BTqdb+Tr6sAWZuZFALEVbpSocQWtkLtOVeds6mFWIaq1cPaWgklvBNATRkEpZSlY8USS3HKfhYWBV0VdsUmnk4GuPfgP/+PV/wfcffRLKcZEnQ7S8FsLWFNCK0B/0QMoez85hcXUFJ06dwkG/j3//27/B1bUbmF+cxu5wiOuHu/ivb/wPnv7RM/j0p/4E9957vwFqEjGtFlE4r4r8BowS6W45I5s8so8xUUvoFQnzAk2EWSDT4/WO85rRbi7cARhQjcfjqgxr6QQBUbWst7e38aV//RJ2dnfgdWN87YVvwl8KcOOpNaQHqUSTocbP3X8vblx4BZ25OXQ7LSydPImp6TauXHkNj//4Wbihj+XZWezs95CWOd5y8jSu7G6ilyRYnZ3D73zkt/Dehz+Abkc4H+arWUgCJQR8ktlROkJRU6JnFTDMpK25VcIyY1mOhm2HyycmlhN0pptguA0KkUw9VAM3WA0TNaSCINkpRbD1nQ186M8/AagcveuH2PnxNo/pJyXOdufRdhxcO+wj8jwsnD6Gza097AwO4VB1MiDkHWB4eIgTx1bwhtl5PH/1FQxGCeIgwsrcLH71wXfjE7/521hcWuZ5SAIsxT9eoOGVeF5m0cxMNkqwpBnUaCB0DeluvTIxRSW4jBNI071AgkjTFKPRWICOcVIiDKEnaDJhGCOKIyF1jBYRbP/Wsz+A8kRVu6vTmL1znraIWHEEUYi7Wy0suh7WyxFeWruGUeSgtdABfGBlYZ53eXV1GUtTs7hwYw3DUQIv8hCtTCNZ8fHfl76HP/3cZ/HCxfNiwrZ/5yayz5iN6cchTcrSDMQ/0Vot12Pr8ZJ3Uaoh1IPHqlcljU5DAGXFg9DDWUMYnlPeIXkUfYrSOGRjx89c+iECL6jMrn3vCTgDjf6NA5TdFrzlRXhphm4RIAsVRuMB+43Z2VlkABbmu1hpL+DacAf+sS5OrxzDzOkV6HKE7soytl+4gGvr1/DJv/gjLPvz+Ke/+ge0W+0mXhO3YOuIbF4C4MQ0mhG3yfdYTkYaE7w0SSbq1LXRaFExw+2SUIJAkrE6uSS7FOxAKtwfD3B9+zJ86qChB7BKOrj93B1Ye/wyciqN9BIkYcCQ3hmP0J7qIIpaULGCO+Uimu9iWyWYmV5G+w2zSHt9tNs+/M4MButbaC/MotVuY+/VTeztHeKHLzyDB956zviOGuNUroEFVPNHVkvqKof4U950sz4O15JXCJiTUorQmFwTrsoSYoXyEDGTCsUY/ED45tUbV9EbDBCHLSiPMjIBVK7v49QDZzG1tIRL59fhdDK0R2NkAx/xQhtTK3NCpLsllKcRdrrwIh/OMMXy2TOIZqcx2NrG0tkzKNMEB1euM4ekXY2//8oX8dZ73srmXbejmPIOo2+DNY0lVCUUTnEElloAa90Gu4tq2YYIYg3R+pZlS9Iuutj3fNEo46BJkDTAE+efpfgPJwPCMOA8JUtS6DSHF7iIQw/x/ccw3Z8Xct0N0N/cw2C7h3YnQnt1FsU4RTZIELXaWLjnLKK5WZRpjpnl49BlioMrV+GBkKmH0A+xP+xhbWMNK0srZlF1D4/86XKNvGkNzFmzYNzqekp7DOUjgrIEj80yhRgqG3IR0piwAuUVRBZzOLQTMIzX3uAQz129xJNlv5cDYSuCW0oiSLJ1Cw2dO0hv9JH2U6YkHU9hZpE0JEC+O4Qb+Jg9fRyd4yuI5+fh+C14s3PkzZAcXgdGGTAu4OYuVCA7/H8vPI33L62YEF2TW0pRGmMQrqmTGblIZs4aY6yigee47aWZejeL5doQVzZjJY9jFYnDo4lx1qs/8dLz0BgiCqIqUniFgtdqoRhnjFFarTby4Rhzq4tIDgcoCPkSq+YpNh1/bgZeK0I4FcPLNcqDPoI2ZXqSM+U7u8Awhe4XCL2Q255ons9feBEffOj9jQgqGKYGcSIUEpKlQKWGJEkqQxQWSO1huUogCdYkuHNsEd2k7IwQ2bWYbNdxmYumBxwMenj28o8Qhw4KtwVNUcB0aZJAstxBZ3meo1U8GyPpDYFBBsQBC4Z5ZOqSSsivZSgL4nM0vDkXTl7CD1yUZMa9EQEv+NoDfBMxtUZ/NOTWtZnOTKUFtrxj22YllSAPbSshkicJry0CafJA3LXZ7CgQ6Tq1oGxkYt8zCewYSucFHnvmMfQOttgk/TCC23KhKZ1PchZgNB2gOzODsNvG4doGyoMxInKexp6ZiKYoRTiCGH7XZxNUeYlA+fBVgPG4B7cAfw/cEG7YaDzygJ39XczPznPoFx9iiDZrO9Yp21yqUXqhtWVFKnUzA1s8W5Phi2wiqcURN5MNwSrCi1g4zhRnnuOl519Gtp/DjVwgAII5H34UIkMmoTD0gEGKNDkA+hkC1zd5loYXBzIeSvYzvMNRwALy3AABEWVUztAOprpdFAdj6LbU2ouEyG6Jqpv7W7jHvbvKuLmcfKRjwmIWUpCKiaTk2LIFjb5mrl1XtHCDKFZQKEyUooGkgFWz9GyzrovB/h76BwdwMypuaehRAR1KPhKEAYdsLnr1M2gnhe/6UL50Uljbt1wJCcKPI26fUB7hpghhEEPnOQI3gOuViKMIqi27XLgF8lQalg4prTDsHU94Mg5VEVbgCYuH4zhpifVFgtlM2ZaiixBb8jChLFEBH1YvU5W0vIwU6Xwe7MKlC5znhJaNjz34oY8yEz9EnCyN5LcI1FH+QljFZY2gZ5IpurT4QrOmeAF1TwF+p4V4bo7v0YpqycLERWEMFck8yzBHPi5AdbTdw32JQM2moJu6IQSUVvlgZWbMLrMPJYVg66zUZ6KVzRFB2RZ0uoZ2kezXqCnlE7Soq6+9hiikgp2GH4SMYBlqhw68yIXyHOTjEvl2Dn8K7EdULE+gaEQh3aGKAmXgnZYsWBeIOtPw4xnogoBfDOWlcFUG1e2ijFsc/ke7PZQu+TLu4ai1pOpyqJuducLAVQaiUeq+GctHcaucEawIxpBNVgBN+KzZ4ZYkiYrEsuk8Sf6VVy6x04vCSBwWacyUIFASZNjyxWQ6DvJ2jmg6RtYfQ5HPIf80zFGOM3gtB8FUhCiIGSXzixtTU8gHhwhaM9BZAo+mEYQI3YC7roo0hQ5zlH7BmxDEoW2Nqe2Gw69EXeJZaPOkpd8GGcE9XGGocIztj6E8B9KHJ1yL7SoSroLpTmN72qHcQ9AlfacmZ5/Uv6Q6FNVwPPgdDwXZPdWQAw9+O0KeZAjaAYJWTGyEJKXEq7YEbVIEGV/vo+yR8CJEMx04bgrfcWmCKNIEfkl+J4IKFYokRU6WTRtiMBenCBM0rWyqZf5pY0mRbUGO4YHVDuOw6+4xAngGKYqNKagSyLTp4rbdmXXSyiZA8anf72N7b5fDblUoN+WNwinguA680BM+1RU8wyGUkLEpahEUkgTVQ6ELqD4w7g+QbA4RdGK0lqfhBxE75ULn/BKHgjjlvFBQLaDMiFcpBfAZEMoC4SbuxnsD1bsJ1kJkc+s0ofbR7Hwnek4Mi6c4UhjaoXEfP5BjN3Dx4kU2IfIZdNYW1kkYBQqG62x2hUIQ+vDiUIRF7eD0HMOiMcGtgVbcEmRqjhf7GXoHG0ine5h+wwKmuh2JIqbdzY9dxjX5KGUhU9Sy4KysKpI1SK2pBcMONKXR4Lst2GNvWnVlmoHByHYyTZeoJeeIv9nY3ULciqv6EQuTsIjvcsHejUzmyo6bslUHnh+jbPtAoZEnqUQHQvxZCVIk7qwwL4GRT8jSBGpYIl3rAQcJ4rku4hlC1oJQ3VAjK2kTNQIVVGR9vV4jgIokn+yUqMtA9fWVedkOKs4hbHeoU9/Y7Nq0g+4fHkiTDTUEGGlzSq80RyKKFC51fLom2tnkbJCKecUBcjKfhJoDSE4lyqBks5MGQTAh5pu5MXahNGFriGJ/zI46aEfwohYjZGLmAs9jYfJsLDA1DpbfszKArmkuzZfGaqEYjSHV4lYsMxgzDGWTDqvfVrNFrM2tzaoAZjsION/xyZe4oLdzCMRVTaYUvTtTyIZjHjvwQxSOi6wQzFA6VFWkLgZ508nSBhlxOhCagxuA/IBNpBjlyMZDwFe8AdSZRdfYqGlUwmiKJI/iYyYrkRPvak2AH35fyaTj4rVMCo7aPm3GbZZJTnecJgga/bzSl+LAIURLKhsSgVp3YbNQ0wJRHEOPqbQhXRKKFI7CJWlMVLDpWdqU7vFyIbFpHoSY6Znk5wrqiTFATQ/JlxCGCtiJV4kwm7cho2zrauMzyQ83hGL4J48pyNxQCbWbgiVtmtwMfUbjEWtLJRRWVcmf2HzoBBcOjNfnTlhxqhRRNL2Gw409Goq7IUx1k95MIYLIpRqReWXQ0ALS0iFjM8dCjdp0ngRKb6lQKwu/RFazc3xNY4NFGM7risQaVKUxQvfZTHWSrNFNetMiSGr0C6OKFLL5FR2nF7BYnY0JyGuDpiBHfXv0tyfmyIJ0pFGACHVN2TVhH+6XE80tivoVQVYEWjCnGZI9W5xCn4A6ICrKUrLnpnbUi59MEaxTrY4ZB+1RN7fkSBTKmh1U9DGopW6g4YXEcVzZra0g8C6zGdAbbFYwxnxtmaPxvhP/MLWo2JfQdLhbgd404YyXeJkmk2jrQ/b9JBpXNIe0ngRDv6XDorqt5pSqb40cyQQGsZ4qTxA+RugGUVcrEF11TTf4X/OLMmaPSpym/VXeFzKPpV3nJFOKcFa0/Ex6kiGG2IGaPhQu0GvpsqSxCcHSOX6/22b0pqQqApbNoXyKzJ/8ThhFFXK3BJmFHVV4arAI1tfaF1KbH6tV3O1QhSMug1j235qTJbBE6hRRpG5dH7OfCiuYLihuTWPGXkImlSdokVQPp0VZVs1XwvjRIim6tHwKvXRdMtFZYR/G7z8UxrdQxDId3c3k1y6z+rv5Pmfzd5VdW5+qm9m1XFbRmWVdNKk1SHKkkFS9InXqd6gtx2obGC2vwfDadXkhBA0Im/hewNXO6oUGoi759SBZICel5FyjSCqIGZXiDLw3u+3XVR1pqqRIxeVW+9J7zVFblaleNJl4m+2ItlTZtX2DnryJrRKgoYi0WPuuksUGtoHYMO1SMaiRJr+gYR9mIo2tWYlZEBHkSoMPcSCmTsV9/IbnERhgauONltOq6G6wAN1PLiBPiS007wWYV42aRIplDuoNb5QWawurpM25kg2J9oUE0AIttK4OmdaPqvxg36q1g1ofUmuLDZW069x+WrWz2wzXEEusqRL2yYFa2tHOmMAdkVQWYEprmMB8+/+RoCuptZW+SxnZvDlt62JNlzPxfpM50VwnHPw/UsmeQoWMaMwAAAAASUVORK5CYII="
-                        alt="Dr. Taufik Kurrohman, S.H.I., M.H.">
+                        alt="Dr. Taufik Kurrohman, S.H.I., M.H."
+                        style="width: 100%; height: auto; display: block; margin: 0 auto; -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%); border: 0;">
                 </div>
 
                 <div class="leader-caption">
-                    <p>Dr. Taufik Kurrohman, S.H.I., M.H.</p>
-                    <span>2024–2028</span>
+                    <p style="font-family: inherit; font-size: 11px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">Dr. Taufik Kurrohman, S.H.I., M.H.</p>
+                    <span style="display: block; font-family: inherit; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 3px;">2024–2028</span>
                 </div>
             </div>
 
