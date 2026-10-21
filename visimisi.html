@@ -1,16 +1,8 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-
 <div class="visimisi-wrapper"
-  style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
+  style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
 
   <style>
-    .visimisi-wrapper,
-    .visimisi-wrapper * {
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
+    /* CSS Murni Tanpa JavaScript */
     .vm-tab-input {
       display: none !important;
     }
@@ -20,7 +12,7 @@
       border: none;
       padding: 0;
       margin: 0;
-      font-family: 'Geist', inherit;
+      font-family: inherit;
       font-size: clamp(18px, 2.3vw, 22px);
       font-weight: 600;
       color: #85131b;
@@ -66,10 +58,16 @@
     #vm-tab-sasaran:checked~.vm-main-body #vm-cnt-sasaran {
       display: block;
     }
+
+    /* Memaksa warna nomor list (::marker) mengikuti warna tema (#85131b) */
+    .vm-main-body ol li,
+    .vm-main-body ol li::marker {
+      color: #85131b !important;
+    }
   </style>
 
   <!-- RADIO INPUTS UNTUK TABS -->
-  <input type="radio" id="vm-tab-visi" name="vm-tab-group" class="vm-tab-input" checked>
+  <input type="radio" id="vm-tab-visi" name="vm-tab-group" class="vm-tab-input" checked="">
   <input type="radio" id="vm-tab-misi" name="vm-tab-group" class="vm-tab-input">
   <input type="radio" id="vm-tab-tujuan" name="vm-tab-group" class="vm-tab-input">
   <input type="radio" id="vm-tab-sasaran" name="vm-tab-group" class="vm-tab-input">
@@ -116,12 +114,16 @@
 
       <!-- 1. KONTEN VISI -->
       <div id="vm-cnt-visi" class="vm-content-box">
-        <h2
-          style="font-family: 'Geist', sans-serif; font-size: clamp(28px, 4vw, 38px); font-weight: 500; background: linear-gradient(135deg, rgb(128, 0, 0) 10%, #FE5722 50%, rgb(128, 0, 10) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
+                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                background-clip:text; color:rgb(128,0,0);
+                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
           Visi Program Studi
         </h2>
         <p
-          style="font-family: 'Geist', sans-serif; font-size: clamp(17px, 2.1vw, 20px); line-height: 1.62; color: #85131b; font-weight: 500; margin: 0; max-width: 500px;">
+          style="font-size: clamp(17px, 2.1vw, 20px); line-height: 1.62; color: #85131b; font-weight: 500; margin: 0; max-width: 500px;">
           “Mencetak sarjana yang unggul dalam bidang ilmu hukum serta hubungan industrial yang berdampak bagi masyarakat
           luas dijiwai nilai religiolitas dan humanisme.”
         </p>
@@ -129,57 +131,81 @@
 
       <!-- 2. KONTEN MISI -->
       <div id="vm-cnt-misi" class="vm-content-box">
-        <h2
-          style="font-family: 'Geist', sans-serif; font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
+                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                background-clip:text; color:rgb(128,0,0);
+                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
           Misi Program Studi
         </h2>
         <ol
-          style="font-family: 'Geist', sans-serif; margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="margin-bottom: 10px;">Menyelenggarakan pendidikan dan pengajaran ilmu hukum yang berkualitas dan
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="color: #85131b; margin-bottom: 10px;">Menyelenggarakan pendidikan dan pengajaran ilmu hukum yang
+            berkualitas dan
             responsif terhadap perkembangan hukum nasional serta kebutuhan masyarakat luas.</li>
-          <li style="margin-bottom: 10px;">Melaksanakan penelitian di bidang ilmu hukum dan hubungan industrial yang
+          <li style="color: #85131b; margin-bottom: 10px;">Melaksanakan penelitian di bidang ilmu hukum dan hubungan
+            industrial yang
             inovatif, berdaya saing, serta berorientasi pada kemanfaatan publik.</li>
-          <li style="margin-bottom: 10px;">Melaksanakan pengabdian kepada masyarakat melalui advokasi, konsultasi, dan
+          <li style="color: #85131b; margin-bottom: 10px;">Melaksanakan pengabdian kepada masyarakat melalui advokasi,
+            konsultasi, dan
             edukasi hukum yang berkeadilan.</li>
-          <li style="margin-bottom: 0;">Mengembangkan kerja sama strategis dengan institusi penegak hukum dan dunia
+          <li style="color: #85131b; margin-bottom: 0;">Mengembangkan kerja sama strategis dengan institusi penegak
+            hukum dan dunia
             kerja yang dilandasi nilai religiusitas dan humanisme.</li>
         </ol>
       </div>
 
       <!-- 3. KONTEN TUJUAN -->
       <div id="vm-cnt-tujuan" class="vm-content-box">
-        <h2
-          style="font-family: 'Geist', sans-serif; font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
+                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                background-clip:text; color:rgb(128,0,0);
+                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
           Tujuan Program Studi
         </h2>
         <ol
-          style="font-family: 'Geist', sans-serif; margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="margin-bottom: 10px;">Menghasilkan lulusan sarjana hukum yang berintegritas, profesional, dan
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="color: #85131b; margin-bottom: 10px;">Menghasilkan lulusan sarjana hukum yang berintegritas,
+            profesional, dan
             menguasai kemahiran hukum secara teoretis maupun praktis.</li>
-          <li style="margin-bottom: 10px;">Menghasilkan karya penelitian hukum bermutu yang memberikan kontribusi nyata
+          <li style="color: #85131b; margin-bottom: 10px;">Menghasilkan karya penelitian hukum bermutu yang memberikan
+            kontribusi nyata
             bagi pembaruan hukum nasional dan hukum ketenagakerjaan.</li>
-          <li style="margin-bottom: 10px;">Memberikan kontribusi aktif dalam penegakan hukum dan perlindungan hak-hak
+          <li style="color: #85131b; margin-bottom: 10px;">Memberikan kontribusi aktif dalam penegakan hukum dan
+            perlindungan hak-hak
             hukum masyarakat luas.</li>
-          <li style="margin-bottom: 0;">Mewujudkan tata kelola program studi yang transparan, akuntabel, dan unggul
+          <li style="color: #85131b; margin-bottom: 0;">Mewujudkan tata kelola program studi yang transparan, akuntabel,
+            dan unggul
             dalam pelayanan akademik.</li>
         </ol>
       </div>
 
       <!-- 4. KONTEN SASARAN -->
       <div id="vm-cnt-sasaran" class="vm-content-box">
-        <h2
-          style="font-family: 'Geist', sans-serif; font-size: clamp(28px, 4vw, 38px); line-height: 1.22; font-weight: 800; color: #85131b; margin: 0 0 20px 0;">
+        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
+                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                background-clip:text; color:rgb(128,0,0);
+                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
           Sasaran Program Studi
         </h2>
         <ol
-          style="font-family: 'Geist', sans-serif; margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="margin-bottom: 10px;">Peningkatan kompetensi lulusan dalam kemahiran hukum acara, peradilan semu
+          style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
+          <li style="color: #85131b; margin-bottom: 10px;">Peningkatan kompetensi lulusan dalam kemahiran hukum acara,
+            peradilan semu
             (moot court), dan hukum hubungan industrial.</li>
-          <li style="margin-bottom: 10px;">Peningkatan persentase lulusan yang langsung terserap di lembaga peradilan,
+          <li style="color: #85131b; margin-bottom: 10px;">Peningkatan persentase lulusan yang langsung terserap di
+            lembaga peradilan,
             instansi pemerintah, dan kantor hukum ternama.</li>
-          <li style="margin-bottom: 10px;">Perluasan kemitraan strategis magang dan klinik hukum (clinical legal
+          <li style="color: #85131b; margin-bottom: 10px;">Perluasan kemitraan strategis magang dan klinik hukum
+            (clinical legal
             education) bagi mahasiswa.</li>
-          <li style="margin-bottom: 0;">Peningkatan kualitas pengajar berpendidikan Doktor (S-3) dan praktisi hukum
+          <li style="color: #85131b; margin-bottom: 0;">Peningkatan kualitas pengajar berpendidikan Doktor (S-3) dan
+            praktisi hukum
             aktif.</li>
         </ol>
       </div>
