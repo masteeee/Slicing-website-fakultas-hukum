@@ -1,82 +1,5 @@
-<style>
-    .unpam-section-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 32px;
-        margin: 30px auto;
-        max-width: 1200px;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #333333;
-        line-height: 1.65;
-    }
-
-    .unpam-video-col {
-        flex: 1 1 450px;
-        max-width: 100%;
-    }
-
-    .unpam-video-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        /* Rasio 16:9 */
-        height: 0;
-        overflow: hidden;
-        border-radius: 8px;
-        background-color: #e5e5e5;
-    }
-
-    .unpam-video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
-
-    .unpam-content-col {
-        flex: 1 1 480px;
-    }
-
-    .unpam-subnav {
-        display: flex;
-        gap: 24px;
-        margin-bottom: 12px;
-        font-size: 15px;
-        font-weight: 600;
-    }
-
-    .unpam-subnav a {
-        color: #701017;
-        text-decoration: none;
-        transition: opacity 0.2s;
-    }
-
-    .unpam-subnav a:hover {
-        text-decoration: underline;
-        opacity: 0.85;
-    }
-
-    .unpam-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #701017;
-        margin: 0 0 20px 0;
-        line-height: 1.25;
-    }
-
-    .unpam-content-col p {
-        margin-bottom: 16px;
-        text-align: justify;
-        font-size: 14.5px;
-        color: #3b3b3b;
-    }
-</style>
-
 <div
-    style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 40px auto; padding: 10px 15px;">
+    style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 40px auto; padding: 10px 15px; box-sizing: border-box;">
 
     <!-- Header Judul Bagian -->
     <div style="text-align: center; margin-bottom: 35px;">
@@ -93,7 +16,7 @@
 
         <!-- Kartu 1 -->
         <div
-            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s;">
+            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); box-sizing: border-box; transition: transform 0.2s;">
             <div
                 style="width: 48px; height: 48px; border-radius: 10px; background: #fdf2f2; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;">
                 ⚖️</div>
@@ -104,7 +27,7 @@
 
         <!-- Kartu 2 -->
         <div
-            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); box-sizing: border-box;">
             <div
                 style="width: 48px; height: 48px; border-radius: 10px; background: #fff8eb; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;">
                 🎓</div>
@@ -116,7 +39,7 @@
 
         <!-- Kartu 3 -->
         <div
-            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); box-sizing: border-box;">
             <div
                 style="width: 48px; height: 48px; border-radius: 10px; background: #fdf2f2; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;">
                 🏛️</div>
@@ -127,7 +50,7 @@
 
         <!-- Kartu 4 -->
         <div
-            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+            style="flex: 1 1 250px; max-width: 280px; background: #ffffff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); box-sizing: border-box;">
             <div
                 style="width: 48px; height: 48px; border-radius: 10px; background: #fff8eb; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;">
                 🤝</div>
@@ -143,50 +66,61 @@
 
 </div>
 
-<div class="unpam-section-container">
+<!-- Bagian Video & Tentang Kami (Semua Style Inlined Tanpa Tag <style> & Tanpa JS) -->
+<div class="unpam-section-container"
+    style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px; margin: 30px auto; max-width: 1200px; padding: 10px 15px; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #333333; line-height: 1.65;">
+
     <!-- Kolom Video -->
-    <div class="unpam-video-col">
-        <div class="unpam-video-wrapper">
+    <div class="unpam-video-col" style="flex: 1 1 450px; max-width: 100%; box-sizing: border-box;">
+        <div class="unpam-video-wrapper"
+            style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background-color: #e5e5e5;">
             <iframe
                 src="https://www.youtube.com/embed/8c5IlUU4NbU?autoplay=1&mute=1&muted=1&loop=1&playlist=8c5IlUU4NbU&playsinline=1&enablejsapi=1&rel=0"
-                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen
+                title="Profil Fakultas Hukum" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
             </iframe>
         </div>
     </div>
 
     <!-- Kolom Konten Teks -->
-    <div class="unpam-content-col">
-        <div class="unpam-subnav">
-            <a href="#tentang">Tentang</a>
-            <a href="#visi">Visi</a>
-            <a href="#misi">Misi</a>
+    <div class="unpam-content-col" style="flex: 1 1 480px; box-sizing: border-box;">
+        <div class="unpam-subnav"
+            style="display: flex; gap: 24px; margin-bottom: 12px; font-size: 15px; font-weight: 600;">
+            <a href="#tentang" style="color: #701017; text-decoration: none;">Tentang</a>
+            <a href="#visi" style="color: #701017; text-decoration: none;">Visi</a>
+            <a href="#misi" style="color: #701017; text-decoration: none;">Misi</a>
         </div>
 
-        <h2 class="unpam-title">Tentang Ilmu Hukum</h2>
+        <h2 class="unpam-title"
+            style="font-size: 32px; font-weight: 700; color: #701017; margin: 0 0 20px 0; line-height: 1.25;">Tentang
+            Ilmu Hukum</h2>
 
-        <p>
+        <p
+            style="margin: 0 0 16px 0; text-align: justify; font-size: 14.5px; line-height: 1.65; color: rgb(128, 0, 0);">
             Fakultas Hukum Universitas Pamulang berdiri pada tahun 2001 dengan tujuan menyelenggarakan pendidikan hukum
             yang berkualitas dan relevan dengan perkembangan zaman. Sejak awal, fakultas ini berkomitmen untuk mencetak
             generasi hukum yang profesional, etis, dan berintegritas, melalui kurikulum yang menggabungkan teori hukum
             klasik dengan praktik kontemporer.
         </p>
 
-        <p>
+        <p
+            style="margin: 0 0 16px 0; text-align: justify; font-size: 14.5px; line-height: 1.65; color: rgb(128, 0, 0);">
             Fakultas Hukum Universitas Pamulang terus memberikan kesempatan kepada seluruh lapisan masyarakat untuk
             mengenyam pendidikan dengan biaya terjangkau namun tetap mengutamakan kualitas, baik dalam bidang sumber
             daya manusianya seperti peningkatan jumlah dosen untuk studi lanjut ke jenjang Strata Tiga. Selain itu, para
             pengajar juga terdiri dari Akademisi, Praktisi Hukum, dan Peneliti Berdampak.
         </p>
 
-        <p>
+        <p
+            style="margin: 0 0 16px 0; text-align: justify; font-size: 14.5px; line-height: 1.65; color: rgb(128, 0, 0);">
             Fakultas Hukum Universitas Pamulang melakukan pengembangan pembelajaran dilakukan dengan pembaruan materi
             hukum melalui penyusunan kurikulum yang responsif terhadap dinamika hukum nasional dan internasional. Studi
             Interdisipliner dengan menggabungkan pengetahuan hukum dengan ekonomi, teknologi, dan ilmu sosial, serta
             praktis dan teoretis dengan memberikan keseimbangan antara teori hukum klasik dan praktik di lapangan
             melalui simulasi pengadilan (moot court), magang, dan clinical legal education.
         </p>
-        <p>
+        <p
+            style="margin: 0 0 16px 0; text-align: justify; font-size: 14.5px; line-height: 1.65; color: rgb(128, 0, 0);">
             Fakultas Hukum Universitas Pamulang terus melakukan peningkatan sarana dan prasarana seperti penyediaan
             ruang kelas yang nyaman, perpustakaan yang dilengkapi literatur buku-buku bidang ilmu hukum, laboratorium
             peradilan semu untuk mahasiswa agar semakin memahami praktik hukum acara, serta menjalin kerjasama dengan
