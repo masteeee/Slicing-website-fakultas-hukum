@@ -17,15 +17,15 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: flex-start;
-      gap: clamp(20px, 4vw, 45px);
-      margin-bottom: clamp(24px, 3.5vw, 36px);
+      justify-content: center;
+      gap: clamp(24px, 4vw, 50px);
+      margin-bottom: clamp(28px, 4vw, 42px);
       flex-wrap: wrap;
     }
 
     .sambutan-foto-col {
       flex: 0 0 auto;
-      width: clamp(230px, 28vw, 290px);
+      width: clamp(250px, 30vw, 300px);
       max-width: 100%;
       box-sizing: border-box;
     }
@@ -33,8 +33,8 @@
     .sambutan-foto-frame {
       position: relative;
       width: 100%;
-      border-top-left-radius: 80px;
-      border-top-right-radius: 12px;
+      border-top-left-radius: 130px;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       overflow: hidden;
@@ -53,62 +53,68 @@
       margin-top: 8px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       align-items: flex-start;
     }
 
     .sambutan-badge {
-      background-color: #85131b;
+      background-color: #a82d15;
       color: #ffffff;
-      border-radius: 5px;
+      border-radius: 4px;
       font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: 0.3px;
+      line-height: 1.25;
+      letter-spacing: 0.2px;
       display: inline-block;
     }
 
     .sambutan-badge-name {
-      font-size: clamp(10px, 1.15vw, 11.5px);
-      padding: 5px 10px;
+      font-size: clamp(9.5px, 1.05vw, 11px);
+      padding: 5px 8px;
     }
 
     .sambutan-badge-role {
-      font-size: clamp(9.5px, 1.05vw, 11px);
-      padding: 4px 10px;
-      letter-spacing: 0.5px;
+      font-size: clamp(9px, 1vw, 10.5px);
+      padding: 4px 8px;
+      letter-spacing: 0.4px;
     }
 
     .sambutan-title-col {
-      flex: 1 1 260px;
+      flex: 0 0 auto;
+      width: clamp(250px, 30vw, 300px);
+      max-width: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       box-sizing: border-box;
     }
 
     .sambutan-title-box {
-      border: 2px solid #e02424;
-      border-radius: 24px;
-      padding: clamp(20px, 3.2vw, 32px) clamp(22px, 3.5vw, 36px);
+      width: 100%;
+      border: 2px solid #eb3223;
+      border-radius: 28px;
+      padding: clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 26px);
       background-color: #ffffff;
-      box-shadow: 0 4px 20px rgba(224, 36, 36, 0.05);
-      display: inline-block;
+      box-shadow: 0 4px 20px rgba(235, 50, 35, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       box-sizing: border-box;
+      min-height: 275px;
     }
 
     .sambutan-title-gradient {
-      font-size: clamp(24px, 3.4vw, 36px);
-      background: linear-gradient(to right, rgb(128, 0, 0) 0%, rgb(225, 60, 35) 50%, rgb(128, 0, 0) 100%);
+      font-size: clamp(23px, 3vw, 31px);
+      background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(225, 60, 35) 50%, rgb(128, 0, 0) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: rgb(128, 0, 0);
       display: inline-block;
-      line-height: 1.18;
-      font-weight: 700;
+      line-height: 1.08;
+      font-weight: 800;
       margin: 0;
       text-transform: uppercase;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.4px;
     }
 
     .sambutan-greeting {
@@ -157,22 +163,25 @@
 
       .sambutan-header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        align-items: center;
+        gap: 22px;
       }
 
       .sambutan-foto-col {
         width: 100%;
-        max-width: 270px;
+        max-width: 280px;
         margin: 0 auto;
       }
 
       .sambutan-title-col {
         width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
       }
 
       .sambutan-title-box {
-        width: 100%;
+        min-height: auto;
+        padding: 22px 20px;
       }
 
       .sambutan-p {
@@ -187,27 +196,27 @@
 
     <!-- BARIS HEADER: FOTO KAPRODI & BOX JUDUL MERAH -->
     <div class="sambutan-header"
-      style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: clamp(20px, 4vw, 45px); margin-bottom: clamp(24px, 3.5vw, 36px); flex-wrap: wrap;">
+      style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: clamp(24px, 4vw, 50px); margin-bottom: clamp(28px, 4vw, 42px); flex-wrap: wrap;">
 
       <!-- KOLOM FOTO KAPRODI -->
       <div class="sambutan-foto-col"
-        style="flex: 0 0 auto; width: clamp(230px, 28vw, 290px); max-width: 100%; box-sizing: border-box;">
+        style="flex: 0 0 auto; width: clamp(250px, 30vw, 300px); max-width: 100%; box-sizing: border-box;">
         <div class="sambutan-foto-frame"
-          style="position: relative; width: 100%; border-top-left-radius: 80px; border-top-right-radius: 12px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; overflow: hidden; background: linear-gradient(135deg, #b81414 0%, #ff5e36 100%); box-shadow: 0 8px 24px rgba(133, 19, 27, 0.16);">
+          style="position: relative; width: 100%; border-top-left-radius: 130px; border-top-right-radius: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; overflow: hidden; background: linear-gradient(135deg, #b81414 0%, #ff5e36 100%); box-shadow: 0 8px 24px rgba(133, 19, 27, 0.16);">
           <img src="https://cms.unpam.ac.id/storage/assets/pages/content/HM63uheECFUB2Pb6JVMjYybtQaIp9sko0DYV14a0.png"
-            alt="Assoc. Prof. Dr. H. M. Rezky Pahlawan, M.P, S.H., M.H."
+            alt="Assoc. Prof. Dr. H. M. Rezky Pahlawan, M.P., S.H., M.H."
             style="width: 100%; height: auto; display: block; object-fit: cover;">
         </div>
 
         <!-- BADGE NAMA & JABATAN -->
         <div class="sambutan-badge-group"
-          style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start;">
+          style="margin-top: 8px; display: flex; flex-direction: column; gap: 5px; align-items: flex-start;">
           <span class="sambutan-badge sambutan-badge-name"
-            style="background-color: #85131b; color: #ffffff; border-radius: 5px; font-weight: 700; line-height: 1.3; letter-spacing: 0.3px; font-size: clamp(10px, 1.15vw, 11.5px); padding: 5px 10px; display: inline-block;">
-            ASSOC. PROF. DR. H. M. REZKY PAHLAWAN, M.P, S.H., M.H.
+            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.25; letter-spacing: 0.2px; font-size: clamp(9.5px, 1.05vw, 11px); padding: 5px 8px; display: inline-block;">
+            ASSOC. PROF. DR. H. M. REZKY PAHLAWAN, M.P., S.H., M.H.
           </span>
           <span class="sambutan-badge sambutan-badge-role"
-            style="background-color: #85131b; color: #ffffff; border-radius: 5px; font-weight: 700; line-height: 1.3; letter-spacing: 0.5px; font-size: clamp(9.5px, 1.05vw, 11px); padding: 4px 10px; display: inline-block;">
+            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.25; letter-spacing: 0.4px; font-size: clamp(9px, 1vw, 10.5px); padding: 4px 8px; display: inline-block;">
             KAPRODI ILMU HUKUM S-1
           </span>
         </div>
@@ -215,11 +224,11 @@
 
       <!-- KOLOM KARTU JUDUL DENGAN OUTLINE MERAH -->
       <div class="sambutan-title-col"
-        style="flex: 1 1 260px; display: flex; align-items: center; justify-content: flex-start; box-sizing: border-box;">
+        style="flex: 0 0 auto; width: clamp(250px, 30vw, 300px); max-width: 100%; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
         <div class="sambutan-title-box"
-          style="border: 2px solid #e02424; border-radius: 24px; padding: clamp(20px, 3.2vw, 32px) clamp(22px, 3.5vw, 36px); background-color: #ffffff; box-shadow: 0 4px 20px rgba(224, 36, 36, 0.05); display: inline-block; box-sizing: border-box;">
+          style="width: 100%; border: 2px solid #eb3223; border-radius: 28px; padding: clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 26px); background-color: #ffffff; box-shadow: 0 4px 20px rgba(235, 50, 35, 0.06); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; min-height: 275px;">
           <h2 class="sambutan-title-gradient"
-            style="font-size: clamp(24px, 3.4vw, 36px); background: linear-gradient(to right, rgb(128, 0, 0) 0%, rgb(225, 60, 35) 50%, rgb(128, 0, 0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block; line-height: 1.18; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: -0.3px;">
+            style="font-size: clamp(23px, 3vw, 31px); background: linear-gradient(135deg, rgb(128, 0, 0) 0%, rgb(225, 60, 35) 50%, rgb(128, 0, 0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128, 0, 0); display: inline-block; line-height: 1.08; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: -0.4px;">
             SAMBUTAN<br>
             KAPRODI<br>
             KETUA<br>
