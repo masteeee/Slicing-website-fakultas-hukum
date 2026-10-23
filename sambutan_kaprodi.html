@@ -32,6 +32,7 @@
       width: clamp(250px, 30vw, 300px);
       max-width: 100%;
       box-sizing: border-box;
+      position: relative;
     }
 
     .sambutan-foto-frame {
@@ -42,22 +43,33 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       overflow: hidden;
-      background: linear-gradient(135deg, #b81414 0%, #ff5e36 100%);
-      box-shadow: 0 8px 24px rgba(133, 19, 27, 0.16);
+      background-color: #8c1004;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%);
+      background-size: 14px 14px, 14px 14px, 100% 100%;
+      box-shadow: 0 10px 28px rgba(133, 19, 27, 0.22);
     }
 
     .sambutan-foto-frame img {
-      width: 100%;
+      width: 145%;
+      max-width: none;
       height: auto;
       display: block;
-      object-fit: cover;
+      margin-left: -28.5%;
+      margin-top: -7.5%;
+      margin-bottom: -1%;
     }
 
     .sambutan-badge-group {
-      margin-top: 8px;
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      z-index: 5;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 2px;
       align-items: flex-start;
     }
 
@@ -66,20 +78,23 @@
       color: #ffffff;
       border-radius: 4px;
       font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: 0.2px;
+      line-height: 1.15;
       display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
     }
 
     .sambutan-badge-name {
-      font-size: clamp(9.5px, 1.05vw, 11px);
-      padding: 5px 8px;
+      font-size: clamp(9px, 1vw, 10.5px);
+      padding: 4px 8px;
+      letter-spacing: 0.1px;
+      white-space: nowrap;
     }
 
     .sambutan-badge-role {
-      font-size: clamp(9px, 1vw, 10.5px);
+      font-size: clamp(8.5px, 0.95vw, 10px);
       padding: 4px 8px;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }
 
     .sambutan-title-col {
@@ -140,7 +155,7 @@
     .sambutan-p {
       color: #85131b;
       font-size: clamp(14px, 1.45vw, 15.5px);
-      line-height: 1.72;
+      line-height: 1;
       text-align: justify;
       text-justify: inter-word;
       margin: 0 0 16px 0;
@@ -174,7 +189,21 @@
       .sambutan-foto-col {
         width: 100%;
         max-width: 280px;
-        margin: 0 auto;
+        margin: 0 auto 30px auto !important;
+        position: relative;
+      }
+
+      .sambutan-badge-group {
+        bottom: -14px;
+        left: 0;
+        max-width: 100%;
+        gap: 2px;
+      }
+
+      .sambutan-badge-name {
+        white-space: normal;
+        font-size: 9px;
+        padding: 4px 7px;
       }
 
       .sambutan-title-col {
@@ -204,23 +233,23 @@
 
       <!-- KOLOM FOTO KAPRODI -->
       <div class="sambutan-foto-col"
-        style="flex: 0 0 auto; width: clamp(250px, 30vw, 300px); max-width: 100%; box-sizing: border-box;">
+        style="position: relative; flex: 0 0 auto; width: clamp(250px, 30vw, 300px); max-width: 100%; box-sizing: border-box;">
         <div class="sambutan-foto-frame"
-          style="position: relative; width: 100%; border-top-left-radius: 130px; border-top-right-radius: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; overflow: hidden; background: linear-gradient(135deg, #b81414 0%, #ff5e36 100%); box-shadow: 0 8px 24px rgba(133, 19, 27, 0.16);">
+          style="position: relative; width: 100%; border-top-left-radius: 130px; border-top-right-radius: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; overflow: hidden; background-color: #8c1004; background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size: 14px 14px, 14px 14px, 100% 100%; box-shadow: 0 10px 28px rgba(133, 19, 27, 0.22);">
           <img src="https://cms.unpam.ac.id/storage/assets/pages/content/B5M9UY8pR1Y5EyZTy5jv1T2PlkkfUlq06i6Zw3ei.png"
             alt="Assoc. Prof. Dr. H. M. Rezky Pahlawan, M.P., S.H., M.H."
-            style="width: 100%; height: auto; display: block; object-fit: cover;">
+            style="width: 145%; max-width: none; height: auto; display: block; margin-left: -28.5%; margin-top: -7.5%; margin-bottom: -1%;">
         </div>
 
-        <!-- BADGE NAMA & JABATAN -->
+        <!-- BADGE NAMA & JABATAN OVERLAY -->
         <div class="sambutan-badge-group"
-          style="margin-top: 8px; display: flex; flex-direction: column; gap: 5px; align-items: flex-start;">
+          style="position: absolute; bottom: -12px; left: 0; z-index: 5; display: flex; flex-direction: column; gap: 2px; align-items: flex-start;">
           <span class="sambutan-badge sambutan-badge-name"
-            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.25; letter-spacing: 0.2px; font-size: clamp(9.5px, 1.05vw, 11px); padding: 5px 8px; display: inline-block;">
+            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1px; font-size: clamp(9px, 1vw, 10.5px); padding: 4px 8px; display: inline-block; white-space: nowrap; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
             ASSOC. PROF. DR. H. M. REZKY PAHLAWAN, M.P., S.H., M.H.
           </span>
           <span class="sambutan-badge sambutan-badge-role"
-            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.25; letter-spacing: 0.4px; font-size: clamp(9px, 1vw, 10.5px); padding: 4px 8px; display: inline-block;">
+            style="background-color: #a82d15; color: #ffffff; border-radius: 4px; font-weight: 700; line-height: 1.15; letter-spacing: 0.2px; font-size: clamp(8.5px, 0.95vw, 10px); padding: 4px 8px; display: inline-block; white-space: nowrap; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
             KAPRODI ILMU HUKUM S-1
           </span>
         </div>
@@ -255,7 +284,7 @@
       </div>
 
       <div class="sambutan-welcome"
-        style="font-size: clamp(15px, 1.8vw, 18px); font-weight: 600; color: #85131b; line-height: 1.5; margin-bottom: 20px;">
+        style="font-size: clamp(15px, 1.8vw, 18px); font-weight: 600; color: #85131b; line-height: 1; margin-bottom: 20px;">
         Selamat datang di website Program Studi S1 Ilmu Hukum Universitas Pamulang.
       </div>
 
