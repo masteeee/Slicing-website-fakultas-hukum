@@ -1,0 +1,250 @@
+<!-- Link Google Fonts untuk Font Geist -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+<div class="sambutan-wrapper"
+  style="max-width: 980px; margin: 0 auto; padding: clamp(24px, 4.5vw, 50px) clamp(18px, 4vw, 45px); font-family: 'Geist', sans-serif; box-sizing: border-box; background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/Z9R5kw0i3aenLCKTIfnnhp2UQvOh5RB2lhcsipXa.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 36px; box-shadow: 0 15px 45px rgba(133, 19, 27, 0.08); color: #85131b;">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+    .sambutan-wrapper,
+    .sambutan-wrapper * {
+      box-sizing: border-box;
+      font-family: 'Geist', sans-serif;
+    }
+
+    /* Container Header (Foto & Judul Box) */
+    .sambutan-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: clamp(24px, 4.5vw, 50px);
+      margin-bottom: clamp(28px, 4.5vw, 40px);
+      flex-wrap: wrap;
+    }
+
+    /* Kolom Foto & Identitas Kaprodi */
+    .sambutan-foto-col {
+      flex: 0 0 auto;
+      width: clamp(240px, 32vw, 300px);
+      max-width: 100%;
+    }
+
+    .sambutan-foto-frame {
+      position: relative;
+      width: 100%;
+      border-top-left-radius: 80px;
+      border-top-right-radius: 12px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #b81414 0%, #ff5e36 100%);
+      box-shadow: 0 8px 24px rgba(133, 19, 27, 0.18);
+    }
+
+    .sambutan-foto-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Badge Nama & Jabatan */
+    .sambutan-badge-group {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .sambutan-badge {
+      background-color: #85131b;
+      color: #ffffff;
+      border-radius: 5px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.3px;
+    }
+
+    .sambutan-badge-name {
+      font-size: clamp(10px, 1.15vw, 11.5px);
+      padding: 5px 10px;
+    }
+
+    .sambutan-badge-role {
+      font-size: clamp(9.5px, 1.05vw, 11px);
+      padding: 4px 10px;
+    }
+
+    /* Kolom Judul Box Merah */
+    .sambutan-title-col {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .sambutan-title-box {
+      border: 2px solid #e02424;
+      border-radius: 24px;
+      padding: clamp(20px, 3.2vw, 34px) clamp(22px, 3.5vw, 36px);
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 20px rgba(224, 36, 36, 0.05);
+      display: inline-block;
+    }
+
+    /* Gradasi Teks Judul sesuai instruksi */
+    .sambutan-title-gradient {
+      font-size: clamp(24px, 3.5vw, 36px);
+      background: linear-gradient(to right, rgb(128, 0, 0) 0%, rgb(225, 60, 35) 50%, rgb(128, 0, 0) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: rgb(128, 0, 0);
+      display: inline-block;
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: -0.3px;
+    }
+
+    /* Teks Sambutan */
+    .sambutan-body {
+      width: 100%;
+    }
+
+    .sambutan-greeting {
+      font-size: clamp(16px, 1.9vw, 19px);
+      font-weight: 600;
+      color: #85131b;
+      margin-bottom: 12px;
+    }
+
+    .sambutan-welcome {
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 600;
+      color: #85131b;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .sambutan-p {
+      color: #85131b;
+      font-size: clamp(14px, 1.45vw, 15.5px);
+      line-height: 1.72;
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 0 0 16px 0;
+      font-weight: 400;
+    }
+
+    .sambutan-closing {
+      font-size: clamp(15px, 1.7vw, 17px);
+      font-weight: 600;
+      color: #85131b;
+      margin-top: 14px;
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 680px) {
+      .sambutan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .sambutan-foto-col {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .sambutan-title-col {
+        width: 100%;
+      }
+
+      .sambutan-title-box {
+        width: 100%;
+      }
+
+      .sambutan-p {
+        text-align: left;
+      }
+    }
+  </style>
+
+  <!-- BAGIAN ATAS: FOTO KAPRODI & KARTU JUDUL -->
+  <div class="sambutan-header">
+
+    <!-- FOTO & BIODATA KAPRODI -->
+    <div class="sambutan-foto-col">
+      <!-- Frame Foto Berbentuk Arch / Lengkung Sesuai Desain -->
+      <div class="sambutan-foto-frame">
+        <!-- Ganti src foto ini jika diunggah ke CMS UNPAM (contoh: https://cms.unpam.ac.id/storage/assets/pages/content/...) -->
+        <img src="kaprodi_foto.png" alt="Assoc. Prof. Dr. H. M. Rezky Pahlawan, M.P, S.H., M.H.">
+      </div>
+
+      <!-- Badge Nama & Posisi -->
+      <div class="sambutan-badge-group">
+        <span class="sambutan-badge sambutan-badge-name">ASSOC. PROF. DR. H. M. REZKY PAHLAWAN, M.P, S.H., M.H.</span>
+        <span class="sambutan-badge sambutan-badge-role">KAPRODI ILMU HUKUM S-1</span>
+      </div>
+    </div>
+
+    <!-- KARTU JUDUL DENGAN OUTLINE MERAH & GRADASI -->
+    <div class="sambutan-title-col">
+      <div class="sambutan-title-box">
+        <h2 class="sambutan-title-gradient">
+          SAMBUTAN<br>
+          KAPRODI<br>
+          KETUA<br>
+          PROGRAM<br>
+          STUDI<br>
+          ILMU HUKUM<br>
+          S-1
+        </h2>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BAGIAN KONTEN TEKS SAMBUTAN -->
+  <div class="sambutan-body">
+
+    <div class="sambutan-greeting">
+      Assalamu'alaikum Wr. Wb.
+    </div>
+
+    <div class="sambutan-welcome">
+      Selamat datang di website Program Studi S1 Ilmu Hukum Universitas Pamulang.
+    </div>
+
+    <p class="sambutan-p">
+      Puji syukur ke hadirat Allah SWT atas segala rahmat dan karunia-Nya. Website ini kami hadirkan sebagai media informasi, komunikasi, dan pelayanan akademik yang dapat diakses oleh mahasiswa, calon mahasiswa, alumni, mitra, serta masyarakat. Melalui website ini, kami berkomitmen menyajikan informasi yang akurat, transparan, dan mudah diakses mengenai berbagai aktivitas Program Studi S1 Ilmu Hukum.
+    </p>
+
+    <p class="sambutan-p">
+      Program Studi S1 Ilmu Hukum Universitas Pamulang berkomitmen menyelenggarakan pendidikan hukum yang berkualitas dengan mengedepankan penguasaan ilmu, integritas, profesionalisme, dan nilai-nilai keadilan. Proses pembelajaran didukung oleh dosen yang kompeten, kurikulum yang relevan dengan perkembangan hukum, serta berbagai kegiatan penelitian, pengabdian kepada masyarakat, dan kemahasiswaan yang mendorong lahirnya lulusan yang unggul dan berdaya saing.
+    </p>
+
+    <p class="sambutan-p">
+      Kami berkomitmen mencetak lulusan hukum yang unggul, berintegritas, dan berdaya saing global. Keunggulan ini didukung oleh SDM berkualitas mulai dari Profesor, Associate Professor, Doktor, hingga praktisi handal. Didukung juga sarana prasarana yang luar biasa, serta suasana akademik yang kental melalui beragam program penunjang di luar kelas untuk memperkuat ketercapaian profil lulusan.
+    </p>
+
+    <p class="sambutan-p" style="margin-bottom: 20px;">
+      Terima kasih kepada seluruh pimpinan, dosen, mahasiswa, alumni, dan mitra atas dukungannya. Selamat mengeksplorasi situs kami untuk mengenal lebih jauh komitmen dan kualitas pendidikan di Prodi S-1 Ilmu Hukum.
+    </p>
+
+    <div class="sambutan-closing">
+      Wassalamu'alaikum Wr. Wb.
+    </div>
+
+  </div>
+
+</div>

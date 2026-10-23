@@ -1,8 +1,14 @@
 <div class="visimisi-wrapper"
-  style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
+  style="max-width: 1050px; margin: 0 auto; padding: clamp(20px, 4vw, 45px) clamp(16px, 3%, 30px); font-family: 'Geist', sans-serif; box-sizing: border-box; background-color: #ffffff; color: #85131b;">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
     /* CSS Murni Tanpa JavaScript */
+    .visimisi-wrapper {
+      font-family: 'Geist', sans-serif;
+    }
+
     .vm-tab-input {
       display: none !important;
     }
@@ -12,7 +18,7 @@
       border: none;
       padding: 0;
       margin: 0;
-      font-family: inherit;
+      font-family: 'Geist', sans-serif;
       font-size: clamp(18px, 2.3vw, 22px);
       font-weight: 600;
       color: #85131b;
@@ -63,6 +69,7 @@
     .vm-main-body ol li,
     .vm-main-body ol li::marker {
       color: #85131b !important;
+      font-family: 'Geist', sans-serif;
     }
   </style>
 
@@ -78,27 +85,27 @@
     <div
       style="display: flex; flex-direction: row; align-items: flex-end; gap: clamp(24px, 5.5vw, 60px); flex-wrap: wrap; padding-bottom: 0;">
 
-      <!-- TAB VISION -->
+      <!-- TAB VISI -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
         <label for="vm-tab-visi" id="vm-label-visi" class="vm-tab-label">Vision</label>
         <div id="vm-ind-visi" class="vm-tab-indicator"></div>
       </div>
 
-      <!-- TAB MISSION -->
+      <!-- TAB MISI -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
         <label for="vm-tab-misi" id="vm-label-misi" class="vm-tab-label">Mission</label>
         <div id="vm-ind-misi" class="vm-tab-indicator"></div>
       </div>
 
-      <!-- TAB GOALS -->
+      <!-- TAB TUJUAN -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <label for="vm-tab-tujuan" id="vm-label-tujuan" class="vm-tab-label">Goals</label>
+        <label for="vm-tab-tujuan" id="vm-label-tujuan" class="vm-tab-label">Objectives</label>
         <div id="vm-ind-tujuan" class="vm-tab-indicator"></div>
       </div>
 
-      <!-- TAB OBJECTIVES -->
+      <!-- TAB SASARAN -->
       <div style="position: relative; display: inline-block; padding-bottom: 10px;">
-        <label for="vm-tab-sasaran" id="vm-label-sasaran" class="vm-tab-label">Objectives</label>
+        <label for="vm-tab-sasaran" id="vm-label-sasaran" class="vm-tab-label">Targets</label>
         <div id="vm-ind-sasaran" class="vm-tab-indicator"></div>
       </div>
 
@@ -114,99 +121,71 @@
 
       <!-- 1. KONTEN VISI -->
       <div id="vm-cnt-visi" class="vm-content-box">
-        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
-                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
-                -webkit-background-clip:text;
-                -webkit-text-fill-color:transparent;
-                background-clip:text; color:rgb(128,0,0);
-                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.22; font-weight: 400; margin: 0 0 20px 0;">
           Study Program Vision
         </h2>
         <p
           style="font-size: clamp(17px, 2.1vw, 20px); line-height: 1.62; color: #85131b; font-weight: 500; margin: 0; max-width: 500px;">
-          "To produce graduates who excel in the field of law and industrial relations, making a meaningful impact on
-          society, guided by the values of religiosity and humanism."
+          “To produce excellent law graduates with specialized expertise in industrial relations who create a meaningful
+          impact on society, grounded in religiosity and humanism.”
         </p>
       </div>
 
       <!-- 2. KONTEN MISI -->
       <div id="vm-cnt-misi" class="vm-content-box">
-        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
-                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
-                -webkit-background-clip:text;
-                -webkit-text-fill-color:transparent;
-                background-clip:text; color:rgb(128,0,0);
-                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.22; font-weight: 400; margin: 0 0 20px 0;">
           Study Program Mission
         </h2>
         <ol
           style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="color: #85131b; margin-bottom: 10px;">To provide high-quality legal education and teaching that is
-            responsive to
-            the development of national law and the needs of the wider community.</li>
-          <li style="color: #85131b; margin-bottom: 10px;">To conduct innovative and competitive research in the fields of
-            law and
-            industrial relations, oriented toward public benefit.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">To organize high-quality legal education and teaching that is
+            responsive to national legal developments and the needs of the broader community.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">To conduct innovative and competitive research in legal
+            science and industrial relations oriented toward public benefit.</li>
           <li style="color: #85131b; margin-bottom: 10px;">To carry out community service through legal advocacy,
-            consultation, and
-            education grounded in justice.</li>
+            consultation, and education grounded in justice.</li>
           <li style="color: #85131b; margin-bottom: 0;">To develop strategic partnerships with law enforcement
-            institutions and the
-            professional world, founded on the values of religiosity and humanism.</li>
+            institutions and the professional sector, guided by the values of religiosity and humanism.</li>
         </ol>
       </div>
 
       <!-- 3. KONTEN TUJUAN -->
       <div id="vm-cnt-tujuan" class="vm-content-box">
-        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
-                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
-                -webkit-background-clip:text;
-                -webkit-text-fill-color:transparent;
-                background-clip:text; color:rgb(128,0,0);
-                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
-          Study Program Goals
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.22; font-weight: 400; margin: 0 0 20px 0;">
+          Study Program Objectives
         </h2>
         <ol
           style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="color: #85131b; margin-bottom: 10px;">To produce law graduates of high integrity and professionalism
-            who possess
-            both theoretical knowledge and practical legal skills.</li>
-          <li style="color: #85131b; margin-bottom: 10px;">To produce high-quality legal research that makes a tangible
-            contribution to
-            the reform of national law and labor relations.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">To produce law graduates who are principled, professional,
+            and proficient in both theoretical and practical legal skills.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">To generate high-quality legal research that provides
+            tangible contributions to national legal reform and labor law.</li>
           <li style="color: #85131b; margin-bottom: 10px;">To actively contribute to law enforcement and the protection
-            of legal rights
-            for the general public.</li>
-          <li style="color: #85131b; margin-bottom: 0;">To achieve transparent, accountable, and excellent study program
-            governance in
-            academic services.</li>
+            of legal rights for the general public.</li>
+          <li style="color: #85131b; margin-bottom: 0;">To establish transparent, accountable, and excellent governance
+            in academic services for the study program.</li>
         </ol>
       </div>
 
       <!-- 4. KONTEN SASARAN -->
       <div id="vm-cnt-sasaran" class="vm-content-box">
-        <h2 style="font-family: emoji; font-size: clamp(28px, 4vw, 38px); background:linear-gradient(135deg, rgb(128,0,0) 0%,
-                rgb(185,25,25) 50%, rgb(225,60,35) 100%);
-                -webkit-background-clip:text;
-                -webkit-text-fill-color:transparent;
-                background-clip:text; color:rgb(128,0,0);
-                display:inline-block; line-height: 1.22; font-weight: 500; color: #85131b; margin: 0 0 20px 0;">
-          Study Program Objectives
+        <h2
+          style="font-size: clamp(28px, 4vw, 38px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.22; font-weight: 400; margin: 0 0 20px 0;">
+          Study Program Targets
         </h2>
         <ol
           style="margin: 0; padding-left: 22px; font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; color: #85131b; font-weight: 500; max-width: 520px;">
-          <li style="color: #85131b; margin-bottom: 10px;">Enhancing graduate competency in procedural law, moot court
-            practice, and
-            industrial relations law.</li>
-          <li style="color: #85131b; margin-bottom: 10px;">Increasing the percentage of graduates directly absorbed by
-            judicial
-            institutions, government agencies, and reputable law firms.</li>
-          <li style="color: #85131b; margin-bottom: 10px;">Expanding strategic internship partnerships and legal aid
-            clinics (clinical
-            legal education) for students.</li>
-          <li style="color: #85131b; margin-bottom: 0;">Elevating faculty qualifications with doctoral degrees (Ph.D./S-3)
-            and active
-            legal practice backgrounds.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">Enhancing graduate competency in procedural legal skills,
+            moot court practice, and industrial relations law.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">Increasing the percentage of graduates directly employed in
+            judicial institutions, government agencies, and prominent law firms.</li>
+          <li style="color: #85131b; margin-bottom: 10px;">Expanding strategic partnerships for student internships and
+            clinical legal education programs.</li>
+          <li style="color: #85131b; margin-bottom: 0;">Elevating faculty quality through doctoral-educated (Ph.D.)
+            academic staff and active legal practitioners.</li>
         </ol>
       </div>
 
@@ -217,7 +196,7 @@
       <div
         style="width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 12px 36px rgba(75, 22, 27, 0.16); background-color: #f7f7f7;">
         <img src="https://cms.unpam.ac.id/storage/assets/pages/content/vkXRYf6Rz5uB5YauOZbQqLhHi4dkYLSOsmptRSbW.png"
-          alt="Faculty of Law Lobby, Universitas Pamulang"
+          alt="Faculty of Law Lobby Pamulang University"
           style="width: 100%; height: auto; display: block; object-fit: cover; border-radius: 28px;">
       </div>
     </div>
