@@ -105,12 +105,14 @@
     }
 
     .sambutan-badge-name {
-      font-size: clamp(9px, 0.85vw, 10.5px);
-      padding: 10px 8px;
+      font-size: clamp(8px, 0.85vw, 10.5px);
+      padding: 5px 12px;
       letter-spacing: 0.1px;
       width: calc(100% + 40px);
-      max-width: none;
-      white-space: nowrap;
+      max-width: calc(100% + 40px);
+      white-space: normal;
+      overflow-wrap: break-word;
+      box-sizing: border-box;
     }
 
     .sambutan-badge-role {
@@ -221,27 +223,41 @@
         position: relative;
       }
 
+
       .sambutan-badge-group {
         bottom: -10px;
         left: 0;
+        width: 100%;
         max-width: 100%;
-        gap: 0px;
+        gap: 0;
+        align-items: flex-start;
+        box-sizing: border-box;
       }
 
       .sambutan-badge {
-        font-size: clamp(7.5px, 2vw, 9px) !important;
-        padding: 2px 5px !important;
+        font-size: clamp(7px, 1.7vw, 9px) !important;
+        padding: 3px 5px !important;
+        box-sizing: border-box;
+        max-width: 100%;
       }
 
       .sambutan-badge-name {
+        width: 100% !important;
+        max-width: 100% !important;
         white-space: normal !important;
-        line-height: 1.15 !important;
+        overflow-wrap: anywhere;
+        line-height: 1.2 !important;
       }
 
       .sambutan-badge-role {
-        white-space: nowrap !important;
-        font-size: clamp(7px, 1.8vw, 8px) !important;
+        width: auto !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        font-size: clamp(7px, 1.6vw, 8px) !important;
+        line-height: 1.2 !important;
       }
+
 
       .sambutan-title-col {
         flex: 1 1 0 !important;
