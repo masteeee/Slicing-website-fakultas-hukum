@@ -94,7 +94,7 @@
     .sambutan-badge {
       background-color: #a82d15;
       color: #ffffff;
-      border-radius: 12px 12px 0px 0px;
+      border-radius: 2px;
       font-family: 'Geist', sans-serif;
       font-weight: 500;
       line-height: 1.3;
@@ -105,9 +105,12 @@
     }
 
     .sambutan-badge-name {
-      font-size: clamp(8px, 0.85vw, 10.5px);
-      padding: 5px 8px;
+      font-size: clamp(9px, 0.85vw, 10.5px);
+      padding: 10px 8px;
       letter-spacing: 0.1px;
+      width: calc(100% + 40px);
+      max-width: none;
+      white-space: nowrap;
     }
 
     .sambutan-badge-role {
@@ -285,13 +288,13 @@
 
         <!-- BADGE NAMA & JABATAN OVERLAY -->
         <div class="sambutan-badge-group"
-          style="position: absolute; bottom: -12px; left: 0; z-index: 5; display: flex; flex-direction: column; align-items: flex-start; padding: 0; gap: 0px; border-radius: 12px 12px 0px 0px;">
+          style="position: absolute; bottom: -12px; left: 0; z-index: 5; display: flex; flex-direction: column; align-items: flex-start; padding: 0; gap: 0px;width:calc(100% + 40px);">
           <span class="sambutan-badge sambutan-badge-name"
-            style="font-family: 'Geist', sans-serif; background-color: #a82d15; color: #ffffff; border-radius: 12px 12px 0px 0px; font-weight: 500; line-height: 1.15; letter-spacing: 0.1px; font-size: clamp(8px, 1.05vw, 10.5px); padding: 4px 8px; display: inline-block; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
+            style="font-family: 'Geist', sans-serif; background-color: #a82d15; color: #ffffff; border-radius: 8px 8px 0px 0px; width:calc(100% + 40px); font-weight: 500; line-height: 1; letter-spacing: 0.5px; font-size: clamp(8px, 1.05vw, 10.5px); padding: 4px 8px 10px 16px; display: inline-block; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
             ASSOC. PROF. DR. H. M. REZKY PAHLAWAN, M.P., S.H., M.H.
           </span>
           <span class="sambutan-badge sambutan-badge-role"
-            style="font-family: 'Geist', sans-serif; background-color: #a82d15; color: #ffffff; border-radius: 0px 0px 12px 12px; font-weight: 500; line-height: 1.15; letter-spacing: 0.2px; font-size: clamp(7.5px, 0.95vw, 10px); padding: 4px 8px; display: inline-block; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
+            style="font-family: 'Geist', sans-serif; background-color: #a82d15; color: #ffffff; border-radius: 0px 0px 8px 8px; font-weight: 500; line-height: 1.15; letter-spacing: 0.2px; font-size: clamp(7.5px, 0.95vw, 10px); padding: 4px 8px 4px 16px; display: inline-block; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);">
             KAPRODI ILMU HUKUM S-1
           </span>
         </div>
@@ -303,9 +306,8 @@
         <div class="sambutan-title-box"
           style="width: 100%; height: 100%; border: 2px solid #eb3223; border-radius: clamp(18px, 3.5vw, 28px); padding: clamp(14px, 2.2vw, 26px) clamp(16px, 2.2vw, 26px); background-color: #ffffff; box-shadow: 0 4px 20px rgba(235, 50, 35, 0.06); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;">
           <h2 class="sambutan-title-gradient"
-            style="font-size: clamp(14px, 2.3vw, 27px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.1; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: -0.4px;">
+            style="font-size: clamp(14px, 2.3vw, 27px); background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: rgb(128,0,0); display: inline-block; line-height: 1.1; font-weight: 500; margin: 0; text-transform: uppercase; letter-spacing: -0.4px;">
             SAMBUTAN<br>
-            KAPRODI<br>
             KETUA<br>
             PROGRAM<br>
             STUDI<br>
