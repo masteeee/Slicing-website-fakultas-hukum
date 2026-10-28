@@ -1,158 +1,5 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
-
-    /* ========================================================
-       STYLE KONTEN PIMPINAN YAYASAN & REKTORAT
-       ======================================================== */
-
-    .pimpinan-container {
-        width: 100%;
-        margin: clamp(20px, 3.5vw, 36px) 0 clamp(24px, 4vw, 40px) 0;
-        box-sizing: border-box;
-    }
-
-    /* Baris 1: 3 Tokoh Utama (Pendiri, Ketua Yayasan, Rektor) */
-    .pimpinan-row-top {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(16px, 2.8vw, 30px);
-        margin-bottom: clamp(32px, 4.5vw, 46px);
-        align-items: start;
-    }
-
-    /* Baris 2: 4 Wakil Rektor */
-    .pimpinan-row-bottom {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: clamp(10px, 1.8vw, 22px);
-        align-items: start;
-    }
-
-    /* Card Pimpinan */
-    .pimpinan-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Bingkai Foto Lengkung (Arch Dome) dengan Background Maroon Grid */
-    .pimpinan-photo-frame {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1 / 1.32;
-        border-radius: 9999px 9999px 0 0;
-        overflow: hidden;
-        background-color: #8c1004;
-        background-image:
-            linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-            radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%);
-        background-size: 14px 14px, 14px 14px, 100% 100%;
-        box-shadow: 0 10px 24px rgba(133, 19, 27, 0.16);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-sizing: border-box;
-    }
-
-    .pimpinan-card:hover .pimpinan-photo-frame {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px rgba(133, 19, 27, 0.26);
-    }
-
-    /* Tag Foto di dalam bingkai */
-    .pimpinan-photo {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-        z-index: 2;
-    }
-
-    /* Otomatis sembunyikan tag foto jika src masih kosong atau tanda pagar (#) */
-    .pimpinan-photo:not([src]),
-    .pimpinan-photo[src=""],
-    .pimpinan-photo[src="#"] {
-        display: none !important;
-    }
-
-    /* Teks Keterangan Nama & Jabatan */
-    .pimpinan-info {
-        width: 100%;
-        margin-top: clamp(12px, 1.6vw, 16px);
-        box-sizing: border-box;
-    }
-
-    .pimpinan-name-top {
-        font-family: 'Geist', Arial, sans-serif;
-        font-size: clamp(14px, 1.4vw, 17px);
-        font-weight: 700;
-        color: #800000;
-        line-height: 1.25;
-        margin: 0 0 6px 0;
-    }
-
-    .pimpinan-title-top {
-        font-family: 'Geist', Arial, sans-serif;
-        font-size: clamp(11.5px, 1.05vw, 13px);
-        font-weight: 500;
-        color: #3a0000;
-        line-height: 1.35;
-        margin: 0;
-    }
-
-    .pimpinan-name-bottom {
-        font-family: 'Geist', Arial, sans-serif;
-        font-size: clamp(12.5px, 1.15vw, 15px);
-        font-weight: 700;
-        color: #800000;
-        line-height: 1.25;
-        margin: 0 0 6px 0;
-    }
-
-    .pimpinan-title-bottom {
-        font-family: 'Geist', Arial, sans-serif;
-        font-size: clamp(11px, 0.95vw, 12px);
-        font-weight: 500;
-        color: #3a0000;
-        line-height: 1.35;
-        margin: 0;
-    }
-
-    /* Responsivitas Layar Tablet & Mobile */
-    @media (max-width: 768px) {
-        .pimpinan-row-bottom {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 26px 16px;
-        }
-    }
-
-    @media (max-width: 540px) {
-        .pimpinan-row-top {
-            grid-template-columns: repeat(1, 1fr);
-            max-width: 250px;
-            margin: 0 auto clamp(28px, 5vw, 38px) auto;
-            gap: 24px;
-        }
-
-        .pimpinan-row-bottom {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px 12px;
-        }
-    }
-
-    @media (max-width: 360px) {
-        .pimpinan-row-bottom {
-            grid-template-columns: repeat(1, 1fr);
-            max-width: 230px;
-            margin: 0 auto;
-        }
-    }
 </style>
 
 <div
@@ -190,134 +37,192 @@
         </div>
 
         <!-- ========================================================
-             BAGIAN SUSUNAN PIMPINAN YAYASAN & REKTORAT
+             BAGIAN SUSUNAN PIMPINAN YAYASAN & REKTORAT (PURE INLINE CSS)
              ======================================================== -->
-        <div class="pimpinan-container">
+        <div style="width:100%; margin:clamp(20px, 3.5vw, 36px) 0 clamp(24px, 4vw, 40px) 0; box-sizing:border-box;">
 
             <!-- BARIS 1: 3 PIMPINAN (Pendiri, Ketua Yayasan, Rektor) -->
-            <div class="pimpinan-row-top">
+            <div
+                style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:clamp(16px, 2.8vw, 28px); margin-bottom:clamp(32px, 4.5vw, 46px); width:100%; box-sizing:border-box;">
 
                 <!-- 1. Dr. (H.C) Drs. H. Darsono -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 210px; max-width:250px; min-width:180px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 1 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 1 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. (H.C) Drs. H. Darsono"
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-top">Dr. (H.C) Drs. H. Darsono</div>
-                        <div class="pimpinan-title-top">Pendiri Yayasan Sasmita Jaya & Universitas Pamulang</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. (H.C) Drs. H. Darsono
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Pendiri Yayasan Sasmita Jaya & Universitas Pamulang
+                        </div>
                     </div>
                 </div>
 
                 <!-- 2. Dr. Pranoto, S.E., M.M. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 210px; max-width:250px; min-width:180px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 2 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 2 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. Pranoto, S.E., M.M."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-top">Dr. Pranoto, S.E., M.M.</div>
-                        <div class="pimpinan-title-top">Ketua Yayasan Sasmita Jaya</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. Pranoto, S.E., M.M.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Ketua Yayasan Sasmita Jaya
+                        </div>
                     </div>
                 </div>
 
                 <!-- 3. Dr. E. Nurzaman, AM, M.M.,M.Si. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 210px; max-width:250px; min-width:180px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 3 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 3 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. E. Nurzaman, AM, M.M.,M.Si."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-top">Dr. E. Nurzaman, AM, M.M.,M.Si.</div>
-                        <div class="pimpinan-title-top">Rektor Universitas Pamulang</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. E. Nurzaman, AM, M.M.,M.Si.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Rektor Universitas Pamulang
+                        </div>
                     </div>
                 </div>
 
             </div>
 
             <!-- BARIS 2: 4 WAKIL REKTOR -->
-            <div class="pimpinan-row-bottom">
+            <div
+                style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:clamp(10px, 1.8vw, 18px); width:100%; box-sizing:border-box;">
 
                 <!-- 4. Dr. Ubaid Al Faruq, S.Pd., M.Pd. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 150px; max-width:190px; min-width:130px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 4 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 4 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. Ubaid Al Faruq, S.Pd., M.Pd."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-bottom">Dr. Ubaid Al Faruq, S.Pd., M.Pd.</div>
-                        <div class="pimpinan-title-bottom">Wakil Rektor I</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. Ubaid Al Faruq, S.Pd., M.Pd.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Wakil Rektor I
+                        </div>
                     </div>
                 </div>
 
                 <!-- 5. Dr. M. Wildan, S.S., M.A. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 150px; max-width:190px; min-width:130px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 5 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 5 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. M. Wildan, S.S., M.A."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-bottom">Dr. M. Wildan, S.S., M.A.</div>
-                        <div class="pimpinan-title-bottom">Wakil Rektor II</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. M. Wildan, S.S., M.A.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Wakil Rektor II
+                        </div>
                     </div>
                 </div>
 
                 <!-- 6. Dr. Dameis Surya Anggara, S.Pd., M.Pd. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 150px; max-width:190px; min-width:130px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 6 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 6 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="Dr. Dameis Surya Anggara, S.Pd., M.Pd."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-bottom">Dr. Dameis Surya Anggara, S.Pd., M.Pd.</div>
-                        <div class="pimpinan-title-bottom">Wakil Rektor III</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. Dameis Surya Anggara, S.Pd., M.Pd.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Wakil Rektor III
+                        </div>
                     </div>
                 </div>
 
                 <!-- 7. Prof. Dr. Oksidelfa Yanto, S.H., M.H. -->
-                <div class="pimpinan-card">
-                    <div class="pimpinan-photo-frame">
+                <div
+                    style="flex:1 1 150px; max-width:190px; min-width:130px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
                         <!-- ===================================================================
-                             [GANTI FOTO 7 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             [GANTI FOTO 7 DI SINI]: Ubah src di bawah dengan link foto dari CMS
+                             Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                              =================================================================== -->
-                        <img src=""
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/6TkBEKzVPt7b3SVzQLReBqJI2vRYBXWk9Urwi9zr.png"
                             alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H."
-                            class="pimpinan-photo"
-                            onerror="this.style.display='none'">
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
                     </div>
-                    <div class="pimpinan-info">
-                        <div class="pimpinan-name-bottom">Prof. Dr. Oksidelfa Yanto, S.H., M.H.</div>
-                        <div class="pimpinan-title-bottom">Wakil Rektor IV</div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Prof. Dr. Oksidelfa Yanto, S.H., M.H.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Wakil Rektor IV
+                        </div>
                     </div>
                 </div>
 
@@ -334,6 +239,4 @@
         </div>
 
     </div>
-</div>
-
 </div>
