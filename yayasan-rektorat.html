@@ -1,5 +1,158 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+    /* ========================================================
+       STYLE KONTEN PIMPINAN YAYASAN & REKTORAT
+       ======================================================== */
+
+    .pimpinan-container {
+        width: 100%;
+        margin: clamp(20px, 3.5vw, 36px) 0 clamp(24px, 4vw, 40px) 0;
+        box-sizing: border-box;
+    }
+
+    /* Baris 1: 3 Tokoh Utama (Pendiri, Ketua Yayasan, Rektor) */
+    .pimpinan-row-top {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2.8vw, 30px);
+        margin-bottom: clamp(32px, 4.5vw, 46px);
+        align-items: start;
+    }
+
+    /* Baris 2: 4 Wakil Rektor */
+    .pimpinan-row-bottom {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(10px, 1.8vw, 22px);
+        align-items: start;
+    }
+
+    /* Card Pimpinan */
+    .pimpinan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Bingkai Foto Lengkung (Arch Dome) dengan Background Maroon Grid */
+    .pimpinan-photo-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1.32;
+        border-radius: 9999px 9999px 0 0;
+        overflow: hidden;
+        background-color: #8c1004;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+            radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%);
+        background-size: 14px 14px, 14px 14px, 100% 100%;
+        box-shadow: 0 10px 24px rgba(133, 19, 27, 0.16);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .pimpinan-card:hover .pimpinan-photo-frame {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(133, 19, 27, 0.26);
+    }
+
+    /* Tag Foto di dalam bingkai */
+    .pimpinan-photo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        z-index: 2;
+    }
+
+    /* Otomatis sembunyikan tag foto jika src masih kosong atau tanda pagar (#) */
+    .pimpinan-photo:not([src]),
+    .pimpinan-photo[src=""],
+    .pimpinan-photo[src="#"] {
+        display: none !important;
+    }
+
+    /* Teks Keterangan Nama & Jabatan */
+    .pimpinan-info {
+        width: 100%;
+        margin-top: clamp(12px, 1.6vw, 16px);
+        box-sizing: border-box;
+    }
+
+    .pimpinan-name-top {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(14px, 1.4vw, 17px);
+        font-weight: 700;
+        color: #800000;
+        line-height: 1.25;
+        margin: 0 0 6px 0;
+    }
+
+    .pimpinan-title-top {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(11.5px, 1.05vw, 13px);
+        font-weight: 500;
+        color: #3a0000;
+        line-height: 1.35;
+        margin: 0;
+    }
+
+    .pimpinan-name-bottom {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(12.5px, 1.15vw, 15px);
+        font-weight: 700;
+        color: #800000;
+        line-height: 1.25;
+        margin: 0 0 6px 0;
+    }
+
+    .pimpinan-title-bottom {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(11px, 0.95vw, 12px);
+        font-weight: 500;
+        color: #3a0000;
+        line-height: 1.35;
+        margin: 0;
+    }
+
+    /* Responsivitas Layar Tablet & Mobile */
+    @media (max-width: 768px) {
+        .pimpinan-row-bottom {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px 16px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .pimpinan-row-top {
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 250px;
+            margin: 0 auto clamp(28px, 5vw, 38px) auto;
+            gap: 24px;
+        }
+
+        .pimpinan-row-bottom {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px 12px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .pimpinan-row-bottom {
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 230px;
+            margin: 0 auto;
+        }
+    }
 </style>
 
 <div
@@ -8,6 +161,7 @@
     <div
         style="width:100%; max-width:860px; margin:0 auto; padding:36px 28px; background-color:#ffffff; background-image:linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)),url('https://cms.unpam.ac.id/storage/assets/pages/content/O02reEx6ECrROhwjGBQsfx8mK6kZuBXfHJWe7p0h.png'); background-position:center center; background-repeat:no-repeat; background-size:cover; border:1px solid #e0dada; border-radius:22px; box-shadow:0 12px 32px rgba(0,0,0,0.08); box-sizing:border-box;">
 
+        <!-- HEADER LOGO & JUDUL -->
         <div
             style="display:flex; align-items:center; justify-content:center; gap:clamp(10px,2vw,20px); margin-bottom:clamp(22px,3.5vw,36px);">
 
@@ -19,7 +173,7 @@
             <div style="flex-shrink:0; text-align:center;">
                 <div
                     style="font-family:'Geist',Arial,sans-serif; font-size:clamp(18px,2vw,24px); font-weight:500; color:#c0392b; letter-spacing:1px; text-transform:uppercase;">
-                    PPIMPINAN YAYASAN & REKTORAT
+                    PIMPINAN YAYASAN & REKTORAT
                 </div>
 
                 <div
@@ -35,5 +189,151 @@
 
         </div>
 
+        <!-- ========================================================
+             BAGIAN SUSUNAN PIMPINAN YAYASAN & REKTORAT
+             ======================================================== -->
+        <div class="pimpinan-container">
+
+            <!-- BARIS 1: 3 PIMPINAN (Pendiri, Ketua Yayasan, Rektor) -->
+            <div class="pimpinan-row-top">
+
+                <!-- 1. Dr. (H.C) Drs. H. Darsono -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 1 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. (H.C) Drs. H. Darsono"
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-top">Dr. (H.C) Drs. H. Darsono</div>
+                        <div class="pimpinan-title-top">Pendiri Yayasan Sasmita Jaya & Universitas Pamulang</div>
+                    </div>
+                </div>
+
+                <!-- 2. Dr. Pranoto, S.E., M.M. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 2 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. Pranoto, S.E., M.M."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-top">Dr. Pranoto, S.E., M.M.</div>
+                        <div class="pimpinan-title-top">Ketua Yayasan Sasmita Jaya</div>
+                    </div>
+                </div>
+
+                <!-- 3. Dr. E. Nurzaman, AM, M.M.,M.Si. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 3 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. E. Nurzaman, AM, M.M.,M.Si."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-top">Dr. E. Nurzaman, AM, M.M.,M.Si.</div>
+                        <div class="pimpinan-title-top">Rektor Universitas Pamulang</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BARIS 2: 4 WAKIL REKTOR -->
+            <div class="pimpinan-row-bottom">
+
+                <!-- 4. Dr. Ubaid Al Faruq, S.Pd., M.Pd. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 4 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. Ubaid Al Faruq, S.Pd., M.Pd."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-bottom">Dr. Ubaid Al Faruq, S.Pd., M.Pd.</div>
+                        <div class="pimpinan-title-bottom">Wakil Rektor I</div>
+                    </div>
+                </div>
+
+                <!-- 5. Dr. M. Wildan, S.S., M.A. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 5 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. M. Wildan, S.S., M.A."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-bottom">Dr. M. Wildan, S.S., M.A.</div>
+                        <div class="pimpinan-title-bottom">Wakil Rektor II</div>
+                    </div>
+                </div>
+
+                <!-- 6. Dr. Dameis Surya Anggara, S.Pd., M.Pd. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 6 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Dr. Dameis Surya Anggara, S.Pd., M.Pd."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-bottom">Dr. Dameis Surya Anggara, S.Pd., M.Pd.</div>
+                        <div class="pimpinan-title-bottom">Wakil Rektor III</div>
+                    </div>
+                </div>
+
+                <!-- 7. Prof. Dr. Oksidelfa Yanto, S.H., M.H. -->
+                <div class="pimpinan-card">
+                    <div class="pimpinan-photo-frame">
+                        <!-- ===================================================================
+                             [GANTI FOTO 7 DI SINI]: Masukkan link foto dari CMS ke src="..."
+                             =================================================================== -->
+                        <img src=""
+                            alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H."
+                            class="pimpinan-photo"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="pimpinan-info">
+                        <div class="pimpinan-name-bottom">Prof. Dr. Oksidelfa Yanto, S.H., M.H.</div>
+                        <div class="pimpinan-title-bottom">Wakil Rektor IV</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="width:60%; max-width:400px; margin:30px auto 0; height:1px; background:#d8b4b4;"></div>
+
+        <div style="margin-top:22px; text-align:center;">
+            <span
+                style="font-family:'Great Vibes',cursive; font-size:clamp(25px,4vw,42px); font-weight:500; font-style:normal; line-height:1.1; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4;">Berbagi
+                Untuk Negeri</span>
+        </div>
 
     </div>
+</div>
+
+</div>
