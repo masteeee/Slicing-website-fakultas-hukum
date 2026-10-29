@@ -43,13 +43,13 @@
             <!-- FOTO 1 (PALING ATAS): KETUA PROGRAM STUDI -->
             <div
                 style="position:relative; width:clamp(210px, 34%, 250px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #440202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-                
+
                 <!-- ===================================================================
                      [FOTO KETUA PRODI]: Ubah src di bawah jika ingin mengganti foto dari CMS
                      =================================================================== -->
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/B5M9UY8pR1Y5EyZTy5jv1T2PlkkfUlq06i6Zw3ei.png"
                     alt="Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H."
-                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; z-index:1;">
+                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block; z-index:1;">
 
                 <!-- Keterangan Nama & Jabatan di Dalam Card -->
                 <div
@@ -88,14 +88,14 @@
                 <!-- FOTO KIRI: SEKRETARIS PROGRAM STUDI -->
                 <div
                     style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-                    
+
                     <!-- ===================================================================
                          [GANTI FOTO SEKRETARIS DI SINI]: Ubah src di bawah dengan link CMS
                          Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                          =================================================================== -->
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         alt="Siti Chadijah, S.H., M.H."
-                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; z-index:1;">
+                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block; z-index:1;">
 
                     <!-- Keterangan Nama & Jabatan di Dalam Card -->
                     <div
@@ -114,14 +114,14 @@
                 <!-- FOTO KANAN: WAKIL KETUA PROGRAM STUDI -->
                 <div
                     style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-                    
+
                     <!-- ===================================================================
                          [GANTI FOTO WAKIL KETUA DI SINI]: Ubah src di bawah dengan link CMS
                          Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
                          =================================================================== -->
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         alt="Dr. Abdul Hadi, S.H., M.H."
-                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; z-index:1;">
+                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block; z-index:1;">
 
                     <!-- Keterangan Nama & Jabatan di Dalam Card -->
                     <div
@@ -162,125 +162,128 @@
                 style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box; margin:4px 0 16px 0;">
 
                 <!-- DROPDOWN: Dosen Pengembang Fakultas -->
-                <details style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Fakultas" style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
-                        Dosen Pengembang Fakultas <span aria-hidden="true" style="display:inline-block; margin-left:8px; font-size:12px;">&#9662;</span>
+                <details
+                    style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Fakultas"
+                        style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Dosen Pengembang Fakultas <span aria-hidden="true"
+                            style="display:inline-block; margin-left:8px; font-size:12px;">▾</span>
                     </summary>
 
-                <!-- POPUP CARD: DAFTAR DOSEN FAKULTAS (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
-                <div id="popup-dosen-fakultas"
-                    style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
-                    
-                    <!-- Header Popup Card -->
-                    <div
-                        style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
-                        <div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
-                                Daftar Dosen Pengembang Fakultas Hukum
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
-                                Fakultas Hukum Universitas Pamulang
+                    <!-- POPUP CARD: DAFTAR DOSEN FAKULTAS (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
+                    <div id="popup-dosen-fakultas"
+                        style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+
+                        <!-- Header Popup Card -->
+                        <div
+                            style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
+                            <div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
+                                    Daftar Dosen Pengembang Fakultas Hukum
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
+                                    Fakultas Hukum Universitas Pamulang
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Grid Dosen Fakultas -->
+                        <div
+                            style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
+
+                            <!-- Dosen 1 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN FAKULTAS 1]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Fakultas 1"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Dosen Fakultas 1, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Kurikulum &amp; Pembelajaran
+                                </div>
+                            </div>
+
+                            <!-- Dosen 2 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN FAKULTAS 2]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Fakultas 2"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Dosen Fakultas 2, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Riset &amp; Publikasi
+                                </div>
+                            </div>
+
+                            <!-- Dosen 3 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN FAKULTAS 3]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Fakultas 3"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Fakultas 3, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Pengabdian Masyarakat
+                                </div>
+                            </div>
+
+                            <!-- Dosen 4 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN FAKULTAS 4]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Fakultas 4"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Fakultas 4, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Penjaminan Mutu
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Footer Popup Card -->
+                        <div
+                            style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
+                            <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                                Klik kembali judul dropdown untuk menutup
+                            </span>
+                        </div>
+
                     </div>
-
-                    <!-- Grid Dosen Fakultas -->
-                    <div
-                        style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
-
-                        <!-- Dosen 1 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN FAKULTAS 1]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Fakultas 1"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dr. Dosen Fakultas 1, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Kurikulum &amp; Pembelajaran
-                            </div>
-                        </div>
-
-                        <!-- Dosen 2 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN FAKULTAS 2]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Fakultas 2"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dr. Dosen Fakultas 2, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Riset &amp; Publikasi
-                            </div>
-                        </div>
-
-                        <!-- Dosen 3 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN FAKULTAS 3]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Fakultas 3"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Fakultas 3, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Pengabdian Masyarakat
-                            </div>
-                        </div>
-
-                        <!-- Dosen 4 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN FAKULTAS 4]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Fakultas 4"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Fakultas 4, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Penjaminan Mutu
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Footer Popup Card -->
-                    <div
-                        style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
-                        <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
-                            Klik kembali judul dropdown untuk menutup
-                        </span>
-                    </div>
-
-                </div>
 
                 </details>
 
@@ -294,125 +297,128 @@
                 </div>
 
                 <!-- DROPDOWN: Dosen Pengembang Program Studi -->
-                <details style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Program Studi" style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
-                        Dosen Pengembang Program Studi <span aria-hidden="true" style="display:inline-block; margin-left:8px; font-size:12px;">&#9662;</span>
+                <details
+                    style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Program Studi"
+                        style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Dosen Pengembang Program Studi <span aria-hidden="true"
+                            style="display:inline-block; margin-left:8px; font-size:12px;">▾</span>
                     </summary>
 
-                <!-- POPUP CARD: DAFTAR DOSEN PRODI (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
-                <div id="popup-dosen-prodi"
-                    style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
-                    
-                    <!-- Header Popup Card -->
-                    <div
-                        style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
-                        <div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
-                                Daftar Dosen Pengembang Program Studi
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
-                                Program Studi Ilmu Hukum S-1 Universitas Pamulang
+                    <!-- POPUP CARD: DAFTAR DOSEN PRODI (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
+                    <div id="popup-dosen-prodi"
+                        style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+
+                        <!-- Header Popup Card -->
+                        <div
+                            style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
+                            <div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
+                                    Daftar Dosen Pengembang Program Studi
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
+                                    Program Studi Ilmu Hukum S-1 Universitas Pamulang
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Grid Dosen Prodi -->
+                        <div
+                            style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
+
+                            <!-- Dosen Prodi 1 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN PRODI 1]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Prodi 1"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Pengembang 1, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Kurikulum &amp; Silabus
+                                </div>
+                            </div>
+
+                            <!-- Dosen Prodi 2 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN PRODI 2]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Prodi 2"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Pengembang 2, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Kemahasiswaan &amp; Alumni
+                                </div>
+                            </div>
+
+                            <!-- Dosen Prodi 3 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN PRODI 3]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Prodi 3"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Pengembang 3, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Kerjasama &amp; Praktik Peradilan
+                                </div>
+                            </div>
+
+                            <!-- Dosen Prodi 4 -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
+                                    <!-- [FOTO DOSEN PRODI 4]: Masukkan link CMS di src -->
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        alt="Dosen Pengembang Prodi 4"
+                                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dosen Pengembang 4, S.H., M.H.
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Bidang Skripsi &amp; Tugas Akhir
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Footer Popup Card -->
+                        <div
+                            style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
+                            <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                                Klik kembali judul dropdown untuk menutup
+                            </span>
+                        </div>
+
                     </div>
-
-                    <!-- Grid Dosen Prodi -->
-                    <div
-                        style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
-
-                        <!-- Dosen Prodi 1 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN PRODI 1]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Prodi 1"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Pengembang 1, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Kurikulum &amp; Silabus
-                            </div>
-                        </div>
-
-                        <!-- Dosen Prodi 2 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN PRODI 2]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Prodi 2"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Pengembang 2, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Kemahasiswaan &amp; Alumni
-                            </div>
-                        </div>
-
-                        <!-- Dosen Prodi 3 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN PRODI 3]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Prodi 3"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Pengembang 3, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Kerjasama &amp; Praktik Peradilan
-                            </div>
-                        </div>
-
-                        <!-- Dosen Prodi 4 -->
-                        <div
-                            style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
-                            <div
-                                style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; box-sizing:border-box;">
-                                <!-- [FOTO DOSEN PRODI 4]: Masukkan link CMS di src -->
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    alt="Dosen Pengembang Prodi 4"
-                                    style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
-                                Dosen Pengembang 4, S.H., M.H.
-                            </div>
-                            <div
-                                style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
-                                Bidang Skripsi &amp; Tugas Akhir
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Footer Popup Card -->
-                    <div
-                        style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
-                        <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
-                            Klik kembali judul dropdown untuk menutup
-                        </span>
-                    </div>
-
-                </div>
 
                 </details>
 
@@ -432,7 +438,8 @@
         <!-- ========================================================
              BAGIAN 3: BAGAN STRUKTUR ORGANISASI FAKULTAS HUKUM
              ======================================================== -->
-        <div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; box-sizing:border-box; margin-top:6px;">
+        <div
+            style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; box-sizing:border-box; margin-top:6px;">
 
             <!-- Kontainer Diagram Alur dengan Garis Penghubung Presisi -->
             <div
@@ -490,7 +497,7 @@
                         <!-- LKBH -->
                         <div
                             style="flex:1; background:linear-gradient(135deg, #6c0a0a 0%, #350101 100%); border:1px solid #b82424; border-radius:5px; padding:6px 4px; color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:9.5px; font-weight:600; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.18); line-height:1.25;">
-                            Lembaga Kajian &<br>Bantuan Hukum<br>(LKBH)
+                            Lembaga Kajian &amp;<br>Bantuan Hukum<br>(LKBH)
                         </div>
                     </div>
 
@@ -593,8 +600,9 @@
                     </div>
 
                     <!-- 7 KOTAK BIDANG -->
-                    <div style="display:flex; justify-content:space-between; width:100%; gap:6px; box-sizing:border-box;">
-                        
+                    <div
+                        style="display:flex; justify-content:space-between; width:100%; gap:6px; box-sizing:border-box;">
+
                         <!-- 1. Implementasi Kerjasama -->
                         <div
                             style="flex:1; background:linear-gradient(135deg, #6c0a0a 0%, #350101 100%); border:1px solid #b82424; border-radius:5px; padding:8px 3px; color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:8.5px; font-weight:600; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.18); line-height:1.2;">
