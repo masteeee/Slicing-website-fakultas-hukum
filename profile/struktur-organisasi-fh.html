@@ -43,7 +43,7 @@
             <!-- FOTO 1 (PALING ATAS): KETUA PROGRAM STUDI -->
             <div
                 style="position:relative; width:clamp(210px, 34%, 250px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #440202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-
+                
                 <!-- ===================================================================
                      [FOTO KETUA PRODI]: Ubah src di bawah jika ingin mengganti foto dari CMS
                      =================================================================== -->
@@ -88,7 +88,7 @@
                 <!-- FOTO KIRI: SEKRETARIS PROGRAM STUDI -->
                 <div
                     style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-
+                    
                     <!-- ===================================================================
                          [GANTI FOTO SEKRETARIS DI SINI]: Ubah src di bawah dengan link CMS
                          Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
@@ -114,7 +114,7 @@
                 <!-- FOTO KANAN: WAKIL KETUA PROGRAM STUDI -->
                 <div
                     style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
-
+                    
                     <!-- ===================================================================
                          [GANTI FOTO WAKIL KETUA DI SINI]: Ubah src di bawah dengan link CMS
                          Contoh: <img src="https://cms.unpam.ac.id/storage/...png" ...>
@@ -156,21 +156,21 @@
             </div>
 
             <!-- ========================================================
-                 BAGIAN 2: DUA BUBBLE INTERAKTIF POPUP (100% INLINE CSS)
+                 BAGIAN 2: DUA DROPDOWN INTERAKTIF TANPA JAVASCRIPT
                  ======================================================== -->
             <div
                 style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box; margin:4px 0 16px 0;">
 
-                <!-- BUBBLE 1: DOSEN PENGEMBANG FAKULTAS -->
-                <div title="Klik untuk membuka/menutup daftar Dosen Pengembang Fakultas"
-                    style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none;">
-                    Dosen Pengembang Fakultas
-                </div>
+                <!-- DROPDOWN: Dosen Pengembang Fakultas -->
+                <details style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Fakultas" style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Dosen Pengembang Fakultas <span aria-hidden="true" style="display:inline-block; margin-left:8px; font-size:12px;">&#9662;</span>
+                    </summary>
 
                 <!-- POPUP CARD: DAFTAR DOSEN FAKULTAS (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
                 <div id="popup-dosen-fakultas"
-                    style="display:block; width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
-
+                    style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+                    
                     <!-- Header Popup Card -->
                     <div
                         style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
@@ -184,7 +184,6 @@
                                 Fakultas Hukum Universitas Pamulang
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Grid Dosen Fakultas -->
@@ -276,10 +275,14 @@
                     <!-- Footer Popup Card -->
                     <div
                         style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
-
+                        <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                            Klik kembali judul dropdown untuk menutup
+                        </span>
                     </div>
 
                 </div>
+
+                </details>
 
                 <!-- Panah Alur Menghubungkan Bubble 1 ke Bubble 2 -->
                 <div style="display:flex; flex-direction:column; align-items:center; line-height:1; margin:4px 0;">
@@ -290,16 +293,16 @@
                     <div style="width:2px; height:12px; border-left:2px dashed #8b181b;"></div>
                 </div>
 
-                <!-- BUBBLE 2: DOSEN PENGEMBANG PROGRAM STUDI -->
-                <div title="Klik untuk membuka/menutup daftar Dosen Pengembang Program Studi"
-                    style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none;">
-                    Dosen Pengembang Program Studi
-                </div>
+                <!-- DROPDOWN: Dosen Pengembang Program Studi -->
+                <details style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Klik untuk membuka/menutup daftar Dosen Pengembang Program Studi" style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Dosen Pengembang Program Studi <span aria-hidden="true" style="display:inline-block; margin-left:8px; font-size:12px;">&#9662;</span>
+                    </summary>
 
                 <!-- POPUP CARD: DAFTAR DOSEN PRODI (BERSIH DENGAN BACKGROUND PUTIH, BUKAN FIXED BLACK OVERLAY) -->
                 <div id="popup-dosen-prodi"
-                    style="display:block; width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
-
+                    style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+                    
                     <!-- Header Popup Card -->
                     <div
                         style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
@@ -313,7 +316,6 @@
                                 Program Studi Ilmu Hukum S-1 Universitas Pamulang
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Grid Dosen Prodi -->
@@ -405,10 +407,14 @@
                     <!-- Footer Popup Card -->
                     <div
                         style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
-
+                        <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                            Klik kembali judul dropdown untuk menutup
+                        </span>
                     </div>
 
                 </div>
+
+                </details>
 
                 <!-- Panah Alur Menghubungkan Bubble 2 ke Bagan Struktur di Bawah -->
                 <div style="display:flex; flex-direction:column; align-items:center; line-height:1; margin-top:4px;">
@@ -426,8 +432,7 @@
         <!-- ========================================================
              BAGIAN 3: BAGAN STRUKTUR ORGANISASI FAKULTAS HUKUM
              ======================================================== -->
-        <div
-            style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; box-sizing:border-box; margin-top:6px;">
+        <div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; box-sizing:border-box; margin-top:6px;">
 
             <!-- Kontainer Diagram Alur dengan Garis Penghubung Presisi -->
             <div
@@ -588,9 +593,8 @@
                     </div>
 
                     <!-- 7 KOTAK BIDANG -->
-                    <div
-                        style="display:flex; justify-content:space-between; width:100%; gap:6px; box-sizing:border-box;">
-
+                    <div style="display:flex; justify-content:space-between; width:100%; gap:6px; box-sizing:border-box;">
+                        
                         <!-- 1. Implementasi Kerjasama -->
                         <div
                             style="flex:1; background:linear-gradient(135deg, #6c0a0a 0%, #350101 100%); border:1px solid #b82424; border-radius:5px; padding:8px 3px; color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:8.5px; font-weight:600; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.18); line-height:1.2;">
