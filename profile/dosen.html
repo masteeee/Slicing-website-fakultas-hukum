@@ -1,0 +1,1029 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+  /* ========================================================
+     STYLE KHUSUS HALAMAN DAFTAR DOSEN FAKULTAS HUKUM
+     ======================================================== */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #2d2020;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dosen-page-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+  }
+
+  /* ---------------- SEARCH BAR ---------------- */
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 42px;
+    width: 100%;
+  }
+
+  .search-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .search-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 13px 22px 13px 48px;
+    border-radius: 9999px;
+    border: 1.5px solid #dcdcdc;
+    background-color: #ffffff;
+    font-family: 'Geist', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #333333;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    outline: none;
+    transition: all 0.25s ease;
+  }
+
+  .search-input::placeholder {
+    color: #7d7d7d;
+    font-weight: 400;
+  }
+
+  .search-input:focus {
+    border-color: #800000;
+    box-shadow: 0 4px 20px rgba(128, 0, 0, 0.15);
+  }
+
+  /* ---------------- GRID DOSEN ---------------- */
+  .dosen-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 46px;
+  }
+
+  /* ---------------- CARD DOSEN ---------------- */
+  .dosen-card {
+    background: #ffffff;
+    border: 2px solid #8b181b;
+    border-radius: 16px;
+    padding: 18px 14px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+  }
+
+  .dosen-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(139, 24, 27, 0.13);
+  }
+
+  /* Lingkungan Foto Dosen & Background Lengkung */
+  .dosen-photo-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 14px;
+  }
+
+  .dosen-arch-backdrop {
+    position: absolute;
+    bottom: 0;
+    width: 156px;
+    height: 182px;
+    border-radius: 78px 78px 0 0;
+    background: radial-gradient(circle at 50% 25%, #b51a1a 0%, #800000 65%, #4a0000 100%);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.25);
+    z-index: 1;
+  }
+
+  .dosen-photo {
+    position: relative;
+    z-index: 2;
+    width: 172px;
+    height: 198px;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+  }
+
+  /* Teks Info Dosen */
+  .dosen-info {
+    margin-bottom: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dosen-name {
+    font-family: 'Geist', Arial, sans-serif;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #800000;
+    line-height: 1.25;
+    margin: 0 0 6px 0;
+  }
+
+  .dosen-nidn-title {
+    font-family: 'Geist', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #800000;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0 0 2px 0;
+    opacity: 0.85;
+  }
+
+  .dosen-nidn-number {
+    font-family: 'Geist', Arial, sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #800000;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* 3 Tab / Tombol Link di Bagian Bawah */
+  .dosen-tabs {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .dosen-tab-btn {
+    flex: 1 1 0;
+    padding: 7px 2px;
+    background-color: #800000;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Geist', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .dosen-tab-btn:hover {
+    background-color: #a81717;
+    transform: translateY(-1px);
+  }
+
+  /* ---------------- PAGINATION ---------------- */
+  .pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-item {
+    display: inline-block;
+  }
+
+  .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    font-family: 'Geist', Arial, sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1.5px solid #d4a5a5;
+    background-color: #ffffff;
+    color: #800000;
+    transition: all 0.2s ease;
+  }
+
+  .page-link:hover {
+    border-color: #800000;
+    background-color: #fdf2f2;
+  }
+
+  .page-item.active .page-link {
+    background-color: #800000;
+    border-color: #800000;
+    color: #ffffff;
+    cursor: default;
+  }
+
+  .page-item.disabled .page-link {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-color: #dcdcdc;
+    color: #999999;
+    pointer-events: none;
+  }
+
+  .page-link.nav-btn {
+    padding: 0 14px;
+    font-weight: 600;
+  }
+
+  .page-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 38px;
+    color: #800000;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .pagination-info {
+    font-size: 13px;
+    color: #71717a;
+    font-weight: 500;
+  }
+
+  /* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+  @media screen and (max-width: 1100px) {
+    .dosen-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .dosen-page-container {
+      padding: 24px 14px 40px 14px;
+    }
+    .dosen-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .dosen-card {
+      padding: 14px 10px 12px 10px;
+    }
+    .dosen-photo-container {
+      height: 180px;
+    }
+    .dosen-arch-backdrop {
+      width: 140px;
+      height: 165px;
+      border-radius: 70px 70px 0 0;
+    }
+    .dosen-photo {
+      width: 150px;
+      height: 178px;
+    }
+    .dosen-name {
+      font-size: 15px;
+    }
+    .dosen-tab-btn {
+      font-size: 9px;
+      padding: 6px 1px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .dosen-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .dosen-photo-container {
+      height: 160px;
+    }
+    .dosen-arch-backdrop {
+      width: 120px;
+      height: 145px;
+      border-radius: 60px 60px 0 0;
+    }
+    .dosen-photo {
+      width: 130px;
+      height: 156px;
+    }
+    .dosen-name {
+      font-size: 13.5px;
+    }
+    .dosen-nidn-title, .dosen-nidn-number {
+      font-size: 10px;
+    }
+    .dosen-tab-btn {
+      font-size: 8px;
+      padding: 5px 1px;
+      border-radius: 3px;
+    }
+    .page-link {
+      min-width: 32px;
+      height: 32px;
+      font-size: 12px;
+      padding: 0 6px;
+    }
+  }
+</style>
+
+<div class="dosen-page-container">
+
+  <!-- ========================================================
+       1. FORM PENCARIAN DOSEN (SEARCH BAR)
+       ======================================================== -->
+  <div class="search-wrapper">
+    <form action="" method="GET" class="search-box">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <input 
+        type="text" 
+        name="search" 
+        class="search-input" 
+        placeholder="Cari Nama Dosen" 
+        aria-label="Cari Nama Dosen"
+      />
+    </form>
+  </div>
+
+  <!-- ========================================================
+       2. GRID KARTU DOSEN (DEFAULT 12 DOSEN PER HALAMAN)
+       
+       CATATAN INTEGRASI BACKEND / CMS (Looping Card):
+       Jika diintegrasikan dengan PHP / Laravel Blade / WordPress,
+       cukup gunakan SATU blok class="dosen-card" di bawah ini
+       dan bungkus dengan loop seperti contoh:
+       
+       <?php // foreach($list_dosen as $dosen): ?>
+       <div class="dosen-card">
+          ...
+       </div>
+       <?php // endforeach; ?>
+       
+       Dengan cara ini, 200+ dosen otomatis ter-render 12 per halaman
+       tanpa perlu membuat 200+ card manual di kode HTML!
+       ======================================================== -->
+  <div class="dosen-grid">
+
+    <!-- CARD DOSEN 1 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 2 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 3 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 4 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 5 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 6 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 7 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 8 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 9 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 10 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 11 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+    <!-- CARD DOSEN 12 -->
+    <div class="dosen-card">
+      <div class="dosen-photo-container">
+        <div class="dosen-arch-backdrop"></div>
+        <img 
+          src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png" 
+          alt="Dr. Abdul Hadi" 
+          class="dosen-photo" 
+          loading="lazy"
+        />
+      </div>
+      <div class="dosen-info">
+        <div class="dosen-name">Dr. Abdul Hadi</div>
+        <div class="dosen-nidn-title">NIDN / NUPTK</div>
+        <div class="dosen-nidn-number">00000 / 00000</div>
+      </div>
+      <div class="dosen-tabs">
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+        <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+        <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. PAGINATION (PENGATURAN HALAMAN)
+       ======================================================== -->
+  <div class="pagination-container">
+    <ul class="pagination-nav">
+      <!-- Tombol Prev -->
+      <li class="page-item">
+        <a href="?page=1" class="page-link nav-btn" aria-label="Previous">&laquo; Prev</a>
+      </li>
+
+      <!-- Halaman 1 (Aktif) -->
+      <li class="page-item active">
+        <span class="page-link">1</span>
+      </li>
+
+      <!-- Halaman 2 -->
+      <li class="page-item">
+        <a href="?page=2" class="page-link">2</a>
+      </li>
+
+      <!-- Halaman 3 -->
+      <li class="page-item">
+        <a href="?page=3" class="page-link">3</a>
+      </li>
+
+      <!-- Halaman 4 -->
+      <li class="page-item">
+        <a href="?page=4" class="page-link">4</a>
+      </li>
+
+      <!-- Titik-titik Pemisah -->
+      <li class="page-item">
+        <span class="page-ellipsis">...</span>
+      </li>
+
+      <!-- Halaman Terakhir (Contoh 200 dosen / 12 = 17 Halaman) -->
+      <li class="page-item">
+        <a href="?page=17" class="page-link">17</a>
+      </li>
+
+      <!-- Tombol Next -->
+      <li class="page-item">
+        <a href="?page=2" class="page-link nav-btn" aria-label="Next">Next &raquo;</a>
+      </li>
+    </ul>
+
+    <!-- Informasi Jumlah Data -->
+    <div class="pagination-info">
+      Menampilkan <strong>1 - 12</strong> dari <strong>204</strong> Dosen
+    </div>
+  </div>
+
+</div>
+
+<!-- ========================================================
+     JAVASCRIPT: DYNAMIC PAGINATION & LIVE SEARCH
+     ======================================================== -->
+<script>
+  (function () {
+    // 1. DATA DOSEN SIMULASI (204 Dosen Fakultas Hukum)
+    const baseNames = [
+      "Dr. Abdul Hadi",
+      "Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H.",
+      "Siti Chadijah, S.H., M.H.",
+      "Dr. Taufik Kurrohman, S.H., M.H.",
+      "Dr. Susanto, S.H., M.M., M.H.",
+      "Dr. Subarto, S.H., M.H.",
+      "Dr. Hj. Erna Prabawati, S.H., M.Kn.",
+      "Dr. H. Bambang Santoso, S.H., M.H.",
+      "Dr. Yayan Mulyana, S.H., M.H.",
+      "Dr. Ir. H. Sugeng Riyadi, S.H., M.H.",
+      "Dr. Rina Novianty, S.H., M.H.",
+      "Dr. Dwi Haryanto, S.H., M.H.",
+      "Prof. Dr. Oksidelfa Yanto, S.H., M.H.",
+      "Dr. M. Wildan, S.H., M.H.",
+      "Dr. Endang Sutrisno, S.H., M.Hum.",
+      "Dr. Ferry Irawan Febriansyah, S.H., M.H.",
+      "Dr. Budi Utomo, S.H., M.H.",
+      "Dr. Rahayu Hartini, S.H., M.Si.",
+      "Dr. Anis Mashdurohatun, S.H., M.Hum.",
+      "Dr. Sri Wahyuni, S.H., M.H.",
+      "Dr. Hendra Gunawan, S.H., M.H.",
+      "Dr. Agus Salim, S.H., M.H.",
+      "Dr. Nurul Huda, S.H., M.H.",
+      "Dr. Arif Rahman, S.H., M.H."
+    ];
+
+    const defaultPhoto = "https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png";
+    const totalDosenCount = 204;
+    const perPage = 12;
+
+    const dosenList = [];
+    for (let i = 1; i <= totalDosenCount; i++) {
+      const nameIndex = (i - 1) % baseNames.length;
+      const baseName = baseNames[nameIndex];
+      const nidnNum = "04" + String(1000000 + i * 37).slice(-8);
+      const nuptkNum = "90" + String(2000000 + i * 53).slice(-8);
+      dosenList.push({
+        id: i,
+        name: i <= 12 ? (i === 1 ? "Dr. Abdul Hadi" : baseName) : baseName,
+        nidn: nidnNum,
+        nuptk: nuptkNum,
+        photo: defaultPhoto,
+        scholar: "https://scholar.google.com",
+        sinta: "https://sinta.kemdikbud.go.id",
+        pddikti: "https://pddikti.kemdiktisaintek.go.id"
+      });
+    }
+
+    // 2. DOM Elements
+    const gridContainer = document.querySelector('.dosen-grid');
+    const paginationNav = document.querySelector('.pagination-nav');
+    const paginationInfo = document.querySelector('.pagination-info');
+    const searchInput = document.querySelector('.search-input');
+    const searchForm = document.querySelector('.search-box');
+
+    // 3. Helper URL & State
+    function getStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const page = parseInt(params.get('page')) || 1;
+      const search = params.get('search') || '';
+      return { page, search };
+    }
+
+    function updateStateUrl(page, search, push = true) {
+      const params = new URLSearchParams();
+      if (search) params.set('search', search);
+      if (page > 1) params.set('page', page);
+      const queryStr = params.toString();
+      const newUrl = window.location.pathname + (queryStr ? '?' + queryStr : '');
+      if (push) {
+        window.history.pushState({}, '', newUrl);
+      } else {
+        window.history.replaceState({}, '', newUrl);
+      }
+    }
+
+    // 4. Render Kartu Dosen
+    function renderCards(items) {
+      if (!gridContainer) return;
+      if (items.length === 0) {
+        gridContainer.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px;">
+            <div style="font-size: 40px; margin-bottom: 12px;">🔍</div>
+            <div style="font-size: 18px; font-weight: 700; color: #800000; margin-bottom: 6px;">Dosen Tidak Ditemukan</div>
+            <div style="font-size: 14px; color: #71717a;">Coba gunakan kata kunci nama atau NIDN yang lain.</div>
+          </div>
+        `;
+        return;
+      }
+
+      gridContainer.innerHTML = items.map(dosen => `
+        <div class="dosen-card">
+          <div class="dosen-photo-container">
+            <div class="dosen-arch-backdrop"></div>
+            <img 
+              src="${dosen.photo}" 
+              alt="${dosen.name}" 
+              class="dosen-photo" 
+              loading="lazy"
+            />
+          </div>
+          <div class="dosen-info">
+            <div class="dosen-name">${dosen.name}</div>
+            <div class="dosen-nidn-title">NIDN / NUPTK</div>
+            <div class="dosen-nidn-number">${dosen.nidn} / ${dosen.nuptk}</div>
+          </div>
+          <div class="dosen-tabs">
+            <a href="${dosen.scholar}" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Google Scholar</a>
+            <a href="${dosen.sinta}" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">Sinta</a>
+            <a href="${dosen.pddikti}" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn">PDDikti</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 5. Render Pagination
+    function renderPagination(currentPage, totalPages, totalItems, searchQuery) {
+      if (!paginationNav || !paginationInfo) return;
+
+      if (totalItems === 0) {
+        paginationInfo.innerHTML = `Menampilkan <strong>0</strong> Dosen`;
+        paginationNav.innerHTML = '';
+        return;
+      }
+
+      const start = (currentPage - 1) * perPage + 1;
+      const end = Math.min(currentPage * perPage, totalItems);
+      paginationInfo.innerHTML = `Menampilkan <strong>${start} - ${end}</strong> dari <strong>${totalItems}</strong> Dosen`;
+
+      function makePageUrl(p) {
+        const params = new URLSearchParams();
+        if (searchQuery) params.set('search', searchQuery);
+        if (p > 1) params.set('page', p);
+        const q = params.toString();
+        return q ? '?' + q : window.location.pathname;
+      }
+
+      let navHtml = '';
+
+      // Tombol Prev
+      if (currentPage > 1) {
+        navHtml += `
+          <li class="page-item">
+            <a href="${makePageUrl(currentPage - 1)}" data-page="${currentPage - 1}" class="page-link nav-btn" aria-label="Previous">&laquo; Prev</a>
+          </li>`;
+      } else {
+        navHtml += `
+          <li class="page-item disabled">
+            <span class="page-link nav-btn">&laquo; Prev</span>
+          </li>`;
+      }
+
+      // Hitung halaman yang akan ditampilkan
+      let pages = [];
+      if (totalPages <= 7) {
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
+      } else {
+        if (currentPage <= 4) {
+          pages = [1, 2, 3, 4, 5, '...', totalPages];
+        } else if (currentPage >= totalPages - 3) {
+          pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+        } else {
+          pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+        }
+      }
+
+      pages.forEach(p => {
+        if (p === '...') {
+          navHtml += `<li class="page-item"><span class="page-ellipsis">...</span></li>`;
+        } else if (p === currentPage) {
+          navHtml += `
+            <li class="page-item active">
+              <span class="page-link">${p}</span>
+            </li>`;
+        } else {
+          navHtml += `
+            <li class="page-item">
+              <a href="${makePageUrl(p)}" data-page="${p}" class="page-link">${p}</a>
+            </li>`;
+        }
+      });
+
+      // Tombol Next
+      if (currentPage < totalPages) {
+        navHtml += `
+          <li class="page-item">
+            <a href="${makePageUrl(currentPage + 1)}" data-page="${currentPage + 1}" class="page-link nav-btn" aria-label="Next">Next &raquo;</a>
+          </li>`;
+      } else {
+        navHtml += `
+          <li class="page-item disabled">
+            <span class="page-link nav-btn">Next &raquo;</span>
+          </li>`;
+      }
+
+      paginationNav.innerHTML = navHtml;
+    }
+
+    // 6. Terapkan State ke UI
+    function applyState(page, search, pushState = false) {
+      if (searchInput && searchInput.value !== search) {
+        searchInput.value = search;
+      }
+
+      const query = (search || '').toLowerCase().trim();
+      const filtered = query
+        ? dosenList.filter(d => d.name.toLowerCase().includes(query) || d.nidn.includes(query) || d.nuptk.includes(query))
+        : dosenList;
+
+      const totalItems = filtered.length;
+      const totalPages = Math.max(1, Math.ceil(totalItems / perPage));
+
+      let validPage = page;
+      if (validPage < 1) validPage = 1;
+      if (validPage > totalPages) validPage = totalPages;
+
+      if (pushState) {
+        updateStateUrl(validPage, search, true);
+      }
+
+      const startIndex = (validPage - 1) * perPage;
+      const pageItems = filtered.slice(startIndex, startIndex + perPage);
+
+      renderCards(pageItems);
+      renderPagination(validPage, totalPages, totalItems, search);
+    }
+
+    // 7. Event Listener Klik Pagination
+    if (paginationNav) {
+      paginationNav.addEventListener('click', function (e) {
+        const link = e.target.closest('a[data-page]');
+        if (link) {
+          e.preventDefault();
+          const targetPage = parseInt(link.getAttribute('data-page'));
+          const currentSearch = searchInput ? searchInput.value.trim() : '';
+          applyState(targetPage, currentSearch, true);
+          if (gridContainer) {
+            gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
+
+    // 8. Event Listener Pencarian
+    if (searchForm) {
+      searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const query = searchInput ? searchInput.value.trim() : '';
+        applyState(1, query, true);
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function (e) {
+        const query = e.target.value.trim();
+        applyState(1, query, true);
+      });
+    }
+
+    // 9. Handle Tombol Back / Forward Browser
+    window.addEventListener('popstate', function () {
+      const state = getStateFromUrl();
+      applyState(state.page, state.search, false);
+    });
+
+    // 10. Jalankan saat Pertama Kali Dibuka
+    const initialState = getStateFromUrl();
+    applyState(initialState.page, initialState.search, false);
+  })();
+</script>
