@@ -1,0 +1,92 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+  /* Custom Class untuk Efek Hover Kartu di CMS */
+  .unpam-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+  }
+  .unpam-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18) !important;
+  }
+</style>
+
+<!-- Wrapper Full Lebar Screen -->
+<div style="width:100%; max-width:100%; margin:0; padding:40px 0; box-sizing:border-box; background-color:#ffffff;">
+  <!-- Inner Container (Konten Tetap Rapi di Tengah) -->
+  <div style="font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; max-width:1100px; margin:0 auto; padding:0 20px; box-sizing:border-box;">
+
+    <!-- Section Judul & Hero Background Image -->
+    <div style="text-align:center; margin:-40px -20px 30px -20px; padding:0; position:relative;">
+      <!-- Background Image Full Width -->
+      <div style="width:100%; background-image:url('https://cms.unpam.ac.id/storage/assets/pages/content/qYL3xBirojJxKNfIbsGfy3oRlTUs76PWFaXPS11V.png'); background-size:cover; background-position:center top; background-repeat:no-repeat; min-height:clamp(250px,40vw,450px);"></div>
+    </div>
+
+    <!-- Judul di bawah gambar, di atas cards -->
+    <h1 style="font-family:'Geist',sans-serif; font-size:clamp(26px,5vw,36px); font-weight:800; color:#6B0B0B; margin:0 0 24px 0; padding:0; line-height:1.2; text-transform:uppercase; letter-spacing:-0.5px; text-align:center;">
+      Peminatan Ilmu
+    </h1>
+
+    <!-- Grid Peminatan (Layout 2x2 Responsive) -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; width:100%; box-sizing:border-box;">
+
+      <!-- 1. Hukum Perdata -->
+      <div class="unpam-card" style="background-color:#6B0B0B; color:#ffffff; padding:28px; border-radius:16px; display:flex; flex-direction:column; justify-content:space-between; min-height:180px; box-sizing:border-box;">
+        <div>
+          <div style="display:inline-block; background-color:rgba(255,255,255,0.15); padding:6px 14px; border-radius:8px; margin-bottom:14px;">
+            <h2 style="font-family:'Geist',sans-serif; font-size:20px; font-weight:700; color:#ffffff; margin:0; padding:0; line-height:1.3;">
+              Hukum Perdata
+            </h2>
+          </div>
+          <p style="font-family:'Geist',sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#f3f4f6; margin:0;">
+            Menjadikan lulusan sebagai ahli hukum yang profesional dan kapabel dalam Bidang Hukum Perdata, dalam skala lokal, nasional maupun internasional.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Hukum Pidana -->
+      <div class="unpam-card" style="background-color:#FFC801; color:#1a1a1a; padding:28px; border-radius:16px; display:flex; flex-direction:column; justify-content:space-between; min-height:180px; box-sizing:border-box;">
+        <div>
+          <div style="display:inline-block; background-color:#6B0B0B; padding:6px 14px; border-radius:8px; margin-bottom:14px;">
+            <h2 style="font-family:'Geist',sans-serif; font-size:20px; font-weight:700; color:#ffffff; margin:0; padding:0; line-height:1.3;">
+              Hukum Pidana
+            </h2>
+          </div>
+          <p style="font-family:'Geist',sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#2d3748; margin:0;">
+            Menjadikan lulusan sebagai ahli hukum yang profesional dan kapabel dalam Bidang Hukum Pidana, dalam skala lokal, nasional maupun internasional.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Hukum Tata Negara -->
+      <div class="unpam-card" style="background-color:#FFC801; color:#1a1a1a; padding:28px; border-radius:16px; display:flex; flex-direction:column; justify-content:space-between; min-height:180px; box-sizing:border-box;">
+        <div>
+          <div style="display:inline-block; background-color:#6B0B0B; padding:6px 14px; border-radius:8px; margin-bottom:14px;">
+            <h2 style="font-family:'Geist',sans-serif; font-size:20px; font-weight:700; color:#ffffff; margin:0; padding:0; line-height:1.3;">
+              Hukum Tata Negara
+            </h2>
+          </div>
+          <p style="font-family:'Geist',sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#2d3748; margin:0;">
+            Menjadikan lulusan sebagai ahli hukum yang profesional dan kapabel dalam Bidang Hukum Tata Negara, dalam skala lokal, nasional maupun internasional.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. Hukum Internasional -->
+      <div class="unpam-card" style="background-color:#6B0B0B; color:#ffffff; padding:28px; border-radius:16px; display:flex; flex-direction:column; justify-content:space-between; min-height:180px; box-sizing:border-box;">
+        <div>
+          <div style="display:inline-block; background-color:rgba(255,255,255,0.15); padding:6px 14px; border-radius:8px; margin-bottom:14px;">
+            <h2 style="font-family:'Geist',sans-serif; font-size:20px; font-weight:700; color:#ffffff; margin:0; padding:0; line-height:1.3;">
+              Hukum Internasional
+            </h2>
+          </div>
+          <p style="font-family:'Geist',sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#f3f4f6; margin:0;">
+            Menjadikan lulusan sebagai ahli hukum yang profesional dan kapabel dalam Bidang Hukum Internasional, dalam skala nasional, regional maupun internasional.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
