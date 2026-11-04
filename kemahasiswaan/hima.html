@@ -1,297 +1,397 @@
-<div
-    style="width:100%; max-width:1200px; margin:0 auto; padding:40px 24px; background-color:#ffffff; background-image:linear-gradient(rgb(255,255,255),rgb(255, 255, 255)),url('https://cms.unpam.ac.id/storage/assets/pages/content/O02reEx6ECrROhwjGBQsfx8mK6kZuBXfHJWe7p0h.png'); background-position:center center; background-repeat:no-repeat; background-size:cover; border:1px solid #e0dada; border-radius:22px; box-shadow:0 12px 32px rgba(0,0,0,0.08); box-sizing:border-box; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
 
-    <!-- HEADER: LOGO KIRI, JUDUL, LOGO KANAN -->
-    <div
-        style="display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:40px; border-bottom:2px solid #f0e0e0; padding-bottom:20px;">
-        <!-- LOGO KIRI: UNIVERSITAS PAMULANG -->
-        <div style="flex-shrink:0;">
-            <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo UNPAM"
-                style="width:75px; height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+    /* CSS Responsif Mobile */
+    @media (max-width: 768px) {
+        .hima-container {
+            padding: 20px 12px !important;
+        }
+
+        .hima-header {
+            flex-direction: column !important;
+            gap: 12px !important;
+        }
+
+        .hima-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+
+        .hima-flex-wrap {
+            flex-wrap: wrap !important;
+        }
+
+        .hima-card {
+            width: 100% !important;
+        }
+
+        .hima-line-desktop {
+            display: none !important;
+        }
+
+        .hima-box-mobile {
+            width: 100% !important;
+            max-width: 280px !important;
+        }
+    }
+</style>
+
+<div class="hima-container"
+    style="width:100%; max-width:1050px; margin:0 auto; padding:32px 24px; background-color:#ffffff; background-image:linear-gradient(rgb(255,255,255),rgb(255, 255, 255)),url('https://cms.unpam.ac.id/storage/assets/pages/content/O02reEx6ECrROhwjGBQsfx8mK6kZuBXfHJWe7p0h.png'); background-position:center center; background-repeat:no-repeat; background-size:cover; border:1px solid #e0dada; border-radius:22px; box-shadow:0 12px 32px rgba(0,0,0,0.08); box-sizing:border-box; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+
+    <!-- HEADER LOGO & JUDUL -->
+    <div class="hima-header"
+        style="display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2vw, 50px); margin-bottom: clamp(24px, 3.5vw, 36px); flex-wrap: nowrap;">
+
+        <!-- LOGO KIRI: YAYASAN SASMITA JAYA -->
+        <div style="flex-shrink: 0; text-align: center;">
+            <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Yayasan Sasmita Jaya"
+                style="width: clamp(40px, 5vw, 58px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
         </div>
 
-        <!-- JUDUL TENGAH -->
-        <div style="text-align:center; flex-grow:1;">
+        <!-- TEKS JUDUL TENGAH -->
+        <div style="text-align: center;">
             <div
-                style="font-size:clamp(15px, 2vw, 22px); font-weight:700; color:#c0392b; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">
+                style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12px, 1.4vw, 18px); font-weight:500; color:#c0392b; letter-spacing:1px; text-transform:uppercase; margin-bottom:2px;">
                 SUSUNAN PENGURUS
             </div>
             <div
-                style="font-size:clamp(18px, 2.5vw, 30px); font-weight:800; color:#800000; letter-spacing:-0.5px; text-transform:uppercase; line-height:1.2;">
+                style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12px, 1.4vw, 18px); font-weight:500; color:#c0392b; letter-spacing:1px; text-transform:uppercase; margin-bottom:2px;">
                 HIMPUNAN MAHASISWA FAKULTAS HUKUM
             </div>
             <div
-                style="font-size:clamp(14px, 1.8vw, 20px); font-weight:700; color:#1a365d; margin-top:4px; text-transform:uppercase;">
+                style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 2.5vw, 22px); font-weight:500; line-height:1.2; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:#800000; letter-spacing:-0.5px; text-transform:uppercase;">
                 UNIVERSITAS PAMULANG PERIODE 2025–2026
             </div>
         </div>
 
         <!-- LOGO KANAN: HIMA FH -->
-        <div style="flex-shrink:0;">
+        <div style="flex-shrink: 0;">
             <img src="https://cms.unpam.ac.id/storage/assets/pages/content/r31Ii23OuzaStEUIVNQLfarnYMufSzbQ4ZSNUYlX.png"
                 alt="Logo Hima FH"
-                style="width:75px; height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+                style="width: clamp(45px, 5.5vw, 65px); height: auto; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
         </div>
+
     </div>
 
-    <!-- STRUKTUR ORGANISASI CONTAINER -->
-    <div style="display:flex; flex-direction:column; align-items:center; position:relative; width:100%;">
+    <!-- STRUKTUR ORGANISASI UTAMA -->
+    <div style="position:relative; width:100%; display:flex; flex-direction:column; align-items:center;">
+
+        <!-- GARIS VERTIKAL UTAMA -->
+        <div class="hima-line-desktop"
+            style="position:absolute; top:35px; bottom:120px; left:50%; width:2px; background-color:#d0d0d0; transform:translateX(-50%); z-index:1;">
+        </div>
 
         <!-- TINGKAT 1: KETUA & WAKIL KETUA UMUM -->
-        <div style="display:flex; justify-content:center; gap:40px; width:100%; margin-bottom:25px; z-index:2;">
-            <!-- Ketua Umum -->
-            <div
-                style="background:#800000; color:#ffffff; border-radius:10px; width:220px; text-align:center; box-shadow:0 4px 10px rgba(128,0,0,0.2); overflow:hidden; border:1px solid #a52a2a;">
-                <div
-                    style="background:#5c0000; padding:6px; font-size:11px; font-weight:bold; letter-spacing:0.5px; text-transform:uppercase; color:#ffeb3b;">
-                    Ketua Umum</div>
-                <div style="padding:10px 8px; font-size:13px; font-weight:600;">Cleo Malic Haidar</div>
+        <div class="hima-flex-wrap"
+            style="position:relative; z-index:2; display:flex; justify-content:center; gap:16px; margin-bottom:12px; width:100%;">
+            <div class="hima-line-desktop"
+                style="position:absolute; top:50%; left:calc(50% - 75px); right:calc(50% - 75px); height:2px; background-color:#d0d0d0; transform:translateY(-50%); z-index:-1;">
             </div>
-            <!-- Wakil Ketua Umum -->
-            <div
-                style="background:#800000; color:#ffffff; border-radius:10px; width:220px; text-align:center; box-shadow:0 4px 10px rgba(128,0,0,0.2); overflow:hidden; border:1px solid #a52a2a;">
-                <div
-                    style="background:#5c0000; padding:6px; font-size:11px; font-weight:bold; letter-spacing:0.5px; text-transform:uppercase; color:#ffeb3b;">
-                    Wakil Ketua Umum</div>
-                <div style="padding:10px 8px; font-size:13px; font-weight:600;">Citra Widiatmi</div>
+
+            <div class="hima-box-mobile"
+                style="background:#800000; color:#ffffff; border-radius:6px; padding:8px 14px; text-align:center; min-width:160px; box-shadow:0 2px 6px rgba(128,0,0,0.15);">
+                <div style="font-size:12px; font-weight:bold; color:#ffeb3b;">Cleo Malic Haidar</div>
+                <div style="font-size:10px; opacity:0.9;">Ketua Umum</div>
             </div>
+            <div class="hima-box-mobile"
+                style="background:#800000; color:#ffffff; border-radius:6px; padding:8px 14px; text-align:center; min-width:160px; box-shadow:0 2px 6px rgba(128,0,0,0.15);">
+                <div style="font-size:12px; font-weight:bold; color:#ffeb3b;">Citra Widiatmi</div>
+                <div style="font-size:10px; opacity:0.9;">Wakil Ketua Umum</div>
+            </div>
+        </div>
+
+        <!-- KONEKTOR VERTIKAL -->
+        <div class="hima-line-desktop"
+            style="position:relative; z-index:2; width:2px; height:18px; background-color:#d0d0d0; margin-bottom:12px;">
         </div>
 
         <!-- TINGKAT 2: BENDAHARA, SEKRETARIS, WAKIL BENDAHARA -->
-        <div
-            style="display:flex; justify-content:center; align-items:center; gap:30px; width:100%; margin-bottom:35px; z-index:2; flex-wrap:wrap;">
-            <!-- Bendahara Umum -->
-            <div
-                style="background:#800000; color:#ffffff; border-radius:10px; width:200px; text-align:center; box-shadow:0 4px 10px rgba(128,0,0,0.2); overflow:hidden; border:1px solid #a52a2a;">
-                <div
-                    style="background:#5c0000; padding:6px; font-size:11px; font-weight:bold; letter-spacing:0.5px; text-transform:uppercase; color:#ffeb3b;">
-                    Bendahara Umum</div>
-                <div style="padding:10px 8px; font-size:13px; font-weight:600;">Sopi Restia</div>
+        <div class="hima-flex-wrap"
+            style="position:relative; z-index:2; display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:30px; width:100%; max-width:880px;">
+            <div class="hima-line-desktop"
+                style="position:absolute; top:50%; left:15%; right:15%; height:2px; background-color:#d0d0d0; transform:translateY(-50%); z-index:-1;">
             </div>
-            <!-- Sekretaris Umum -->
-            <div
-                style="background:#800000; color:#ffffff; border-radius:10px; width:240px; text-align:center; box-shadow:0 4px 10px rgba(128,0,0,0.2); overflow:hidden; border:1px solid #a52a2a;">
-                <div
-                    style="background:#5c0000; padding:6px; font-size:11px; font-weight:bold; letter-spacing:0.5px; text-transform:uppercase; color:#ffeb3b;">
-                    Sekretaris Umum</div>
-                <div style="padding:10px 8px; font-size:13px; font-weight:600;">Aprillia Putri Tania Rosena Hatusupy
+
+            <div class="hima-box-mobile"
+                style="background:#800000; color:#ffffff; border-radius:6px; padding:8px 12px; text-align:center; flex:1; min-width:160px; max-width:200px; box-shadow:0 2px 6px rgba(128,0,0,0.15);">
+                <div style="font-size:11.5px; font-weight:bold; color:#ffeb3b;">Sopi Restia</div>
+                <div style="font-size:9.5px; opacity:0.9;">Bendahara Umum</div>
+            </div>
+            <div class="hima-box-mobile"
+                style="background:#800000; color:#ffffff; border-radius:6px; padding:8px 12px; text-align:center; flex:1.2; min-width:180px; max-width:260px; box-shadow:0 2px 6px rgba(128,0,0,0.15);">
+                <div style="font-size:11.5px; font-weight:bold; color:#ffeb3b;">Aprillia Putri Tania Rosena Hatusupy
                 </div>
+                <div style="font-size:9.5px; opacity:0.9;">Sekretaris Umum</div>
             </div>
-            <!-- Wakil Bendahara Umum -->
-            <div
-                style="background:#800000; color:#ffffff; border-radius:10px; width:200px; text-align:center; box-shadow:0 4px 10px rgba(128,0,0,0.2); overflow:hidden; border:1px solid #a52a2a;">
-                <div
-                    style="background:#5c0000; padding:6px; font-size:11px; font-weight:bold; letter-spacing:0.5px; text-transform:uppercase; color:#ffeb3b;">
-                    Wakil Bendahara Umum</div>
-                <div style="padding:10px 8px; font-size:13px; font-weight:600;">Tiara Amanda</div>
+            <div class="hima-box-mobile"
+                style="background:#800000; color:#ffffff; border-radius:6px; padding:8px 12px; text-align:center; flex:1; min-width:160px; max-width:200px; box-shadow:0 2px 6px rgba(128,0,0,0.15);">
+                <div style="font-size:11.5px; font-weight:bold; color:#ffeb3b;">Tiara Amanda</div>
+                <div style="font-size:9.5px; opacity:0.9;">Wakil Bendahara Umum</div>
             </div>
         </div>
 
-        <!-- GRID KOTAK BIDANG (BARIS 1: PENGEMBANGAN ORGANISASI & ADVOKASI) -->
-        <div
-            style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px; width:100%; margin-bottom:25px; z-index:2;">
-            <!-- Pengembangan Organisasi -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Pengembangan Organisasi
+        <!-- WADAH BAGAN BIDANG -->
+        <div style="width:100%; display:flex; flex-direction:column; gap:28px; position:relative; z-index:2;">
+
+            <!-- BARIS BIDANG 1: PENGEMBANGAN ORGANISASI & ADVOKASI -->
+            <div class="hima-grid"
+                style="position:relative; display:grid; grid-template-columns: 1fr 1fr; gap:36px; width:100%;">
+                <div class="hima-line-desktop"
+                    style="position:absolute; top:11px; left:25%; right:25%; height:2px; background-color:#d0d0d0; z-index:-1;">
                 </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Bayu Doni Padang
+
+                <!-- BIDANG 1 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                    <div
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        PENGEMBANGAN ORGANISASI
                     </div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Iffah Noerhayatina A'lsyah</div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Bayu Doni Padang</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Iffah Noerhayatina
+                                    A'lsyah</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Nasywa Salsabilla Al Zahra</li>
+                                <li>Maulana Ihya Ulumuddin</li>
+                                <li>Apollinaris Seltus Jehardin</li>
+                                <li>Fransiska Alia Fasya</li>
+                                <li>Younisa Haningtyas Panantun</li>
+                                <li>Thasya Ramadhany</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIDANG 2 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
                     <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Nasywa Salsabilla Al Zahra</li>
-                        <li>Maulana Ihya Ulumuddin</li>
-                        <li>Apollinaris Seltus Jehardin</li>
-                        <li>Fransiska Alia Fasya</li>
-                        <li>Younisa Haningtyas Panantun</li>
-                        <li>Thasya Ramadhany</li>
-                    </ul>
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        ADVOKASI
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Ahmad Muajir</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Asqlya Aniatul
+                                    Hidayah</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Aldrich Delon Irzal</li>
+                                <li>Angga Satria Wicaksana</li>
+                                <li>Arifin Gunawan Paldi</li>
+                                <li>Pahmi Apriandani</li>
+                                <li>Tangguh Wicaksana</li>
+                                <li>Yuniar Octaviani</li>
+                                <li>Reza Risklawan</li>
+                                <li>Saepul Anwar</li>
+                                <li>Erna Wati</li>
+                                <li>Zahra Aulia Artha</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Advokasi -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Advokasi
+            <!-- BARIS BIDANG 2: KAJIAN DAN KEILMUAN & SOSIAL DAN KEROHANIAN -->
+            <div class="hima-grid"
+                style="position:relative; display:grid; grid-template-columns: 1fr 1fr; gap:36px; width:100%;">
+                <div class="hima-line-desktop"
+                    style="position:absolute; top:11px; left:25%; right:25%; height:2px; background-color:#d0d0d0; z-index:-1;">
                 </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Ahmad Muajir</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Asqlya Aniatul Hidayah</div>
-                    <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Aldrich Delon Irzal</li>
-                        <li>Angga Satria Wicaksana</li>
-                        <li>Arifin Gunawan Paldi</li>
-                        <li>Pahmi Apriandani</li>
-                        <li>Tangguh Wicaksana</li>
-                        <li>Yuniar Octaviani</li>
-                        <li>Reza Risklawan</li>
-                        <li>Saepul Anwar</li>
-                        <li>Erna Wati</li>
-                        <li>Zahra Aulia Artha</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!-- GRID KOTAK BIDANG (BARIS 2: KAJIAN DAN KEILMUAN & SOSIAL DAN KEROHANIAN) -->
-        <div
-            style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px; width:100%; margin-bottom:25px; z-index:2;">
-            <!-- Kajian dan Keilmuan -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Kajian dan Keilmuan
-                </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Wahyu</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Salsabilla Madelyn Danti</div>
+                <!-- BIDANG 3 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
                     <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Donal Fernando Saban</li>
-                        <li>Eki Kardidus Su</li>
-                        <li>Abdur Rahman Amarya</li>
-                        <li>Suraldin</li>
-                        <li>Rahmat</li>
-                        <li>Titin</li>
-                        <li>M. Habib Qufron R.E.</li>
-                        <li>Aulia Zahra Zafira</li>
-                        <li>Alya Nur Hikmah</li>
-                        <li>Abriel Torantino Ritey</li>
-                    </ul>
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        KAJIAN DAN KEILMUAN
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Wahyu</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Salsabilla Madelyn
+                                    Danti</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Donal Fernando Saban</li>
+                                <li>Eki Kardidus Su</li>
+                                <li>Abdur Rahman Amarya</li>
+                                <li>Suraldin</li>
+                                <li>Rahmat</li>
+                                <li>Titin</li>
+                                <li>M. Habib Qufron R.E.</li>
+                                <li>Aulia Zahra Zafira</li>
+                                <li>Alya Nur Hikmah</li>
+                                <li>Abriel Torantino Ritey</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Sosial dan Kerohanian -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Sosial dan Kerohanian
-                </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Windi Anggraeni</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Trissa Lihayati Nur Laila</div>
+                <!-- BIDANG 4 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
                     <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Stia Amini</li>
-                        <li>Nia Andriani</li>
-                        <li>M. Syarif Hidayatullah</li>
-                        <li>Aquila Adya Sukmajaya</li>
-                        <li>Yeshika Ruci Simatupang</li>
-                        <li>Rifki Adi Saputra</li>
-                        <li>Lydia Vilky Anastasya Situmeang</li>
-                        <li>Muhammad Fikri Ramadany</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- GRID KOTAK BIDANG (BARIS 3: PEMBERDAYAAN MAHASISWA & EKONOMI KREATIF) -->
-        <div
-            style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px; width:100%; margin-bottom:25px; z-index:2;">
-            <!-- Pemberdayaan Mahasiswa -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Pemberdayaan Mahasiswa
-                </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Dicky Arladi
-                        Tampubolon</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Adrian Agus</div>
-                    <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Agustina Herawati</li>
-                        <li>Muhammad Kosasih</li>
-                        <li>Ahmad Rizwan</li>
-                        <li>Dewi Indriyanti</li>
-                        <li>Karolus Bahawato Makin</li>
-                        <li>Rafly Fahrulli Al Ghifary</li>
-                        <li>Imam Yahya</li>
-                        <li>Alimin</li>
-                    </ul>
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        SOSIAL DAN KEROHANIAN
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Windi Anggraeni</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Trissa Lihayati Nur
+                                    Laila</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Stia Amini</li>
+                                <li>Nia Andriani</li>
+                                <li>M. Syarif Hidayatullah</li>
+                                <li>Aquila Adya Sukmajaya</li>
+                                <li>Yeshika Ruci Simatupang</li>
+                                <li>Rifki Adi Saputra</li>
+                                <li>Lydia Vilky Anastasya Situmeang</li>
+                                <li>Muhammad Fikri Ramadany</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Ekonomi Kreatif -->
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Ekonomi Kreatif
+            <!-- BARIS BIDANG 3: PEMBERDAYAAN MAHASISWA & EKONOMI KREATIF -->
+            <div class="hima-grid"
+                style="position:relative; display:grid; grid-template-columns: 1fr 1fr; gap:36px; width:100%;">
+                <div class="hima-line-desktop"
+                    style="position:absolute; top:11px; left:25%; right:25%; height:2px; background-color:#d0d0d0; z-index:-1;">
                 </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Arif Riadi</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang: Nami
-                        Veronika Sri Ayu Simanjuntak</div>
-                    <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>Ijmlati</li>
-                        <li>Elsya Blantika</li>
-                        <li>Nazwa Khofatuniza</li>
-                        <li>Siti Fauziah Awallah Putri</li>
-                        <li>Siti Ulandari</li>
-                        <li>Agung Satria Putra</li>
-                        <li>Ach Su'udi Samsil Umam</li>
-                        <li>Josua Frianto Sinaga</li>
-                        <li>Qory Daffa Wanikmah</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!-- KOTAK TENGAH BAWAH: KOMUNIKASI DAN INFORMASI -->
-        <div style="display:flex; justify-content:center; width:100%; z-index:2;">
-            <div
-                style="background:#ffffff; border:2px solid #800000; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.06); width:100%; max-width:500px;">
-                <div
-                    style="background:#800000; color:#ffeb3b; padding:10px; text-align:center; font-weight:bold; font-size:13px; text-transform:uppercase;">
-                    Komunikasi dan Informasi
-                </div>
-                <div style="padding:14px; font-size:13px; color:#333333; line-height:1.6;">
-                    <div style="font-weight:600; color:#800000; margin-bottom:2px;">Kepala Bidang: Valentinus
-                        Sigalingging</div>
-                    <div style="font-weight:600; color:#555; margin-bottom:8px; font-size:12px;">Sekretaris Bidang:
-                        Nopriandi Aliansyah</div>
+                <!-- BIDANG 5 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
                     <div
-                        style="font-weight:bold; color:#800000; border-top:1px solid #eee; padding-top:6px; margin-bottom:4px;">
-                        Anggota:</div>
-                    <ul style="margin:0; padding-left:18px; color:#555;">
-                        <li>M. Ma'fud Shodiq</li>
-                        <li>Fitri Handayani</li>
-                        <li>Aqila Ratu Minerva</li>
-                        <li>Ralsa Zahra Afifah Safari</li>
-                        <li>Tauhid Ma'ruf</li>
-                        <li>M. Naufal Hakim</li>
-                    </ul>
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        PEMBERDAYAAN MAHASISWA
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Dicky Arladi Tampubolon</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Adrian Agus</span>
+                            </div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Agustina Herawati</li>
+                                <li>Muhammad Kosasih</li>
+                                <li>Ahmad Rizwan</li>
+                                <li>Dewi Indriyanti</li>
+                                <li>Karolus Bahawato Makin</li>
+                                <li>Rafly Fahrulli Al Ghifary</li>
+                                <li>Imam Yahya</li>
+                                <li>Alimin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIDANG 6 -->
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                    <div
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        EKONOMI KREATIF
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Arif Riadi</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Nami Veronika Sri Ayu
+                                    Simanjuntak</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>Ijmlati</li>
+                                <li>Elsya Blantika</li>
+                                <li>Nazwa Khofatuniza</li>
+                                <li>Siti Fauziah Awallah Putri</li>
+                                <li>Siti Ulandari</li>
+                                <li>Agung Satria Putra</li>
+                                <li>Ach Su'udi Samsil Umam</li>
+                                <li>Josua Frianto Sinaga</li>
+                                <li>Qory Daffa Wanikmah</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- BARIS BIDANG 4: KOMUNIKASI DAN INFORMASI -->
+            <div style="display:flex; justify-content:center; width:100%;">
+                <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+                    <div
+                        style="background:#800000; color:#ffffff; font-size:10px; font-weight:bold; text-transform:uppercase; padding:4px 14px; border-radius:4px; letter-spacing:0.3px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+                        KOMUNIKASI DAN INFORMASI
+                    </div>
+                    <div class="hima-line-desktop" style="width:2px; height:8px; background-color:#d0d0d0;"></div>
+                    <div class="hima-card"
+                        style="background:#ffffff; border:1px solid #800000; border-radius:6px; width:50%; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden;">
+                        <div style="background:#800000; height:12px; width:100%;"></div>
+                        <div style="padding:10px 12px; font-size:11px; color:#333; line-height:1.45;">
+                            <div style="font-weight:bold; color:#800000; font-size:11px;">Kepala Bidang: <span
+                                    style="font-weight:normal; color:#222;">Valentinus Sigalingging</span></div>
+                            <div style="font-weight:bold; color:#c0392b; font-size:10.5px; margin-bottom:6px;">
+                                Sekretaris Bidang: <span style="font-weight:normal; color:#222;">Nopriandi
+                                    Aliansyah</span></div>
+                            <div
+                                style="font-weight:bold; color:#800000; border-top:1px solid #f0dfdf; padding-top:4px; margin-bottom:3px; font-size:10.5px;">
+                                Anggota:</div>
+                            <ul style="margin:0; padding-left:16px; color:#444; font-size:10.5px;">
+                                <li>M. Ma'fud Shodiq</li>
+                                <li>Fitri Handayani</li>
+                                <li>Aqila Ratu Minerva</li>
+                                <li>Ralsa Zahra Afifah Safari</li>
+                                <li>Tauhid Ma'ruf</li>
+                                <li>M. Naufal Hakim</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
