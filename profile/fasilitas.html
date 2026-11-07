@@ -71,21 +71,24 @@
     /* HEADER LAYOUT */
     .facility-header-row {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 40px;
         margin-bottom: 25px;
     }
 
     .facility-left-col {
-        flex: 0 0 280px;
-        max-width: 280px;
+        flex: 0 0 320px;
+        max-width: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .facility-logos {
         display: flex;
         gap: 12px;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 
     .facility-logos img {
@@ -94,15 +97,18 @@
     }
 
     .facility-title {
-        font-size: clamp(24px, 3.2vw, 36px);
+        font-size: clamp(26px, 3.4vw, 38px);
         font-weight: 800;
         color: #8c1004;
         margin: 0;
-        line-height: 1.1;
+        line-height: 1.05;
+        letter-spacing: -0.5px;
     }
 
     .facility-right-col {
         flex-grow: 1;
+        display: flex;
+        align-items: center;
     }
 
     .facility-desc {
@@ -232,9 +238,15 @@
         </div>
 
         <div class="facility-sub-img-grid">
-            <div class="facility-sub-img-box"><img src="URL_GAMBAR_KECIL_1.jpg" alt="Galeri 1"></div>
-            <div class="facility-sub-img-box"><img src="URL_GAMBAR_KECIL_2.jpg" alt="Galeri 2"></div>
-            <div class="facility-sub-img-box"><img src="URL_GAMBAR_KECIL_3.jpg" alt="Galeri 3"></div>
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/f34R1JZjsmiuSWx5x7AuTR419vZSwad4GYJlr549.png"
+                    alt="Galeri 1"></div>
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/kM5bXPsU57kPRm1U3akZmsvhDwFX4AlvjutBxZLI.png"
+                    alt="Galeri 2"></div>
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/ISAzREA81k3PtTHrG7R4hiXJRFJW051iljciDzcZ.png"
+                    alt="Galeri 3"></div>
         </div>
     </div>
 
