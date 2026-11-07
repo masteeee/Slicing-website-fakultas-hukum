@@ -32,7 +32,7 @@
         border-radius: 6px;
         font-size: 13.5px;
         font-weight: 600;
-        box-shadow: 0 4px 10px rgba(140, 16, 4, 0.2);
+        box-shadow: 0 4px 10px rgba(235, 235, 235, 0.2);
         transition: transform 0.2s, opacity 0.2s;
         display: inline-block;
     }
@@ -113,25 +113,34 @@
         margin: 0;
     }
 
-    /* GRID GAMBAR UTAMA & GALERI */
+    /* PERBAIKAN: KOTAK GAMBAR UTAMA (PROPOSIONAL) */
     .facility-main-img-box {
         width: 100%;
-        height: 420px;
+        aspect-ratio: 16 / 9;
+        /* Menggunakan rasio standar agar tidak terlalu panjang ke bawah */
+        max-height: 450px;
         border-radius: 14px;
         overflow: hidden;
-        background-color: #e2e8f0;
+        background-color: #eaeaea;
+        /* Latar belakang hitam agar rapi jika ada sisa ruang */
         margin-bottom: 16px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         border: 2px solid #a82d15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .facility-main-img-box img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        /* Otomatis mengisi dan melakukan zoom pas memenuhi kotak */
+        object-position: center;
         display: block;
     }
 
+    /* PERBAIKAN: KOTAK GALERI KECIL (PROPOSIONAL) */
     .facility-sub-img-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -140,18 +149,24 @@
 
     .facility-sub-img-box {
         width: 100%;
-        height: 170px;
+        aspect-ratio: 16 / 10;
+        /* Proporsional untuk galeri kecil */
+        max-height: 200px;
         border-radius: 10px;
         overflow: hidden;
-        background-color: #e2e8f0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        background-color: #eaeaea;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         border: 2px solid #a82d15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .facility-sub-img-box img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         display: block;
     }
 
@@ -161,19 +176,15 @@
             flex-direction: column;
             gap: 15px;
         }
+
         .facility-left-col {
             flex: unset;
             max-width: 100%;
         }
-        .facility-main-img-box {
-            height: 240px;
-        }
+
         .facility-sub-img-grid {
             grid-template-columns: 1fr;
             gap: 12px;
-        }
-        .facility-sub-img-box {
-            height: 150px;
         }
     }
 </style>
@@ -203,13 +214,21 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Ruang Peradilan Semu Fakultas Hukum Universitas Pamulang merupakan fasilitas pembelajaran praktik yang dirancang untuk memberikan pengalaman simulasi persidangan kepada mahasiswa. Dengan suasana yang menyerupai ruang sidang pengadilan, fasilitas ini mendukung pembelajaran hukum acara secara aplikatif melalui praktik beracara, mulai dari pembacaan dakwaan, pemeriksaan saksi, pembuktian, hingga pembacaan putusan. Ruang ini dimanfaatkan untuk praktikum, kegiatan moot court, pelatihan litigasi, dan berbagai kegiatan akademik lainnya. Keberadaannya mencerminkan komitmen Fakultas Hukum Universitas Pamulang dalam menghasilkan lulusan yang profesional, berintegritas, serta memiliki kompetensi hukum yang siap diterapkan di dunia kerja.
+                    Ruang Peradilan Semu Fakultas Hukum Universitas Pamulang merupakan fasilitas pembelajaran praktik
+                    yang dirancang untuk memberikan pengalaman simulasi persidangan kepada mahasiswa. Dengan suasana
+                    yang menyerupai ruang sidang pengadilan, fasilitas ini mendukung pembelajaran hukum acara secara
+                    aplikatif melalui praktik beracara, mulai dari pembacaan dakwaan, pemeriksaan saksi, pembuktian,
+                    hingga pembacaan putusan. Ruang ini dimanfaatkan untuk praktikum, kegiatan moot court, pelatihan
+                    litigasi, dan berbagai kegiatan akademik lainnya. Keberadaannya mencerminkan komitmen Fakultas Hukum
+                    Universitas Pamulang dalam menghasilkan lulusan yang profesional, berintegritas, serta memiliki
+                    kompetensi hukum yang siap diterapkan di dunia kerja.
                 </p>
             </div>
         </div>
 
         <div class="facility-main-img-box">
-            <img src="URL_GAMBAR_UTAMA_PERADILAN_SEMU.jpg" alt="Ruang Peradilan Semu Utama">
+            <img src="https://cms.unpam.ac.id/storage/assets/pages/content/vSKDLCOWd2bqYrBEwMoV2l2qaGzUO0QZWFW07pPE.png"
+                alt="Ruang Peradilan Semu Utama">
         </div>
 
         <div class="facility-sub-img-grid">
@@ -232,7 +251,11 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Ruang Kelas Fakultas Hukum Universitas Pamulang dirancang secara kondusif dan nyaman untuk mendukung kegiatan belajar mengajar sehari-hari. Dilengkapi dengan fasilitas pendukung modern seperti pendingin ruangan (AC), proyektor, serta penataan tempat duduk yang ergonomis, ruang kelas ini menciptakan lingkungan akademik yang interaktif antara dosen dan mahasiswa dalam mendalami berbagai disiplin ilmu hukum.
+                    Ruang Kelas Fakultas Hukum Universitas Pamulang dirancang secara kondusif dan nyaman untuk mendukung
+                    kegiatan belajar mengajar sehari-hari. Dilengkapi dengan fasilitas pendukung modern seperti
+                    pendingin ruangan (AC), proyektor, serta penataan tempat duduk yang ergonomis, ruang kelas ini
+                    menciptakan lingkungan akademik yang interaktif antara dosen dan mahasiswa dalam mendalami berbagai
+                    disiplin ilmu hukum.
                 </p>
             </div>
         </div>
@@ -261,7 +284,10 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Ruang Auditorium Fakultas Hukum Universitas Pamulang merupakan fasilitas serbaguna berkapasitas besar yang digunakan untuk menyelenggarakan berbagai acara penting seperti seminar nasional, kuliah umum, yudisium, simposium hukum, serta perhelatan akbar kemahasiswaan lainnya dengan dukungan tata suara dan pencahayaan profesional.
+                    Ruang Auditorium Fakultas Hukum Universitas Pamulang merupakan fasilitas serbaguna berkapasitas
+                    besar yang digunakan untuk menyelenggarakan berbagai acara penting seperti seminar nasional, kuliah
+                    umum, yudisium, simposium hukum, serta perhelatan akbar kemahasiswaan lainnya dengan dukungan tata
+                    suara dan pencahayaan profesional.
                 </p>
             </div>
         </div>
@@ -290,7 +316,10 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Ruang Perpustakaan menyediakan ribuan referensi literatur hukum, mulai dari kitab undang-undang, jurnal ilmiah, buku teks referensi hukum perdata, pidana, tata negara, hingga karya ilmiah civitas akademika. Ruangan ini dirancang tenang dan nyaman untuk mendukung kegiatan riset dan studi mandiri mahasiswa.
+                    Ruang Perpustakaan menyediakan ribuan referensi literatur hukum, mulai dari kitab undang-undang,
+                    jurnal ilmiah, buku teks referensi hukum perdata, pidana, tata negara, hingga karya ilmiah civitas
+                    akademika. Ruangan ini dirancang tenang dan nyaman untuk mendukung kegiatan riset dan studi mandiri
+                    mahasiswa.
                 </p>
             </div>
         </div>
@@ -319,7 +348,9 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Ruang Teleconference dilengkapi dengan teknologi perangkat komunikasi audiovisual mutakhir untuk memfasilitasi pertemuan daring jarak jauh, kuliah tamu internasional, kolaborasi riset antar-universitas, serta sidang panel virtual dalam skala profesional.
+                    Ruang Teleconference dilengkapi dengan teknologi perangkat komunikasi audiovisual mutakhir untuk
+                    memfasilitasi pertemuan daring jarak jauh, kuliah tamu internasional, kolaborasi riset
+                    antar-universitas, serta sidang panel virtual dalam skala profesional.
                 </p>
             </div>
         </div>
@@ -348,7 +379,9 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Fasilitas ibadah berupa masjid yang bersih, luas, dan nyaman disediakan di lingkungan kampus untuk memastikan seluruh mahasiswa, dosen, serta staf dapat menjalankan ibadah sholat dengan khusyuk serta menjadi pusat kegiatan keagamaan kampus.
+                    Fasilitas ibadah berupa masjid yang bersih, luas, dan nyaman disediakan di lingkungan kampus untuk
+                    memastikan seluruh mahasiswa, dosen, serta staf dapat menjalankan ibadah sholat dengan khusyuk serta
+                    menjadi pusat kegiatan keagamaan kampus.
                 </p>
             </div>
         </div>
@@ -377,7 +410,9 @@
             </div>
             <div class="facility-right-col">
                 <p class="facility-desc">
-                    Area taman kampus yang hijau, asri, dan tertata rapi dirancang sebagai ruang terbuka bagi mahasiswa untuk berdiskusi santai, mengerjakan tugas kelompok, atau sekadar beristirahat di sela-sela jadwal perkuliahan yang padat.
+                    Area taman kampus yang hijau, asri, dan tertata rapi dirancang sebagai ruang terbuka bagi mahasiswa
+                    untuk berdiskusi santai, mengerjakan tugas kelompok, atau sekadar beristirahat di sela-sela jadwal
+                    perkuliahan yang padat.
                 </p>
             </div>
         </div>
