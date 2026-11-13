@@ -1,0 +1,281 @@
+<style>
+    .lulusan-page {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 22px clamp(16px, 3vw, 32px) 14px;
+        box-sizing: border-box;
+        background: #f7f7f7;
+        font-family: 'Geist', Arial, Helvetica, sans-serif;
+        color: #292020;
+    }
+
+    /* HEADER LOGO */
+    .lulusan-header {
+        width: 100%;
+        min-height: 70px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-bottom: 38px;
+    }
+
+    .lulusan-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .lulusan-logo img {
+        width: auto;
+        height: 42px;
+        max-width: 110px;
+        object-fit: contain;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    /* PEMBATAS */
+    .lulusan-divider {
+        width: 100%;
+        height: 1px;
+        background: #c9c9c9;
+        margin: 0;
+        border: 0;
+    }
+
+    /* BARIS PROFIL */
+    .lulusan-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: clamp(16px, 2.5vw, 26px);
+        padding: 22px 0;
+        box-sizing: border-box;
+    }
+
+    .lulusan-item.reverse {
+        flex-direction: row-reverse;
+    }
+
+    /* FOTO */
+    .lulusan-photo {
+        flex: 0 0 clamp(100px, 17vw, 145px);
+        width: clamp(100px, 17vw, 145px);
+        height: clamp(100px, 17vw, 145px);
+        border-radius: 50%;
+        overflow: hidden;
+        background: #e9e9e9;
+        box-sizing: border-box;
+    }
+
+    .lulusan-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    /* DESKRIPSI */
+    .lulusan-content {
+        flex: 1 1 auto;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .lulusan-title {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(16px, 1.8vw, 22px);
+        font-weight: 700;
+        line-height: 1.25;
+        color: #990000;
+        margin: 0 0 9px 0;
+        padding: 0;
+    }
+
+    .lulusan-description {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: clamp(12px, 1.25vw, 15px);
+        font-weight: 400;
+        line-height: 1.3;
+        color: #850000;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* PERATAAN BARIS KEDUA */
+    .lulusan-item.reverse .lulusan-content {
+        text-align: right;
+    }
+
+    /* RESPONSIVE TABLET DAN HP */
+    @media screen and (max-width: 600px) {
+        .lulusan-page {
+            padding: 18px 16px 12px;
+        }
+
+        .lulusan-header {
+            min-height: 65px;
+            padding-bottom: 28px;
+        }
+
+        .lulusan-logo img {
+            height: 35px;
+            max-width: 90px;
+        }
+
+        .lulusan-item {
+            gap: 14px;
+            padding: 20px 0;
+        }
+
+        .lulusan-photo {
+            flex: 0 0 95px;
+            width: 95px;
+            height: 95px;
+        }
+
+        .lulusan-title {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .lulusan-description {
+            font-size: 12px;
+            line-height: 1.3;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        .lulusan-page {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .lulusan-item {
+            gap: 11px;
+        }
+
+        .lulusan-photo {
+            flex: 0 0 78px;
+            width: 78px;
+            height: 78px;
+        }
+
+        .lulusan-title {
+            font-size: 14px;
+        }
+
+        .lulusan-description {
+            font-size: 11px;
+        }
+    }
+</style>
+
+<div class="lulusan-page">
+
+    <!-- HEADER LOGO -->
+    <div class="lulusan-header">
+        <div class="lulusan-logo">
+
+            <!-- GANTI URL LOGO SESUAI LOGO FAKULTAS -->
+            <img src="GANTI_URL_LOGO_1" alt="Logo Universitas Pamulang">
+
+            <img src="GANTI_URL_LOGO_2" alt="Logo Fakultas Hukum">
+
+            <img src="GANTI_URL_LOGO_3" alt="Logo Yayasan">
+
+        </div>
+    </div>
+
+    <div class="lulusan-divider"></div>
+
+    <!-- PROFIL LULUSAN 1 -->
+    <div class="lulusan-item">
+
+        <div class="lulusan-photo">
+            <!-- GANTI DENGAN FOTO LULUSAN 1 -->
+            <img src="GANTI_URL_FOTO_1" alt="Penegak Hukum">
+        </div>
+
+        <div class="lulusan-content">
+            <h3 class="lulusan-title">
+                Penegak Hukum
+            </h3>
+
+            <p class="lulusan-description">
+                Sebagai penegak hukum, lulusan ini menjadi agen keadilan
+                yang dapat bekerja sebagai hakim, jaksa, atau polisi,
+                bertanggung jawab untuk menegakkan hukum dan menjaga
+                keamanan masyarakat.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="lulusan-divider"></div>
+
+    <!-- PROFIL LULUSAN 2 -->
+    <div class="lulusan-item reverse">
+
+        <div class="lulusan-photo">
+            <!-- GANTI DENGAN FOTO LULUSAN 2 -->
+            <img src="GANTI_URL_FOTO_2" alt="Konsultan Hukum">
+        </div>
+
+        <div class="lulusan-content">
+            <h3 class="lulusan-title">
+                Konsultan Hukum
+            </h3>
+
+            <p class="lulusan-description">
+                Sebagai konsultan hukum, lulusan ini memiliki keahlian
+                dalam memberikan saran hukum kepada klien, baik individu
+                maupun organisasi, untuk membantu mereka memahami
+                implikasi hukum dalam keputusan bisnis atau kehidupan
+                pribadi. Mereka dapat bekerja di firma hukum,
+                perusahaan, atau menjadi praktisi hukum independen.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="lulusan-divider"></div>
+
+    <!-- PROFIL LULUSAN 3 -->
+    <div class="lulusan-item">
+
+        <div class="lulusan-photo">
+            <!-- GANTI DENGAN FOTO LULUSAN 3 -->
+            <img src="GANTI_URL_FOTO_3" alt="Perancang Perundang-Undangan dan Kontrak">
+        </div>
+
+        <div class="lulusan-content">
+            <h3 class="lulusan-title">
+                Perancang Perundang-Undangan dan Kontrak
+            </h3>
+
+            <p class="lulusan-description">
+                Sebagai perancang perundang-undangan dan kontrak,
+                lulusan ini memiliki kemampuan untuk merancang aturan
+                hukum baru dan kontrak yang sah. Mereka dapat bekerja
+                di pemerintahan atau sektor swasta untuk mengembangkan
+                kebijakan hukum.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="lulusan-divider"></div>
+
+</div>
