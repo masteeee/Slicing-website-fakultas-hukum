@@ -1,0 +1,1442 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+    .pk {
+        --maroon: #800000;
+        --tint: #fff7f7;
+        --tint2: #fff2f2;
+        --line: #ebd4d4;
+        --line2: #f0cfcf;
+        --line-soft: #f3e2e2;
+        --ink: #222222;
+        --ink2: #3a3030;
+        --muted: #5f5757;
+        box-sizing: border-box;
+        max-width: 1040px;
+        margin: 24px auto 56px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(100, 0, 0, .14);
+        font-family: 'Geist', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--ink)
+    }
+
+    .pk *,
+    .pk *::before,
+    .pk *::after {
+        box-sizing: border-box
+    }
+
+    .pk h1,
+    .pk h2,
+    .pk h3,
+    .pk p,
+    .pk ul,
+    .pk ol {
+        margin: 0
+    }
+
+    .pk em {
+        font-style: italic
+    }
+
+    /* Pita judul */
+    .pk-head {
+        background: var(--maroon);
+        color: #fff;
+        padding: clamp(26px, 5vw, 52px)
+    }
+
+    .pk h1 {
+        font-size: clamp(28px, 4.4vw, 38px);
+        line-height: 1.2;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -.01em;
+        max-width: 22em;
+        text-wrap: balance
+    }
+
+    .pk-intro {
+        margin-top: 18px;
+        max-width: 68ch;
+        color: rgba(255, 255, 255, .9);
+        font-size: 17px
+    }
+
+    .pk-intro strong {
+        color: #fff;
+        font-weight: 600
+    }
+
+    .pk-motto {
+        margin-top: 14px;
+        font-size: 15px;
+        font-style: italic;
+        color: rgba(255, 255, 255, .8)
+    }
+
+    .pk-main {
+        padding: clamp(22px, 3.5vw, 36px) clamp(22px, 4.5vw, 52px) clamp(28px, 4.5vw, 52px)
+    }
+
+    /* Ringkasan angka */
+    .pk-facts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: var(--tint);
+        border: 1px solid var(--line2);
+        border-top: 4px solid var(--maroon);
+        border-radius: 10px
+    }
+
+    .pk-fact {
+        padding: 18px 22px
+    }
+
+    .pk-fact+.pk-fact {
+        border-left: 1px solid var(--line2)
+    }
+
+    .pk-fact b {
+        display: block;
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--maroon)
+    }
+
+    .pk-fact span {
+        display: block;
+        margin-top: 2px;
+        font-size: 14.5px;
+        line-height: 1.45;
+        color: var(--muted)
+    }
+
+    /* Banner peminatan */
+    .pk-konsen {
+        margin-top: 20px;
+        background: var(--maroon);
+        color: #fff;
+        border-radius: 10px;
+        padding: 20px 24px
+    }
+
+    .pk-konsen h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px
+    }
+
+    .pk-konsen ol {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px
+    }
+
+    .pk-konsen li {
+        background: rgba(255, 255, 255, .14);
+        border: 1px solid rgba(255, 255, 255, .3);
+        border-radius: 8px;
+        padding: 9px 14px;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.4
+    }
+
+    .pk-section {
+        margin-top: 44px
+    }
+
+    .pk h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        font-weight: 700;
+        color: var(--maroon);
+        padding-left: 14px;
+        border-left: 5px solid var(--maroon)
+    }
+
+    .pk-lead {
+        margin-top: 8px;
+        max-width: 66ch;
+        color: var(--muted)
+    }
+
+    /* Akordeon semester */
+    .pk-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px
+    }
+
+    .pk-item {
+        border: 1.5px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        overflow: hidden
+    }
+
+    .pk-item[open] {
+        border-color: var(--maroon);
+        box-shadow: 0 4px 16px rgba(128, 0, 0, .14)
+    }
+
+    .pk-item>summary {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 17px 20px;
+        cursor: pointer;
+        list-style: none;
+        border-left: 5px solid var(--maroon)
+    }
+
+    .pk-item>summary::-webkit-details-marker {
+        display: none
+    }
+
+    .pk-item>summary:hover {
+        background: var(--tint)
+    }
+
+    .pk-item>summary:focus-visible {
+        outline: 3px solid var(--maroon);
+        outline-offset: -3px
+    }
+
+    .pk-item[open]>summary {
+        background: var(--maroon);
+        color: #fff
+    }
+
+    .pk-item[open]>summary:focus-visible {
+        outline-color: #fff
+    }
+
+    .pk-sum-text {
+        flex: 1;
+        min-width: 0
+    }
+
+    .pk-sum-title {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--maroon)
+    }
+
+    .pk-tag {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 1px 9px;
+        border: 1px solid var(--line2);
+        border-radius: 20px;
+        background: var(--tint2);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.5;
+        vertical-align: 2px;
+        color: var(--maroon)
+    }
+
+    .pk-sum-sub {
+        display: block;
+        margin-top: 2px;
+        font-size: 14.5px;
+        color: var(--muted)
+    }
+
+    .pk-sum-meta {
+        font-size: 14.5px;
+        color: var(--muted);
+        white-space: nowrap
+    }
+
+    .pk-sum-meta b {
+        font-weight: 700;
+        color: var(--maroon);
+        font-size: 16px
+    }
+
+    .pk-chev {
+        flex: none;
+        width: 10px;
+        height: 10px;
+        margin: 0 6px 4px 2px;
+        border-right: 2px solid var(--maroon);
+        border-bottom: 2px solid var(--maroon);
+        transform: rotate(45deg);
+        transition: transform .2s ease
+    }
+
+    .pk-item[open] .pk-sum-title,
+    .pk-item[open] .pk-sum-meta b {
+        color: #fff
+    }
+
+    .pk-item[open] .pk-sum-sub,
+    .pk-item[open] .pk-sum-meta {
+        color: rgba(255, 255, 255, .88)
+    }
+
+    .pk-item[open] .pk-tag {
+        background: transparent;
+        border-color: rgba(255, 255, 255, .55);
+        color: #fff
+    }
+
+    .pk-item[open] .pk-chev {
+        border-color: #fff;
+        transform: rotate(-135deg);
+        margin-bottom: -4px
+    }
+
+    .pk-body {
+        padding: 22px clamp(16px, 3vw, 30px) 30px
+    }
+
+    .pk-body h3 {
+        margin: 0 0 10px;
+        padding-bottom: 6px;
+        border-bottom: 2px solid var(--line2);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--maroon)
+    }
+
+    .pk-body .pk-gap {
+        margin-top: 30px
+    }
+
+    .pk-note {
+        margin: -2px 0 12px;
+        color: var(--muted);
+        font-size: 15px
+    }
+
+    /* Tabel */
+    .pk-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid var(--line);
+        border-radius: 10px
+    }
+
+    .pk table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+        font-variant-numeric: tabular-nums
+    }
+
+    .pk caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap
+    }
+
+    .pk thead th {
+        background: var(--maroon);
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+        padding: 11px 14px;
+        white-space: nowrap
+    }
+
+    .pk td {
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--line-soft);
+        vertical-align: baseline
+    }
+
+    .pk tbody tr:nth-child(even) td {
+        background: #fffbfb
+    }
+
+    .pk tbody tr:last-child td {
+        border-bottom: 0
+    }
+
+    .pk tfoot th,
+    .pk tfoot td {
+        padding: 12px 14px;
+        background: var(--tint2);
+        border-top: 1.5px solid var(--line2);
+        border-bottom: 0;
+        font-weight: 700;
+        color: var(--maroon)
+    }
+
+    .pk tfoot th {
+        text-align: right
+    }
+
+    .pk tfoot td {
+        white-space: nowrap
+    }
+
+    .pk .c-name {
+        font-weight: 600;
+        color: var(--ink)
+    }
+
+    .pk .c-pem {
+        width: 190px;
+        font-weight: 700;
+        color: var(--maroon)
+    }
+
+    .pk .c-code {
+        width: 140px;
+        white-space: nowrap;
+        color: var(--muted);
+        letter-spacing: .02em
+    }
+
+    .pk .c-sks {
+        width: 120px;
+        white-space: nowrap;
+        color: var(--ink2)
+    }
+
+    .pk-t-rekap {
+        max-width: 520px
+    }
+
+    .pk-t-rekap .c-sks {
+        width: auto
+    }
+
+    .pk-t-rekap td:first-child {
+        font-weight: 600;
+        color: var(--ink)
+    }
+
+    .pk-t-rekap thead th:last-child,
+    .pk-t-rekap td:last-child {
+        text-align: right
+    }
+
+    .pk-about {
+        margin-top: 16px;
+        padding: 18px 26px 18px 44px;
+        background: var(--tint);
+        border: 1px solid var(--line2);
+        border-radius: 10px;
+        color: var(--ink2);
+        max-width: 80ch
+    }
+
+    .pk-about li+li {
+        margin-top: 10px
+    }
+
+    .pk-about li::marker {
+        color: var(--maroon)
+    }
+
+    @media (max-width:860px) {
+        .pk-facts {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .pk-fact:nth-child(3) {
+            border-left: 0
+        }
+
+        .pk-fact:nth-child(n+3) {
+            border-top: 1px solid var(--line2)
+        }
+
+        .pk-konsen ol {
+            grid-template-columns: repeat(2, 1fr)
+        }
+    }
+
+    @media (max-width:640px) {
+        .pk {
+            margin: 12px 8px 40px;
+            border-radius: 12px
+        }
+
+        .pk-main {
+            padding: 20px 18px 28px
+        }
+
+        .pk-section {
+            margin-top: 36px
+        }
+
+        .pk-fact {
+            padding: 14px 16px
+        }
+
+        .pk-fact b {
+            font-size: 22px
+        }
+
+        .pk-konsen {
+            padding: 16px 16px 18px
+        }
+
+        .pk-item>summary {
+            padding: 14px 14px;
+            gap: 12px
+        }
+
+        .pk-lbl {
+            display: none
+        }
+
+        .pk-sum-title {
+            font-size: 17px
+        }
+
+        .pk-tag {
+            display: table;
+            margin: 3px 0 1px
+        }
+
+        .pk-body {
+            padding: 18px 14px 24px
+        }
+
+        .pk-table-wrap {
+            overflow: visible;
+            border: 0;
+            border-radius: 0
+        }
+
+        .pk-t-mk thead,
+        .pk-t-pem thead {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0)
+        }
+
+        .pk-t-mk,
+        .pk-t-pem,
+        .pk-t-mk tbody,
+        .pk-t-pem tbody,
+        .pk-t-mk tfoot,
+        .pk-t-pem tfoot {
+            display: block
+        }
+
+        .pk-t-mk tbody tr,
+        .pk-t-pem tbody tr {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            column-gap: 12px;
+            row-gap: 1px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--line-soft)
+        }
+
+        .pk-t-mk tbody tr {
+            grid-template-areas: "name sks" "code code"
+        }
+
+        .pk-t-pem tbody tr {
+            grid-template-areas: "name sks" "pem code"
+        }
+
+        .pk-t-mk td,
+        .pk-t-pem td,
+        .pk-t-mk tbody tr:nth-child(even) td,
+        .pk-t-pem tbody tr:nth-child(even) td {
+            padding: 0;
+            border: 0;
+            background: none
+        }
+
+        .pk .c-name {
+            grid-area: name;
+            width: auto
+        }
+
+        .pk .c-sks {
+            grid-area: sks;
+            width: auto;
+            text-align: right;
+            font-weight: 600;
+            color: var(--maroon)
+        }
+
+        .pk-t-mk .c-sks::after,
+        .pk-t-pem .c-sks::after {
+            content: " SKS"
+        }
+
+        .pk .c-pem {
+            grid-area: pem;
+            width: auto;
+            font-size: 14px
+        }
+
+        .pk .c-code {
+            grid-area: code;
+            width: auto;
+            font-size: 14px
+        }
+
+        .pk-t-pem .c-code {
+            text-align: right
+        }
+
+        .pk-t-mk tbody tr:last-child,
+        .pk-t-pem tbody tr:last-child {
+            border-bottom: 0
+        }
+
+        .pk-t-mk tfoot tr,
+        .pk-t-pem tfoot tr {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 6px;
+            padding: 12px 14px;
+            background: var(--tint2);
+            border-radius: 8px
+        }
+
+        .pk-t-mk tfoot th,
+        .pk-t-mk tfoot td,
+        .pk-t-pem tfoot th,
+        .pk-t-pem tfoot td {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: none;
+            text-align: left
+        }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+        .pk-chev {
+            transition: none
+        }
+    }
+</style>
+<div class="pk">
+    <header class="pk-head">
+        <h1>Struktur Mata Kuliah dan Distribusi SKS</h1>
+        <p class="pk-intro">Kurikulum resmi terkini Program Studi S-1 Ilmu Hukum, Fakultas Hukum Universitas Pamulang.
+            Total beban studi <strong>148 SKS</strong>, dengan 4 konsentrasi peminatan keahlian hukum: <strong>Hukum
+                Perdata, Hukum Pidana, Hukum Tata Negara,</strong> dan <strong>Hukum Internasional</strong>.</p>
+        <p class="pk-motto">Berbagi Untuk Negeri</p>
+    </header>
+    <div class="pk-main">
+        <div class="pk-facts">
+            <div class="pk-fact"><b>148 SKS</b><span>Total beban studi (kumulatif)</span></div>
+            <div class="pk-fact"><b>8 semester</b><span>Masa studi reguler (4 tahun)</span></div>
+            <div class="pk-fact"><b>4 konsentrasi</b><span>Peminatan keahlian</span></div>
+            <div class="pk-fact"><b>S.H.</b><span>Gelar kelulusan (Sarjana Hukum)</span></div>
+        </div>
+        <div class="pk-konsen">
+            <h3>4 bidang konsentrasi peminatan (mulai semester 5)</h3>
+            <ol>
+                <li>1. Hukum Perdata</li>
+                <li>2. Hukum Pidana</li>
+                <li>3. Hukum Tata Negara (HTN)</li>
+                <li>4. Hukum Internasional (HI)</li>
+            </ol>
+        </div>
+        <section class="pk-section">
+            <h2>Mata kuliah per semester</h2>
+            <p class="pk-lead">Klik atau ketuk salah satu semester untuk melihat daftar mata kuliah dan bobot SKS-nya.
+            </p>
+            <div class="pk-list">
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 1</span><span class="pk-sum-sub">9
+                                mata kuliah wajib bersama</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah semester 1</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Pengantar Ilmu Hukum</td>
+                                        <td class="c-code">22FHK0014</td>
+                                        <td class="c-sks">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Sosiologi Hukum</td>
+                                        <td class="c-code">22HUK0232</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Basic Academic English</td>
+                                        <td class="c-code">22PAM0052</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Logika dan Penalaran Hukum</td>
+                                        <td class="c-code">22FHK0022</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Ilmu Negara</td>
+                                        <td class="c-code">22FHK0032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Pendidikan Kewarganegaraan</td>
+                                        <td class="c-code">22PAM0032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Pendidikan Anti Korupsi</td>
+                                        <td class="c-code">22FHK0042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Sejarah Hukum</td>
+                                        <td class="c-code">22HUK0242</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Bahasa Indonesia</td>
+                                        <td class="c-code">22PAM0042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="2">Total SKS semester 1</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 2</span><span class="pk-sum-sub">8
+                                mata kuliah wajib bersama</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah semester 2</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Hukum Pidana</td>
+                                        <td class="c-code">22FHK0063</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Perdata</td>
+                                        <td class="c-code">22FHK0053</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Tata Negara</td>
+                                        <td class="c-code">22FHK0073</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Pengantar Hukum Indonesia</td>
+                                        <td class="c-code">22FHK0083</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Intermediate Academic English</td>
+                                        <td class="c-code">22PAM0062</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Pendidikan Agama</td>
+                                        <td class="c-code">22PAM0012</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Politik Hukum</td>
+                                        <td class="c-code">22HUK0252</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Pendidikan Pancasila</td>
+                                        <td class="c-code">22PAM0022</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="2">Total SKS semester 2</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 3</span><span class="pk-sum-sub">9
+                                mata kuliah wajib bersama</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah semester 3</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Hukum Kesehatan</td>
+                                        <td class="c-code">22HUK0262</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Administrasi Negara</td>
+                                        <td class="c-code">22FHK0093</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hak Asasi Manusia</td>
+                                        <td class="c-code">22HUK0272</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Waris Islam</td>
+                                        <td class="c-code">22HUK0032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Adat</td>
+                                        <td class="c-code">22HUK0282</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Internasional</td>
+                                        <td class="c-code">22HUK0293</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Islam</td>
+                                        <td class="c-code">22HUK0302</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Transportasi</td>
+                                        <td class="c-code">22HUK0042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Perlindungan Konsumen</td>
+                                        <td class="c-code">22HUK0052</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="2">Total SKS semester 3</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 4</span><span class="pk-sum-sub">8
+                                mata kuliah wajib bersama</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah semester 4</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Hukum Acara Perdata</td>
+                                        <td class="c-code">22HUK0314</td>
+                                        <td class="c-sks">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Acara Pidana</td>
+                                        <td class="c-code">22HUK0324</td>
+                                        <td class="c-sks">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Perikatan</td>
+                                        <td class="c-code">22HUK0332</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Pemerintahan Daerah</td>
+                                        <td class="c-code">22HUK0342</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Agraria</td>
+                                        <td class="c-code">22HUK0062</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Ilmu Perundang-undangan</td>
+                                        <td class="c-code">22HUK0352</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Pers</td>
+                                        <td class="c-code">22HUK0072</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Telematika</td>
+                                        <td class="c-code">22HUK0082</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="2">Total SKS semester 4</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 5<span class="pk-tag">Wajib +
+                                    Peminatan</span></span><span class="pk-sum-sub">7 mata kuliah bersama + 1 mata
+                                kuliah konsentrasi</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <h3>Mata kuliah wajib bersama (17 SKS)</h3>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah wajib bersama semester 5</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Hukum Dagang</td>
+                                        <td class="c-code">22HUK0363</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Acara Peradilan Konstitusi</td>
+                                        <td class="c-code">22HUK0092</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Metode Penelitian dan Penulisan Hukum</td>
+                                        <td class="c-code">22HUK0023</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Acara Peradilan TUN</td>
+                                        <td class="c-code">22HUK0102</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Pembuktian</td>
+                                        <td class="c-code">22HUK0112</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Lingkungan</td>
+                                        <td class="c-code">22HUK0123</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Entrepreneurship</td>
+                                        <td class="c-code">22HUK0012</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="pk-gap">Mata kuliah konsentrasi peminatan (3 SKS)</h3>
+                        <p class="pk-note">Ambil 1 mata kuliah sesuai peminatan yang Anda pilih.</p>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-pem">
+                                <caption>Pilihan mata kuliah konsentrasi peminatan semester 5</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Peminatan Keahlian</th>
+                                        <th scope="col">Mata Kuliah Peminatan</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-pem">Hukum Perdata</td>
+                                        <td class="c-name">Pendaftaran Tanah</td>
+                                        <td class="c-code">22HUK1013</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Pidana</td>
+                                        <td class="c-name">Penologi</td>
+                                        <td class="c-code">22HUK1023</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Tata Negara</td>
+                                        <td class="c-name">Hukum Kelembagaan Negara</td>
+                                        <td class="c-code">22HUK1033</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Internasional</td>
+                                        <td class="c-name">Hukum Dagang Internasional</td>
+                                        <td class="c-code">22HUK1043</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total SKS semester 5 yang ditempuh</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 6<span class="pk-tag">Wajib +
+                                    Peminatan</span></span><span class="pk-sum-sub">8 mata kuliah bersama + 1 mata
+                                kuliah konsentrasi</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>20 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <h3>Mata kuliah wajib bersama (18 SKS)</h3>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah wajib bersama semester 6</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Keadvokatan</td>
+                                        <td class="c-code">22HUK0373</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Pajak</td>
+                                        <td class="c-code">22HUK0132</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Kriminologi</td>
+                                        <td class="c-code">22HUK0142</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Acara Peradilan Agama</td>
+                                        <td class="c-code">22HUK0152</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Perbandingan Hukum</td>
+                                        <td class="c-code">22HUK0382</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Ketenagakerjaan</td>
+                                        <td class="c-code">22HUK0392</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hak Atas Kekayaan Intelektual</td>
+                                        <td class="c-code">22HUK0402</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Penyelesaian Perselisihan Hubungan Industrial</td>
+                                        <td class="c-code">22HUK0163</td>
+                                        <td class="c-sks">3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="pk-gap">Mata kuliah konsentrasi peminatan (2 SKS)</h3>
+                        <p class="pk-note">Ambil 1 mata kuliah sesuai peminatan yang Anda pilih.</p>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-pem">
+                                <caption>Pilihan mata kuliah konsentrasi peminatan semester 6</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Peminatan Keahlian</th>
+                                        <th scope="col">Mata Kuliah Peminatan</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-pem">Hukum Perdata</td>
+                                        <td class="c-name">Hukum Kepailitan dan Penundaan Pembayaran Hutang</td>
+                                        <td class="c-code">22HUK2012</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Pidana</td>
+                                        <td class="c-name">Hukum Pidana Khusus</td>
+                                        <td class="c-code">22HUK2022</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Tata Negara</td>
+                                        <td class="c-name">Hukum Kepartaian</td>
+                                        <td class="c-code">22HUK2032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Internasional</td>
+                                        <td class="c-name">Hukum Perjanjian Internasional</td>
+                                        <td class="c-code">22HUK2042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total SKS semester 6 yang ditempuh</th>
+                                        <td>20 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 7<span class="pk-tag">Wajib +
+                                    Peminatan</span></span><span class="pk-sum-sub">8 mata kuliah bersama + 1 mata
+                                kuliah konsentrasi</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>18 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <h3>Mata kuliah wajib bersama (16 SKS)</h3>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah wajib bersama semester 7</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Hukum Perbankan</td>
+                                        <td class="c-code">22HUK0412</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Pidana Internasional</td>
+                                        <td class="c-code">22HUK0172</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Asuransi</td>
+                                        <td class="c-code">22HUK0182</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">PLKH Perdata</td>
+                                        <td class="c-code">22HUK0192</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">PLKH Pidana</td>
+                                        <td class="c-code">22HUK0202</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Hukum Ekonomi Syariah</td>
+                                        <td class="c-code">22HUK0212</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Etika Profesi Hukum</td>
+                                        <td class="c-code">22FHK0102</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">PLKH Non Litigasi</td>
+                                        <td class="c-code">22HUK0222</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="pk-gap">Mata kuliah konsentrasi peminatan (2 SKS)</h3>
+                        <p class="pk-note">Ambil 1 mata kuliah sesuai peminatan yang Anda pilih.</p>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-pem">
+                                <caption>Pilihan mata kuliah konsentrasi peminatan semester 7</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Peminatan Keahlian</th>
+                                        <th scope="col">Mata Kuliah Peminatan</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-pem">Hukum Perdata</td>
+                                        <td class="c-name">Hukum Jaminan</td>
+                                        <td class="c-code">22HUK3012</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Pidana</td>
+                                        <td class="c-name">Hukum Perlindungan Perempuan dan Anak</td>
+                                        <td class="c-code">22HUK3022</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Tata Negara</td>
+                                        <td class="c-name">Hak Uji Materil</td>
+                                        <td class="c-code">22HUK3032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Internasional</td>
+                                        <td class="c-name">Hukum Humaniter Internasional</td>
+                                        <td class="c-code">22HUK3042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total SKS semester 7 yang ditempuh</th>
+                                        <td>18 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+                <details class="pk-item">
+                    <summary>
+                        <span class="pk-sum-text"><span class="pk-sum-title">Semester 8<span class="pk-tag">Wajib +
+                                    Peminatan</span></span><span class="pk-sum-sub">2 mata kuliah bersama + 1 mata
+                                kuliah konsentrasi</span></span>
+                        <span class="pk-sum-meta"><span class="pk-lbl">Beban studi: </span><b>10 SKS</b></span>
+                        <span class="pk-chev" aria-hidden="true"></span>
+                    </summary>
+                    <div class="pk-body">
+                        <h3>Mata kuliah wajib bersama (8 SKS)</h3>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-mk">
+                                <caption>Mata kuliah wajib bersama semester 8</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-name">Filsafat Hukum</td>
+                                        <td class="c-code">22FHK0112</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-name">Skripsi</td>
+                                        <td class="c-code">22HUK5016</td>
+                                        <td class="c-sks">6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="pk-gap">Mata kuliah konsentrasi peminatan (2 SKS)</h3>
+                        <p class="pk-note">Ambil 1 mata kuliah sesuai peminatan yang Anda pilih.</p>
+                        <div class="pk-table-wrap">
+                            <table class="pk-t-pem">
+                                <caption>Pilihan mata kuliah konsentrasi peminatan semester 8</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Peminatan Keahlian</th>
+                                        <th scope="col">Mata Kuliah Peminatan</th>
+                                        <th scope="col">Kode MK</th>
+                                        <th scope="col">Bobot (SKS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="c-pem">Hukum Perdata</td>
+                                        <td class="c-name">Hukum Surat Berharga</td>
+                                        <td class="c-code">22HUK4012</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Pidana</td>
+                                        <td class="c-name">Victimologi</td>
+                                        <td class="c-code">22HUK4022</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Tata Negara</td>
+                                        <td class="c-name">Lembaga Kepresidenan</td>
+                                        <td class="c-code">22HUK4032</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="c-pem">Hukum Internasional</td>
+                                        <td class="c-name">Hukum Arbitrase Internasional</td>
+                                        <td class="c-code">22HUK4042</td>
+                                        <td class="c-sks">2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total SKS semester 8 yang ditempuh</th>
+                                        <td>10 SKS</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <section class="pk-section">
+            <h2>Rekapitulasi beban studi per semester (148 SKS)</h2>
+            <div class="pk-table-wrap pk-rekap" style="margin-top:22px;max-width:520px">
+                <table class="pk-t-rekap">
+                    <caption>Rekapitulasi beban studi per semester</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Semester</th>
+                            <th scope="col">Beban Studi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semester 1</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 2</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 3</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 4</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 5</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 6</td>
+                            <td class="c-sks">20 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 7</td>
+                            <td class="c-sks">18 SKS</td>
+                        </tr>
+                        <tr>
+                            <td>Semester 8</td>
+                            <td class="c-sks">10 SKS</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" style="text-align:left">Total SKS</th>
+                            <td>148 SKS</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section class="pk-section">
+            <h2>Catatan kurikulum dan peminatan</h2>
+            <ul class="pk-about">
+                <li>Struktur mata kuliah mengacu pada <strong>Buku Pedoman Kurikulum Terkini Program Studi S-1 Ilmu
+                        Hukum</strong> Fakultas Hukum Universitas Pamulang.</li>
+                <li>Pemilihan <strong>bidang peminatan</strong> dilakukan saat memasuki semester 5, sesuai minat dan
+                    bakat mahasiswa (Perdata, Pidana, Hukum Tata Negara, atau Hukum Internasional).</li>
+                <li>Total beban studi untuk menyelesaikan program sarjana hukum adalah <strong>148 SKS</strong>,
+                    termasuk Praktik Peradilan / PLKH dan Skripsi 6 SKS.</li>
+            </ul>
+        </section>
+    </div>
+</div>
