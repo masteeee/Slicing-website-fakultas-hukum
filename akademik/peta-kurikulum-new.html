@@ -1,1260 +1,1235 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
-
-    .pk {
-        --maroon: #800000;
-        --maroon-d: #680000;
-        --tint: #fff7f7;
-        --tint2: #fff2f2;
-        --line: #ebd4d4;
-        --line2: #f0cfcf;
-        --line-soft: #f3e2e2;
-        --ink: #222222;
-        --ink2: #3a3030;
-        --muted: #5f5757;
-        box-sizing: border-box;
-        max-width: 1040px;
-        margin: 24px auto 56px;
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(100, 0, 0, .14);
-        font-family: 'Geist', Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        line-height: 1.65;
-        color: var(--ink)
-    }
-
-    .pk *,
-    .pk *::before,
-    .pk *::after {
-        box-sizing: border-box
-    }
-
-    .pk h1,
-    .pk h2,
-    .pk h3,
-    .pk p,
-    .pk ul {
-        margin: 0
-    }
-
-    .pk em {
-        font-style: italic
-    }
-
-    /* Pita judul */
-    .pk-head {
-        background: var(--maroon);
-        color: #fff;
-        padding: clamp(26px, 5vw, 52px)
-    }
-
-    .pk h1 {
-        font-size: clamp(28px, 4.4vw, 38px);
-        line-height: 1.2;
-        font-weight: 700;
-        color: #fff;
-        letter-spacing: -.01em;
-        max-width: 22em;
-        text-wrap: balance
-    }
-
-    .pk-nb {
-        white-space: nowrap
-    }
-
-    .pk-intro {
-        margin-top: 18px;
-        max-width: 68ch;
-        color: rgba(255, 255, 255, .9);
-        font-size: 17px
-    }
-
-    .pk-intro strong {
-        color: #fff;
-        font-weight: 600
-    }
-
-    .pk-main {
-        padding: 8px clamp(22px, 4.5vw, 52px) clamp(28px, 4.5vw, 52px)
-    }
-
-    .pk-section {
-        margin-top: 44px
-    }
-
-    .pk h2 {
-        font-size: 22px;
-        line-height: 1.3;
-        font-weight: 700;
-        color: var(--maroon);
-        padding-left: 14px;
-        border-left: 5px solid var(--maroon)
-    }
-
-    .pk-lead {
-        margin-top: 8px;
-        max-width: 66ch;
-        color: var(--muted)
-    }
-
-    /* Cara membaca */
-    .pk-cols {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto 1fr;
-        column-gap: 16px;
-        margin-top: 22px
-    }
-
-    .pk-col {
-        display: grid;
-        grid-row: span 3;
-        grid-template-rows: subgrid;
-        padding: 20px 22px 22px;
-        background: var(--tint);
-        border: 1px solid var(--line2);
-        border-top: 4px solid var(--maroon);
-        border-radius: 10px
-    }
-
-    .pk h3 {
-        font-size: 17px;
-        line-height: 1.35;
-        font-weight: 700;
-        color: var(--maroon)
-    }
-
-    .pk-col-sub {
-        margin-top: 4px;
-        font-size: 14.5px;
-        line-height: 1.5;
-        color: var(--muted)
-    }
-
-    .pk-col ul {
-        margin-top: 16px;
-        padding-left: 18px;
-        font-size: 15px;
-        line-height: 1.55;
-        color: #444
-    }
-
-    .pk-col li+li {
-        margin-top: 9px
-    }
-
-    .pk-col li::marker {
-        color: var(--maroon)
-    }
-
-    .pk-col strong {
-        color: var(--ink);
-        font-weight: 600
-    }
-
-    /* Daftar profil */
-    .pk-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 22px
-    }
-
-    .pk-item {
-        border: 1.5px solid var(--line);
-        border-radius: 12px;
-        background: #fff;
-        overflow: hidden
-    }
-
-    .pk-item[open] {
-        border-color: var(--maroon);
-        box-shadow: 0 4px 16px rgba(128, 0, 0, .14)
-    }
-
-    .pk-item>summary {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 17px 20px;
-        cursor: pointer;
-        list-style: none;
-        border-left: 5px solid var(--maroon)
-    }
-
-    .pk-item>summary::-webkit-details-marker {
-        display: none
-    }
-
-    .pk-item>summary:hover {
-        background: var(--tint)
-    }
-
-    .pk-item>summary:focus-visible {
-        outline: 3px solid var(--maroon);
-        outline-offset: -3px
-    }
-
-    .pk-item[open]>summary {
-        background: var(--maroon);
-        color: #fff
-    }
-
-    .pk-item[open]>summary:focus-visible {
-        outline-color: #fff
-    }
-
-    .pk-sum-text {
-        flex: 1;
-        min-width: 0
-    }
-
-    .pk-sum-title {
-        display: block;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.35;
-        color: var(--maroon)
-    }
-
-    .pk-sum-sub {
-        display: block;
-        margin-top: 2px;
-        font-size: 14.5px;
-        color: var(--muted)
-    }
-
-    .pk-sum-meta {
-        font-size: 14.5px;
-        color: var(--muted);
-        white-space: nowrap
-    }
-
-    .pk-chev {
-        flex: none;
-        width: 10px;
-        height: 10px;
-        margin: 0 6px 4px 2px;
-        border-right: 2px solid var(--maroon);
-        border-bottom: 2px solid var(--maroon);
-        transform: rotate(45deg);
-        transition: transform .2s ease
-    }
-
-    .pk-item[open] .pk-sum-title {
-        color: #fff
-    }
-
-    .pk-item[open] .pk-sum-sub,
-    .pk-item[open] .pk-sum-meta {
-        color: rgba(255, 255, 255, .88)
-    }
-
-    .pk-item[open] .pk-chev {
-        border-color: #fff;
-        transform: rotate(-135deg);
-        margin-bottom: -4px
-    }
-
-    .pk-body {
-        padding: 8px clamp(18px, 3vw, 30px) 34px
-    }
-
-    .pk-inner {
-        max-width: 860px
-    }
-
-    .pk-body h3 {
-        margin: 30px 0 10px;
-        padding-bottom: 6px;
-        border-bottom: 2px solid var(--line2);
-        font-size: 16px
-    }
-
-    .pk-body h3:first-child {
-        margin-top: 20px
-    }
-
-    .pk-peran {
-        font-size: 17px;
-        color: var(--ink2);
-        max-width: 66ch
-    }
-
-    .pk-note {
-        margin-bottom: 12px;
-        color: var(--muted);
-        font-size: 15px
-    }
-
-    .pk-cpl {
-        list-style: none;
-        padding: 0;
-        border-top: 1px solid var(--line-soft)
-    }
-
-    .pk-cpl li {
-        display: grid;
-        grid-template-columns: 76px 1fr;
-        gap: 4px 16px;
-        padding: 14px 0;
-        border-bottom: 1px solid var(--line-soft)
-    }
-
-    .pk-cpl-code {
-        justify-self: start;
-        align-self: start;
-        background: var(--maroon);
-        color: #fff;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1;
-        padding: 6px 9px;
-        border-radius: 6px;
-        letter-spacing: .02em
-    }
-
-    .pk-cpl-name {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--ink);
-        line-height: 1.4
-    }
-
-    .pk-cpl-desc {
-        margin-top: 3px;
-        font-size: 15px;
-        color: #4a3f3f;
-        max-width: 62ch
-    }
-
-    .pk-table-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border: 1px solid var(--line);
-        border-radius: 10px
-    }
-
-    .pk table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 15px;
-        font-variant-numeric: tabular-nums
-    }
-
-    .pk caption {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap
-    }
-
-    .pk th {
-        background: var(--maroon);
-        color: #fff;
-        font-weight: 600;
-        font-size: 14px;
-        text-align: left;
-        padding: 11px 14px;
-        white-space: nowrap
-    }
-
-    .pk td {
-        padding: 11px 14px;
-        border-bottom: 1px solid var(--line-soft);
-        vertical-align: baseline
-    }
-
-    .pk tbody tr:nth-child(even) td {
-        background: #fffbfb
-    }
-
-    .pk tbody tr:last-child td {
-        border-bottom: 0
-    }
-
-    .pk .c-sem {
-        width: 110px;
-        white-space: nowrap;
-        font-weight: 600;
-        color: var(--maroon)
-    }
-
-    .pk .c-name {
-        font-weight: 600;
-        color: var(--ink)
-    }
-
-    .pk .c-code {
-        width: 140px;
-        white-space: nowrap;
-        color: var(--muted);
-        letter-spacing: .02em
-    }
-
-    .pk .c-sks {
-        width: 120px;
-        white-space: nowrap;
-        color: var(--ink2)
-    }
-
-    .pk-ringkas {
-        max-width: 72ch;
-        background: var(--maroon);
-        color: #fff;
-        border-radius: 10px;
-        padding: 18px 22px;
-        font-size: 16px
-    }
-
-    .pk-about {
-        margin-top: 16px;
-        padding: 18px 26px 18px 44px;
-        background: var(--tint);
-        border: 1px solid var(--line2);
-        border-radius: 10px;
-        color: var(--ink2);
-        max-width: 80ch
-    }
-
-    .pk-about li+li {
-        margin-top: 10px
-    }
-
-    .pk-about li::marker {
-        color: var(--maroon)
-    }
-
-    @media (max-width:860px) {
-        .pk-cols {
-            grid-template-columns: 1fr;
-            grid-template-rows: none;
-            row-gap: 14px
-        }
-
-        .pk-col {
-            display: block;
-            grid-row: auto
-        }
-    }
-
-    @media (max-width:640px) {
-        .pk {
-            margin: 12px 8px 40px;
-            border-radius: 12px
-        }
-
-        .pk-main {
-            padding: 4px 18px 28px
-        }
-
-        .pk-section {
-            margin-top: 36px
-        }
-
-        .pk-item>summary {
-            padding: 15px 14px;
-            gap: 12px
-        }
-
-        .pk-sum-meta {
-            display: none
-        }
-
-        .pk-sum-title {
-            font-size: 17px
-        }
-
-        .pk-body {
-            padding: 6px 16px 26px
-        }
-
-        .pk-cpl li {
-            grid-template-columns: 1fr
-        }
-
-        .pk-table-wrap {
-            overflow: visible;
-            border: 0;
-            border-radius: 0
-        }
-
-        .pk thead {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            clip: rect(0 0 0 0)
-        }
-
-        .pk table,
-        .pk tbody {
-            display: block
-        }
-
-        .pk tbody tr {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            grid-template-areas: "name sks" "sem code";
-            column-gap: 12px;
-            row-gap: 1px;
-            padding: 13px 0;
-            border-bottom: 1px solid var(--line-soft)
-        }
-
-        .pk tbody tr:last-child {
-            border-bottom: 0
-        }
-
-        .pk td,
-        .pk tbody tr:nth-child(even) td {
-            padding: 0;
-            border: 0;
-            background: none
-        }
-
-        .pk .c-name {
-            grid-area: name;
-            width: auto
-        }
-
-        .pk .c-sks {
-            grid-area: sks;
-            width: auto;
-            text-align: right;
-            font-weight: 600;
-            color: var(--maroon)
-        }
-
-        .pk .c-sks::after {
-            content: " SKS"
-        }
-
-        .pk .c-sem {
-            grid-area: sem;
-            width: auto;
-            font-size: 14px;
-            font-weight: 500
-        }
-
-        .pk .c-sem::before {
-            content: "Semester "
-        }
-
-        .pk .c-code {
-            grid-area: code;
-            width: auto;
-            text-align: right;
-            font-size: 14px
-        }
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-        .pk-chev {
-            transition: none
-        }
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap');
 </style>
-<div class="pk">
-    <header class="pk-head">
-        <h1>Peta Kurikulum Program Studi <span class="pk-nb">S-1</span> Ilmu Hukum</h1>
-        <p class="pk-intro">Halaman ini menunjukkan bagaimana mata kuliah di Program Studi S-1 Ilmu Hukum membawa
-            mahasiswa menuju peran profesional tertentu. Kurikulumnya disusun dengan pendekatan <em>Outcome-Based
-                Education</em> (OBE) yang menghubungkan <strong>Profil Lulusan</strong> (peran profesional),
-            <strong>Capaian Pembelajaran Lulusan (CPL)</strong>, dan <strong>Mata Kuliah Pendukung</strong>, agar
-            lulusan sarjana hukum memiliki kompetensi yang siap bersaing.</p>
-    </header>
-    <div class="pk-main">
-        <section class="pk-section">
-            <h2>Cara membaca peta kurikulum</h2>
-            <p class="pk-lead">Setiap profil lulusan dicapai lewat sejumlah CPL, dan setiap CPL dibangun oleh mata
-                kuliah tertentu. Ketiganya saling menopang:</p>
-            <div class="pk-cols">
-                <div class="pk-col">
-                    <h3>1. Profil Lulusan</h3>
-                    <p class="pk-col-sub">5 peran profesional lulusan di dunia kerja</p>
-                    <ul>
-                        <li><strong>Pengacara / Advokat dan Praktisi Hukum</strong></li>
-                        <li><strong>Perancang Peraturan dan Kontrak (Legal Drafter)</strong></li>
-                        <li><strong>Konsultan Hukum Korporasi / In-House Counsel</strong></li>
-                        <li><strong>Aparatur Penegak Hukum Publik (Hakim, Jaksa, Penyidik)</strong></li>
-                        <li><strong>Akademisi / Peneliti dan Analis Kebijakan Hukum</strong></li>
+
+<div
+    style="width:100%;margin:0 auto;padding:28px 14px 56px 14px;box-sizing:border-box;font-family:'Geist',Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222222;background:linear-gradient(to bottom, #800000 0%, #800000 140px, #f7efef 140px, #f7efef 100%);">
+
+    <div
+        style="width:100%;max-width:1160px;margin:0 auto;padding:clamp(24px, 4vw, 44px) clamp(16px, 3.5vw, 36px);box-sizing:border-box;background:#ffffff;border-radius:12px;box-shadow:0 2px 14px rgba(60,0,0,0.18);">
+
+        <!-- HEADER -->
+        <div style="text-align:center;margin-bottom:32px;">
+            <div
+                style="display:inline-block;margin-bottom:14px;padding:5px 16px;font-size:14px;font-weight:600;color:#800000;background:#fbf0f0;border:1px solid #e8c9c9;border-radius:16px;">
+                Kurikulum Outcome-Based Education (OBE)
+            </div>
+            <h1
+                style="font-size:clamp(26px, 4.2vw, 40px);font-weight:700;color:#800000;margin:0 0 12px 0;line-height:1.2;">
+                Peta Kurikulum Program Studi S-1 Ilmu Hukum
+            </h1>
+            <p style="font-size:16px;color:#4f4747;max-width:720px;margin:0 auto;line-height:1.55;">
+                Pemetaan keterhubungan konstruktif antara <strong>Profil Lulusan</strong> (peran profesional),
+                <strong>Capaian Pembelajaran Lulusan (CPL)</strong>, dan <strong>Mata Kuliah Pendukung</strong> untuk
+                menjamin kompetensi lulusan sarjana hukum yang berdaya saing.
+            </p>
+        </div>
+
+        <!-- RINGKASAN -->
+        <div
+            style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:14px;margin-bottom:32px;">
+            <div
+                style="padding:16px 20px;background:#ffffff;border:1px solid #e8d5d5;border-top:3px solid #800000;border-radius:8px;">
+                <div style="font-size:14px;font-weight:600;color:#5f5757;">1. Profil Lulusan</div>
+                <div style="margin-top:2px;font-size:22px;font-weight:700;line-height:1.25;color:#800000;">5<span
+                        style="font-size:14px;font-weight:600;color:#5f5757;"> Peran Profesional</span></div>
+            </div>
+            <div
+                style="padding:16px 20px;background:#ffffff;border:1px solid #e8d5d5;border-top:3px solid #800000;border-radius:8px;">
+                <div style="font-size:14px;font-weight:600;color:#5f5757;">2. Capaian Pembelajaran</div>
+                <div style="margin-top:2px;font-size:22px;font-weight:700;line-height:1.25;color:#800000;">CPL<span
+                        style="font-size:14px;font-weight:600;color:#5f5757;"> Standar Kompetensi</span></div>
+            </div>
+            <div
+                style="padding:16px 20px;background:#ffffff;border:1px solid #e8d5d5;border-top:3px solid #800000;border-radius:8px;">
+                <div style="font-size:14px;font-weight:600;color:#5f5757;">3. Mata Kuliah</div>
+                <div style="margin-top:2px;font-size:22px;font-weight:700;line-height:1.25;color:#800000;">148<span
+                        style="font-size:14px;font-weight:600;color:#5f5757;"> SKS Pendukung</span></div>
+            </div>
+        </div>
+
+        <!-- DIAGRAM 3 KOLOM -->
+        <div
+            style="margin-bottom:32px;padding:22px 20px;background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;">
+            <div style="margin-bottom:4px;font-size:18px;font-weight:700;color:#800000;">Diagram Alur Keterhubungan Peta
+                Kurikulum</div>
+            <div style="margin-bottom:16px;font-size:14.5px;color:#5f5757;">Tiga pilar kurikulum yang saling menopang
+                secara terintegrasi:</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:14px;">
+                <div style="padding:16px;background:#fff7f7;border:1px solid #f0cfcf;border-radius:10px;">
+                    <div
+                        style="display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #e8d5d5;">
+                        <span
+                            style="flex:0 0 28px;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background:#800000;color:#ffffff;font-size:14px;font-weight:700;">1</span>
+                        <div>
+                            <div style="font-size:16px;font-weight:700;color:#800000;">Profil Lulusan</div>
+                            <div style="font-size:14px;color:#5f5757;">Peran profesional lulusan di dunia kerja</div>
+                        </div>
+                    </div>
+                    <ul style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6;color:#3a3030;">
+                        <li style="margin-top:3px;"><strong>Pengacara / Advokat &amp; Praktisi Hukum</strong></li>
+                        <li style="margin-top:3px;"><strong>Perancang Peraturan &amp; Kontrak (Legal Drafter)</strong>
+                        </li>
+                        <li style="margin-top:3px;"><strong>Konsultan Hukum Bisnis / In-House Counsel</strong></li>
+                        <li style="margin-top:3px;"><strong>Aparatur Penegak Hukum Publik (Hakim, Jaksa,
+                                Penyidik)</strong></li>
+                        <li style="margin-top:3px;"><strong>Akademisi / Peneliti &amp; Analis Kebijakan Hukum</strong>
+                        </li>
                     </ul>
                 </div>
-                <div class="pk-col">
-                    <h3>2. Capaian Pembelajaran (CPL)</h3>
-                    <p class="pk-col-sub">Standar kompetensi dan kemampuan lulusan</p>
-                    <ul>
-                        <li><strong>Sikap dan etika</strong>: integritas moral dan nilai kemanusiaan</li>
-                        <li><strong>Pengetahuan yuridis</strong>: teori hukum materiil dan formil</li>
-                        <li><strong>Keterampilan khusus</strong>: praktik peradilan dan litigasi</li>
-                        <li><strong><em>Legal drafting</em></strong>: penyusunan kontrak dan regulasi</li>
-                        <li><strong>Analisis kritis</strong>: <em>legal reasoning</em> dan penyelesaian sengketa</li>
+                <div style="padding:16px;background:#fff7f7;border:1px solid #f0cfcf;border-radius:10px;">
+                    <div
+                        style="display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #e8d5d5;">
+                        <span
+                            style="flex:0 0 28px;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background:#800000;color:#ffffff;font-size:14px;font-weight:700;">2</span>
+                        <div>
+                            <div style="font-size:16px;font-weight:700;color:#800000;">Capaian Pembelajaran (CPL)</div>
+                            <div style="font-size:14px;color:#5f5757;">Standar kompetensi dan kapabilitas lulusan</div>
+                        </div>
+                    </div>
+                    <ul style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6;color:#3a3030;">
+                        <li style="margin-top:3px;"><strong>Sikap &amp; Etika</strong>: Integritas moral dan nilai
+                            humanis</li>
+                        <li style="margin-top:3px;"><strong>Pengetahuan Yuridis</strong>: Teori hukum materiil dan
+                            formil</li>
+                        <li style="margin-top:3px;"><strong>Keterampilan Khusus</strong>: Praktik peradilan dan litigasi
+                        </li>
+                        <li style="margin-top:3px;"><strong>Legal Drafting</strong>: Penyusunan kontrak dan regulasi
+                        </li>
+                        <li style="margin-top:3px;"><strong>Analisis Kritis</strong>: Legal reasoning dan penyelesaian
+                            sengketa</li>
                     </ul>
                 </div>
-                <div class="pk-col">
-                    <h3>3. Mata Kuliah Pendukung</h3>
-                    <p class="pk-col-sub">148 SKS mata kuliah penunjang pencapaian CPL</p>
-                    <ul>
-                        <li><strong>Mata kuliah dasar</strong>: Pengantar Ilmu Hukum (PIH), Pengantar Hukum Indonesia
-                            (PHI), Logika Hukum</li>
-                        <li><strong>Mata kuliah substansi</strong>: Hukum Pidana, Hukum Perdata, Hukum Tata Negara
-                            (HTN), Hukum Administrasi Negara (HAN)</li>
-                        <li><strong>Mata kuliah prosedural</strong>: Hukum Acara dan Pembuktian</li>
-                        <li><strong>Praktikum dan klinis</strong>: PLKH Litigasi dan Non-Litigasi</li>
-                        <li><strong>Tugas akhir</strong>: Skripsi (6 SKS)</li>
+                <div style="padding:16px;background:#fff7f7;border:1px solid #f0cfcf;border-radius:10px;">
+                    <div
+                        style="display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #e8d5d5;">
+                        <span
+                            style="flex:0 0 28px;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background:#800000;color:#ffffff;font-size:14px;font-weight:700;">3</span>
+                        <div>
+                            <div style="font-size:16px;font-weight:700;color:#800000;">Mata Kuliah Pendukung</div>
+                            <div style="font-size:14px;color:#5f5757;">Kurikulum penunjang penguasaan CPL</div>
+                        </div>
+                    </div>
+                    <ul style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6;color:#3a3030;">
+                        <li style="margin-top:3px;"><strong>Mata Kuliah Dasar</strong>: Pengantar Ilmu Hukum (PIH),
+                            Pengantar Hukum Indonesia (PHI), Logika Hukum</li>
+                        <li style="margin-top:3px;"><strong>Mata Kuliah Substansi</strong>: Pidana, Perdata, Hukum Tata
+                            Negara (HTN), Hukum Administrasi Negara (HAN)</li>
+                        <li style="margin-top:3px;"><strong>Mata Kuliah Prosedural</strong>: Hukum Acara dan Pembuktian
+                        </li>
+                        <li style="margin-top:3px;"><strong>Praktikum &amp; Klinis</strong>: PLKH Litigasi dan
+                            Non-Litigasi</li>
+                        <li style="margin-top:3px;"><strong>Tugas Akhir</strong>: Skripsi 6 SKS</li>
                     </ul>
                 </div>
             </div>
-        </section>
-        <section class="pk-section">
-            <h2>Rincian tiap profil lulusan</h2>
-            <p class="pk-lead">Pilih satu profil untuk melihat kompetensi yang harus dicapai dan mata kuliah yang
-                menunjangnya.</p>
-            <div class="pk-list">
-                <details class="pk-item">
-                    <summary>
-                        <span class="pk-sum-text"><span class="pk-sum-title">Pengacara / Advokat dan Praktisi
-                                Hukum</span><span class="pk-sum-sub">Profil lulusan 1: Litigasi dan
-                                non-litigasi</span></span>
-                        <span class="pk-sum-meta">10 mata kuliah</span>
-                        <span class="pk-chev" aria-hidden="true"></span>
-                    </summary>
-                    <div class="pk-body">
-                        <div class="pk-inner">
-                            <h3>Peran profesional</h3>
-                            <p class="pk-peran">Memberikan jasa hukum dan membela kepentingan klien dalam perkara
-                                pidana, perdata, tata usaha negara, maupun peradilan agama. Juga mendampingi klien
-                                bernegosiasi dan bermediasi untuk menyelesaikan sengketa di luar pengadilan.</p>
-                            <h3>Kompetensi yang harus dicapai (CPL)</h3>
-                            <p class="pk-note">Untuk menjalankan peran ini, lulusan perlu menguasai kompetensi berikut.
-                            </p>
-                            <ul class="pk-cpl">
-                                <li><span class="pk-cpl-code">CPL-A</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Integritas Etika</p>
-                                        <p class="pk-cpl-desc">Menjunjung tinggi kode etik advokat, integritas moral
-                                            dalam penegakan hukum, keadilan substantif, dan perlindungan hak asasi
-                                            manusia.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-B</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Keahlian Hukum Acara</p>
-                                        <p class="pk-cpl-desc">Menguasai hukum materiil (perdata, pidana, tata usaha
-                                            negara) dan seluruh tahapan hukum formil di lingkungan peradilan Indonesia.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-C</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Keterampilan Advokasi dan Litigasi</p>
-                                        <p class="pk-cpl-desc">Mampu menyusun dokumen persidangan (surat kuasa, gugatan,
-                                            replik, pledoi, memori banding/kasasi) dan beracara di pengadilan.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-D</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penyelesaian Alternatif / Non-Litigasi</p>
-                                        <p class="pk-cpl-desc">Mampu menggunakan teknik mediasi, negosiasi, dan
-                                            konsiliasi untuk menyelesaikan perselisihan secara damai dan solutif.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Mata kuliah pendukung</h3>
-                            <p class="pk-note">Kompetensi tersebut dibangun lewat mata kuliah berikut, diurutkan menurut
-                                semester.</p>
-                            <div class="pk-table-wrap">
-                                <table>
-                                    <caption>Mata kuliah pendukung profil Pengacara / Advokat dan Praktisi Hukum,
-                                        diurutkan menurut semester</caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Semester</th>
-                                            <th scope="col">Mata Kuliah</th>
-                                            <th scope="col">Kode MK</th>
-                                            <th scope="col">Bobot (SKS)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Hukum Acara Perdata</td>
-                                            <td class="c-code">22HUK0314</td>
-                                            <td class="c-sks">4</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Hukum Acara Pidana</td>
-                                            <td class="c-code">22HUK0324</td>
-                                            <td class="c-sks">4</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Hukum Acara Peradilan TUN</td>
-                                            <td class="c-code">22HUK0102</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Hukum Pembuktian</td>
-                                            <td class="c-code">22HUK0112</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Keadvokatan</td>
-                                            <td class="c-code">22HUK0373</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Acara Peradilan Agama</td>
-                                            <td class="c-code">22HUK0152</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">PLKH Perdata (Peradilan Semu)</td>
-                                            <td class="c-code">22HUK0192</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">PLKH Pidana (Peradilan Semu)</td>
-                                            <td class="c-code">22HUK0202</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">PLKH Non Litigasi</td>
-                                            <td class="c-code">22HUK0222</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Etika Profesi Hukum</td>
-                                            <td class="c-code">22FHK0102</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3>Bagaimana ketiganya terhubung</h3>
-                            <p class="pk-ringkas">Sebagai pengacara atau advokat, lulusan dibekali pemahaman mendalam
-                                tentang prosedur peradilan dan etika advokasi. Pemahaman itu diwujudkan lewat kemampuan
-                                menyusun surat hukum, menguasai teknik pembuktian, dan menyusun strategi pembelaan.
-                                Semuanya ditopang oleh mata kuliah Hukum Acara, Keadvokatan, serta praktik litigasi dan
-                                non-litigasi.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="pk-item">
-                    <summary>
-                        <span class="pk-sum-text"><span class="pk-sum-title">Perancang Peraturan dan Kontrak (Legal
-                                Drafter)</span><span class="pk-sum-sub">Profil lulusan 2: Perancangan regulasi dan
-                                kontrak bisnis</span></span>
-                        <span class="pk-sum-meta">8 mata kuliah</span>
-                        <span class="pk-chev" aria-hidden="true"></span>
-                    </summary>
-                    <div class="pk-body">
-                        <div class="pk-inner">
-                            <h3>Peran profesional</h3>
-                            <p class="pk-peran">Menganalisis dan merancang naskah akademik serta peraturan
-                                perundang-undangan, baik tingkat nasional maupun daerah. Juga menyusun dan menelaah
-                                kontrak bisnis (<em>contract drafting</em>) dengan cermat agar tidak menyisakan celah
-                                hukum yang merugikan.</p>
-                            <h3>Kompetensi yang harus dicapai (CPL)</h3>
-                            <p class="pk-note">Untuk menjalankan peran ini, lulusan perlu menguasai kompetensi berikut.
-                            </p>
-                            <ul class="pk-cpl">
-                                <li><span class="pk-cpl-code">CPL-A</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penalaran dan Logika Perundang-undangan</p>
-                                        <p class="pk-cpl-desc">Menguasai teori hierarki peraturan perundang-undangan,
-                                            asas pembentukan peraturan yang baik, dan logika perancangan hukum.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-B</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Keahlian <em>Contract Drafting</em></p>
-                                        <p class="pk-cpl-desc">Mampu merumuskan klausul kontrak komersial, addendum, dan
-                                            jaminan, serta mengidentifikasi risiko hukum dalam transaksi bisnis.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-C</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penyusunan Naskah Akademik</p>
-                                        <p class="pk-cpl-desc">Mampu melakukan harmonisasi hukum dan menyusun rancangan
-                                            undang-undang serta peraturan daerah yang partisipatif dan dapat diterapkan.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Mata kuliah pendukung</h3>
-                            <p class="pk-note">Kompetensi tersebut dibangun lewat mata kuliah berikut, diurutkan menurut
-                                semester.</p>
-                            <div class="pk-table-wrap">
-                                <table>
-                                    <caption>Mata kuliah pendukung profil Perancang Peraturan dan Kontrak (Legal
-                                        Drafter), diurutkan menurut semester</caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Semester</th>
-                                            <th scope="col">Mata Kuliah</th>
-                                            <th scope="col">Kode MK</th>
-                                            <th scope="col">Bobot (SKS)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="c-sem">1</td>
-                                            <td class="c-name">Logika dan Penalaran Hukum</td>
-                                            <td class="c-code">22FHK0022</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Ilmu Perundang-undangan</td>
-                                            <td class="c-code">22HUK0352</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Hukum Perikatan</td>
-                                            <td class="c-code">22HUK0332</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Hukum Pemerintahan Daerah</td>
-                                            <td class="c-code">22HUK0342</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Hukum Kelembagaan Negara</td>
-                                            <td class="c-code">22HUK1033</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Perjanjian Internasional</td>
-                                            <td class="c-code">22HUK2042</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hak Uji Materil</td>
-                                            <td class="c-code">22HUK3032</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hukum Jaminan</td>
-                                            <td class="c-code">22HUK3012</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3>Bagaimana ketiganya terhubung</h3>
-                            <p class="pk-ringkas">Sebagai perancang peraturan dan kontrak, lulusan dilatih berpikir
-                                yuridis agar mampu menyusun norma hukum yang presisi dan mengikat. Kemampuan itu
-                                ditopang oleh mata kuliah Ilmu Perundang-undangan, Hukum Perikatan, Hukum Perjanjian
-                                Internasional, dan Hukum Kelembagaan Negara.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="pk-item">
-                    <summary>
-                        <span class="pk-sum-text"><span class="pk-sum-title">Konsultan Hukum Korporasi / In-House
-                                Counsel</span><span class="pk-sum-sub">Profil lulusan 3: Hukum bisnis dan kepatuhan
-                                perusahaan</span></span>
-                        <span class="pk-sum-meta">10 mata kuliah</span>
-                        <span class="pk-chev" aria-hidden="true"></span>
-                    </summary>
-                    <div class="pk-body">
-                        <div class="pk-inner">
-                            <h3>Peran profesional</h3>
-                            <p class="pk-peran">Ahli hukum internal perusahaan yang memberi nasihat hukum (<em>legal
-                                    opinion</em>), memastikan perusahaan patuh pada regulasi (<em>regulatory
-                                    compliance</em>), serta menangani perizinan usaha, merger dan akuisisi, kepailitan,
-                                dan sengketa hubungan industrial.</p>
-                            <h3>Kompetensi yang harus dicapai (CPL)</h3>
-                            <p class="pk-note">Untuk menjalankan peran ini, lulusan perlu menguasai kompetensi berikut.
-                            </p>
-                            <ul class="pk-cpl">
-                                <li><span class="pk-cpl-code">CPL-A</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penguasaan Hukum Korporasi dan Komersial</p>
-                                        <p class="pk-cpl-desc">Menguasai regulasi tentang perseroan terbatas, perbankan,
-                                            pasar modal, hak kekayaan intelektual, kepailitan, dan perpajakan.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-B</span>
-                                    <div>
-                                        <p class="pk-cpl-name"><em>Legal Due Diligence</em> dan Audit</p>
-                                        <p class="pk-cpl-desc">Mampu melakukan uji tuntas hukum (<em>legal audit</em>)
-                                            dan menyusun pendapat hukum (<em>legal opinion</em>) yang akurat dan
-                                            komprehensif.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-C</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Pencegahan dan Mitigasi Risiko Bisnis</p>
-                                        <p class="pk-cpl-desc">Mampu merancang strategi pencegahan perselisihan
-                                            komersial dan menangani sengketa hubungan industrial secara profesional.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Mata kuliah pendukung</h3>
-                            <p class="pk-note">Kompetensi tersebut dibangun lewat mata kuliah berikut, diurutkan menurut
-                                semester.</p>
-                            <div class="pk-table-wrap">
-                                <table>
-                                    <caption>Mata kuliah pendukung profil Konsultan Hukum Korporasi / In-House Counsel,
-                                        diurutkan menurut semester</caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Semester</th>
-                                            <th scope="col">Mata Kuliah</th>
-                                            <th scope="col">Kode MK</th>
-                                            <th scope="col">Bobot (SKS)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="c-sem">3</td>
-                                            <td class="c-name">Hukum Perlindungan Konsumen</td>
-                                            <td class="c-code">22HUK0052</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Hukum Dagang</td>
-                                            <td class="c-code">22HUK0363</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Kepailitan dan Penundaan Pembayaran Hutang</td>
-                                            <td class="c-code">22HUK2012</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hak Atas Kekayaan Intelektual (HAKI)</td>
-                                            <td class="c-code">22HUK0402</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Ketenagakerjaan</td>
-                                            <td class="c-code">22HUK0392</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Penyelesaian Perselisihan Hubungan Industrial</td>
-                                            <td class="c-code">22HUK0163</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Pajak</td>
-                                            <td class="c-code">22HUK0132</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hukum Perbankan</td>
-                                            <td class="c-code">22HUK0412</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hukum Asuransi</td>
-                                            <td class="c-code">22HUK0182</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">8</td>
-                                            <td class="c-name">Hukum Surat Berharga</td>
-                                            <td class="c-code">22HUK4012</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3>Bagaimana ketiganya terhubung</h3>
-                            <p class="pk-ringkas">Sebagai konsultan hukum korporasi, lulusan mampu mengawal legalitas
-                                bisnis dan menekan risiko operasional perusahaan. Mata kuliah seperti Hukum Dagang,
-                                Hukum Perbankan, Hukum Kepailitan, HAKI, Hukum Pajak, dan Hukum Penyelesaian
-                                Perselisihan Hubungan Industrial menjadi pilar utama profil ini.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="pk-item">
-                    <summary>
-                        <span class="pk-sum-text"><span class="pk-sum-title">Aparatur Penegak Hukum Publik (Hakim,
-                                Jaksa, Penyidik)</span><span class="pk-sum-sub">Profil lulusan 4: Penegakan keadilan dan
-                                hukum publik</span></span>
-                        <span class="pk-sum-meta">11 mata kuliah</span>
-                        <span class="pk-chev" aria-hidden="true"></span>
-                    </summary>
-                    <div class="pk-body">
-                        <div class="pk-inner">
-                            <h3>Peran profesional</h3>
-                            <p class="pk-peran">Aparatur negara yang berwenang menegakkan hukum pidana dan peradilan
-                                umum: melakukan penyelidikan, penyidikan, dan penuntutan, serta mengadili perkara demi
-                                kepastian hukum dan rasa keadilan di masyarakat.</p>
-                            <h3>Kompetensi yang harus dicapai (CPL)</h3>
-                            <p class="pk-note">Untuk menjalankan peran ini, lulusan perlu menguasai kompetensi berikut.
-                            </p>
-                            <ul class="pk-cpl">
-                                <li><span class="pk-cpl-code">CPL-A</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Integritas Yudisial dan Keadilan</p>
-                                        <p class="pk-cpl-desc">Menjunjung integritas aparatur penegak hukum: bersih,
-                                            bebas dari intervensi, adil, dan berorientasi pada kepastian hukum yang
-                                            bermartabat.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-B</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Keahlian Investigasi dan Pembuktian Yuridis</p>
-                                        <p class="pk-cpl-desc">Mampu menguji alat bukti, menyusun fakta hukum perkara,
-                                            dan menerapkan pasal pidana materiil secara objektif.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-C</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penyusunan Berkas Perkara dan Putusan</p>
-                                        <p class="pk-cpl-desc">Mampu menyusun Berita Acara Pemeriksaan (BAP), surat
-                                            dakwaan, surat tuntutan, dan pertimbangan putusan yang bernalar logis.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Mata kuliah pendukung</h3>
-                            <p class="pk-note">Kompetensi tersebut dibangun lewat mata kuliah berikut, diurutkan menurut
-                                semester.</p>
-                            <div class="pk-table-wrap">
-                                <table>
-                                    <caption>Mata kuliah pendukung profil Aparatur Penegak Hukum Publik (Hakim, Jaksa,
-                                        Penyidik), diurutkan menurut semester</caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Semester</th>
-                                            <th scope="col">Mata Kuliah</th>
-                                            <th scope="col">Kode MK</th>
-                                            <th scope="col">Bobot (SKS)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="c-sem">1</td>
-                                            <td class="c-name">Pendidikan Anti Korupsi</td>
-                                            <td class="c-code">22FHK0042</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">2</td>
-                                            <td class="c-name">Hukum Pidana</td>
-                                            <td class="c-code">22FHK0063</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">4</td>
-                                            <td class="c-name">Hukum Acara Pidana</td>
-                                            <td class="c-code">22HUK0324</td>
-                                            <td class="c-sks">4</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Hukum Pembuktian</td>
-                                            <td class="c-code">22HUK0112</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Penologi</td>
-                                            <td class="c-code">22HUK1023</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Hukum Pidana Khusus (Tipikor, Narkotika, dll)</td>
-                                            <td class="c-code">22HUK2022</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Kriminologi</td>
-                                            <td class="c-code">22HUK0142</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hukum Pidana Internasional</td>
-                                            <td class="c-code">22HUK0172</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">Hukum Perlindungan Perempuan dan Anak</td>
-                                            <td class="c-code">22HUK3022</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">7</td>
-                                            <td class="c-name">PLKH Pidana</td>
-                                            <td class="c-code">22HUK0202</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">8</td>
-                                            <td class="c-name">Victimologi</td>
-                                            <td class="c-code">22HUK4022</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3>Bagaimana ketiganya terhubung</h3>
-                            <p class="pk-ringkas">Sebagai aparatur penegak hukum, lulusan dituntut tajam dalam
-                                menganalisis tindak pidana dan memiliki integritas yudisial yang tinggi. Keahlian ini
-                                dibangun terpadu oleh mata kuliah inti Hukum Pidana, Hukum Pembuktian, Hukum Pidana
-                                Khusus, Kriminologi, Pendidikan Anti Korupsi, dan praktik peradilan semu pidana.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="pk-item">
-                    <summary>
-                        <span class="pk-sum-text"><span class="pk-sum-title">Akademisi / Peneliti dan Analis Kebijakan
-                                Hukum</span><span class="pk-sum-sub">Profil lulusan 5: Riset ilmiah dan kajian
-                                hukum</span></span>
-                        <span class="pk-sum-meta">7 mata kuliah</span>
-                        <span class="pk-chev" aria-hidden="true"></span>
-                    </summary>
-                    <div class="pk-body">
-                        <div class="pk-inner">
-                            <h3>Peran profesional</h3>
-                            <p class="pk-peran">Melakukan riset hukum doktrinal maupun empiris (sosio-legal), menulis
-                                publikasi ilmiah, dan merumuskan rekomendasi pembaruan hukum nasional serta kebijakan
-                                publik.</p>
-                            <h3>Kompetensi yang harus dicapai (CPL)</h3>
-                            <p class="pk-note">Untuk menjalankan peran ini, lulusan perlu menguasai kompetensi berikut.
-                            </p>
-                            <ul class="pk-cpl">
-                                <li><span class="pk-cpl-code">CPL-A</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Penguasaan Teori dan Filsafat Hukum</p>
-                                        <p class="pk-cpl-desc">Menguasai aliran-aliran filsafat hukum, teori keadilan,
-                                            sosiologi hukum, dan politik hukum nasional secara komparatif.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-B</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Keahlian Metodologi Penelitian Hukum</p>
-                                        <p class="pk-cpl-desc">Mampu merancang dan melaksanakan riset hukum dengan
-                                            metodologi ilmiah yang valid, kritis, dan berstandar akademik tinggi.</p>
-                                    </div>
-                                </li>
-                                <li><span class="pk-cpl-code">CPL-C</span>
-                                    <div>
-                                        <p class="pk-cpl-name">Publikasi Ilmiah dan <em>Policy Brief</em></p>
-                                        <p class="pk-cpl-desc">Mampu menulis artikel ilmiah bereputasi dan merumuskan
-                                            <em>policy brief</em> untuk penyempurnaan sistem hukum nasional.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Mata kuliah pendukung</h3>
-                            <p class="pk-note">Kompetensi tersebut dibangun lewat mata kuliah berikut, diurutkan menurut
-                                semester.</p>
-                            <div class="pk-table-wrap">
-                                <table>
-                                    <caption>Mata kuliah pendukung profil Akademisi / Peneliti dan Analis Kebijakan
-                                        Hukum, diurutkan menurut semester</caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Semester</th>
-                                            <th scope="col">Mata Kuliah</th>
-                                            <th scope="col">Kode MK</th>
-                                            <th scope="col">Bobot (SKS)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="c-sem">1</td>
-                                            <td class="c-name">Pengantar Ilmu Hukum</td>
-                                            <td class="c-code">22FHK0014</td>
-                                            <td class="c-sks">4</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">1</td>
-                                            <td class="c-name">Sosiologi Hukum</td>
-                                            <td class="c-code">22HUK0232</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">2</td>
-                                            <td class="c-name">Politik Hukum</td>
-                                            <td class="c-code">22HUK0252</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">5</td>
-                                            <td class="c-name">Metode Penelitian dan Penulisan Hukum</td>
-                                            <td class="c-code">22HUK0023</td>
-                                            <td class="c-sks">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">6</td>
-                                            <td class="c-name">Perbandingan Hukum</td>
-                                            <td class="c-code">22HUK0382</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">8</td>
-                                            <td class="c-name">Filsafat Hukum</td>
-                                            <td class="c-code">22FHK0112</td>
-                                            <td class="c-sks">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="c-sem">8</td>
-                                            <td class="c-name">Skripsi (Tugas Akhir Mandiri)</td>
-                                            <td class="c-code">22HUK5016</td>
-                                            <td class="c-sks">6</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3>Bagaimana ketiganya terhubung</h3>
-                            <p class="pk-ringkas">Sebagai akademisi atau peneliti hukum, lulusan disiapkan berpikir
-                                secara filosofis, kritis, dan metodologis. Fondasinya adalah mata kuliah Metode
-                                Penelitian dan Penulisan Hukum, Filsafat Hukum, Sosiologi Hukum, Politik Hukum, dan
-                                Skripsi, yang bersama-sama melatih lulusan menghasilkan riset hukum berkualitas.</p>
-                        </div>
-                    </div>
-                </details>
+        </div>
+
+        <!-- PETUNJUK -->
+        <div style="margin-bottom:16px;text-align:center;">
+            <div
+                style="display:inline-block;padding:7px 18px;font-size:14px;font-weight:600;color:#800000;background:#fbf0f0;border:1px solid #e8c9c9;border-radius:16px;">
+                Klik salah satu Profil Lulusan di bawah untuk melihat rincian hubungannya
             </div>
-        </section>
-        <section class="pk-section">
-            <h2>Tentang pendekatan OBE</h2>
-            <ul class="pk-about">
-                <li><strong>OBE menyusun kurikulum secara terbalik</strong> (<em>backward design</em>): mulai dari
-                    profil lulusan yang dibutuhkan dunia profesi, diturunkan menjadi Capaian Pembelajaran Lulusan (CPL),
-                    lalu disusun mata kuliah yang relevan.</li>
-                <li><strong>Setiap mata kuliah terhubung langsung</strong> (<em>constructive alignment</em>) dengan
-                    pencapaian CPL dan pembentukan profil lulusan mahasiswa Fakultas Hukum UNPAM.</li>
-                <li><strong>Konsultasikan pilihan Anda.</strong> Mahasiswa dapat berkonsultasi dengan Dosen Pembimbing
-                    Akademik (DPA) untuk memilih peminatan yang sesuai dengan target karier.</li>
+        </div>
+
+        <!-- PROFIL LULUSAN (accordion bawaan HTML, tertutup secara default) -->
+        <div style="display:flex;flex-direction:column;gap:14px;">
+
+            <!-- PROFIL 1: Pengacara / Advokat &amp; Praktisi Hukum -->
+            <details style="background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;overflow:hidden;">
+                <summary
+                    style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 20px;background:#800000;color:#ffffff;cursor:pointer;list-style:none;">
+                    <div>
+                        <div style="font-size:18px;font-weight:700;line-height:1.3;">Pengacara / Advokat &amp; Praktisi
+                            Hukum</div>
+                        <div style="font-size:14px;line-height:1.4;">Profil Lulusan #1 &bull; Litigasi &amp;
+                            Non-Litigasi</div>
+                    </div>
+                    <div>
+                        <span
+                            style="display:inline-block;padding:3px 12px;font-size:13px;font-weight:600;color:#800000;background:#ffffff;border-radius:14px;">Lihat
+                            Keterhubungan &bull; 1 &rarr; 2 &rarr; 3</span>
+                        <span style="font-size:13px;margin-left:8px;">&#9660;</span>
+                    </div>
+                </summary>
+
+                <div style="padding:20px;background:#ffffff;">
+
+                    <div
+                        style="padding:14px 16px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 8px 8px 0;">
+                        <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">1. Deskripsi Peran
+                            Profesional (Profil Lulusan)</div>
+                        <div style="font-size:15px;line-height:1.6;color:#3a3030;">Profesi yang memberikan jasa hukum,
+                            advokasi perkara pidana, perdata, tata usaha negara, maupun peradilan agama, serta
+                            pendampingan negosiasi dan mediasi penyelesaian sengketa di luar pengadilan.</div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Diwujudkan melalui Capaian Pembelajaran (CPL)</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div>
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">2. Capaian
+                            Pembelajaran Lulusan (Kompetensi yang Harus Dicapai)</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:10px;">
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-A
+                                    (Integritas Etika)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menjunjung tinggi kode
+                                    etik advokat, integritas moralitas penegakan hukum, keadilan substantif, dan
+                                    perlindungan hak asasi manusia.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-B
+                                    (Keahlian Hukum Acara)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menguasai hukum materiil
+                                    (Perdata, Pidana, TUN) dan seluruh tahapan hukum formil pada lingkungan peradilan di
+                                    Indonesia.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-C
+                                    (Keterampilan Advokasi &amp; Litigasi)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu menyusun dokumen
+                                    hukum persidangan (surat kuasa, gugatan, replik, pledoi, memori banding/kasasi) dan
+                                    beracara di pengadilan.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-D
+                                    (Penyelesaian Alternatif / Non-Litigasi)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu melakukan teknik
+                                    mediasi, negosiasi, dan konsiliasi untuk menyelesaikan perselisihan secara damai dan
+                                    solutif.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Didukung oleh sebaran mata kuliah kurikulum</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">3. Mata Kuliah
+                            Terkait (Pendukung Pencapaian CPL)</div>
+                        <div style="border:1px solid #e8d5d5;border-radius:8px;overflow:hidden;">
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">1</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0373</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Keadvokatan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">2</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0314</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Acara Perdata</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">4
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">3</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0324</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Acara Pidana</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">4
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">4</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0102</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Acara Peradilan TUN</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">5</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0152</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Acara Peradilan Agama</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">6</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0112</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pembuktian</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">7</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0192</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    PLKH Perdata (Peradilan Semu)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">8</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0202</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    PLKH Pidana (Peradilan Semu)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">9</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0222</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    PLKH Non Litigasi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:0 solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">10</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0102</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Etika Profesi Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding:16px 20px;background:#800000;color:#ffffff;border-radius:8px;">
+                        <div style="margin-bottom:6px;font-size:15px;font-weight:700;">Ringkasan Keterhubungan (Poin 1,
+                            2, dan 3)</div>
+                        <div style="font-size:14.5px;line-height:1.65;">Sebagai <strong>Pengacara / Advokat &amp;
+                                Praktisi Hukum</strong>, lulusan dibekali pemahaman mendalam tentang prosedur peradilan
+                            dan etika advokasi (Poin 1), yang diwujudkan melalui penguasaan Capaian Pembelajaran berupa
+                            kemampuan menyusun surat hukum, teknik pembuktian, dan strategi pembelaan (Poin 2). Seluruh
+                            kompetensi ini secara terstruktur disokong oleh paket Mata Kuliah Hukum Acara, Keadvokatan,
+                            serta Praktik Litigasi dan Non-Litigasi (Poin 3).</div>
+                    </div>
+
+                </div>
+            </details>
+            <!-- PROFIL 2: Perancang Peraturan &amp; Kontrak (Legal Drafter) -->
+            <details style="background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;overflow:hidden;">
+                <summary
+                    style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 20px;background:#800000;color:#ffffff;cursor:pointer;list-style:none;">
+                    <div>
+                        <div style="font-size:18px;font-weight:700;line-height:1.3;">Perancang Peraturan &amp; Kontrak
+                            (Legal Drafter)</div>
+                        <div style="font-size:14px;line-height:1.4;">Profil Lulusan #2 &bull; Perancangan Regulasi &amp;
+                            Kontrak Bisnis</div>
+                    </div>
+                    <div>
+                        <span
+                            style="display:inline-block;padding:3px 12px;font-size:13px;font-weight:600;color:#800000;background:#ffffff;border-radius:14px;">Lihat
+                            Keterhubungan &bull; 1 &rarr; 2 &rarr; 3</span>
+                        <span style="font-size:13px;margin-left:8px;">&#9660;</span>
+                    </div>
+                </summary>
+
+                <div style="padding:20px;background:#ffffff;">
+
+                    <div
+                        style="padding:14px 16px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 8px 8px 0;">
+                        <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">1. Deskripsi Peran
+                            Profesional (Profil Lulusan)</div>
+                        <div style="font-size:15px;line-height:1.6;color:#3a3030;">Profesi yang memiliki keahlian khusus
+                            dalam menganalisis, merancang naskah akademik peraturan perundang-undangan (tingkat nasional
+                            dan daerah), serta menyusun dan menelaah kontrak bisnis (contract drafting) secara cermat
+                            dan bebas risiko celah hukum.</div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Diwujudkan melalui Capaian Pembelajaran (CPL)</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div>
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">2. Capaian
+                            Pembelajaran Lulusan (Kompetensi yang Harus Dicapai)</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:10px;">
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-A
+                                    (Penalaran &amp; Logika Perundang-undangan)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menguasai teori hierarki
+                                    peraturan perundang-undangan, asas-asas pembentukan peraturan yang baik, dan logika
+                                    perancangan hukum.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-B
+                                    (Keahlian Contract Drafting)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu merumuskan klausul
+                                    kontrak komersial, addendum, jaminan, serta mengidentifikasi risiko hukum dalam
+                                    transaksi bisnis.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-C
+                                    (Penyusunan Naskah Akademik)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu melakukan
+                                    harmonisasi hukum dan menyusun draf rancangan undang-undang serta peraturan daerah
+                                    yang partisipatif dan implementatif.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Didukung oleh sebaran mata kuliah kurikulum</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">3. Mata Kuliah
+                            Terkait (Pendukung Pencapaian CPL)</div>
+                        <div style="border:1px solid #e8d5d5;border-radius:8px;overflow:hidden;">
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">1</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0352</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Ilmu Perundang-undangan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">2</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0332</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Perikatan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">3</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0022</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Logika dan Penalaran Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 1</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">4</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0342</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pemerintahan Daerah</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">5</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK1033</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Kelembagaan Negara</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">6</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK3032</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hak Uji Materil</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">7</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK3012</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Jaminan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:0 solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">8</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK2042</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Perjanjian Internasional</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding:16px 20px;background:#800000;color:#ffffff;border-radius:8px;">
+                        <div style="margin-bottom:6px;font-size:15px;font-weight:700;">Ringkasan Keterhubungan (Poin 1,
+                            2, dan 3)</div>
+                        <div style="font-size:14.5px;line-height:1.65;">Sebagai <strong>Perancang Peraturan &amp;
+                                Kontrak (Legal Drafter)</strong> (Poin 1), lulusan dilatih memiliki kepekaan logika
+                            yuridis untuk menyusun norma hukum yang presisi dan mengikat (Poin 2). Capaian tersebut
+                            ditopang oleh Mata Kuliah Ilmu Perundang-undangan, Hukum Perikatan, Perjanjian
+                            Internasional, serta Hukum Kelembagaan Negara (Poin 3).</div>
+                    </div>
+
+                </div>
+            </details>
+            <!-- PROFIL 3: Konsultan Hukum Bisnis / In-House Counsel -->
+            <details style="background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;overflow:hidden;">
+                <summary
+                    style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 20px;background:#800000;color:#ffffff;cursor:pointer;list-style:none;">
+                    <div>
+                        <div style="font-size:18px;font-weight:700;line-height:1.3;">Konsultan Hukum Bisnis / In-House
+                            Counsel</div>
+                        <div style="font-size:14px;line-height:1.4;">Profil Lulusan #3 &bull; Hukum Bisnis &amp;
+                            Kepatuhan Perusahaan</div>
+                    </div>
+                    <div>
+                        <span
+                            style="display:inline-block;padding:3px 12px;font-size:13px;font-weight:600;color:#800000;background:#ffffff;border-radius:14px;">Lihat
+                            Keterhubungan &bull; 1 &rarr; 2 &rarr; 3</span>
+                        <span style="font-size:13px;margin-left:8px;">&#9660;</span>
+                    </div>
+                </summary>
+
+                <div style="padding:20px;background:#ffffff;">
+
+                    <div
+                        style="padding:14px 16px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 8px 8px 0;">
+                        <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">1. Deskripsi Peran
+                            Profesional (Profil Lulusan)</div>
+                        <div style="font-size:15px;line-height:1.6;color:#3a3030;">Pakar hukum internal perusahaan yang
+                            bertugas memberikan nasihat hukum (legal opinion/advice), mengawal kepatuhan regulasi
+                            (regulatory compliance), menangani perizinan bisnis, merger dan akuisisi, kepailitan, dan
+                            sengketa hubungan industrial.</div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Diwujudkan melalui Capaian Pembelajaran (CPL)</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div>
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">2. Capaian
+                            Pembelajaran Lulusan (Kompetensi yang Harus Dicapai)</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:10px;">
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-A
+                                    (Penguasaan Hukum Korporasi &amp; Komersial)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menguasai regulasi hukum
+                                    perseroan terbatas, perbankan, pasar modal, hak kekayaan intelektual, kepailitan,
+                                    dan perpajakan.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-B
+                                    (Legal Due Diligence &amp; Audit)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu melaksanakan uji
+                                    tuntas hukum (legal audit) dan menyusun pendapat hukum (legal opinion) yang akurat
+                                    dan komprehensif.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-C
+                                    (Pencegahan &amp; Mitigasi Risiko Bisnis)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu merancang strategi
+                                    pencegahan perselisihan komersial dan menangani sengketa hubungan industrial secara
+                                    profesional.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Didukung oleh sebaran mata kuliah kurikulum</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">3. Mata Kuliah
+                            Terkait (Pendukung Pencapaian CPL)</div>
+                        <div style="border:1px solid #e8d5d5;border-radius:8px;overflow:hidden;">
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">1</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0363</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Dagang</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">2</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0412</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Perbankan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">3</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK2012</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Kepailitan dan Penundaan Pembayaran Hutang</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">4</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0402</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hak Atas Kekayaan Intelektual (HAKI)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">5</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0392</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Ketenagakerjaan</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">6</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0163</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Penyelesaian Perselisihan Hubungan Industrial</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">7</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0132</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pajak</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">8</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0182</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Asuransi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">9</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK4012</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Surat Berharga</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 8</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:0 solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">10</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0052</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Perlindungan Konsumen</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding:16px 20px;background:#800000;color:#ffffff;border-radius:8px;">
+                        <div style="margin-bottom:6px;font-size:15px;font-weight:700;">Ringkasan Keterhubungan (Poin 1,
+                            2, dan 3)</div>
+                        <div style="font-size:14.5px;line-height:1.65;">Sebagai <strong>Konsultan Hukum Bisnis /
+                                In-House Counsel</strong> (Poin 1), lulusan memiliki kompetensi mengawal legalitas
+                            bisnis dan mitigasi risiko operasional perusahaan (Poin 2). Mata Kuliah spesifik seperti
+                            Hukum Dagang, Perbankan, Kepailitan, HAKI, Pajak, dan Hubungan Industrial menjadi pilar
+                            utama pembentukan profil ini (Poin 3).</div>
+                    </div>
+
+                </div>
+            </details>
+            <!-- PROFIL 4: Aparatur Penegak Hukum Publik (Hakim, Jaksa, Penyidik) -->
+            <details style="background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;overflow:hidden;">
+                <summary
+                    style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 20px;background:#800000;color:#ffffff;cursor:pointer;list-style:none;">
+                    <div>
+                        <div style="font-size:18px;font-weight:700;line-height:1.3;">Aparatur Penegak Hukum Publik
+                            (Hakim, Jaksa, Penyidik)</div>
+                        <div style="font-size:14px;line-height:1.4;">Profil Lulusan #4 &bull; Penegakan Keadilan &amp;
+                            Hukum Publik</div>
+                    </div>
+                    <div>
+                        <span
+                            style="display:inline-block;padding:3px 12px;font-size:13px;font-weight:600;color:#800000;background:#ffffff;border-radius:14px;">Lihat
+                            Keterhubungan &bull; 1 &rarr; 2 &rarr; 3</span>
+                        <span style="font-size:13px;margin-left:8px;">&#9660;</span>
+                    </div>
+                </summary>
+
+                <div style="padding:20px;background:#ffffff;">
+
+                    <div
+                        style="padding:14px 16px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 8px 8px 0;">
+                        <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">1. Deskripsi Peran
+                            Profesional (Profil Lulusan)</div>
+                        <div style="font-size:15px;line-height:1.6;color:#3a3030;">Aparatur negara yang berwenang
+                            menegakkan hukum pidana dan peradilan umum, melakukan penyelidikan, penyidikan, penuntutan
+                            perkara, serta mengadili perkara demi tercapainya kepastian hukum dan rasa keadilan di
+                            tengah masyarakat.</div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Diwujudkan melalui Capaian Pembelajaran (CPL)</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div>
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">2. Capaian
+                            Pembelajaran Lulusan (Kompetensi yang Harus Dicapai)</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:10px;">
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-A
+                                    (Integritas Yudisial &amp; Keadilan)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menjunjung integritas
+                                    aparatur penegak hukum yang bersih, bebas intervensi, adil, dan berorientasi pada
+                                    kepastian hukum yang bermartabat.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-B
+                                    (Keahlian Investigasi &amp; Pembuktian Yuridis)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu menguji alat bukti,
+                                    mengonstruksikan fakta hukum perkara, dan menerapkan pasal-pasal pidana materiil
+                                    secara objektif.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-C
+                                    (Penyusunan Berkas Perkara &amp; Putusan)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu menyusun Berita
+                                    Acara Pemeriksaan (BAP), surat dakwaan, surat tuntutan, dan pertimbangan putusan
+                                    hukum yang bernalar logis.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Didukung oleh sebaran mata kuliah kurikulum</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">3. Mata Kuliah
+                            Terkait (Pendukung Pencapaian CPL)</div>
+                        <div style="border:1px solid #e8d5d5;border-radius:8px;overflow:hidden;">
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">1</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0063</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pidana</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 2</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">2</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0324</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Acara Pidana</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">4
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 4</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">3</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0112</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pembuktian</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">4</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK2022</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pidana Khusus (Tipikor, Narkotika, dll)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">5</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0142</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Kriminologi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">6</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK1023</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Penologi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">7</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK4022</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Victimologi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 8</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">8</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0172</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Pidana Internasional</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">9</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0042</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Pendidikan Anti Korupsi</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 1</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">10</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK3022</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Hukum Perlindungan Perempuan dan Anak</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:0 solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">11</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0202</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    PLKH Pidana (Peradilan Semu)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 7</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding:16px 20px;background:#800000;color:#ffffff;border-radius:8px;">
+                        <div style="margin-bottom:6px;font-size:15px;font-weight:700;">Ringkasan Keterhubungan (Poin 1,
+                            2, dan 3)</div>
+                        <div style="font-size:14.5px;line-height:1.65;">Sebagai <strong>Aparatur Penegak Hukum Publik
+                                (Hakim, Jaksa, Penyidik)</strong> (Poin 1), lulusan dituntut memiliki ketajaman analisis
+                            tindak pidana dan integritas yudisial tinggi (Poin 2). Mata Kuliah inti Hukum Pidana, Hukum
+                            Pembuktian, Pidana Khusus, Kriminologi, Anti Korupsi, dan Peradilan Semu Pidana secara
+                            terpadu membangun keahlian ini (Poin 3).</div>
+                    </div>
+
+                </div>
+            </details>
+            <!-- PROFIL 5: Akademisi / Peneliti &amp; Analis Kebijakan Hukum -->
+            <details style="background:#ffffff;border:1px solid #e8d5d5;border-radius:10px;overflow:hidden;">
+                <summary
+                    style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 20px;background:#800000;color:#ffffff;cursor:pointer;list-style:none;">
+                    <div>
+                        <div style="font-size:18px;font-weight:700;line-height:1.3;">Akademisi / Peneliti &amp; Analis
+                            Kebijakan Hukum</div>
+                        <div style="font-size:14px;line-height:1.4;">Profil Lulusan #5 &bull; Riset Ilmiah &amp; Kajian
+                            Hukum</div>
+                    </div>
+                    <div>
+                        <span
+                            style="display:inline-block;padding:3px 12px;font-size:13px;font-weight:600;color:#800000;background:#ffffff;border-radius:14px;">Lihat
+                            Keterhubungan &bull; 1 &rarr; 2 &rarr; 3</span>
+                        <span style="font-size:13px;margin-left:8px;">&#9660;</span>
+                    </div>
+                </summary>
+
+                <div style="padding:20px;background:#ffffff;">
+
+                    <div
+                        style="padding:14px 16px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 8px 8px 0;">
+                        <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">1. Deskripsi Peran
+                            Profesional (Profil Lulusan)</div>
+                        <div style="font-size:15px;line-height:1.6;color:#3a3030;">Profesi yang mendedikasikan keahlian
+                            dalam riset hukum doktrinal maupun empiris (sosio-legal), menghasilkan naskah publikasi
+                            ilmiah, serta merumuskan rekomendasi pembaruan hukum nasional dan kebijakan publik.</div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Diwujudkan melalui Capaian Pembelajaran (CPL)</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div>
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">2. Capaian
+                            Pembelajaran Lulusan (Kompetensi yang Harus Dicapai)</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:10px;">
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-A
+                                    (Penguasaan Teori &amp; Filsafat Hukum)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Menguasai secara
+                                    komparatif aliran-aliran filsafat hukum, teori keadilan, sosiologi hukum, dan
+                                    politik hukum nasional.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-B
+                                    (Keahlian Metodologi Penelitian Hukum)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu merancang dan
+                                    melaksanakan riset hukum dengan metodologi ilmiah yang valid, kritis, dan berstandar
+                                    akademik tinggi.</div>
+                            </div>
+                            <div
+                                style="padding:13px 15px;background:#fdfcfc;border:1px solid #ebdada;border-radius:8px;">
+                                <div style="margin-bottom:4px;font-size:15px;font-weight:700;color:#800000;">CPL-C
+                                    (Publikasi Ilmiah &amp; Policy Brief)</div>
+                                <div style="font-size:14.5px;line-height:1.55;color:#4f4747;">Mampu menulis artikel
+                                    ilmiah bereputasi serta merumuskan policy brief untuk penyempurnaan sistem hukum
+                                    nasional.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex;align-items:center;gap:12px;margin:14px 0;color:#800000;font-size:14px;font-weight:600;">
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                        <span style="text-align:center;">&#9660; Didukung oleh sebaran mata kuliah kurikulum</span>
+                        <span style="flex:1 1 0;height:1px;background:#e8d5d5;"></span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <div style="margin-bottom:10px;font-size:15px;font-weight:700;color:#800000;">3. Mata Kuliah
+                            Terkait (Pendukung Pencapaian CPL)</div>
+                        <div style="border:1px solid #e8d5d5;border-radius:8px;overflow:hidden;">
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">1</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0023</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Metode Penelitian dan Penulisan Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">3
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 5</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">2</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0112</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Filsafat Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 8</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">3</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22FHK0014</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Pengantar Ilmu Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">4
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 1</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">4</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0232</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Sosiologi Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 1</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">5</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0252</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Politik Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 2</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#fffbfb;border-bottom:1px solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">6</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK0382</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Perbandingan Hukum</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">2
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 6</div>
+                            </div>
+                            <div
+                                style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:11px 16px;background:#ffffff;border-bottom:0 solid #f1e2e2;">
+                                <div style="flex:0 0 24px;font-size:14px;font-weight:600;color:#777777;">7</div>
+                                <div
+                                    style="flex:0 0 100px;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#800000;">
+                                    22HUK5016</div>
+                                <div style="flex:1 1 220px;min-width:0;font-size:15px;font-weight:600;color:#222222;">
+                                    Skripsi (Tugas Akhir Mandiri)</div>
+                                <div style="flex:0 0 64px;"><span
+                                        style="display:inline-block;padding:2px 11px;font-size:13.5px;font-weight:700;color:#800000;background:#f2e4e4;border-radius:14px;">6
+                                        SKS</span></div>
+                                <div style="flex:0 0 92px;font-size:14px;color:#5f5757;">Semester 8</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding:16px 20px;background:#800000;color:#ffffff;border-radius:8px;">
+                        <div style="margin-bottom:6px;font-size:15px;font-weight:700;">Ringkasan Keterhubungan (Poin 1,
+                            2, dan 3)</div>
+                        <div style="font-size:14.5px;line-height:1.65;">Sebagai <strong>Akademisi / Peneliti &amp;
+                                Analis Kebijakan Hukum</strong> (Poin 1), lulusan dipersiapkan dengan kemampuan berpikir
+                            filosofis, kritis, dan metodologis (Poin 2). Mata Kuliah Metode Penelitian Hukum, Filsafat
+                            Hukum, Sosiologi Hukum, Politik Hukum, dan Skripsi menjadi fondasi utama dalam menghasilkan
+                            riset hukum berkualitas (Poin 3).</div>
+                    </div>
+
+                </div>
+            </details>
+        </div>
+
+        <!-- CATATAN -->
+        <div
+            style="margin-top:32px;padding:16px 22px;background:#fff8f8;border:1px solid #f2dede;border-left:4px solid #800000;border-radius:0 10px 10px 0;">
+            <div style="margin-bottom:6px;font-size:15px;font-weight:600;color:#800000;">Penjelasan Konsep Peta
+                Kurikulum OBE</div>
+            <ul style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.65;color:#4f4747;">
+                <li><strong>Pendekatan Outcome-Based Education (OBE)</strong> menyusun kurikulum secara terbalik
+                    (<em>backward design</em>): dimulai dari merumuskan Profil Lulusan yang dibutuhkan dunia profesi,
+                    menurunkan Capaian Pembelajaran Lulusan (CPL), lalu menyusun Mata Kuliah yang relevan.</li>
+                <li style="margin-top:4px;">Setiap mata kuliah memiliki keterikatan langsung (<em>constructive
+                        alignment</em>) terhadap pemenuhan CPL dan pembentukan profil lulusan mahasiswa Fakultas Hukum
+                    UNPAM.</li>
+                <li style="margin-top:4px;">Mahasiswa dapat berkonsultasi dengan Dosen Pembimbing Akademik (DPA) untuk
+                    memilih mata kuliah pilihan peminatan yang paling sesuai dengan target profil karier yang dituju.
+                </li>
             </ul>
-        </section>
+        </div>
+
     </div>
 </div>
