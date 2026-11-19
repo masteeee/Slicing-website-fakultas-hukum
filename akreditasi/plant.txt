@@ -1,0 +1,10 @@
+Buat Beberapa Halaman Berikut:
+1. Halaman SK Biaya dimana memuat SK Biaya Pendidikan https://drive.google.com/file/d/1pVhoaIRB3xf1XCN8HnAXvg_xqoTVwDl-/view dan SK Biaya UAPS https://drive.google.com/file/d/1X7eqeP0vdp32WKNeBdZkeBe9pj3NVjOB/view
+2. Halaman Peraturan Plagiasi, Dimana memuat https://drive.google.com/file/d/16x1Mt7t_CIKCm_1zlAPwWSWBS78P_4wu/view
+3. Halaman Dokumen, terdapat beberapa dokumen diantaranya 
+    - BUKU PEDOMAN UAPS 2026 :https://drive.google.com/file/d/1AFwuyMwTZg31fHPA8r6ZkcE3EAB79fmk/view
+    - BUKU SOP FH UNPAM : https://drive.google.com/file/d/1WrQqXuo0u6OdhSti4zeZvgCuVpapQKhQ/view
+    - BUKU PEDOMAN AKADEMIK UNPAM : https://drive.google.com/file/d/1vWSWjNJM2dZgb37GtamXaMeaov7Gl7kP/view
+    - KUMPULAN FORMULIR: https://drive.google.com/drive/folders/16Xc5Ggf3JIki1qFFxO1wthuHGMfyy4wV
+    - KUMPULAN TEMPLATE IA : https://drive.google.com/drive/folders/1MhrKS1lTyBrttW_AQi4PeO-naIveA1PC
+    - PANDUAN MENTARI DOSEN: https://drive.google.com/file/d/17hl_fMyZncWH3y_y4SE9tesVYMeEj31U/view
