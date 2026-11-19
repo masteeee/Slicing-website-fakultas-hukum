@@ -1,0 +1,289 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+    /* ===== RESPONSIVE MOBILE: YAYASAN & REKTORAT ===== */
+
+    /* Header: di mobile, logo kiri & kanan berdampingan di atas judul */
+    @media screen and (max-width: 640px) {
+        .yrk-header {
+            gap: 12px 18px !important;
+        }
+        .yrk-logo-left {
+            order: 1 !important;
+        }
+        .yrk-logo-right {
+            order: 2 !important;
+        }
+        .yrk-header-title {
+            order: 3 !important;
+            flex: 0 0 100% !important;
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .yrk-outer-pad {
+            padding: 16px 10px !important;
+        }
+        .yrk-inner-card {
+            padding: 20px 14px !important;
+            border-radius: 14px !important;
+        }
+    }
+
+    /* Baris 1 (3 pimpinan): 1 kolom di mobile */
+    @media screen and (max-width: 540px) {
+        .yrk-row-top {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 14px !important;
+        }
+        .yrk-card-top {
+            flex: 0 0 calc(50% - 10px) !important;
+            max-width: calc(50% - 10px) !important;
+            min-width: 130px !important;
+        }
+    }
+
+    /* Baris 2 (4 wakil rektor): 2 kolom di mobile */
+    @media screen and (max-width: 600px) {
+        .yrk-row-bottom {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 12px !important;
+        }
+        .yrk-card-bottom {
+            flex: 0 0 calc(50% - 8px) !important;
+            max-width: calc(50% - 8px) !important;
+            min-width: 110px !important;
+        }
+    }
+
+    /* Sangat kecil: nama font lebih kecil */
+    @media screen and (max-width: 360px) {
+        .yrk-name-top {
+            font-size: 12.5px !important;
+        }
+        .yrk-role-top {
+            font-size: 10.5px !important;
+        }
+        .yrk-name-bottom {
+            font-size: 11px !important;
+        }
+        .yrk-role-bottom {
+            font-size: 10px !important;
+        }
+    }
+</style>
+
+<div class="yrk-outer-pad"
+    style="width:100%; margin:0; padding:30px 16px; background:#ffffff; box-sizing:border-box; font-family:'Geist',Arial,Helvetica,sans-serif; color:#2d2020;">
+
+    <div class="yrk-inner-card"
+        style="width:100%; max-width:860px; margin:0 auto; padding:36px 28px; background-color:#ffffff; background-image:linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)),url('https://cms.unpam.ac.id/storage/assets/pages/content/O02reEx6ECrROhwjGBQsfx8mK6kZuBXfHJWe7p0h.png'); background-position:center center; background-repeat:no-repeat; background-size:cover; border:1px solid #e0dada; border-radius:22px; box-shadow:0 12px 32px rgba(0,0,0,0.08); box-sizing:border-box;">
+
+        <!-- HEADER LOGO & JUDUL -->
+        <div class="yrk-header"
+            style="display:flex; align-items:center; justify-content:center; gap:clamp(10px,2vw,20px); margin-bottom:clamp(22px,3.5vw,36px); flex-wrap:wrap;">
+
+            <div class="yrk-logo-left" style="flex-shrink:0;">
+                <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Foundation Logo"
+                    style="width:clamp(44px,6vw,64px); height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+            </div>
+
+            <div class="yrk-header-title" style="flex-shrink:0; text-align:center;">
+                <div
+                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px,2vw,24px); font-weight:500; color:#c0392b; letter-spacing:1px; text-transform:uppercase;">
+                    FOUNDATION LEADERSHIP &amp; RECTORATE
+                </div>
+
+                <div
+                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(18px,4vw,44px); font-weight:500; line-height:1.1; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:#800000; letter-spacing:-1px; text-transform:uppercase;">
+                    UNIVERSITAS PAMULANG
+                </div>
+            </div>
+
+            <div class="yrk-logo-right" style="flex-shrink:0;">
+                <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Pamulang University Logo"
+                    style="width:clamp(44px,6vw,64px); height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+            </div>
+
+        </div>
+
+        <!-- ========================================================
+             BAGIAN SUSUNAN PIMPINAN YAYASAN & REKTORAT (PURE INLINE CSS)
+             ======================================================== -->
+        <div style="width:100%; margin:clamp(20px, 3.5vw, 36px) 0 clamp(24px, 4vw, 40px) 0; box-sizing:border-box;">
+
+            <!-- BARIS 1: 3 PIMPINAN (Pendiri, Ketua Yayasan, Rektor) -->
+            <div class="yrk-row-top"
+                style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:clamp(16px, 2.8vw, 28px); margin-bottom:clamp(32px, 4.5vw, 46px); width:100%; box-sizing:border-box;">
+
+                <!-- 1. Dr. (H.C) Drs. H. Darsono -->
+                <div class="yrk-card-top"
+                    style="flex:1 1 210px; max-width:250px; min-width:140px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/uGvuB1mi9zF3HxSbNIZkDDQoRUEPVj2xRuxvenHK.png"
+                            alt="Dr. (H.C) Drs. H. Darsono"
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. (H.C) Drs. H. Darsono
+                        </div>
+                        <div class="yrk-role-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Founder of Sasmita Jaya Foundation &amp; Universitas Pamulang
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dr. Pranoto, S.E., M.M. -->
+                <div class="yrk-card-top"
+                    style="flex:1 1 210px; max-width:250px; min-width:140px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/XHhwlpqrPPOUksrdO4KlO3QKqNDchCwibQqlS0nA.png"
+                            alt="Dr. Pranoto, S.E., M.M."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. Pranoto, S.E., M.M.
+                        </div>
+                        <div class="yrk-role-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Chairman of Sasmita Jaya Foundation
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Dr. E. Nurzaman, AM, M.M.,M.Si. -->
+                <div class="yrk-card-top"
+                    style="flex:1 1 210px; max-width:250px; min-width:140px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/241NeGbhYvDmK4QgfgKPJPfPSsBiHOXugAFbM2dT.png"
+                            alt="Dr. E. Nurzaman, AM, M.M.,M.Si."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.4vw, 17px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Dr. E. Nurzaman, AM, M.M.,M.Si.
+                        </div>
+                        <div class="yrk-role-top"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11.5px, 1.05vw, 13px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Rector of Universitas Pamulang
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BARIS 2: 4 WAKIL REKTOR -->
+            <div class="yrk-row-bottom"
+                style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:clamp(10px, 1.8vw, 18px); width:100%; box-sizing:border-box;">
+
+                <!-- 4. Dr. Ubaid Al Faruq, S.Pd., M.Pd. -->
+                <div class="yrk-card-bottom"
+                    style="flex:1 1 150px; max-width:190px; min-width:110px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/R4jZ1M9l1JAmLZt1HyjdHGfKuGebHrFCYGSCyxh4.png"
+                            alt="Dr. Ubaid Al Faruq, S.Pd., M.Pd."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Assoc. Prof. Dr. Ubaid Al Faruq, S.Pd., M.Pd.
+                        </div>
+                        <div class="yrk-role-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Vice Rector I
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Dr. M. Wildan, S.S., M.A. -->
+                <div class="yrk-card-bottom"
+                    style="flex:1 1 150px; max-width:190px; min-width:110px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/J7uMJKGRkOArFMXRNZ9sZwo8qYr2mYyKAeApGTlI.png"
+                            alt="Dr. M. Wildan, S.S., M.A."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; transform:scale(1.22); transform-origin:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Assoc. Prof. Dr. M. Wildan, S.S., M.A.
+                        </div>
+                        <div class="yrk-role-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Vice Rector II
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Dr. Dameis Surya Anggara, S.Pd., M.Pd. -->
+                <div class="yrk-card-bottom"
+                    style="flex:1 1 150px; max-width:190px; min-width:110px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/Kl9FtmQ5eujdMNoM0vN0PqNeiclilfIiX2DIjA7j.png"
+                            alt="Dr. Dameis Surya Anggara, S.Pd., M.Pd."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            ⁠Assoc. Prof. Dr. Dameis Surya Anggara, S.Pd., M.Pd.
+                        </div>
+                        <div class="yrk-role-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Vice Rector III
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Prof. Dr. Oksidelfa Yanto, S.H., M.H. -->
+                <div class="yrk-card-bottom"
+                    style="flex:1 1 150px; max-width:190px; min-width:110px; display:flex; flex-direction:column; align-items:center; text-align:center; box-sizing:border-box;">
+                    <div
+                        style="position:relative; width:100%; aspect-ratio:1 / 1.32; border-radius:9999px 9999px 0 0; overflow:hidden; background-color:#8c1004; background-image:linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), radial-gradient(circle at 85% 20%, #e63f1a 0%, #b3160a 50%, #660800 100%); background-size:14px 14px, 14px 14px, 100% 100%; box-shadow:0 10px 24px rgba(133,19,27,0.16); box-sizing:border-box;">
+                        <img src="https://cms.unpam.ac.id/storage/assets/pages/content/W5WHE6I2yHhQXzR0u8DlDcbP4he8LzwgKpbSIKrA.png"
+                            alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H."
+                            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block; margin:0; padding:0; border:0;">
+                    </div>
+                    <div style="width:100%; margin-top:clamp(12px, 1.6vw, 16px); box-sizing:border-box;">
+                        <div class="yrk-name-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(12.5px, 1.15vw, 15px); font-weight:700; color:#800000; line-height:1.25; margin:0 0 6px 0;">
+                            Prof. Dr. Oksidelfa Yanto, S.H., M.H.
+                        </div>
+                        <div class="yrk-role-bottom"
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 0.95vw, 12px); font-weight:500; color:#3a0000; line-height:1.35; margin:0;">
+                            Vice Rector IV
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="width:60%; max-width:400px; margin:30px auto 0; height:1px; background:#d8b4b4;"></div>
+
+        <div style="margin-top:22px; text-align:center;">
+            <span
+                style="font-family:'Great Vibes',cursive; font-size:clamp(25px,4vw,42px); font-weight:500; font-style:normal; line-height:1.1; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4;">Sharing
+                for the Nation</span>
+        </div>
+
+    </div>
+</div>

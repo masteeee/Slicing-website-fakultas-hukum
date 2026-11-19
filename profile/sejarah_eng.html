@@ -1,0 +1,279 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+    .sejarah-main-container .leader-node {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .sejarah-main-container .leader-node:hover {
+        transform: translateY(-6px) scale(1.04);
+    }
+
+    @media (max-width: 768px) {
+        .sejarah-main-container .timeline-desktop {
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 24px !important;
+            padding: 20px 0 !important;
+        }
+
+        .sejarah-main-container .timeline-line-item {
+            display: none !important;
+        }
+
+        .sejarah-main-container .leader-node {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            width: 220px !important;
+            text-align: center !important;
+        }
+
+        .sejarah-main-container .leader-photo {
+            margin: 0 auto 6px auto !important;
+        }
+
+        .sejarah-main-container .sejarah-heading-sub,
+        .sejarah-main-container .sejarah-heading-title {
+            text-align: center !important;
+        }
+    }
+</style>
+
+<div class="sejarah-main-container"
+    style="position: relative; width: 100%; max-width: 100%; margin: 0; padding: clamp(25px, 4vw, 45px) clamp(16px, 4%, 40px); background-color: #ffffff; background-image: url('https://cms.unpam.ac.id/storage/assets/pages/content/nVkG3xAyF5qQTNG80YgQ1Su29sNd2ohX8zACilrL.png'); background-repeat: no-repeat; background-position: center bottom; background-size: cover; box-sizing: border-box; font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #2b2b2b; overflow-x: hidden;">
+
+    <!-- Top Bar: Judul Sejarah dan Logo Yayasan / Unpam Sejajar -->
+    <div class="top-bar-header"
+        style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; width: 100%; margin-bottom: 10px; box-sizing: border-box;">
+
+        <!-- KOLOM KIRI: Judul -->
+        <div class="header-sejarah-kiri" style="flex: 1; min-width: 150px; box-sizing: border-box;">
+            <h1
+                style="font-family: 'Geist', sans-serif; font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; margin: 0; letter-spacing: -0.5px; background: linear-gradient(to right, rgb(128,0,0) 0%, rgb(225,60,35) 50%, rgb(246, 73, 46) 100%); color: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;">
+                History
+            </h1>
+        </div>
+
+        <!-- KOLOM KANAN: Kumpulan Logo -->
+        <div class="header-sejarah-kanan" style="flex: 1; min-width: 200px; box-sizing: border-box;">
+            <div class="logo-wrapper-header"
+                style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; flex-wrap: nowrap;">
+                <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Sasmita Jaya Foundation Logo"
+                    style="height: clamp(34px, 5vw, 44px); width: auto; max-width: 45%; object-fit: contain; border: 0; display: block; background: transparent;">
+                <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Pamulang University Logo"
+                    style="height: clamp(34px, 5vw, 44px); width: auto; max-width: 45%; object-fit: contain; border: 0; display: block; background: transparent;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Container Grid -->
+    <div class="main-content-grid"
+        style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: flex-start; gap: clamp(25px, 4vw, 45px); width: 100%; box-sizing: border-box;">
+
+        <!-- ==========================================================
+             KOLOM KIRI: TIMELINE KEPEMIMPINAN (100% DIV INLINE CSS)
+             ========================================================== -->
+        <div class="timeline-column timeline-desktop"
+            style="position: relative; flex: 1 1 320px; min-width: 310px; max-width: 390px; height: 970px; margin: 0 auto; box-sizing: border-box;">
+
+            <!-- LENGKUNGAN 1: Dari Titik 1 ke Titik 2 -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 50px; left: 165px; width: 145px; height: 195px; border-top: 2px dashed #9b1b1e; border-right: 2px dashed #9b1b1e; border-bottom: 2px dashed #9b1b1e; border-top-right-radius: 95px; border-bottom-right-radius: 95px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 243px; left: 82px; width: 95px; height: 125px; border-top: 2px dashed #9b1b1e; border-left: 2px dashed #9b1b1e; border-top-left-radius: 65px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <!-- Panah 1 (Menghadap Bawah) -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 142px; left: 303px; width: 10px; height: 10px; border-right: 2px solid #b91c1c; border-bottom: 2px solid #b91c1c; transform: rotate(45deg); z-index: 2; pointer-events: none;">
+            </div>
+
+            <!-- LENGKUNGAN 2: Dari Titik 2 ke Titik 3 -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 375px; left: 82px; width: 105px; height: 120px; border-left: 2px dashed #9b1b1e; border-bottom: 2px dashed #9b1b1e; border-bottom-left-radius: 65px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 493px; left: 175px; width: 145px; height: 130px; border-top: 2px dashed #9b1b1e; border-right: 2px dashed #9b1b1e; border-top-right-radius: 75px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <!-- Panah 2 (Menghadap Kanan) -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 489px; left: 162px; width: 10px; height: 10px; border-top: 2px solid #b91c1c; border-right: 2px solid #b91c1c; transform: rotate(45deg); z-index: 2; pointer-events: none;">
+            </div>
+
+            <!-- LENGKUNGAN 3: Dari Titik 3 ke Titik 4 -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 630px; left: 175px; width: 145px; height: 120px; border-right: 2px dashed #9b1b1e; border-bottom: 2px dashed #9b1b1e; border-bottom-right-radius: 75px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 748px; left: 82px; width: 105px; height: 130px; border-top: 2px dashed #9b1b1e; border-left: 2px dashed #9b1b1e; border-top-left-radius: 65px; box-sizing: border-box; z-index: 1; pointer-events: none;">
+            </div>
+            <!-- Panah 3 (Menghadap Kiri) -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 744px; left: 178px; width: 10px; height: 10px; border-bottom: 2px solid #b91c1c; border-left: 2px solid #b91c1c; transform: rotate(45deg); z-index: 2; pointer-events: none;">
+            </div>
+
+            <!-- 4 TITIK LINGKARAN MERAH BERPINGGIRAN PINK -->
+            <div class="timeline-line-item"
+                style="position: absolute; top: 40px; left: 158px; width: 22px; height: 22px; border-radius: 50%; background-color: #f3c6c7; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                <div style="width: 13px; height: 13px; border-radius: 50%; background-color: #7a090c;"></div>
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 360px; left: 72px; width: 22px; height: 22px; border-radius: 50%; background-color: #f3c6c7; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                <div style="width: 13px; height: 13px; border-radius: 50%; background-color: #7a090c;"></div>
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 615px; left: 308px; width: 22px; height: 22px; border-radius: 50%; background-color: #f3c6c7; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                <div style="width: 13px; height: 13px; border-radius: 50%; background-color: #7a090c;"></div>
+            </div>
+            <div class="timeline-line-item"
+                style="position: absolute; top: 870px; left: 72px; width: 22px; height: 22px; border-radius: 50%; background-color: #f3c6c7; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                <div style="width: 13px; height: 13px; border-radius: 50%; background-color: #7a090c;"></div>
+            </div>
+
+            <!-- ==========================================
+                 DOSEN 1 (KIRI ATAS)
+                 ========================================== -->
+            <div class="leader-node leader-1"
+                style="position: absolute; z-index: 2; text-align: left; width: 215px; box-sizing: border-box; top: 30px; left: 6px;">
+                <div class="leader-photo foto-dekan-1" style="display: block; width: 122px; margin: 0 0 6px 12px;">
+                    <img src="https://cms.unpam.ac.id/storage/assets/pages/content/oYDtw9q7zMkPTb1ngrgwWTRErOmcv8Ed239Up5u2.png"
+                        alt="Assoc. Prof. Dr. Yoyon M. Darusman"
+                        style="width: 122px; height: 155px; object-fit: contain; object-position: bottom center; display: block; border-radius: 10px; margin: auto;">
+                </div>
+                <div class="leader-caption" style="padding-left: 2px;">
+                    <p
+                        style="font-family: 'Geist', sans-serif; font-size: 10.5px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">
+                        Assoc. Prof. Dr. Yoyon M. Darusman, S.H., M.M.</p>
+                    <span
+                        style="display: block; font-family: 'Geist', sans-serif; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 2px;">2004–2012</span>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 DOSEN 2 (KANAN TENGAH-ATAS)
+                 ========================================== -->
+            <div class="leader-node leader-2"
+                style="position: absolute; z-index: 2; text-align: left; width: 205px; box-sizing: border-box; top: 278px; left: 135px;">
+                <div class="leader-photo foto-dekan-2" style="display: block; width: 122px; margin: 0 0 6px 12px;">
+                    <img src="https://cms.unpam.ac.id/storage/assets/pages/content/2VJr9JkvuNsYBdoFljrLiylKWaPB3fHru8UxEYiI.png"
+                        alt="Dr. Ferry Anka Sugandar, S.H., M.H."
+                        style="width: 122px; height: 155px; object-fit: contain; object-position: bottom center; display: block; border-radius: 10px; margin: auto;">
+                </div>
+                <div class="leader-caption" style="padding-left: 4px;">
+                    <p
+                        style="font-family: 'Geist', sans-serif; font-size: 10.5px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">
+                        Dr. Ferry Anka Sugandar, S.H., M.H.</p>
+                    <span
+                        style="display: block; font-family: 'Geist', sans-serif; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 2px;">2012–2021</span>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 DOSEN 3 (KIRI TENGAH-BAWAH)
+                 ========================================== -->
+            <div class="leader-node leader-3"
+                style="position: absolute; z-index: 2; text-align: left; width: 205px; box-sizing: border-box; top: 525px; left: 60px;">
+                <div class="leader-photo foto-dekan-3" style="display: block; width: 122px; margin: 0 0 6px 12px;">
+                    <img src="https://lh3.googleusercontent.com/d/1_fhgulArNLEh_RTzz8N_OSG9o6jxT2G_"
+                        alt="Prof. Dr. Oksidelfa Yanto, S.H., M.H."
+                        style="width: 122px; height: 155px; object-fit: contain; object-position: bottom center; display: block; border-radius: 10px; margin: auto;">
+                </div>
+                <div class="leader-caption" style="padding-left: 4px;">
+                    <p
+                        style="font-family: 'Geist', sans-serif; font-size: 10.5px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">
+                        Prof. Dr. Oksidelfa Yanto, S.H., M.H.</p>
+                    <span
+                        style="display: block; font-family: 'Geist', sans-serif; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 2px;">2021–2024</span>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 DOSEN 4 (KANAN BAWAH)
+                 ========================================== -->
+            <div class="leader-node leader-4"
+                style="position: absolute; z-index: 2; text-align: left; width: 205px; box-sizing: border-box; top: 765px; left: 125px;">
+                <div class="leader-photo foto-dekan-4" style="display: block; width: 122px; margin: 0 0 6px 12px;">
+                    <img src="https://lh3.googleusercontent.com/d/1EvjGg-MH3KO7wcSH5pRuFQ0nqBtFWnuT"
+                        alt="Dr. Taufik Kurrohman, S.H.I., M.H."
+                        style="width: 122px; height: 155px; object-fit: contain; object-position: bottom center; display: block; border-radius: 10px; margin: auto;">
+                </div>
+                <div class="leader-caption" style="padding-left: 4px;">
+                    <p
+                        style="font-family: 'Geist', sans-serif; font-size: 10.5px; font-weight: 700; color: #8b181b; line-height: 1.3; margin: 0; padding: 0;">
+                        Dr. Taufik Kurrohman, S.H.I., M.H.</p>
+                    <span
+                        style="display: block; font-family: 'Geist', sans-serif; font-size: 10px; font-weight: 600; color: #8b181b; margin-top: 2px;">2024–2028</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================================
+             KOLOM KANAN: KONTEN NARASI SEJARAH
+             ========================================================== -->
+        <div class="desc-content-column"
+            style="position: relative; flex: 1.15 1 280px; min-width: 280px; box-sizing: border-box;">
+
+            <div class="desc-inner-card" style="width: 100%; box-sizing: border-box;">
+                <!-- Sub-heading & Heading -->
+                <div class="sejarah-heading-sub" style="margin: 0 0 4px 0; line-height: 1.2; text-align: right;">
+                    <span
+                        style="font-family: 'Geist', sans-serif; font-size: clamp(18px, 2.5vw, 34px); font-weight: 400; background: linear-gradient(to right, rgb(128,0,0) 15%, rgb(225,60,35) 50%, rgb(246, 73, 46) 70%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;">
+                        The History of
+                    </span>
+                </div>
+                <div class="sejarah-heading-title"
+                    style="margin: 0 0 22px 0; line-height: 1.15; letter-spacing: -0.5px; text-align: right;">
+                    <span
+                        style="font-family: 'Geist', sans-serif; font-size: clamp(26px, 3.8vw, 54px); font-weight: 600; background: linear-gradient(to right, rgb(128,0,0) 15%, rgb(225,60,35) 50%, rgb(246, 73, 46) 70%, rgb(128,0,0) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;">
+                        Faculty of Law
+                    </span>
+                </div>
+
+                <!-- Teks Sejarah -->
+                <p
+                    style="font-family: 'Geist', sans-serif; font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #990000; text-align: justify; margin: 0 0 16px 0;">
+                    Universitas Pamulang was founded by the Prima Jaya Foundation in 2000, and subsequently its management was transferred to the Sasmita Jaya Foundation in 2004 under the leadership of Dr. (H.C) Drs. H. Darsono.
+                </p>
+
+                <p
+                    style="font-family: 'Geist', sans-serif; font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #990000; text-align: justify; margin: 0 0 16px 0;">
+                    Under the auspices of the Sasmita Jaya Foundation and over the passage of time, Universitas Pamulang has continued to develop with remarkable progress. Starting from just one student per class and having only a single relatively small campus, today the student body has reached nearly 100,000 students across 4 campus locations—namely the main campus (Campus 1) on Jalan Surya Kencana, Campus 2 in Viktor, Campus 3 in Witana Harja, and Campus 4 (PSDKU) in Serang City.
+                </p>
+
+                <p
+                    style="font-family: 'Geist', sans-serif; font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #990000; text-align: justify; margin: 0 0 16px 0;">
+                    The strides achieved by Universitas Pamulang are inseparable from the dedicated role of the Chairman of the Sasmita Jaya Foundation. The guiding purpose of the Sasmita Jaya Foundation has always been to provide affordable education accessible to all levels of society while upholding superior educational quality.
+                </p>
+
+                <p
+                    style="font-family: 'Geist', sans-serif; font-size: clamp(13px, 1.8vw, 14px); line-height: 1.72; color: #990000; text-align: justify; margin: 0 0 24px 0;">
+                    The Undergraduate Law Study Program (S-1) was established through the <strong
+                        style="font-family: 'Geist', sans-serif; color: #990000;">Decree of the Minister of National Education of the Republic of Indonesia No. 136/D/O/2001</strong> regarding the Granting of Operational Permits for Study Programs and the Establishment of Universitas Pamulang in Tangerang organized by the Prima Jaya Foundation in Tangerang. At that time, 10 study programs were founded, with Law being one of them.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==========================================================
+         BAGIAN BAWAH: GALERI FOTO SEJARAH MEMANJANG KE SAMPING
+         ========================================================== -->
+    <div class="sejarah-bottom-gallery"
+        style="width: 100%; margin-top: clamp(24px, 4vw, 36px); box-sizing: border-box;">
+        <div
+            style="width: 100%; background: #ffffff; border: 1px solid #e5d8d8; border-bottom: 4px solid #990000; border-radius: 6px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); box-sizing: border-box;">
+            <img src="https://lh3.googleusercontent.com/d/1jhmnmrW0GgtV2APboXLEWA7RXEObclWG"
+                alt="Historical Documentation of Pamulang University"
+                style="width: 100%; height: auto; display: block; object-fit: cover; margin: 0; border: 0;"
+                loading="lazy">
+        </div>
+    </div>
+
+</div>

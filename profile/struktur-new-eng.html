@@ -1,0 +1,708 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+</style>
+<style>
+    /* Perbaikan responsif khusus layar mobile */
+    @media screen and (max-width: 480px) {
+        .org-header {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 8px 14px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .org-header .org-logo {
+            width: 36px !important;
+            max-width: 36px !important;
+        }
+
+        .org-header>div:nth-child(1) {
+            order: 1;
+        }
+
+        .org-header>div:nth-child(3) {
+            order: 2;
+        }
+
+        .org-header .org-heading {
+            order: 3;
+            flex: 0 0 100% !important;
+            width: 100% !important;
+        }
+
+        .org-header .org-heading>div:first-child {
+            font-size: 14px !important;
+            letter-spacing: .5px !important;
+        }
+
+        .org-header .org-title-text {
+            font-size: clamp(18px, 5.5vw, 25px) !important;
+            letter-spacing: -.5px !important;
+            line-height: 1.15 !important;
+        }
+
+        .org-leadership-row {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            align-items: flex-start !important;
+            gap: 16px !important;
+        }
+
+        .org-leadership-row .org-person-card {
+            width: calc(50% - 8px) !important;
+            min-width: 0 !important;
+            max-width: 215px !important;
+            flex: 0 1 calc(50% - 8px) !important;
+            border-radius: 18px !important;
+            aspect-ratio: 0.9 / 1.5 !important;
+        }
+
+        .org-leadership-row .org-person-card>img {
+            position: absolute !important;
+            top: 0 !important;
+            bottom: auto !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: center top !important;
+            transform: none !important;
+        }
+    }
+
+    @media screen and (max-width: 340px) {
+        .org-leadership-row {
+            gap: 10px !important;
+        }
+
+        .org-leadership-row .org-person-card {
+            width: calc(50% - 5px) !important;
+            flex-basis: calc(50% - 5px) !important;
+        }
+    }
+</style>
+<div
+    style="width:100%; margin:0; padding:30px 16px; box-sizing:border-box; font-family:'Geist',Arial,Helvetica,sans-serif; color:#2d2020;">
+
+    <div
+        style="width:100%; max-width:860px; margin:0 auto; padding:36px 28px; background-color:#ffffff; background-image:linear-gradient(rgb(255,255,255),rgb(255, 255, 255)),url('https://cms.unpam.ac.id/storage/assets/pages/content/O02reEx6ECrROhwjGBQsfx8mK6kZuBXfHJWe7p0h.png'); background-position:center center; background-repeat:no-repeat; background-size:cover; border:1px solid #e0dada; border-radius:22px; box-shadow:0 12px 32px rgba(0,0,0,0.08); box-sizing:border-box;">
+
+        <!-- HEADER LOGO & JUDUL -->
+        <div class="org-header"
+            style="display:flex; align-items:center; justify-content:center; gap:clamp(10px,2vw,20px); margin-bottom:clamp(24px,3.5vw,36px);">
+
+            <div style="flex-shrink:0;">
+                <img class="org-logo" src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Foundation Logo"
+                    style="width:clamp(44px,6vw,64px); height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+            </div>
+
+            <div class="org-heading" style="flex-shrink:0; text-align:center;">
+                <div
+                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(18px,2vw,24px); font-weight:500; color:#c0392b; letter-spacing:1px; text-transform:uppercase;">
+                    ORGANIZATIONAL STRUCTURE
+                </div>
+
+                <div class="org-title-text"
+                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(18px,4vw,30px); font-weight:500; line-height:1.1; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:#800000; letter-spacing:-1px; text-transform:uppercase;">
+                    UNDERGRADUATE LAW STUDY PROGRAM
+                </div>
+            </div>
+
+            <div style="flex-shrink:0;">
+                <img class="org-logo" src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png"
+                    alt="Pamulang University Logo"
+                    style="width:clamp(44px,6vw,64px); height:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+            </div>
+
+        </div>
+
+        <!-- ========================================================
+             BAGIAN 1: PIMPINAN PROGRAM STUDI (KAPRODI, SEKPRODI, WAKAPRODI)
+             ======================================================== -->
+        <div style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box;">
+
+            <!-- FOTO 1 (PALING ATAS): KETUA PROGRAM STUDI -->
+            <div
+                style="position:relative; width:clamp(210px, 34%, 250px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #440202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
+
+                <img src="https://cms.unpam.ac.id/storage/assets/pages/content/hFxqCleZzs3Uk0K5vQJWfwlK0FxlOoIGk9vehItz.png"
+                    alt="Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H." style="position: absolute;
+                            bottom: -90px;
+                            left: 0;
+                            width: 190%;
+                            height: 130%;
+                            object-fit: contain;
+                            object-position: center bottom;
+                            display: block;
+                            z-index: 1;">
+
+                <div
+                    style="position:absolute; bottom:0; left:0; right:0; padding:36px 12px 10px 12px; background:linear-gradient(to top, rgba(55,0,0,0.96) 0%, rgba(55,0,0,0.65) 60%, transparent 100%); text-align:left; box-sizing:border-box; z-index:2;">
+                    <div
+                        style="font-family:'Geist',Arial,sans-serif; font-size:clamp(11px, 1.15vw, 12.5px); font-weight:700; color:#ffffff; line-height:1.25; margin:0 0 3px 0; text-shadow:0 1px 2px rgba(0,0,0,0.8);">
+                        Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H.
+                    </div>
+                    <div
+                        style="font-family:'Geist',Arial,sans-serif; font-size:clamp(9.5px, 0.95vw, 11px); font-weight:500; color:#ffd4d4; line-height:1.2; margin:0;">
+                        Head of Undergraduate Law Study Program
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALUR PENGHUBUNG 1 -->
+            <div style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box;">
+                <div style="width:2px; height:24px; border-left:2px dashed #8b181b;"></div>
+                <div style="width:clamp(260px, 52%, 400px); height:2px; border-top:2px dashed #8b181b;"></div>
+                <div
+                    style="display:flex; justify-content:space-between; width:clamp(260px, 52%, 400px); box-sizing:border-box;">
+                    <div style="width:2px; height:22px; border-left:2px dashed #8b181b;"></div>
+                    <div style="width:2px; height:22px; border-left:2px dashed #8b181b;"></div>
+                </div>
+            </div>
+
+            <!-- BARIS 2 FOTO: SEKRETARIS (KIRI) & WAKIL KETUA (KANAN) -->
+            <div class="org-leadership-row"
+                style="display:flex; flex-direction:row; justify-content:center; align-items:flex-start; gap:clamp(24px, 5.5vw, 56px); width:100%; box-sizing:border-box;">
+
+                <!-- FOTO KIRI: SEKRETARIS -->
+                <div class="org-person-card"
+                    style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
+                    <img src="https://cms.unpam.ac.id/storage/assets/pages/content/6fFeHdFrlMvulQY3rYAQ41zuWEdTReZ51TTYew6d.png"
+                        alt="Siti Chadijah, S.H., M.H."
+                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center top; display:block; z-index:1; margin-bottom: 0em;">
+                    <div
+                        style="position:absolute; bottom:0; left:0; right:0; padding:32px 10px 10px 10px; background:linear-gradient(to top, rgba(55,0,0,0.96) 0%, rgba(55,0,0,0.65) 60%, transparent 100%); text-align:left; box-sizing:border-box; z-index:2;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(10.5px, 1.1vw, 12px); font-weight:700; color:#ffffff; line-height:1.25; margin:0 0 3px 0; text-shadow:0 1px 2px rgba(0,0,0,0.8);">
+                            Siti Chadijah, S.H., M.H.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(9px, 0.9vw, 10.5px); font-weight:500; color:#ffd4d4; line-height:1.2; margin:0;">
+                            Secretary of Undergraduate Law Study Program
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOTO KANAN: WAKIL KETUA -->
+                <div class="org-person-card"
+                    style="position:relative; width:clamp(170px, 28%, 215px); aspect-ratio:1 / 1.15; border-radius:24px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); box-shadow:0 14px 30px rgba(133,19,27,0.3), inset 0 1px 2px rgba(255,255,255,0.4); border:2.5px solid #b3160a; box-sizing:border-box;">
+                    <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
+                        alt="Dr. Abdul Hadi, S.H., M.H."
+                        style="position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center top; display:block; z-index:1; margin-bottom: 0em;">
+                    <div
+                        style="position:absolute; bottom:0; left:0; right:0; padding:32px 10px 10px 10px; background:linear-gradient(to top, rgba(55,0,0,0.96) 0%, rgba(55,0,0,0.65) 60%, transparent 100%); text-align:left; box-sizing:border-box; z-index:2;">
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(10.5px, 1.1vw, 12px); font-weight:700; color:#ffffff; line-height:1.25; margin:0 0 3px 0; text-shadow:0 1px 2px rgba(0,0,0,0.8);">
+                            Dr. Abdul Hadi, S.H., M.H.
+                        </div>
+                        <div
+                            style="font-family:'Geist',Arial,sans-serif; font-size:clamp(9px, 0.9vw, 10.5px); font-weight:500; color:#ffd4d4; line-height:1.2; margin:0;">
+                            Vice Head of Undergraduate Law Study Program
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ALUR PENGHUBUNG 2 -->
+            <div style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box;">
+                <div
+                    style="display:flex; justify-content:space-between; width:clamp(260px, 52%, 400px); box-sizing:border-box;">
+                    <div style="width:2px; height:20px; border-left:2px dashed #8b181b;"></div>
+                    <div style="width:2px; height:20px; border-left:2px dashed #8b181b;"></div>
+                </div>
+                <div style="width:clamp(260px, 52%, 400px); height:2px; border-bottom:2px dashed #8b181b;"></div>
+                <div style="width:2px; height:22px; border-left:2px dashed #8b181b;"></div>
+            </div>
+
+            <!-- ========================================================
+                 BAGIAN 2: DUA DROPDOWN INTERAKTIF
+                 ======================================================== -->
+            <div
+                style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box; margin:4px 0 16px 0;">
+
+                <!-- DROPDOWN 1: DOSEN PENGEMBANG FAKULTAS -->
+                <details
+                    style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Click to open/close the Faculty Developer Lecturers list"
+                        style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Faculty Developer Lecturers <span aria-hidden="true"
+                            style="display:inline-block; margin-left:8px; font-size:12px;">▾</span>
+                    </summary>
+
+                    <div id="popup-dosen-fakultas"
+                        style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+
+                        <div
+                            style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
+                            <div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
+                                    List of Faculty Developer Lecturers
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
+                                    Faculty of Law Universitas Pamulang
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GRID DATA SPREADSHEET: FAKULTAS -->
+                        <div
+                            style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
+
+                            <!-- Lulu Syakira Alatas -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1CwFeBiAOUebMmxWiKOUdu2Jzxn53DecG"
+                                        alt="Lulu Syakira Alatas, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Lulu Syakira Alatas, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Governance Development Unit</div>
+                            </div>
+
+                            <!-- Taupik Hidayat -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1x82EJk7Mhzh_0s1brB8X7TEhQwN-OvGG"
+                                        alt="Taupik Hidayat, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Taupik Hidayat, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Partnership Development Unit</div>
+                            </div>
+
+                            <!-- Dr. Fenny Wulandari -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1CAHn3GAFh6dR2LW5UDBDzoaa_OC1J_PF"
+                                        alt="Dr. Fenny Wulandari, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Fenny Wulandari, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Academic & Education Unit</div>
+                            </div>
+
+                            <!-- Dr. Wafa Nihayati Inayah -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1V__8rT1Wtw5EzJqIoqkSbdahHrF4JM7B"
+                                        alt="Dr. Wafa Nihayati Inayah, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Wafa Nihayati Inayah, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Research & Community Service Unit</div>
+                            </div>
+
+                            <!-- Henni Rahayu Handayani -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1CAHn3GAFh6dR2LW5UDBDzoaa_OC1J_PF"
+                                        alt="Henni Rahayu HANDAYANI, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Henni Rahayu HANDAYANI, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Finance & Facilities Unit</div>
+                            </div>
+
+                            <!-- Desi Permatasari -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1r_GxumfE624jMYvCbb_J3Bbvhb5vzmS3"
+                                        alt="Desi Permatasari, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Desi Permatasari, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Partnership Development Unit</div>
+                            </div>
+
+                            <!-- Ernawati Suwarno -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1Z0BaP9yKaKpsxZMzgGAJNv4ddPDatjCK"
+                                        alt="Ernawati Suwarno, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Ernawati Suwarno, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Student Affairs Development Unit</div>
+                            </div>
+
+                            <!-- Ahmad Zaki Muntafi -->
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1KYN4qQhktJ5H8uaBGvApnwCHkRGDiR3J"
+                                        alt="Ahmad Zaki Muntafi, S.H., M.A." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Ahmad Zaki Muntafi, S.H., M.A.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Faculty Human Resources Development Unit</div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
+                            <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                                Click the dropdown title again to close
+                            </span>
+                        </div>
+
+                    </div>
+                </details>
+
+                <!-- Panah Alur Menghubungkan Bubble 1 ke Bubble 2 -->
+                <div style="display:flex; flex-direction:column; align-items:center; line-height:1; margin:4px 0;">
+                    <div
+                        style="font-family:'Geist',Arial,sans-serif; font-size:14px; font-weight:800; color:#8b181b; line-height:1;">
+                        v
+                    </div>
+                    <div style="width:2px; height:12px; border-left:2px dashed #8b181b;"></div>
+                </div>
+
+                <!-- DROPDOWN 2: DOSEN PENGEMBANG PROGRAM STUDI -->
+                <details
+                    style="width:100%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                    <summary title="Click to open/close the Study Program Developer Lecturers list"
+                        style="display:inline-block; padding:12px 32px; border-radius:50px; background:radial-gradient(circle at 50% 0%, #c41818 0%, #800000 60%, #4a0000 100%); box-shadow:0 8px 24px rgba(128, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 6px rgba(0, 0, 0, 0.5); border:2px solid rgba(255, 255, 255, 0.38); color:#ffffff; font-family:'Geist',Arial,sans-serif; font-size:clamp(13px, 1.35vw, 16px); font-weight:700; text-align:center; cursor:pointer; letter-spacing:0.3px; text-shadow:0 1px 3px rgba(0,0,0,0.6); box-sizing:border-box; user-select:none; list-style:none;">
+                        Study Program Developer Lecturers <span aria-hidden="true"
+                            style="display:inline-block; margin-left:8px; font-size:12px;">▾</span>
+                    </summary>
+
+                    <div id="popup-dosen-prodi"
+                        style="width:100%; max-width:760px; margin:16px auto 10px auto; background:#ffffff; border:2px solid #800000; border-radius:18px; overflow:hidden; box-shadow:0 14px 36px rgba(128,0,0,0.2); box-sizing:border-box;">
+
+                        <div
+                            style="background:linear-gradient(to right, #800000 0%, #b3160a 100%); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
+                            <div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:clamp(14px, 1.6vw, 18px); font-weight:700; color:#ffffff; line-height:1.2;">
+                                    List of Study Program Developer Lecturers
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; color:#ffd4d4; margin-top:2px;">
+                                    Undergraduate Law Study Program Universitas Pamulang
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GRID DATA SPREADSHEET: PRODI -->
+                        <div
+                            style="padding:20px; background:#faf7f7; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; box-sizing:border-box;">
+
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1yC71c6DUGhKcf561SZnhAVYpb9CxJvfm"
+                                        alt="Dr. Orien Efendi, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Orien Efendi, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Education Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1es7hG2iP7ykxX6ggBTdqsTeG0xBBCVk4"
+                                        alt="Dr. Nopit Ernasari, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dr. Nopit Ernasari, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Human Resources Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1Bmv_1YL_bQ1nFE6wPkPYH4L3UZ-McUgb"
+                                        alt="Tajudin, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Tajudin, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Student Affairs Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1mL0EMdpHqg0PnjqhneYh2Y6UpDRVyJO6"
+                                        alt="Novita Akria Putri, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Novita Akria Putri, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Community Service Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1rUCQnEzL9Z9t7G23SpmOif14WF7h4g_z"
+                                        alt="Ahmad Sayadi, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Ahmad Sayadi, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Education Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1hc50fDhm8_rppjooz4tsQQ3Wh4kVrrE3"
+                                        alt="Annisaul Maslamah, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Annisaul Maslamah, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Human Resources Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1BDpKdqgWCXXvseVpQNNgkzgCWBXChVvB"
+                                        alt="Adithya Tri Firmansyah, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Adithya Tri Firmansyah, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Student Affairs Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1CAHn3GAFh6dR2LW5UDBDzoaa_OC1J_PF"
+                                        alt="Geofani Saragih, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Geofani Saragih, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Research Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1OZvxATaM2hXApg24b8SuBGRcDU31IOiP"
+                                        alt="Sri Yulianty Masoara, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Sri Yulianty Masoara, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Education Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/159nko-NuZq7OFNm6bJF0t_ZYUid15-xE"
+                                        alt="Dwi Sri Handayani, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dwi Sri Handayani, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Human Resources Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1sHjrCzEgJFWuQxIy2cSq-IemVwlPe0X4"
+                                        alt="M. Teguh Pangestu, S.H., M.Kn." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    M. Teguh Pangestu, S.H., M.Kn.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Student Affairs Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1-z66fYbpz8ZJetZmrc4v4ovuysJjQuKh"
+                                        alt="Dhiya Ul Akmal, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dhiya Ul Akmal, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Research Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/17vs5XdV2zvbsaq_zI8hHuAvLUgoEdNIY"
+                                        alt="Arman, S.H., M.Ag., M.A." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Arman, S.H., M.Ag., M.A.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Human Resources Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/15qVtwqEIjTAqxFSwYmPdTXkAAPTziod7"
+                                        alt="M. Alvin Saputra, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    M. Alvin Saputra, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Student Affairs Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1dkcg7IUEUcxEXf7LzaeCL8iXCVIeDgu2"
+                                        alt="Fadli Muhaimin, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Fadli Muhaimin, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Community Service Division</div>
+                            </div>
+                            <div
+                                style="background:#ffffff; border:1px solid #e5d8d8; border-radius:12px; padding:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; box-sizing:border-box;">
+                                <div
+                                    style="position:relative; width:100%; aspect-ratio:1 / 1.15; border-radius:10px; overflow:hidden; background:radial-gradient(circle at 50% 25%, #c01414 0%, #820808 55%, #420202 100%); margin-bottom:8px; display:flex; align-items:flex-end; justify-content:center; box-sizing:border-box;">
+                                    <img src="https://lh3.googleusercontent.com/d/1xYKa_q12tJsSaX48OqfOeKjP_xk3ps0h"
+                                        alt="Dea Dahliam, S.H., M.H." loading="lazy"
+                                        style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center bottom; display:block; margin-bottom: 0em;">
+                                </div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:11.5px; font-weight:700; color:#800000; line-height:1.25; margin-bottom:3px;">
+                                    Dea Dahliam, S.H., M.H.</div>
+                                <div
+                                    style="font-family:'Geist',Arial,sans-serif; font-size:10px; color:#555555; line-height:1.2;">
+                                    Study Program Student Affairs Division</div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            style="background:#f4ecec; padding:10px 20px; display:flex; justify-content:flex-end; border-top:1px solid #e0d5d5; box-sizing:border-box;">
+                            <span style="font-family:'Geist',Arial,sans-serif; font-size:11px; color:#800000;">
+                                Click the dropdown title again to close
+                            </span>
+                        </div>
+
+                    </div>
+                </details>
+
+            </div>
+
+        </div>
+
+        <!-- DIVIDER DAN MOTTO -->
+        <div style="width:60%; max-width:400px; margin:36px auto 0; height:1px; background:#d8b4b4;"></div>
+
+        <div style="margin-top:22px; text-align:center;">
+            <span
+                style="font-family:'Great Vibes',cursive; font-size:clamp(25px,4vw,42px); font-weight:500; font-style:normal; line-height:1.1; background:linear-gradient(to right,#800000 0%,#e13c23 45%,#800000 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4;">Sharing
+                for the Nation</span>
+        </div>
+
+    </div>
+</div>
