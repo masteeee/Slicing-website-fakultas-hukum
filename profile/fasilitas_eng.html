@@ -1,0 +1,495 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+    .fasilitas-cms-wrapper {
+        font-family: 'Geist', sans-serif;
+        color: #333333;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .fasilitas-cms-wrapper * {
+        box-sizing: border-box;
+    }
+
+    /* MENU NAVIGASI ATAS */
+    .fasilitas-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin-bottom: 45px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid #eaeaea;
+    }
+
+    .fasilitas-nav-item {
+        position: relative;
+        background: linear-gradient(135deg, #a82d15 0%, #8c1004 100%);
+        color: #ffffff !important;
+        text-decoration: none;
+        padding: 10px 18px 10px 36px;
+        border-radius: 6px;
+        font-size: 13.5px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(235, 235, 235, 0.2);
+        transition: transform 0.2s, opacity 0.2s;
+        display: inline-block;
+    }
+
+    /* KOTAK KECIL KUNING DI SEBELAH KIRI TOMBOL */
+    .fasilitas-nav-item::before {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        bottom: 6px;
+        width: 16px;
+        background-color: #ffde34;
+        border-radius: 3px;
+    }
+
+    .fasilitas-nav-item:hover {
+        opacity: 0.92;
+        transform: translateY(-2px);
+    }
+
+    /* SECTION TIAP FASILITAS */
+    .facility-section {
+        padding-top: 10px;
+        margin-bottom: 60px;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 50px;
+    }
+
+    .facility-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    /* HEADER LAYOUT */
+    .facility-header-row {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 25px;
+    }
+
+    .facility-left-col {
+        flex: 0 0 320px;
+        max-width: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .facility-logos {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .facility-logos img {
+        height: 38px;
+        object-fit: contain;
+    }
+
+    .facility-title {
+        font-size: clamp(26px, 3.4vw, 38px);
+        font-weight: 800;
+        color: #8c1004;
+        margin: 0;
+        line-height: 1.05;
+        letter-spacing: -0.5px;
+    }
+
+    .facility-right-col {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .facility-desc {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: #850000;
+        text-align: justify;
+        margin: 0;
+    }
+
+    /* PERBAIKAN: KOTAK GAMBAR UTAMA (PROPOSIONAL) */
+    .facility-main-img-box {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        /* Menggunakan rasio standar agar tidak terlalu panjang ke bawah */
+        max-height: 450px;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #eaeaea;
+        /* Latar belakang hitam agar rapi jika ada sisa ruang */
+        margin-bottom: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border: 2px solid #a82d15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .facility-main-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Otomatis mengisi dan melakukan zoom pas memenuhi kotak */
+        object-position: center;
+        display: block;
+    }
+
+    /* PERBAIKAN: KOTAK GALERI KECIL (PROPOSIONAL) */
+    .facility-sub-img-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .facility-sub-img-box {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        /* Proporsional untuk galeri kecil */
+        max-height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #eaeaea;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border: 2px solid #a82d15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .facility-sub-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* RESPONSIF UNTUK MOBILE */
+    @media (max-width: 768px) {
+        /* TAB NAVIGASI MOBILE (Rapi, Berjarak Pas, Tengah & Proporsional) */
+        .fasilitas-nav {
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 18px;
+            justify-content: center;
+        }
+
+        .fasilitas-nav-item {
+            font-size: 12px;
+            padding: 8px 14px 8px 30px;
+            border-radius: 5px;
+            flex: 1 1 calc(50% - 10px);
+            max-width: calc(50% - 10px);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .fasilitas-nav-item::before {
+            left: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 14px;
+        }
+
+        /* HEADER LAYOUT: LOGO & JUDUL POSISI DI TENGAH */
+        .facility-header-row {
+            flex-direction: column;
+            align-items: center !important;
+            text-align: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .facility-left-col {
+            flex: unset;
+            max-width: 100%;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+        .facility-logos {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .facility-title {
+            text-align: center;
+            font-size: clamp(22px, 5.5vw, 28px);
+            margin: 0 auto;
+        }
+
+        .facility-right-col {
+            width: 100%;
+        }
+
+        .facility-desc {
+            text-align: justify;
+            text-align-last: center;
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        /* GAMBAR GALERI KECIL MOBILE */
+        .facility-sub-img-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .facility-sub-img-box {
+            border-radius: 6px;
+            border-width: 1.5px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .fasilitas-nav-item {
+            flex: 1 1 100%;
+            max-width: 100%;
+            text-align: left;
+            padding: 9px 14px 9px 32px;
+            font-size: 12.5px;
+        }
+
+        .facility-sub-img-grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+</style>
+
+<div class="fasilitas-cms-wrapper">
+
+    <!-- MENU NAVIGASI 7 FASILITAS -->
+    <div class="fasilitas-nav">
+        <a href="#peradilan-semu" class="fasilitas-nav-item">Moot Court Room</a>
+        <a href="#ruang-kelas" class="fasilitas-nav-item">Classrooms</a>
+        <a href="#ruang-auditorium" class="fasilitas-nav-item">Auditorium</a>
+        <a href="#ruang-perpustakaan" class="fasilitas-nav-item">Library</a>
+        <a href="#ruang-teleconference" class="fasilitas-nav-item">Teleconference Room</a>
+        <a href="#ruang-masjid" class="fasilitas-nav-item">Campus Mosque</a>
+        <a href="#taman" class="fasilitas-nav-item">Campus Garden</a>
+    </div>
+
+    <!-- ================= 1. MOOT COURT ROOM ================= -->
+    <div id="peradilan-semu" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Moot Court Room</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The Moot Court Room of the Faculty of Law, Universitas Pamulang, is a practical learning facility designed to provide students with simulated trial experiences. With an atmosphere closely resembling an actual courtroom, this facility supports the applied learning of procedural law through court practice, ranging from reading the indictment, examining witnesses, presenting evidence, to reading verdicts. This room is utilized for practicums, moot court activities, litigation training, and various other academic pursuits. Its presence reflects the commitment of the Faculty of Law, Universitas Pamulang, to producing graduates who are professional, possess integrity, and demonstrate legal competence ready to be applied in the professional world.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="https://cms.unpam.ac.id/storage/assets/pages/content/vSKDLCOWd2bqYrBEwMoV2l2qaGzUO0QZWFW07pPE.png"
+                alt="Moot Court Room Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/f34R1JZjsmiuSWx5x7AuTR419vZSwad4GYJlr549.png"
+                    alt="Galeri 1"></div>
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/kM5bXPsU57kPRm1U3akZmsvhDwFX4AlvjutBxZLI.png"
+                    alt="Galeri 2"></div>
+            <div class="facility-sub-img-box"><img
+                    src="https://cms.unpam.ac.id/storage/assets/pages/content/ISAzREA81k3PtTHrG7R4hiXJRFJW051iljciDzcZ.png"
+                    alt="Galeri 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 2. CLASSROOMS ================= -->
+    <div id="ruang-kelas" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Classrooms</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The Classrooms of the Faculty of Law, Universitas Pamulang, are designed to be conducive and comfortable to support daily teaching and learning activities. Equipped with modern supporting facilities such as air conditioning (AC), projectors, and ergonomic seating arrangements, these classrooms create an interactive academic environment between lecturers and students in exploring various legal disciplines.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_RUANG_KELAS.jpg" alt="Classroom Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_KELAS_1.jpg" alt="Kelas 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_KELAS_2.jpg" alt="Kelas 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_KELAS_3.jpg" alt="Kelas 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 3. AUDITORIUM ================= -->
+    <div id="ruang-auditorium" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Auditorium</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The Auditorium of the Faculty of Law, Universitas Pamulang, is a versatile large-capacity facility used to host various major events, such as national seminars, public lectures, graduation ceremonies (judicium), law symposiums, and other grand student events, fully supported by professional sound and lighting systems.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_AUDITORIUM.jpg" alt="Auditorium Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_AUDI_1.jpg" alt="Auditorium 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_AUDI_2.jpg" alt="Auditorium 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_AUDI_3.jpg" alt="Auditorium 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 4. LIBRARY ================= -->
+    <div id="ruang-perpustakaan" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Library</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The Library provides thousands of legal literature references, ranging from statutory books, scientific journals, reference textbooks on civil law, criminal law, constitutional law, to scientific works of the academic community. This room is designed to be quiet and comfortable to support research activities and independent study for students.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_PERPUSTAKAAN.jpg" alt="Library Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_PERPUS_1.jpg" alt="Perpus 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_PERPUS_2.jpg" alt="Perpus 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_PERPUS_3.jpg" alt="Perpus 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 5. TELECONFERENCE ROOM ================= -->
+    <div id="ruang-teleconference" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Teleconference Room</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The Teleconference Room is equipped with state-of-the-art audiovisual communication technology to facilitate remote online meetings, international guest lectures, inter-university research collaborations, and professional virtual panel hearings.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_TELECONFERENCE.jpg" alt="Teleconference Room Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_TELE_1.jpg" alt="Teleconference 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_TELE_2.jpg" alt="Teleconference 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_TELE_3.jpg" alt="Teleconference 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 6. CAMPUS MOSQUE ================= -->
+    <div id="ruang-masjid" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Campus Mosque</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    A clean, spacious, and comfortable campus mosque is provided within the university environment to ensure all students, lecturers, and staff can perform their prayers with tranquility, serving as the central hub for campus religious and spiritual activities.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_MASJID.jpg" alt="Campus Mosque Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_MASJID_1.jpg" alt="Masjid 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_MASJID_2.jpg" alt="Masjid 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_MASJID_3.jpg" alt="Masjid 3"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= 7. CAMPUS GARDEN ================= -->
+    <div id="taman" class="facility-section">
+        <div class="facility-header-row">
+            <div class="facility-left-col">
+                <div class="facility-logos">
+                    <img src="https://satu.unpam.ac.id/assets/ysj-logo-AIAnzpNM.png" alt="Logo Yayasan Sasmita Jaya">
+                    <img src="https://satu.unpam.ac.id/assets/unpam-logo-BVyurWhA.png" alt="Logo Unpam">
+                </div>
+                <h2 class="facility-title">Campus Garden</h2>
+            </div>
+            <div class="facility-right-col">
+                <p class="facility-desc">
+                    The lush, green, and neatly arranged campus garden area is designed as an open space for students to have relaxed discussions, work on group assignments, or simply unwind amidst a busy lecture schedule.
+                </p>
+            </div>
+        </div>
+
+        <div class="facility-main-img-box">
+            <img src="URL_GAMBAR_UTAMA_TAMAN.jpg" alt="Campus Garden Main View">
+        </div>
+
+        <div class="facility-sub-img-grid">
+            <div class="facility-sub-img-box"><img src="URL_TAMAN_1.jpg" alt="Taman 1"></div>
+            <div class="facility-sub-img-box"><img src="URL_TAMAN_2.jpg" alt="Taman 2"></div>
+            <div class="facility-sub-img-box"><img src="URL_TAMAN_3.jpg" alt="Taman 3"></div>
+        </div>
+    </div>
+
+</div>
