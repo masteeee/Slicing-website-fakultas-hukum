@@ -1,597 +1,1430 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
 
+    /* Scoped container untuk mencegah tabrakan style dengan CMS */
+    #fhdsn2-root {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 30px 16px 60px 16px;
+        box-sizing: border-box;
+        font-family: 'Geist', Arial, sans-serif;
+        color: #2d2020;
+    }
+
+    #fhdsn2-root * {
+        box-sizing: border-box;
+    }
+
+    /* Search Box */
+    #fhdsn2-root .fhdsn2-search-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 38px;
+        width: 100%;
+    }
+
+    #fhdsn2-root .fhdsn2-search-box {
+        position: relative;
+        width: 100%;
+        max-width: 440px;
+    }
+
+    #fhdsn2-root .fhdsn2-search-icon {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #888888;
+        pointer-events: none;
+        line-height: 1;
+    }
+
+    #fhdsn2-root .fhdsn2-search-input {
+        width: 100%;
+        padding: 13px 22px 13px 46px;
+        border-radius: 9999px;
+        border: 1.5px solid #dcdcdc;
+        background-color: #ffffff;
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #333333;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #fhdsn2-root .fhdsn2-search-input:focus {
+        border-color: #800000;
+        box-shadow: 0 4px 20px rgba(128, 0, 0, 0.15);
+    }
+
+    /* Grid Kartu Dosen */
+    #fhdsn2-root .fhdsn2-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+        margin-bottom: 46px;
+    }
+
+    /* Kartu Dosen */
+    #fhdsn2-root .fhdsn2-card {
+        background: #ffffff;
+        border: 2px solid #8b181b;
+        border-radius: 16px;
+        padding: 18px 14px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #fhdsn2-root .fhdsn2-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(139, 24, 27, 0.12);
+    }
+
+    /* Wadah Foto & Backdrop Arch */
+    #fhdsn2-root .fhdsn2-photo-container {
+        position: relative;
+        width: 100%;
+        height: 205px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 14px;
+    }
+
+    #fhdsn2-root .fhdsn2-arch-backdrop {
+        position: absolute;
+        bottom: 0;
+        width: 176px;
+        height: 154px;
+        border-radius: 88px 88px 16px 16px;
+        background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%);
+        z-index: 1;
+    }
+
+    #fhdsn2-root .fhdsn2-photo {
+        position: relative;
+        z-index: 2;
+        width: 176px;
+        height: 205px;
+        object-fit: contain;
+        object-position: bottom center;
+        display: block;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+        border: none;
+    }
+
+    #fhdsn2-root .fhdsn2-name {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #800000;
+        line-height: 1.25;
+        margin: 0 0 6px 0;
+    }
+
+    #fhdsn2-root .fhdsn2-nidn-title {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        color: #800000;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin: 0 0 2px 0;
+        opacity: 0.85;
+    }
+
+    #fhdsn2-root .fhdsn2-nidn-number {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #800000;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        margin: 0;
+        opacity: 0.85;
+    }
+
+    #fhdsn2-root .fhdsn2-tabs {
+        display: flex;
+        gap: 6px;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    #fhdsn2-root .fhdsn2-tab-btn {
+        flex: 1 1 0;
+        padding: 7px 2px;
+        background-color: #800000;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        border-radius: 4px;
+        text-align: center;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+    }
+
+    #fhdsn2-root .fhdsn2-tab-btn:hover {
+        background-color: #5c0000;
+    }
+
+    /* Pesan Ketika Tidak Ada Dosen Ditemukan */
+    #fhdsn2-root .fhdsn2-empty-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 48px 16px;
+        display: none;
+    }
+
+    #fhdsn2-root .fhdsn2-empty-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #800000;
+        margin-bottom: 6px;
+    }
+
+    #fhdsn2-root .fhdsn2-empty-desc {
+        font-size: 14px;
+        color: #71717a;
+    }
+
+    /* Pagination */
+    #fhdsn2-root .fhdsn2-pagination-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    #fhdsn2-root .fhdsn2-pagination-list {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #fhdsn2-root .fhdsn2-page-item {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    #fhdsn2-root .fhdsn2-page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        padding: 0 10px;
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 13.5px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 6px;
+        border: 1.5px solid #d4a5a5;
+        background-color: #ffffff;
+        color: #800000;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        user-select: none;
+        line-height: 1;
+    }
+
+    #fhdsn2-root .fhdsn2-page-btn.fhdsn2-nav-btn {
+        padding: 0 14px;
+    }
+
+    #fhdsn2-root .fhdsn2-page-btn:hover:not(.fhdsn2-is-active):not(.fhdsn2-is-disabled) {
+        background-color: #800000;
+        color: #ffffff;
+        border-color: #800000;
+    }
+
+    #fhdsn2-root .fhdsn2-page-btn.fhdsn2-is-active {
+        background-color: #800000;
+        color: #ffffff !important;
+        border-color: #800000;
+        cursor: default;
+    }
+
+    #fhdsn2-root .fhdsn2-page-btn.fhdsn2-is-disabled {
+        border-color: #dcdcdc;
+        background-color: #ffffff;
+        color: #999999 !important;
+        opacity: 0.45;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    #fhdsn2-root .fhdsn2-page-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 28px;
+        height: 38px;
+        color: #800000;
+        font-weight: 700;
+        font-size: 14px;
+        user-select: none;
+    }
+
+    #fhdsn2-root .fhdsn2-page-counter {
+        font-family: 'Geist', Arial, sans-serif;
+        font-size: 13px;
+        color: #71717a;
+        font-weight: 500;
+    }
+
+    /* Responsif Media Queries */
     @media screen and (max-width: 1100px) {
-        .dosen-grid-responsive {
+        #fhdsn2-root .fhdsn2-grid {
             grid-template-columns: repeat(3, 1fr) !important;
             gap: 18px !important;
         }
     }
 
     @media screen and (max-width: 768px) {
-        .dosen-page-box {
+        #fhdsn2-root {
             padding: 24px 14px 40px 14px !important;
         }
 
-        .dosen-grid-responsive {
+        #fhdsn2-root .fhdsn2-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 14px !important;
         }
 
-        .dosen-card {
+        #fhdsn2-root .fhdsn2-card {
             padding: 14px 10px 12px 10px !important;
         }
 
-        .dosen-photo-container {
+        #fhdsn2-root .fhdsn2-photo-container {
             height: 185px !important;
         }
 
-        .dosen-arch-backdrop {
+        #fhdsn2-root .fhdsn2-arch-backdrop {
             width: 154px !important;
             height: 138px !important;
             border-radius: 77px 77px 14px 14px !important;
         }
 
-        .dosen-photo {
+        #fhdsn2-root .fhdsn2-photo {
             width: 154px !important;
             height: 185px !important;
         }
 
-        .dosen-name {
+        #fhdsn2-root .fhdsn2-name {
             font-size: 14.5px !important;
         }
 
-        .dosen-tab-btn {
+        #fhdsn2-root .fhdsn2-tab-btn {
             font-size: 9px !important;
             padding: 6px 1px !important;
         }
     }
 
     @media screen and (max-width: 480px) {
-        .dosen-grid-responsive {
+        #fhdsn2-root .fhdsn2-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 10px !important;
         }
 
-        .dosen-photo-container {
+        #fhdsn2-root .fhdsn2-photo-container {
             height: 165px !important;
         }
 
-        .dosen-arch-backdrop {
+        #fhdsn2-root .fhdsn2-arch-backdrop {
             width: 136px !important;
             height: 124px !important;
             border-radius: 68px 68px 12px 12px !important;
         }
 
-        .dosen-photo {
+        #fhdsn2-root .fhdsn2-photo {
             width: 136px !important;
             height: 165px !important;
         }
 
-        .dosen-name {
+        #fhdsn2-root .fhdsn2-name {
             font-size: 13px !important;
         }
 
-        .dosen-nidn-title,
-        .dosen-nidn-number {
+        #fhdsn2-root .fhdsn2-nidn-title,
+        #fhdsn2-root .fhdsn2-nidn-number {
             font-size: 9.5px !important;
         }
 
-        .dosen-tab-btn {
+        #fhdsn2-root .fhdsn2-tab-btn {
             font-size: 8px !important;
             padding: 5px 1px !important;
             border-radius: 3px !important;
         }
+
+        #fhdsn2-root .fhdsn2-page-btn {
+            min-width: 34px !important;
+            height: 34px !important;
+            font-size: 12.5px !important;
+            padding: 0 8px !important;
+        }
+
+        #fhdsn2-root .fhdsn2-page-btn.fhdsn2-nav-btn {
+            padding: 0 10px !important;
+        }
     }
 </style>
 
-<div class="dosen-page-box"
-    style="width: 100%; max-width: 1240px; margin: 0 auto; padding: 30px 16px 60px 16px; box-sizing: border-box; font-family: 'Geist', Arial, sans-serif; color: #2d2020;">
+<div id="fhdsn2-root" class="fhdsn2-wrapper">
 
     <!-- 1. SEARCH BAR -->
-    <div style="display: flex; justify-content: center; margin-bottom: 38px; width: 100%; box-sizing: border-box;">
-        <div style="position: relative; width: 100%; max-width: 440px; box-sizing: border-box;">
-            <span
-                style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888888; pointer-events: none; line-height: 1;">&#128269;</span>
-            <input type="text" placeholder="Cari Nama Dosen" aria-label="Cari Nama Dosen"
-                style="width: 100%; box-sizing: border-box; padding: 13px 22px 13px 46px; border-radius: 9999px; border: 1.5px solid #dcdcdc; background-color: #ffffff; font-family: 'Geist', Arial, sans-serif; font-size: 14.5px; font-weight: 500; color: #333333; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); outline: none;" />
+    <div class="fhdsn2-search-wrap">
+        <div class="fhdsn2-search-box">
+            <span class="fhdsn2-search-icon">&#128269;</span>
+            <input type="text" id="fhdsn2-search-input" class="fhdsn2-search-input" placeholder="Cari Nama Dosen / NIDN" aria-label="Cari Nama Dosen atau NIDN" />
         </div>
     </div>
 
-    <!-- 2. GRID KARTU DOSEN (12 DOSEN PER HALAMAN) -->
-    <div class="dosen-grid-responsive"
-        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 46px; box-sizing: border-box;">
+    <!-- 2. GRID KARTU DOSEN -->
+    <div id="fhdsn2-grid" class="fhdsn2-grid">
 
         <!-- CARD DOSEN 1 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Abdul Hadi" class="dosen-photo" loading="lazy"
+                    alt="Dr. Abdul Hadi" class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Abdul Hadi</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000037 / 902000053</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 2 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Assoc. Prof. Dr. HM. Rezky Pahlawan MP, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000074 / 902000106</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 3 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Siti Chadijah, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Siti Chadijah, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Siti Chadijah, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000111 / 902000159</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 4 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Taufik Kurrohman, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Taufik Kurrohman, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Taufik Kurrohman, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000148 / 902000212</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 5 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Susanto, S.H., M.M., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Susanto, S.H., M.M., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Susanto, S.H., M.M., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000185 / 902000265</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 6 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Subarto, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Subarto, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Subarto, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000222 / 902000318</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 7 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Hj. Erna Prabawati, S.H., M.Kn." class="dosen-photo" loading="lazy"
+                    alt="Dr. Hj. Erna Prabawati, S.H., M.Kn." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Hj. Erna Prabawati, S.H., M.Kn.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000259 / 902000371</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 8 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. H. Bambang Santoso, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. H. Bambang Santoso, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. H. Bambang Santoso, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000296 / 902000424</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 9 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Yayan Mulyana, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Yayan Mulyana, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Yayan Mulyana, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000333 / 902000477</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 10 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Ir. H. Sugeng Riyadi, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Ir. H. Sugeng Riyadi, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Ir. H. Sugeng Riyadi, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000370 / 902000530</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 11 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Rina Novianty, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Rina Novianty, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Rina Novianty, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000407 / 902000583</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
 
         <!-- CARD DOSEN 12 -->
-        <div class="dosen-card"
+        <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <div class="dosen-photo-container"
+            <div class="fhdsn2-photo-container"
                 style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
-                <div class="dosen-arch-backdrop"
+                <div class="fhdsn2-arch-backdrop"
                     style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
                 </div>
                 <img src="https://cms.unpam.ac.id/storage/assets/pages/content/daSLOuCMvpk0UXKhRIypvoEpXEMaemtfLLKJUmhm.png"
-                    alt="Dr. Dwi Haryanto, S.H., M.H." class="dosen-photo" loading="lazy"
+                    alt="Dr. Dwi Haryanto, S.H., M.H." class="fhdsn2-photo" loading="lazy"
                     style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
             </div>
             <div
                 style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
-                <div class="dosen-name"
+                <div class="fhdsn2-name"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">
                     Dr. Dwi Haryanto, S.H., M.H.</div>
-                <div class="dosen-nidn-title"
+                <div class="fhdsn2-nidn-title"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
                     NIDN / NUPTK</div>
-                <div class="dosen-nidn-number"
+                <div class="fhdsn2-nidn-number"
                     style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">
                     041000444 / 902000636</div>
             </div>
-            <div class="dosen-tabs"
+            <div class="fhdsn2-tabs"
                 style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
-                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
                     Scholar</a>
-                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="dosen-tab-btn"
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
                 <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
-                    class="dosen-tab-btn"
+                    class="fhdsn2-tab-btn"
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
+        </div>
+
+        <!-- CARD DOSEN 13 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/15b76PWCeJxZBWHCHNj-irf80XXYP_Cmu"
+                    alt="HERIYANTO SAPUTRA, S.S., S.H., M.H" class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">HERIYANTO SAPUTRA, S.S., S.H., M.H</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">422029102 / 902000013</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 14 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1k3_ixhbnvWn3y_KVvgFwJ0owms-apRQ7"
+                    alt="Assoc. Prof. Dr. Muhamad. Iqbal, S.H., M.H., CCL." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Assoc. Prof. Dr. Muhamad. Iqbal, S.H., M.H., CCL.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">402029301 / 902000014</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 15 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/15QmkzLsF7fQv6xIvtI2sisXeqZkBPqqH"
+                    alt="Geofani Milthree Saragih S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Geofani Milthree Saragih S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">2455778679130162 / 902000015</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 16 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1FeAQZrSMoAJVGFpuncvWjsIZX5iS4GkK"
+                    alt="Diya Ul Akmal, S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Diya Ul Akmal, S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">6636776677130232 / 902000016</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 17 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1i6woH1UmHCU6oZoVelk_AWmK6fvoBBdF"
+                    alt="Dr (C). Taupik Hidayat, S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Dr (C). Taupik Hidayat, S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">6636776677130232 / 902000017</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 18 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1JqhW_Vc9Pm3pf4FcXqZ0xDhQdX2f-laO"
+                    alt="Afendra Eka Saputra, S.H.,M.H" class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Afendra Eka Saputra, S.H.,M.H</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">417038406 / 902000018</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 19 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1Z5w-AvbSKxvFFjusQLoRNCMwuIjoN4UB"
+                    alt="Muhammad Rezfah Omar, S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Muhammad Rezfah Omar, S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">415067505 / 902000019</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 20 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1Ht0f4RiEspsNNjcKttcQCt1dEsvcruUz"
+                    alt="Dr. Isnu Harjo Prayitno, S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Dr. Isnu Harjo Prayitno, S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">414057405 / 902000020</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 21 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1kNGbJJeG060mAzmJo0pbQZ2L_DZuIWQ-"
+                    alt="R.A DIAH IRIANTI PERMANA SARI, S.H., M.H" class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">R.A DIAH IRIANTI PERMANA SARI, S.H., M.H</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">417107302 / 902000021</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 22 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/18Oes37ltVBaSMn1uRLN4oeZw8ki44n2F"
+                    alt="Desi Permatasari, S.H., M.H.," class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Desi Permatasari, S.H., M.H.,</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">7049774675230313 / 902000022</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 23 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1lY5rayYe2RZP5Ztl-SAbSSh1cAY3zFRs"
+                    alt="SAAN, S.H.,M.H" class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">SAAN, S.H.,M.H</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">8808100016 / 902000023</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- CARD DOSEN 24 -->
+        <div class="fhdsn2-card"
+            style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <div class="fhdsn2-photo-container"
+                style="position: relative; width: 100%; height: 205px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 14px; box-sizing: border-box;">
+                <div class="fhdsn2-arch-backdrop"
+                    style="position: absolute; bottom: 0; width: 176px; height: 154px; border-radius: 88px 88px 16px 16px; background: radial-gradient(circle at 50% 30%, #8b181b 0%, #800000 65%, #520002 100%); z-index: 1;">
+                </div>
+                <img src="https://lh3.googleusercontent.com/d/1nZqr1qiei0yeB9cX_I9FdVxq2hIliAND"
+                    alt="Dadan Herdiana, S.H., M.H." class="fhdsn2-photo" loading="lazy"
+                    style="position: relative; z-index: 2; width: 176px; height: 205px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12)); border: none;" />
+            </div>
+            <div
+                style="margin-bottom: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; box-sizing: border-box;">
+                <div class="fhdsn2-name"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #800000; line-height: 1.25; margin: 0 0 6px 0;">Dadan Herdiana, S.H., M.H.</div>
+                <div class="fhdsn2-nidn-title"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #800000; letter-spacing: 0.3px; line-height: 1.2; text-transform: uppercase; margin: 0 0 2px 0; opacity: 0.85;">
+                    NIDN / NUPTK</div>
+                <div class="fhdsn2-nidn-number"
+                    style="font-family: 'Geist', Arial, sans-serif; font-size: 11.5px; font-weight: 600; color: #800000; letter-spacing: 0.5px; line-height: 1.2; margin: 0; opacity: 0.85;">422107804 / 902000024</div>
+            </div>
+            <div class="fhdsn2-tabs"
+                style="display: flex; gap: 6px; width: 100%; margin-top: auto; box-sizing: border-box;">
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Google
+                    Scholar</a>
+                <a href="https://sinta.kemdikbud.go.id" target="_blank" rel="noopener noreferrer" class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Sinta</a>
+                <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener noreferrer"
+                    class="fhdsn2-tab-btn"
+                    style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
+            </div>
+        </div>
+
+        <!-- Empty State ketika hasil pencarian kosong -->
+        <div id="fhdsn2-empty-state" class="fhdsn2-empty-state">
+            <div class="fhdsn2-empty-title">Dosen Tidak Ditemukan</div>
+            <div class="fhdsn2-empty-desc">Tidak ada dosen yang cocok dengan kata kunci pencarian Anda.</div>
         </div>
 
     </div>
 
     <!-- 3. PAGINATION -->
-    <div
-        style="display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; box-sizing: border-box;">
-        <ul
-            style="display: flex; align-items: center; gap: 6px; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; justify-content: center; box-sizing: border-box;">
-            <li style="display: inline-block;">
-                <span
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 14px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; border-radius: 6px; border: 1.5px solid #dcdcdc; background-color: #ffffff; color: #999999; opacity: 0.45; cursor: not-allowed; box-sizing: border-box;">&laquo;
-                    Prev</span>
-            </li>
-            <li style="display: inline-block;">
-                <span
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; border-radius: 6px; border: 1.5px solid #800000; background-color: #800000; color: #ffffff; cursor: default; box-sizing: border-box;">1</span>
-            </li>
-            <li style="display: inline-block;">
-                <a href="#"
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1.5px solid #d4a5a5; background-color: #ffffff; color: #800000; box-sizing: border-box;">2</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="#"
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1.5px solid #d4a5a5; background-color: #ffffff; color: #800000; box-sizing: border-box;">3</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="#"
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1.5px solid #d4a5a5; background-color: #ffffff; color: #800000; box-sizing: border-box;">4</a>
-            </li>
-            <li style="display: inline-block;">
-                <span
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 38px; color: #800000; font-weight: 700; font-size: 14px; box-sizing: border-box;">...</span>
-            </li>
-            <li style="display: inline-block;">
-                <a href="#"
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1.5px solid #d4a5a5; background-color: #ffffff; color: #800000; box-sizing: border-box;">17</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="#"
-                    style="display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 14px; font-family: 'Geist', Arial, sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1.5px solid #d4a5a5; background-color: #ffffff; color: #800000; box-sizing: border-box;">Next
-                    &raquo;</a>
-            </li>
-        </ul>
-        <div
-            style="font-family: 'Geist', Arial, sans-serif; font-size: 13px; color: #71717a; font-weight: 500; box-sizing: border-box;">
-            Menampilkan <strong>1 - 12</strong> dari <strong>204</strong> Dosen
-        </div>
+    <div class="fhdsn2-pagination-wrap">
+        <ul id="fhdsn2-pagination-list" class="fhdsn2-pagination-list"></ul>
+        <div id="fhdsn2-page-counter" class="fhdsn2-page-counter"></div>
     </div>
 
 </div>
+
+<script>
+(function() {
+    'use strict';
+
+    function initFhDosen() {
+        var root = document.getElementById('fhdsn2-root');
+        if (!root) return;
+
+        var searchInput = document.getElementById('fhdsn2-search-input');
+        var grid = document.getElementById('fhdsn2-grid');
+        var paginationList = document.getElementById('fhdsn2-pagination-list');
+        var pageCounter = document.getElementById('fhdsn2-page-counter');
+        var emptyState = document.getElementById('fhdsn2-empty-state');
+
+        if (!grid || !paginationList || !pageCounter) return;
+
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.fhdsn2-card'));
+        var perPage = 12;
+        var currentPage = 1;
+        var searchTerm = '';
+
+        function getFilteredCards() {
+            var q = searchTerm.toLowerCase().trim();
+            if (!q) return cards;
+            return cards.filter(function(card) {
+                var nameEl = card.querySelector('.fhdsn2-name');
+                var nidnEl = card.querySelector('.fhdsn2-nidn-number');
+                var nameText = nameEl ? nameEl.textContent.toLowerCase() : '';
+                var nidnText = nidnEl ? nidnEl.textContent.toLowerCase() : '';
+                return nameText.indexOf(q) !== -1 || nidnText.indexOf(q) !== -1;
+            });
+        }
+
+        function render() {
+            var filtered = getFilteredCards();
+            var totalItems = filtered.length;
+            var totalPages = Math.max(1, Math.ceil(totalItems / perPage));
+
+            if (currentPage > totalPages) {
+                currentPage = totalPages;
+            }
+            if (currentPage < 1) {
+                currentPage = 1;
+            }
+
+            // Sembunyikan semua kartu terlebih dahulu
+            for (var c = 0; c < cards.length; c++) {
+                cards[c].style.display = 'none';
+            }
+
+            if (totalItems === 0) {
+                if (emptyState) emptyState.style.display = 'block';
+                paginationList.innerHTML = '';
+                pageCounter.innerHTML = 'Menampilkan <strong>0</strong> Dosen';
+                return;
+            }
+
+            if (emptyState) emptyState.style.display = 'none';
+
+            // Tampilkan kartu untuk halaman aktif
+            var startIndex = (currentPage - 1) * perPage;
+            var endIndex = Math.min(startIndex + perPage, totalItems);
+
+            for (var i = startIndex; i < endIndex; i++) {
+                filtered[i].style.display = 'flex';
+            }
+
+            // Perbarui counter
+            pageCounter.innerHTML = 'Menampilkan <strong>' + (startIndex + 1) + ' - ' + endIndex + '</strong> dari <strong>' + totalItems + '</strong> Dosen';
+
+            // Bangun tombol pagination dinamis
+            var html = '';
+
+            // Tombol Prev
+            if (currentPage > 1) {
+                html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn fhdsn2-nav-btn" data-page="' + (currentPage - 1) + '">&laquo; Prev</button></li>';
+            } else {
+                html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled">&laquo; Prev</span></li>';
+            }
+
+            // Penomoran halaman dengan windowing cerdas
+            var pages = [];
+            if (totalPages <= 7) {
+                for (var p = 1; p <= totalPages; p++) pages.push(p);
+            } else if (currentPage <= 4) {
+                pages = [1, 2, 3, 4, 5, '...', totalPages];
+            } else if (currentPage >= totalPages - 3) {
+                pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+            } else {
+                pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+            }
+
+            for (var j = 0; j < pages.length; j++) {
+                var item = pages[j];
+                if (item === '...') {
+                    html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-ellipsis">...</span></li>';
+                } else if (item === currentPage) {
+                    html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-is-active">' + item + '</span></li>';
+                } else {
+                    html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn" data-page="' + item + '">' + item + '</button></li>';
+                }
+            }
+
+            // Tombol Next
+            if (currentPage < totalPages) {
+                html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn fhdsn2-nav-btn" data-page="' + (currentPage + 1) + '">Next &raquo;</button></li>';
+            } else {
+                html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled">Next &raquo;</span></li>';
+            }
+
+            paginationList.innerHTML = html;
+        }
+
+        // Event listener klik tombol pagination
+        paginationList.addEventListener('click', function(e) {
+            var btn = e.target.closest ? e.target.closest('button[data-page]') : null;
+            if (!btn) return;
+            e.preventDefault();
+            var targetPage = parseInt(btn.getAttribute('data-page'), 10);
+            if (targetPage && targetPage !== currentPage) {
+                currentPage = targetPage;
+                render();
+                root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        // Event listener live search
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                searchTerm = searchInput.value;
+                currentPage = 1;
+                render();
+            });
+        }
+
+        // Render awal saat dimuat
+        render();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFhDosen);
+    } else {
+        initFhDosen();
+    }
+})();
+</script>
