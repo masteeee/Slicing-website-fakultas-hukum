@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Dosen Fakultas Hukum</title>
+    <style>
+        /* Reset & Container styling */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .fh-iframe-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fh-iframe-container iframe {
+            width: 100%;
+            min-height: 1200px;
+            border: none;
+            display: block;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: height 0.25s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- KODE EMBED IFRAME DOSEN FAKULTAS HUKUM -->
+    <!-- Salin bagian di bawah ini jika ingin menempelkan langsung ke CMS / Halaman Website -->
+    <div class="fh-iframe-container">
+        <iframe 
+            id="fh-dosen-frame"
+            src="https://websiteprodihukum.vercel.app/" 
+            title="Daftar Dosen Fakultas Hukum"
+            loading="lazy"
+            allow="fullscreen"
+            style="width: 100%; min-height: 1200px; border: none; display: block; overflow: hidden; box-sizing: border-box; transition: height 0.25s ease;"
+        ></iframe>
+    </div>
+
+    <!-- Script opsional: Otomatis menyesuaikan tinggi iframe (auto-resize) saat pencarian / ganti halaman tanpa scrollbar ganda -->
+    <script>
+    (function() {
+        'use strict';
+        window.addEventListener('message', function(event) {
+            // Tangkap postMessage dari Vercel untuk sinkronisasi tinggi konten secara real-time
+            if (event.data && event.data.type === 'fhdsn_resize' && event.data.height) {
+                var frame = document.getElementById('fh-dosen-frame');
+                if (frame) {
+                    var newHeight = parseInt(event.data.height, 10);
+                    if (!isNaN(newHeight) && newHeight > 200) {
+                        frame.style.height = (newHeight + 30) + 'px';
+                    }
+                }
+            }
+        });
+    })();
+    </script>
+
+</body>
+</html>

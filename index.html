@@ -1393,7 +1393,27 @@
             }
 
             paginationList.innerHTML = html;
+            sendHeight();
         }
+
+        function sendHeight() {
+            try {
+                if (window.parent && window.parent !== window) {
+                    var h = Math.max(
+                        document.body ? document.body.scrollHeight : 0,
+                        document.documentElement ? document.documentElement.scrollHeight : 0,
+                        root ? root.scrollHeight : 0
+                    );
+                    window.parent.postMessage({ type: 'fhdsn_resize', height: h }, '*');
+                }
+            } catch (e) {}
+        }
+
+        window.addEventListener('resize', sendHeight);
+        window.addEventListener('load', function() {
+            setTimeout(sendHeight, 200);
+            setTimeout(sendHeight, 600);
+        });
 
         // Event listener klik tombol pagination
         paginationList.addEventListener('click', function(e) {
