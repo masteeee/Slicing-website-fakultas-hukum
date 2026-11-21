@@ -1,7 +1,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
 
-    /* Scoped container untuk mencegah tabrakan style dengan CMS */
+    /* Scoped container utama */
     #fhdsn2-root {
         width: 100%;
         max-width: 1240px;
@@ -16,7 +16,15 @@
         box-sizing: border-box;
     }
 
-    /* Search Box */
+    /* Radio inputs tersembunyi untuk Pure CSS Pagination */
+    #fhdsn2-root input[type="radio"].fhdsn2-radio-toggle {
+        display: none !important;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Search Box Tampilan Bersih */
     #fhdsn2-root .fhdsn2-search-wrap {
         display: flex;
         justify-content: center;
@@ -181,27 +189,7 @@
         background-color: #5c0000;
     }
 
-    /* Pesan Ketika Tidak Ada Dosen Ditemukan */
-    #fhdsn2-root .fhdsn2-empty-state {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 48px 16px;
-        display: none;
-    }
-
-    #fhdsn2-root .fhdsn2-empty-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #800000;
-        margin-bottom: 6px;
-    }
-
-    #fhdsn2-root .fhdsn2-empty-desc {
-        font-size: 14px;
-        color: #71717a;
-    }
-
-    /* Pagination */
+    /* Pagination Styling */
     #fhdsn2-root .fhdsn2-pagination-wrap {
         display: flex;
         flex-direction: column;
@@ -219,12 +207,6 @@
         margin: 0;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    #fhdsn2-root .fhdsn2-page-item {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
     }
 
     #fhdsn2-root .fhdsn2-page-btn {
@@ -252,17 +234,10 @@
         padding: 0 14px;
     }
 
-    #fhdsn2-root .fhdsn2-page-btn:hover:not(.fhdsn2-is-active):not(.fhdsn2-is-disabled) {
+    #fhdsn2-root .fhdsn2-page-btn:hover:not(.fhdsn2-is-disabled) {
         background-color: #800000;
         color: #ffffff;
         border-color: #800000;
-    }
-
-    #fhdsn2-root .fhdsn2-page-btn.fhdsn2-is-active {
-        background-color: #800000;
-        color: #ffffff !important;
-        border-color: #800000;
-        cursor: default;
     }
 
     #fhdsn2-root .fhdsn2-page-btn.fhdsn2-is-disabled {
@@ -274,23 +249,68 @@
         pointer-events: none;
     }
 
-    #fhdsn2-root .fhdsn2-page-ellipsis {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 28px;
-        height: 38px;
-        color: #800000;
-        font-weight: 700;
-        font-size: 14px;
-        user-select: none;
-    }
-
     #fhdsn2-root .fhdsn2-page-counter {
         font-family: 'Geist', Arial, sans-serif;
         font-size: 13px;
         color: #71717a;
         font-weight: 500;
+    }
+
+    /* ========================================================= */
+    /* LOGIKA PURE CSS PAGINATION (ZERO JAVASCRIPT, 100% WAF SAFE) */
+    /* ========================================================= */
+    #fhdsn2-root .fhdsn2-page-grid-1,
+    #fhdsn2-root .fhdsn2-page-grid-2 {
+        display: none;
+    }
+
+    #fhdsn2-root .fhdsn2-prev-p1,
+    #fhdsn2-root .fhdsn2-prev-p2,
+    #fhdsn2-root .fhdsn2-next-p1,
+    #fhdsn2-root .fhdsn2-next-p2,
+    #fhdsn2-root .fhdsn2-counter-p1,
+    #fhdsn2-root .fhdsn2-counter-p2 {
+        display: none;
+    }
+
+    /* Ketika Halaman 1 Aktif */
+    #fh-page-1:checked ~ .fhdsn2-page-grid-1 {
+        display: grid;
+    }
+    #fh-page-1:checked ~ .fhdsn2-pagination-wrap .fhdsn2-prev-p1 {
+        display: inline-flex;
+    }
+    #fh-page-1:checked ~ .fhdsn2-pagination-wrap .fhdsn2-next-p1 {
+        display: inline-flex;
+    }
+    #fh-page-1:checked ~ .fhdsn2-pagination-wrap .fhdsn2-btn-p1 {
+        background-color: #800000;
+        color: #ffffff !important;
+        border-color: #800000;
+        cursor: default;
+    }
+    #fh-page-1:checked ~ .fhdsn2-pagination-wrap .fhdsn2-counter-p1 {
+        display: block;
+    }
+
+    /* Ketika Halaman 2 Aktif */
+    #fh-page-2:checked ~ .fhdsn2-page-grid-2 {
+        display: grid;
+    }
+    #fh-page-2:checked ~ .fhdsn2-pagination-wrap .fhdsn2-prev-p2 {
+        display: inline-flex;
+    }
+    #fh-page-2:checked ~ .fhdsn2-pagination-wrap .fhdsn2-next-p2 {
+        display: inline-flex;
+    }
+    #fh-page-2:checked ~ .fhdsn2-pagination-wrap .fhdsn2-btn-p2 {
+        background-color: #800000;
+        color: #ffffff !important;
+        border-color: #800000;
+        cursor: default;
+    }
+    #fh-page-2:checked ~ .fhdsn2-pagination-wrap .fhdsn2-counter-p2 {
+        display: block;
     }
 
     /* Responsif Media Queries */
@@ -391,17 +411,20 @@
 
 <div id="fhdsn2-root" class="fhdsn2-wrapper">
 
-    <!-- 1. SEARCH BAR -->
+    <!-- RADIO BUTTONS PURE CSS CONTROLLER -->
+    <input type="radio" name="fh_dosen_page" id="fh-page-1" class="fhdsn2-radio-toggle" checked>
+    <input type="radio" name="fh_dosen_page" id="fh-page-2" class="fhdsn2-radio-toggle">
+
+    <!-- 1. SEARCH BAR VISUAL -->
     <div class="fhdsn2-search-wrap">
         <div class="fhdsn2-search-box">
             <span class="fhdsn2-search-icon">&#128269;</span>
-            <input type="text" id="fhdsn2-search-input" class="fhdsn2-search-input" placeholder="Cari Nama Dosen / NIDN" aria-label="Cari Nama Dosen atau NIDN" />
+            <input type="text" class="fhdsn2-search-input" placeholder="Gunakan Ctrl + F untuk mencari Nama / NIDN" aria-label="Cari Dosen" />
         </div>
     </div>
 
-    <!-- 2. GRID KARTU DOSEN -->
-    <div id="fhdsn2-grid" class="fhdsn2-grid">
-
+    <!-- 2A. GRID HALAMAN 1 (12 DOSEN PERTAMA) -->
+    <div class="fhdsn2-grid fhdsn2-page-grid-1">
         <!-- CARD DOSEN 1 -->
         <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
@@ -845,7 +868,10 @@
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
+    </div>
 
+    <!-- 2B. GRID HALAMAN 2 (12 DOSEN KEDUA) -->
+    <div class="fhdsn2-grid fhdsn2-page-grid-2">
         <!-- CARD DOSEN 13 -->
         <div class="fhdsn2-card"
             style="background: #ffffff; border: 2px solid #8b181b; border-radius: 16px; padding: 18px 14px 14px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
@@ -1265,186 +1291,27 @@
                     style="flex: 1 1 0; padding: 7px 2px; background-color: #800000; color: #ffffff; text-decoration: none; font-family: 'Geist', Arial, sans-serif; font-size: 10px; font-weight: 600; border-radius: 4px; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">PDDikti</a>
             </div>
         </div>
-
-        <!-- Empty State ketika hasil pencarian kosong -->
-        <div id="fhdsn2-empty-state" class="fhdsn2-empty-state">
-            <div class="fhdsn2-empty-title">Dosen Tidak Ditemukan</div>
-            <div class="fhdsn2-empty-desc">Tidak ada dosen yang cocok dengan kata kunci pencarian Anda.</div>
-        </div>
-
     </div>
 
-    <!-- 3. PAGINATION -->
+    <!-- 3. PAGINATION (PURE CSS INTERAKTIF) -->
     <div class="fhdsn2-pagination-wrap">
-        <ul id="fhdsn2-pagination-list" class="fhdsn2-pagination-list"></ul>
-        <div id="fhdsn2-page-counter" class="fhdsn2-page-counter"></div>
+        <div class="fhdsn2-pagination-list">
+            <!-- Tombol Prev -->
+            <span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled fhdsn2-prev-p1">&laquo; Prev</span>
+            <label for="fh-page-1" class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-prev-p2">&laquo; Prev</label>
+
+            <!-- Nomor Halaman -->
+            <label for="fh-page-1" class="fhdsn2-page-btn fhdsn2-btn-p1">1</label>
+            <label for="fh-page-2" class="fhdsn2-page-btn fhdsn2-btn-p2">2</label>
+
+            <!-- Tombol Next -->
+            <label for="fh-page-2" class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-next-p1">Next &raquo;</label>
+            <span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled fhdsn2-next-p2">Next &raquo;</span>
+        </div>
+
+        <!-- Counter Status Halaman -->
+        <div class="fhdsn2-page-counter fhdsn2-counter-p1">Menampilkan <strong>1 - 12</strong> dari <strong>24</strong> Dosen</div>
+        <div class="fhdsn2-page-counter fhdsn2-counter-p2">Menampilkan <strong>13 - 24</strong> dari <strong>24</strong> Dosen</div>
     </div>
 
 </div>
-
-<script>
-(function() {
-    'use strict';
-
-    function initFhDosen() {
-        var root = document.getElementById('fhdsn2-root');
-        if (!root) return;
-
-        var searchInput = document.getElementById('fhdsn2-search-input');
-        var grid = document.getElementById('fhdsn2-grid');
-        var paginationList = document.getElementById('fhdsn2-pagination-list');
-        var pageCounter = document.getElementById('fhdsn2-page-counter');
-        var emptyState = document.getElementById('fhdsn2-empty-state');
-
-        if (!grid || !paginationList || !pageCounter) return;
-
-        var cards = Array.prototype.slice.call(grid.querySelectorAll('.fhdsn2-card'));
-        var perPage = 12;
-        var currentPage = 1;
-        var searchTerm = '';
-
-        function getFilteredCards() {
-            var q = searchTerm.toLowerCase().trim();
-            if (!q) return cards;
-            return cards.filter(function(card) {
-                var nameEl = card.querySelector('.fhdsn2-name');
-                var nidnEl = card.querySelector('.fhdsn2-nidn-number');
-                var nameText = nameEl ? nameEl.textContent.toLowerCase() : '';
-                var nidnText = nidnEl ? nidnEl.textContent.toLowerCase() : '';
-                return nameText.indexOf(q) !== -1 || nidnText.indexOf(q) !== -1;
-            });
-        }
-
-        function render() {
-            var filtered = getFilteredCards();
-            var totalItems = filtered.length;
-            var totalPages = Math.max(1, Math.ceil(totalItems / perPage));
-
-            if (currentPage > totalPages) {
-                currentPage = totalPages;
-            }
-            if (currentPage < 1) {
-                currentPage = 1;
-            }
-
-            // Sembunyikan semua kartu terlebih dahulu
-            for (var c = 0; c < cards.length; c++) {
-                cards[c].style.display = 'none';
-            }
-
-            if (totalItems === 0) {
-                if (emptyState) emptyState.style.display = 'block';
-                paginationList.innerHTML = '';
-                pageCounter.innerHTML = 'Menampilkan <strong>0</strong> Dosen';
-                return;
-            }
-
-            if (emptyState) emptyState.style.display = 'none';
-
-            // Tampilkan kartu untuk halaman aktif
-            var startIndex = (currentPage - 1) * perPage;
-            var endIndex = Math.min(startIndex + perPage, totalItems);
-
-            for (var i = startIndex; i < endIndex; i++) {
-                filtered[i].style.display = 'flex';
-            }
-
-            // Perbarui counter
-            pageCounter.innerHTML = 'Menampilkan <strong>' + (startIndex + 1) + ' - ' + endIndex + '</strong> dari <strong>' + totalItems + '</strong> Dosen';
-
-            // Bangun tombol pagination dinamis
-            var html = '';
-
-            // Tombol Prev
-            if (currentPage > 1) {
-                html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn fhdsn2-nav-btn" data-page="' + (currentPage - 1) + '">&laquo; Prev</button></li>';
-            } else {
-                html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled">&laquo; Prev</span></li>';
-            }
-
-            // Penomoran halaman dengan windowing cerdas
-            var pages = [];
-            if (totalPages <= 7) {
-                for (var p = 1; p <= totalPages; p++) pages.push(p);
-            } else if (currentPage <= 4) {
-                pages = [1, 2, 3, 4, 5, '...', totalPages];
-            } else if (currentPage >= totalPages - 3) {
-                pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
-            } else {
-                pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
-            }
-
-            for (var j = 0; j < pages.length; j++) {
-                var item = pages[j];
-                if (item === '...') {
-                    html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-ellipsis">...</span></li>';
-                } else if (item === currentPage) {
-                    html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-is-active">' + item + '</span></li>';
-                } else {
-                    html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn" data-page="' + item + '">' + item + '</button></li>';
-                }
-            }
-
-            // Tombol Next
-            if (currentPage < totalPages) {
-                html += '<li class="fhdsn2-page-item"><button type="button" class="fhdsn2-page-btn fhdsn2-nav-btn" data-page="' + (currentPage + 1) + '">Next &raquo;</button></li>';
-            } else {
-                html += '<li class="fhdsn2-page-item"><span class="fhdsn2-page-btn fhdsn2-nav-btn fhdsn2-is-disabled">Next &raquo;</span></li>';
-            }
-
-            paginationList.innerHTML = html;
-            sendHeight();
-        }
-
-        function sendHeight() {
-            try {
-                if (window.parent && window.parent !== window) {
-                    var h = Math.max(
-                        document.body ? document.body.scrollHeight : 0,
-                        document.documentElement ? document.documentElement.scrollHeight : 0,
-                        root ? root.scrollHeight : 0
-                    );
-                    window.parent.postMessage({ type: 'fhdsn_resize', height: h }, '*');
-                }
-            } catch (e) {}
-        }
-
-        window.addEventListener('resize', sendHeight);
-        window.addEventListener('load', function() {
-            setTimeout(sendHeight, 200);
-            setTimeout(sendHeight, 600);
-        });
-
-        // Event listener klik tombol pagination
-        paginationList.addEventListener('click', function(e) {
-            var btn = e.target.closest ? e.target.closest('button[data-page]') : null;
-            if (!btn) return;
-            e.preventDefault();
-            var targetPage = parseInt(btn.getAttribute('data-page'), 10);
-            if (targetPage && targetPage !== currentPage) {
-                currentPage = targetPage;
-                render();
-                root.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-
-        // Event listener live search
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                searchTerm = searchInput.value;
-                currentPage = 1;
-                render();
-            });
-        }
-
-        // Render awal saat dimuat
-        render();
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initFhDosen);
-    } else {
-        initFhDosen();
-    }
-})();
-</script>
